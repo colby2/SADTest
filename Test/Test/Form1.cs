@@ -19,12 +19,22 @@ namespace Test
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "test";
+            textBox1.ReadOnly = false;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
            
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
         }
     }
