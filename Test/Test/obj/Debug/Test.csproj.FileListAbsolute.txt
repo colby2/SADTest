@@ -10,3 +10,13 @@ C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Properties.Resourc
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.exe
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.pdb
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.exe
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.pdb
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\bin\Debug\Test.exe
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\bin\Debug\Test.pdb
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.GraphTemplate.resources
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Login.resources
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Main.resources
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache

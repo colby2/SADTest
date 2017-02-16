@@ -37,5 +37,11 @@ namespace Test
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            GraphTemplate graph = new GraphTemplate();
+            graph.ShowDialog();
+        }
     }
 }
