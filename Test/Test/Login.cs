@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,10 +18,18 @@ namespace Test
             InitializeComponent();
         }
 
-        private void bLogin_Click(object sender, EventArgs e)
+        public static void hubThreadStart()
         {
             Hub main = new Hub();
             main.ShowDialog();
+        }
+
+        private void bLogin_Click(object sender, EventArgs e)
+        {
+            ThreadStart hubRef = new ThreadStart(hubThreadStart);
+            Thread hubThread = new Thread(hubRef);
+            hubThread.Start();
+            //add code to close login form
 
         }
     }
