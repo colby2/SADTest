@@ -22,5 +22,10 @@ namespace Test
             GraphTemplate graph = new GraphTemplate();
             graph.ShowDialog();
         }
+
+        private void Hub_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

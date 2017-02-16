@@ -91,6 +91,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "Hub";
             this.Text = "Main";
+            this.Load += new System.EventHandler(this.Hub_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
