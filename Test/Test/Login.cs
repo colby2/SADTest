@@ -26,11 +26,13 @@ namespace Test
 
         private void bLogin_Click(object sender, EventArgs e)
         {
-            ThreadStart hubRef = new ThreadStart(hubThreadStart);
-            Thread hubThread = new Thread(hubRef);
-            hubThread.Start();
-            //add code to close login form
-
+            if (true)
+            {
+                ThreadStart hubRef = new ThreadStart(hubThreadStart);
+                Thread hubThread = new Thread(hubRef);
+                hubThread.Start();
+                this.Close();
+            }//end if
         }
     }
 }
