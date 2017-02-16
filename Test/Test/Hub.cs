@@ -10,18 +10,17 @@ using System.Windows.Forms;
 
 namespace Test
 {
-    public partial class Login : Form
+    public partial class Hub : Form
     {
-        public Login()
+        public Hub()
         {
             InitializeComponent();
         }
 
-        private void bLogin_Click(object sender, EventArgs e)
+        private void bGraphs_Click(object sender, EventArgs e)
         {
-            Hub main = new Hub();
-            main.ShowDialog();
-
+            GraphTemplate graph = new GraphTemplate();
+            graph.ShowDialog();
         }
     }
 }
