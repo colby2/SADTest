@@ -31,3 +31,6 @@ C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Properties.Resour
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Hub.resources
 C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Hub.resources
+C:\Users\Owner\Source\Repos\SADTest\Test\Test\bin\Debug\Test.exe.config
+C:\Users\Owner\Source\Repos\SADTest\Test\Test\obj\Debug\Test.exe
+C:\Users\Owner\Source\Repos\SADTest\Test\Test\obj\Debug\Test.pdb
