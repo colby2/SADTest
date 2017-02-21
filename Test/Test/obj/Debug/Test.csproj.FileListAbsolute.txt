@@ -34,3 +34,4 @@ C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Hub.resources
 C:\Users\Owner\Source\Repos\SADTest\Test\Test\bin\Debug\Test.exe.config
 C:\Users\Owner\Source\Repos\SADTest\Test\Test\obj\Debug\Test.exe
 C:\Users\Owner\Source\Repos\SADTest\Test\Test\obj\Debug\Test.pdb
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Patient.resources
