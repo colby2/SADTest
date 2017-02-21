@@ -24,19 +24,31 @@ namespace Test
             graph.ShowDialog();
         }
 
+        public static void patientThreadStart()
+        {
+            Patient patient = new Patient();
+            patient.ShowDialog();
+        }
+
         private void bGraphs_Click(object sender, EventArgs e)
         {
            
             ThreadStart graphRef = new ThreadStart(graphThreadStart);
             Thread graphThread = new Thread(graphRef);
             graphThread.Start();
-            
            
         }
 
         private void Hub_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void bSearch_Click(object sender, EventArgs e)
+        {
+            ThreadStart patientRef = new ThreadStart(patientThreadStart);
+            Thread patientThread = new Thread(patientRef);
+            patientThread.Start();
         }
     }
 }

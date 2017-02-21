@@ -50,6 +50,7 @@
             this.bSearch.TabIndex = 1;
             this.bSearch.Text = "Search";
             this.bSearch.UseVisualStyleBackColor = true;
+            this.bSearch.Click += new System.EventHandler(this.bSearch_Click);
             // 
             // bLogout
             // 
