@@ -22,6 +22,18 @@ namespace Test
 
         }
 
+        public Patient(string criteria)
+        {
+            InitializeComponent();
+            tbName.Text = criteria;//replace with search function, or a search textbox.
+        }
+
+        public Patient(int PatientID)
+        {
+            InitializeComponent();
+            //retreive information based on PatientID Here. TO DO.
+        }
+
         private void label8_Click(object sender, EventArgs e)
         {
 
@@ -72,6 +84,11 @@ namespace Test
                 bEdit.Text = "Edit";
             }
 
+
+        }
+
+        private void tpDemographics_Click(object sender, EventArgs e)
+        {
 
         }
     }

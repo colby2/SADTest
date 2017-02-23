@@ -26,9 +26,16 @@ namespace Test
 
         public static void patientThreadStart()
         {
+
             Patient patient = new Patient();
             patient.ShowDialog();
         }
+
+        public static void patientThreadStart(string criteria)
+        {
+            Patient patient = new Patient(criteria);
+            patient.ShowDialog();
+        }//Thread Starter for patient with non-blank search
 
         private void bGraphs_Click(object sender, EventArgs e)
         {
@@ -46,9 +53,17 @@ namespace Test
 
         private void bSearch_Click(object sender, EventArgs e)
         {
-            ThreadStart patientRef = new ThreadStart(patientThreadStart);
-            Thread patientThread = new Thread(patientRef);
-            patientThread.Start();
+            if (tbSearch.Text != "")
+            {
+                Thread patientThread = new Thread(patientThreadStart);
+                patientThreadStart(tbSearch.Text);
+            }
+            else
+            {
+                ThreadStart patientRef = new ThreadStart(patientThreadStart);
+                Thread patientThread = new Thread(patientRef);
+                patientThread.Start();
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

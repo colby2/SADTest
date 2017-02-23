@@ -30,6 +30,17 @@
         {
             this.tcPatient = new System.Windows.Forms.TabControl();
             this.tpDemographics = new System.Windows.Forms.TabPage();
+            this.bNotes = new System.Windows.Forms.Button();
+            this.bTrends = new System.Windows.Forms.Button();
+            this.bEdit = new System.Windows.Forms.Button();
+            this.bDelete = new System.Windows.Forms.Button();
+            this.tbInsuranceInfoId = new System.Windows.Forms.TextBox();
+            this.tbSecondaryInsurance = new System.Windows.Forms.TextBox();
+            this.tbPrimaryInsurance = new System.Windows.Forms.TextBox();
+            this.lInsuranceInfoId = new System.Windows.Forms.Label();
+            this.lSecondaryInsurance = new System.Windows.Forms.Label();
+            this.lPrimaryInsurance = new System.Windows.Forms.Label();
+            this.lInsurance = new System.Windows.Forms.Label();
             this.tbPhone = new System.Windows.Forms.TextBox();
             this.tbAge = new System.Windows.Forms.TextBox();
             this.tbZip = new System.Windows.Forms.TextBox();
@@ -55,17 +66,6 @@
             this.tpDiabeticTest = new System.Windows.Forms.TabPage();
             this.tpLipidTest = new System.Windows.Forms.TabPage();
             this.tpDiabeticBackground = new System.Windows.Forms.TabPage();
-            this.lInsurance = new System.Windows.Forms.Label();
-            this.lPrimaryInsurance = new System.Windows.Forms.Label();
-            this.lSecondaryInsurance = new System.Windows.Forms.Label();
-            this.lInsuranceInfoId = new System.Windows.Forms.Label();
-            this.tbPrimaryInsurance = new System.Windows.Forms.TextBox();
-            this.tbSecondaryInsurance = new System.Windows.Forms.TextBox();
-            this.tbInsuranceInfoId = new System.Windows.Forms.TextBox();
-            this.bDelete = new System.Windows.Forms.Button();
-            this.bEdit = new System.Windows.Forms.Button();
-            this.bTrends = new System.Windows.Forms.Button();
-            this.bNotes = new System.Windows.Forms.Button();
             this.tcPatient.SuspendLayout();
             this.tpDemographics.SuspendLayout();
             this.SuspendLayout();
@@ -125,6 +125,105 @@
             this.tpDemographics.TabIndex = 0;
             this.tpDemographics.Text = "Demographics";
             this.tpDemographics.UseVisualStyleBackColor = true;
+            this.tpDemographics.Click += new System.EventHandler(this.tpDemographics_Click);
+            // 
+            // bNotes
+            // 
+            this.bNotes.Location = new System.Drawing.Point(367, 532);
+            this.bNotes.Name = "bNotes";
+            this.bNotes.Size = new System.Drawing.Size(75, 23);
+            this.bNotes.TabIndex = 28;
+            this.bNotes.Text = "Notes";
+            this.bNotes.UseVisualStyleBackColor = true;
+            // 
+            // bTrends
+            // 
+            this.bTrends.Location = new System.Drawing.Point(448, 532);
+            this.bTrends.Name = "bTrends";
+            this.bTrends.Size = new System.Drawing.Size(75, 23);
+            this.bTrends.TabIndex = 27;
+            this.bTrends.Text = "Trends";
+            this.bTrends.UseVisualStyleBackColor = true;
+            // 
+            // bEdit
+            // 
+            this.bEdit.Location = new System.Drawing.Point(529, 532);
+            this.bEdit.Name = "bEdit";
+            this.bEdit.Size = new System.Drawing.Size(75, 23);
+            this.bEdit.TabIndex = 26;
+            this.bEdit.Text = "Edit";
+            this.bEdit.UseVisualStyleBackColor = true;
+            this.bEdit.Click += new System.EventHandler(this.bEdit_Click);
+            // 
+            // bDelete
+            // 
+            this.bDelete.Location = new System.Drawing.Point(610, 532);
+            this.bDelete.Name = "bDelete";
+            this.bDelete.Size = new System.Drawing.Size(75, 23);
+            this.bDelete.TabIndex = 25;
+            this.bDelete.Text = "Delete";
+            this.bDelete.UseVisualStyleBackColor = true;
+            // 
+            // tbInsuranceInfoId
+            // 
+            this.tbInsuranceInfoId.Location = new System.Drawing.Point(147, 393);
+            this.tbInsuranceInfoId.Name = "tbInsuranceInfoId";
+            this.tbInsuranceInfoId.ReadOnly = true;
+            this.tbInsuranceInfoId.Size = new System.Drawing.Size(100, 20);
+            this.tbInsuranceInfoId.TabIndex = 24;
+            // 
+            // tbSecondaryInsurance
+            // 
+            this.tbSecondaryInsurance.Location = new System.Drawing.Point(147, 366);
+            this.tbSecondaryInsurance.Name = "tbSecondaryInsurance";
+            this.tbSecondaryInsurance.ReadOnly = true;
+            this.tbSecondaryInsurance.Size = new System.Drawing.Size(100, 20);
+            this.tbSecondaryInsurance.TabIndex = 23;
+            // 
+            // tbPrimaryInsurance
+            // 
+            this.tbPrimaryInsurance.Location = new System.Drawing.Point(147, 339);
+            this.tbPrimaryInsurance.Name = "tbPrimaryInsurance";
+            this.tbPrimaryInsurance.ReadOnly = true;
+            this.tbPrimaryInsurance.Size = new System.Drawing.Size(100, 20);
+            this.tbPrimaryInsurance.TabIndex = 22;
+            // 
+            // lInsuranceInfoId
+            // 
+            this.lInsuranceInfoId.AutoSize = true;
+            this.lInsuranceInfoId.Location = new System.Drawing.Point(28, 396);
+            this.lInsuranceInfoId.Name = "lInsuranceInfoId";
+            this.lInsuranceInfoId.Size = new System.Drawing.Size(89, 13);
+            this.lInsuranceInfoId.TabIndex = 21;
+            this.lInsuranceInfoId.Text = "Insurance Info ID";
+            // 
+            // lSecondaryInsurance
+            // 
+            this.lSecondaryInsurance.AutoSize = true;
+            this.lSecondaryInsurance.Location = new System.Drawing.Point(28, 369);
+            this.lSecondaryInsurance.Name = "lSecondaryInsurance";
+            this.lSecondaryInsurance.Size = new System.Drawing.Size(108, 13);
+            this.lSecondaryInsurance.TabIndex = 20;
+            this.lSecondaryInsurance.Text = "Secondary Insurance";
+            // 
+            // lPrimaryInsurance
+            // 
+            this.lPrimaryInsurance.AutoSize = true;
+            this.lPrimaryInsurance.Location = new System.Drawing.Point(28, 342);
+            this.lPrimaryInsurance.Name = "lPrimaryInsurance";
+            this.lPrimaryInsurance.Size = new System.Drawing.Size(91, 13);
+            this.lPrimaryInsurance.TabIndex = 19;
+            this.lPrimaryInsurance.Text = "Primary Insurance";
+            // 
+            // lInsurance
+            // 
+            this.lInsurance.AutoSize = true;
+            this.lInsurance.Location = new System.Drawing.Point(28, 320);
+            this.lInsurance.Name = "lInsurance";
+            this.lInsurance.Size = new System.Drawing.Size(57, 13);
+            this.lInsurance.TabIndex = 18;
+            this.lInsurance.Text = "Insurance:";
+            this.lInsurance.Click += new System.EventHandler(this.label1_Click);
             // 
             // tbPhone
             // 
@@ -343,104 +442,6 @@
             this.tpDiabeticBackground.TabIndex = 5;
             this.tpDiabeticBackground.Text = "Diabetic Background";
             this.tpDiabeticBackground.UseVisualStyleBackColor = true;
-            // 
-            // lInsurance
-            // 
-            this.lInsurance.AutoSize = true;
-            this.lInsurance.Location = new System.Drawing.Point(28, 320);
-            this.lInsurance.Name = "lInsurance";
-            this.lInsurance.Size = new System.Drawing.Size(57, 13);
-            this.lInsurance.TabIndex = 18;
-            this.lInsurance.Text = "Insurance:";
-            this.lInsurance.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lPrimaryInsurance
-            // 
-            this.lPrimaryInsurance.AutoSize = true;
-            this.lPrimaryInsurance.Location = new System.Drawing.Point(28, 342);
-            this.lPrimaryInsurance.Name = "lPrimaryInsurance";
-            this.lPrimaryInsurance.Size = new System.Drawing.Size(91, 13);
-            this.lPrimaryInsurance.TabIndex = 19;
-            this.lPrimaryInsurance.Text = "Primary Insurance";
-            // 
-            // lSecondaryInsurance
-            // 
-            this.lSecondaryInsurance.AutoSize = true;
-            this.lSecondaryInsurance.Location = new System.Drawing.Point(28, 369);
-            this.lSecondaryInsurance.Name = "lSecondaryInsurance";
-            this.lSecondaryInsurance.Size = new System.Drawing.Size(108, 13);
-            this.lSecondaryInsurance.TabIndex = 20;
-            this.lSecondaryInsurance.Text = "Secondary Insurance";
-            // 
-            // lInsuranceInfoId
-            // 
-            this.lInsuranceInfoId.AutoSize = true;
-            this.lInsuranceInfoId.Location = new System.Drawing.Point(28, 396);
-            this.lInsuranceInfoId.Name = "lInsuranceInfoId";
-            this.lInsuranceInfoId.Size = new System.Drawing.Size(89, 13);
-            this.lInsuranceInfoId.TabIndex = 21;
-            this.lInsuranceInfoId.Text = "Insurance Info ID";
-            // 
-            // tbPrimaryInsurance
-            // 
-            this.tbPrimaryInsurance.Location = new System.Drawing.Point(147, 339);
-            this.tbPrimaryInsurance.Name = "tbPrimaryInsurance";
-            this.tbPrimaryInsurance.ReadOnly = true;
-            this.tbPrimaryInsurance.Size = new System.Drawing.Size(100, 20);
-            this.tbPrimaryInsurance.TabIndex = 22;
-            // 
-            // tbSecondaryInsurance
-            // 
-            this.tbSecondaryInsurance.Location = new System.Drawing.Point(147, 366);
-            this.tbSecondaryInsurance.Name = "tbSecondaryInsurance";
-            this.tbSecondaryInsurance.ReadOnly = true;
-            this.tbSecondaryInsurance.Size = new System.Drawing.Size(100, 20);
-            this.tbSecondaryInsurance.TabIndex = 23;
-            // 
-            // tbInsuranceInfoId
-            // 
-            this.tbInsuranceInfoId.Location = new System.Drawing.Point(147, 393);
-            this.tbInsuranceInfoId.Name = "tbInsuranceInfoId";
-            this.tbInsuranceInfoId.ReadOnly = true;
-            this.tbInsuranceInfoId.Size = new System.Drawing.Size(100, 20);
-            this.tbInsuranceInfoId.TabIndex = 24;
-            // 
-            // bDelete
-            // 
-            this.bDelete.Location = new System.Drawing.Point(610, 532);
-            this.bDelete.Name = "bDelete";
-            this.bDelete.Size = new System.Drawing.Size(75, 23);
-            this.bDelete.TabIndex = 25;
-            this.bDelete.Text = "Delete";
-            this.bDelete.UseVisualStyleBackColor = true;
-            // 
-            // bEdit
-            // 
-            this.bEdit.Location = new System.Drawing.Point(529, 532);
-            this.bEdit.Name = "bEdit";
-            this.bEdit.Size = new System.Drawing.Size(75, 23);
-            this.bEdit.TabIndex = 26;
-            this.bEdit.Text = "Edit";
-            this.bEdit.UseVisualStyleBackColor = true;
-            this.bEdit.Click += new System.EventHandler(this.bEdit_Click);
-            // 
-            // bTrends
-            // 
-            this.bTrends.Location = new System.Drawing.Point(448, 532);
-            this.bTrends.Name = "bTrends";
-            this.bTrends.Size = new System.Drawing.Size(75, 23);
-            this.bTrends.TabIndex = 27;
-            this.bTrends.Text = "Trends";
-            this.bTrends.UseVisualStyleBackColor = true;
-            // 
-            // bNotes
-            // 
-            this.bNotes.Location = new System.Drawing.Point(367, 532);
-            this.bNotes.Name = "bNotes";
-            this.bNotes.Size = new System.Drawing.Size(75, 23);
-            this.bNotes.TabIndex = 28;
-            this.bNotes.Text = "Notes";
-            this.bNotes.UseVisualStyleBackColor = true;
             // 
             // Patient
             // 
