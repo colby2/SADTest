@@ -50,5 +50,10 @@ namespace Test
             Thread patientThread = new Thread(patientRef);
             patientThread.Start();
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

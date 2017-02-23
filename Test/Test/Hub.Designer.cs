@@ -37,13 +37,16 @@
             // 
             // textBox1
             // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Location = new System.Drawing.Point(195, 83);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(187, 20);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // bSearch
             // 
+            this.bSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bSearch.Location = new System.Drawing.Point(388, 80);
             this.bSearch.Name = "bSearch";
             this.bSearch.Size = new System.Drawing.Size(75, 23);
@@ -54,6 +57,7 @@
             // 
             // bLogout
             // 
+            this.bLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bLogout.Location = new System.Drawing.Point(388, 12);
             this.bLogout.Name = "bLogout";
             this.bLogout.Size = new System.Drawing.Size(75, 23);
@@ -63,6 +67,7 @@
             // 
             // bAdd
             // 
+            this.bAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bAdd.Location = new System.Drawing.Point(388, 109);
             this.bAdd.Name = "bAdd";
             this.bAdd.Size = new System.Drawing.Size(75, 23);
@@ -72,6 +77,7 @@
             // 
             // bGraphs
             // 
+            this.bGraphs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bGraphs.Location = new System.Drawing.Point(388, 138);
             this.bGraphs.Name = "bGraphs";
             this.bGraphs.Size = new System.Drawing.Size(75, 23);

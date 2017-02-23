@@ -37,3 +37,4 @@ C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.GraphTemplate.reso
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Login.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Hub.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Patient.resources
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Patient.resources
