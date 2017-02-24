@@ -28,31 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
             this.bSearch = new System.Windows.Forms.Button();
             this.bLogout = new System.Windows.Forms.Button();
             this.bAdd = new System.Windows.Forms.Button();
             this.bGraphs = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // tbSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(195, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(187, 20);
-            this.textBox1.TabIndex = 0;
+            this.tbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSearch.Location = new System.Drawing.Point(195, 83);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(187, 20);
+            this.tbSearch.TabIndex = 0;
+            this.tbSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // bSearch
             // 
+            this.bSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bSearch.Location = new System.Drawing.Point(388, 80);
             this.bSearch.Name = "bSearch";
             this.bSearch.Size = new System.Drawing.Size(75, 23);
             this.bSearch.TabIndex = 1;
             this.bSearch.Text = "Search";
             this.bSearch.UseVisualStyleBackColor = true;
+            this.bSearch.Click += new System.EventHandler(this.bSearch_Click);
             // 
             // bLogout
             // 
+            this.bLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bLogout.Location = new System.Drawing.Point(388, 12);
             this.bLogout.Name = "bLogout";
             this.bLogout.Size = new System.Drawing.Size(75, 23);
@@ -62,6 +67,7 @@
             // 
             // bAdd
             // 
+            this.bAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bAdd.Location = new System.Drawing.Point(388, 109);
             this.bAdd.Name = "bAdd";
             this.bAdd.Size = new System.Drawing.Size(75, 23);
@@ -71,6 +77,7 @@
             // 
             // bGraphs
             // 
+            this.bGraphs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.bGraphs.Location = new System.Drawing.Point(388, 138);
             this.bGraphs.Name = "bGraphs";
             this.bGraphs.Size = new System.Drawing.Size(75, 23);
@@ -88,7 +95,7 @@
             this.Controls.Add(this.bAdd);
             this.Controls.Add(this.bLogout);
             this.Controls.Add(this.bSearch);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbSearch);
             this.Name = "Hub";
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Hub_Load);
@@ -99,7 +106,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.Button bSearch;
         private System.Windows.Forms.Button bLogout;
         private System.Windows.Forms.Button bAdd;
