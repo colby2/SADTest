@@ -33,6 +33,7 @@
             this.bLogout = new System.Windows.Forms.Button();
             this.bAdd = new System.Windows.Forms.Button();
             this.bGraphs = new System.Windows.Forms.Button();
+            this.pPatientList = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // tbSearch
@@ -86,11 +87,19 @@
             this.bGraphs.UseVisualStyleBackColor = true;
             this.bGraphs.Click += new System.EventHandler(this.bGraphs_Click);
             // 
+            // pPatientList
+            // 
+            this.pPatientList.Location = new System.Drawing.Point(12, 173);
+            this.pPatientList.Name = "pPatientList";
+            this.pPatientList.Size = new System.Drawing.Size(1000, 250);
+            this.pPatientList.TabIndex = 5;
+            // 
             // Hub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 428);
+            this.ClientSize = new System.Drawing.Size(475, 435);
+            this.Controls.Add(this.pPatientList);
             this.Controls.Add(this.bGraphs);
             this.Controls.Add(this.bAdd);
             this.Controls.Add(this.bLogout);
@@ -111,5 +120,6 @@
         private System.Windows.Forms.Button bLogout;
         private System.Windows.Forms.Button bAdd;
         private System.Windows.Forms.Button bGraphs;
+        private System.Windows.Forms.Panel pPatientList;
     }
 }

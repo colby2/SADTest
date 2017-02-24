@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -53,17 +54,53 @@ namespace Test
 
         private void bSearch_Click(object sender, EventArgs e)
         {
-            if (tbSearch.Text != "")
+            //if (tbSearch.Text != "")
+            //{
+            //    Thread patientThread = new Thread(patientThreadStart);
+            //    patientThreadStart(tbSearch.Text);
+            //}
+            //else
+            //{
+            //    ThreadStart patientRef = new ThreadStart(patientThreadStart);
+            //    Thread patientThread = new Thread(patientRef);
+            //    patientThread.Start();
+            //}
+
+            string searchInput = tbSearch.Text;
+
+            string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            connection.Open();
+            string searchResults = "SELECT * FROM Demographics WHERE CONCAT(PatientID, ' ', Name, ' ', DateofLastVisit, ' ', Street, ' ', City, ' ', State, ' ', Zip, ' ', Age, ' ', Phone, ' ', PrimaryInsuranceProvider, ' ', SecondaryInsuranceProvider) LIKE '%" + searchInput +"%'";
+            MySqlCommand cmd = new MySqlCommand(searchResults, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+
+            LinkLabel[] llSearch = new LinkLabel[100];
+            int counter = 0;
+            while (reader.Read())
             {
-                Thread patientThread = new Thread(patientThreadStart);
-                patientThreadStart(tbSearch.Text);
+                llSearch[counter] = new LinkLabel();
+                llSearch[counter].ForeColor = Color.Blue;
+                llSearch[counter].Text = reader.GetString(0) + " " + reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3) + " " + reader.GetString(4) + " " + reader.GetString(5) + " " + reader.GetString(6) + " " + reader.GetString(7) + " " + reader.GetString(8) + " " + reader.GetString(9) + " " + reader.GetString(10) + " ";
+                llSearch[counter].Name = "llSearch" + counter;
+                llSearch[counter].Font = new Font("Georgia", 12);
+                llSearch[counter].Width = 10000;
+                counter++;
             }
-            else
+
+            foreach (LinkLabel searchResult in llSearch)
             {
-                ThreadStart patientRef = new ThreadStart(patientThreadStart);
-                Thread patientThread = new Thread(patientRef);
-                patientThread.Start();
+                pPatientList.Controls.Add(searchResult);
             }
+
+            reader.Close();
+            connection.Close();
+
+
+
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
