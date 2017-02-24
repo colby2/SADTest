@@ -38,3 +38,14 @@ C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Login.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Hub.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Patient.resources
 C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Patient.resources
+C:\Users\Owner\Source\Repos\SADTest\Test\Test\bin\Debug\Test.exe
+C:\Users\Owner\Source\Repos\SADTest\Test\Test\bin\Debug\Test.pdb
+C:\Users\Owner\Source\Repos\SADTest\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\Owner\Source\Repos\SADTest\Test\Test\obj\Debug\Test.GraphTemplate.resources
+C:\Users\Owner\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Login.resources
+C:\Users\Owner\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Hub.resources
+C:\Users\Owner\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Patient.resources
+C:\Users\Owner\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\Owner\Source\Repos\SADTest\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\Owner\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.dll
+C:\Users\Owner\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.xml
