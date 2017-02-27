@@ -77,35 +77,44 @@ namespace Test
             MySqlDataReader reader = cmd.ExecuteReader();
 
 
-            LinkLabel[] llSearch = new LinkLabel[100];
+            String[] llSearch = new String[100];
             int counter = 0;
             while (reader.Read())
             {
-                llSearch[counter] = new LinkLabel();
-                llSearch[counter].ForeColor = Color.Blue;
-                llSearch[counter].Text = reader.GetString(0) + " " + reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3) + " " + reader.GetString(4) + " " + reader.GetString(5) + " " + reader.GetString(6) + " " + reader.GetString(7) + " " + reader.GetString(8) + " " + reader.GetString(9) + " " + reader.GetString(10) + " ";
-                llSearch[counter].Name = "llSearch" + counter;
-                llSearch[counter].Font = new Font("Georgia", 12);
-                llSearch[counter].Width = 10000;
+                llSearch[counter] = reader.GetString(0) + " " + reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3) + " " + reader.GetString(4) + " " + reader.GetString(5) + " " + reader.GetString(6) + " " + reader.GetString(7) + " " + reader.GetString(8) + " " + reader.GetString(9) + " " + reader.GetString(10) + " ";
+                lbSearchList.Items.Add(llSearch[counter]);
                 counter++;
             }
-
-            foreach (LinkLabel searchResult in llSearch)
-            {
-                pPatientList.Controls.Add(searchResult);
-            }
+            lbSearchList.Show();
 
             reader.Close();
             connection.Close();
-
-
-
 
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void bAdd_Click(object sender, EventArgs e)
+        {
+            lbSearchList.Items.Add("Test");
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tbSearch.Text != "")
+            {
+                Thread patientThread = new Thread(patientThreadStart);
+                patientThreadStart(lbSearchList.SelectedItem.ToString());
+            }
+            else
+            {
+                ThreadStart patientRef = new ThreadStart(patientThreadStart);
+                Thread patientThread = new Thread(patientRef);
+                patientThread.Start();
+            }
         }
     }
 }
