@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,23 +16,39 @@ namespace Test
         public Patient()
         {
             InitializeComponent();
-            //Pull patient that matches the criteria from the Search bar on the Hub
-
-
-            //Use information to populate text boxes
-
         }
 
         public Patient(string criteria)
         {
             InitializeComponent();
-            tbName.Text = criteria;//replace with search function, or a search textbox.
-        }
+            string selectedID = new String(criteria.TakeWhile(Char.IsDigit).ToArray());
 
-        public Patient(int PatientID)
-        {
-            InitializeComponent();
-            //retreive information based on PatientID Here. TO DO.
+            string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            connection.Open();
+
+            string searchResults = "SELECT * FROM Demographics WHERE PatientID='"+ selectedID+ "'";
+
+            MySqlCommand cmd = new MySqlCommand(searchResults, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                tbPatientId.Text = reader.GetString(0);
+                tbName.Text = reader.GetString(1);
+                tbDateOfLastVisit.Text = reader.GetString(2);
+                tbStreet.Text = reader.GetString(3);
+                tbState.Text = reader.GetString(4);
+                tbZip.Text = reader.GetString(5);
+                tbAge.Text = reader.GetString(6);
+                tbPhone.Text = reader.GetString(7);
+
+
+
+            }
+            connection.Close();
+
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -92,7 +109,7 @@ namespace Test
 
         }
 
-        private void Patient_Load(object sender, EventArgs e)
+        private void tbName_TextChanged(object sender, EventArgs e)
         {
 
         }

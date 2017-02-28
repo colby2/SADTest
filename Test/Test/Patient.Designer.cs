@@ -288,6 +288,7 @@
             this.tbName.ReadOnly = true;
             this.tbName.Size = new System.Drawing.Size(100, 20);
             this.tbName.TabIndex = 10;
+            this.tbName.TextChanged += new System.EventHandler(this.tbName_TextChanged);
             // 
             // tbDateOfLastVisit
             // 

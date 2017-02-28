@@ -31,6 +31,12 @@ namespace Test
             Patient patient = new Patient();
             patient.ShowDialog();
         }
+        
+        public static void loginThreadStart()
+        {
+            Login login = new Login();
+            login.ShowDialog();
+        }
 
         public static void patientThreadStart(string criteria)
         {
@@ -54,18 +60,7 @@ namespace Test
 
         private void bSearch_Click(object sender, EventArgs e)
         {
-            //if (tbSearch.Text != "")
-            //{
-            //    Thread patientThread = new Thread(patientThreadStart);
-            //    patientThreadStart(tbSearch.Text);
-            //}
-            //else
-            //{
-            //    ThreadStart patientRef = new ThreadStart(patientThreadStart);
-            //    Thread patientThread = new Thread(patientRef);
-            //    patientThread.Start();
-            //}
-
+            lbSearchList.Items.Clear();
             string searchInput = tbSearch.Text;
 
             string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
@@ -115,6 +110,14 @@ namespace Test
                 Thread patientThread = new Thread(patientRef);
                 patientThread.Start();
             }
+        }
+
+        private void bLogout_Click(object sender, EventArgs e)
+        {
+            ThreadStart loginRef = new ThreadStart(loginThreadStart);
+            Thread loginThread = new Thread(loginRef);
+            loginThread.Start();
+            this.Close();
         }
     }
 }
