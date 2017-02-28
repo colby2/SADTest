@@ -54,18 +54,7 @@ namespace Test
 
         private void bSearch_Click(object sender, EventArgs e)
         {
-            //if (tbSearch.Text != "")
-            //{
-            //    Thread patientThread = new Thread(patientThreadStart);
-            //    patientThreadStart(tbSearch.Text);
-            //}
-            //else
-            //{
-            //    ThreadStart patientRef = new ThreadStart(patientThreadStart);
-            //    Thread patientThread = new Thread(patientRef);
-            //    patientThread.Start();
-            //}
-
+            lbSearchList.Items.Clear();
             string searchInput = tbSearch.Text;
 
             string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
