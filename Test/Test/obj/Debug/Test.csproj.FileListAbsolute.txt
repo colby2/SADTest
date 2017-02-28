@@ -80,3 +80,6 @@ C:\Users\Owner\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Properties.Resourc
 C:\Users\Owner\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.exe
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.pdb
+C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\bin\Debug\MySql.Data.xml
+C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.LoadScreen.resources
+C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Patient.resources
