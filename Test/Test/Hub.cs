@@ -31,6 +31,12 @@ namespace Test
             Patient patient = new Patient();
             patient.ShowDialog();
         }
+        
+        public static void loginThreadStart()
+        {
+            Login login = new Login();
+            login.ShowDialog();
+        }
 
         public static void patientThreadStart(string criteria)
         {
@@ -104,6 +110,14 @@ namespace Test
                 Thread patientThread = new Thread(patientRef);
                 patientThread.Start();
             }
+        }
+
+        private void bLogout_Click(object sender, EventArgs e)
+        {
+            ThreadStart loginRef = new ThreadStart(loginThreadStart);
+            Thread loginThread = new Thread(loginRef);
+            loginThread.Start();
+            this.Close();
         }
     }
 }
