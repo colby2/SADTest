@@ -22,8 +22,8 @@ namespace Test
 
         public static void loginThreadStart()
         {
-            Login main = new Login();
-            main.ShowDialog();
+            Login login = new Login();
+            login.ShowDialog();
         }
 
         private void LoadScreen_Load(object sender, EventArgs e)
@@ -48,8 +48,6 @@ namespace Test
                 Thread loginThread = new Thread(loginRef);
                 loginThread.Start();
                 this.Close();
-                // new Login().Show();
-                // this.Close();//this.Hide();
             }
         }
     }
