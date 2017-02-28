@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="DemographicsGetSet.cs" />
+    <Compile Include="InsertFunctions.cs" />
     <Compile Include="LoginFunction.cs" />
     <Compile Include="LoginGetSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
