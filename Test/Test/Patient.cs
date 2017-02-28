@@ -91,5 +91,10 @@ namespace Test
         {
 
         }
+
+        private void Patient_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

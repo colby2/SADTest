@@ -451,6 +451,7 @@
             this.Controls.Add(this.tcPatient);
             this.Name = "Patient";
             this.Text = "Patient";
+            this.Load += new System.EventHandler(this.Patient_Load);
             this.tcPatient.ResumeLayout(false);
             this.tpDemographics.ResumeLayout(false);
             this.tpDemographics.PerformLayout();
