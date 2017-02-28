@@ -9,7 +9,7 @@ using MySql.Data.MySqlClient;
 //the variables will be the exact same name as the database fields 
 namespace DiabeticHealthDB
 {
-    class Demographics
+    class DemographicsGetSet
     {
         public int PatientID { get; set; }
         public string Name { get; set; }

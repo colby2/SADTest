@@ -65,6 +65,7 @@
             this.bLogout.TabIndex = 2;
             this.bLogout.Text = "Logout";
             this.bLogout.UseVisualStyleBackColor = true;
+            this.bLogout.Click += new System.EventHandler(this.bLogout_Click);
             // 
             // bAdd
             // 
@@ -99,6 +100,7 @@
             // 
             // Hub
             // 
+            this.AcceptButton = this.bSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 435);

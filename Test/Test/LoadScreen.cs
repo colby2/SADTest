@@ -20,6 +20,12 @@ namespace Test
             InitializeComponent();
         }
 
+        public static void loginThreadStart()
+        {
+            Login login = new Login();
+            login.ShowDialog();
+        }
+
         private void LoadScreen_Load(object sender, EventArgs e)
         {
             timeLeft = 100;
@@ -38,8 +44,10 @@ namespace Test
             else
             {
                 timer1.Stop();
-                new Login().Show();
-                this.Hide();
+                ThreadStart loginRef = new ThreadStart(loginThreadStart);
+                Thread loginThread = new Thread(loginRef);
+                loginThread.Start();
+                this.Close();
             }
         }
     }
