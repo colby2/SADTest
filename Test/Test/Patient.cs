@@ -36,19 +36,18 @@ namespace Test
             while (reader.Read())
             {
                 tbPatientId.Text = reader.GetString(0);
-                tbName.Text = reader.GetString(1);
-                tbDateOfLastVisit.Text = reader.GetString(2);
-                tbStreet.Text = reader.GetString(3);
-                tbState.Text = reader.GetString(4);
-                tbZip.Text = reader.GetString(5);
-                tbAge.Text = reader.GetString(6);
-                tbPhone.Text = reader.GetString(7);
-
-
-
+                tbName.Text = reader.GetString(1) + reader.GetString(2);
+                tbDateOfLastVisit.Text = reader.GetString(3);
+                tbStreet.Text = reader.GetString(4);
+                tbCity.Text = reader.GetString(5);
+                tbState.Text = reader.GetString(6);
+                tbZip.Text = reader.GetString(7);
+                tbDOB.Text = reader.GetString(8);
+                tbPhone.Text = reader.GetString(9);
+                tbPrimaryInsurance.Text = reader.GetString(10);
+                tbSecondaryInsurance.Text = reader.GetString(11);
             }
             connection.Close();
-
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -73,11 +72,10 @@ namespace Test
                 tbCity.ReadOnly = false;
                 tbState.ReadOnly = false;
                 tbZip.ReadOnly = false;
-                tbAge.ReadOnly = false;
+                tbDOB.ReadOnly = false;
                 tbPhone.ReadOnly = false;
                 tbPrimaryInsurance.ReadOnly = false;
                 tbSecondaryInsurance.ReadOnly = false;
-                tbInsuranceInfoId.ReadOnly = false;
 
                 bEdit.Text = "Submit Changes";
             }
@@ -90,11 +88,10 @@ namespace Test
                 tbCity.ReadOnly = true;
                 tbState.ReadOnly = true;
                 tbZip.ReadOnly = true;
-                tbAge.ReadOnly = true;
+                tbDOB.ReadOnly = true;
                 tbPhone.ReadOnly = true;
                 tbPrimaryInsurance.ReadOnly = true;
                 tbSecondaryInsurance.ReadOnly = true;
-                tbInsuranceInfoId.ReadOnly = true;
 
                 //TODO: Pull information from text boxes here and update database.
 
@@ -110,6 +107,11 @@ namespace Test
         }
 
         private void tbName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbAge_TextChanged(object sender, EventArgs e)
         {
 
         }

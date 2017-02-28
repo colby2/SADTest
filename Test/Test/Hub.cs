@@ -67,7 +67,7 @@ namespace Test
             MySqlConnection connection = new MySqlConnection(connectionString);
 
             connection.Open();
-            string searchResults = "SELECT * FROM Demographics WHERE CONCAT(PatientID, ' ', Name, ' ', DateofLastVisit, ' ', Street, ' ', City, ' ', State, ' ', Zip, ' ', Age, ' ', Phone, ' ', PrimaryInsuranceProvider, ' ', SecondaryInsuranceProvider) LIKE '%" + searchInput +"%'";
+            string searchResults = "SELECT * FROM Demographics WHERE CONCAT(PatientID, ' ', FirstName, ' ', LastName, ' ', DateofLastVisit, ' ', Street, ' ', City, ' ', State, ' ', Zip, ' ', DOB, ' ', Phone, ' ', PrimaryInsuranceProvider, ' ', SecondaryInsuranceProvider) LIKE '%" + searchInput +"%'";
             MySqlCommand cmd = new MySqlCommand(searchResults, connection);
             MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -76,7 +76,7 @@ namespace Test
             int counter = 0;
             while (reader.Read())
             {
-                llSearch[counter] = reader.GetString(0) + " " + reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3) + " " + reader.GetString(4) + " " + reader.GetString(5) + " " + reader.GetString(6) + " " + reader.GetString(7) + " " + reader.GetString(8) + " " + reader.GetString(9) + " " + reader.GetString(10) + " ";
+                llSearch[counter] = reader.GetString(0) + " " + reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3) + " " + reader.GetString(4) + " " + reader.GetString(5) + " " + reader.GetString(6) + " " + reader.GetString(7) + " " + reader.GetString(8) + " " + reader.GetString(9) + " " + reader.GetString(10) + " " + reader.GetString(11);
                 lbSearchList.Items.Add(llSearch[counter]);
                 counter++;
             }
@@ -94,22 +94,16 @@ namespace Test
 
         private void bAdd_Click(object sender, EventArgs e)
         {
-            lbSearchList.Items.Add("Test");
+
+            ThreadStart patientRef = new ThreadStart(patientThreadStart);
+            Thread patientThread = new Thread(patientRef);
+            patientThread.Start();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tbSearch.Text != "")
-            {
-                Thread patientThread = new Thread(patientThreadStart);
-                patientThreadStart(lbSearchList.SelectedItem.ToString());
-            }
-            else
-            {
-                ThreadStart patientRef = new ThreadStart(patientThreadStart);
-                Thread patientThread = new Thread(patientRef);
-                patientThread.Start();
-            }
+            Thread patientThread = new Thread(patientThreadStart);
+            patientThreadStart(lbSearchList.SelectedItem.ToString());
         }
 
         private void bLogout_Click(object sender, EventArgs e)

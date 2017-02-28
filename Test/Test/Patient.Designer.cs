@@ -34,15 +34,13 @@
             this.bTrends = new System.Windows.Forms.Button();
             this.bEdit = new System.Windows.Forms.Button();
             this.bDelete = new System.Windows.Forms.Button();
-            this.tbInsuranceInfoId = new System.Windows.Forms.TextBox();
             this.tbSecondaryInsurance = new System.Windows.Forms.TextBox();
             this.tbPrimaryInsurance = new System.Windows.Forms.TextBox();
-            this.lInsuranceInfoId = new System.Windows.Forms.Label();
             this.lSecondaryInsurance = new System.Windows.Forms.Label();
             this.lPrimaryInsurance = new System.Windows.Forms.Label();
             this.lInsurance = new System.Windows.Forms.Label();
             this.tbPhone = new System.Windows.Forms.TextBox();
-            this.tbAge = new System.Windows.Forms.TextBox();
+            this.tbDOB = new System.Windows.Forms.TextBox();
             this.tbZip = new System.Windows.Forms.TextBox();
             this.tbState = new System.Windows.Forms.TextBox();
             this.tbCity = new System.Windows.Forms.TextBox();
@@ -51,7 +49,7 @@
             this.tbName = new System.Windows.Forms.TextBox();
             this.tbDateOfLastVisit = new System.Windows.Forms.TextBox();
             this.lPhone = new System.Windows.Forms.Label();
-            this.lAge = new System.Windows.Forms.Label();
+            this.lDOB = new System.Windows.Forms.Label();
             this.lZip = new System.Windows.Forms.Label();
             this.lState = new System.Windows.Forms.Label();
             this.lStreet = new System.Windows.Forms.Label();
@@ -93,15 +91,13 @@
             this.tpDemographics.Controls.Add(this.bTrends);
             this.tpDemographics.Controls.Add(this.bEdit);
             this.tpDemographics.Controls.Add(this.bDelete);
-            this.tpDemographics.Controls.Add(this.tbInsuranceInfoId);
             this.tpDemographics.Controls.Add(this.tbSecondaryInsurance);
             this.tpDemographics.Controls.Add(this.tbPrimaryInsurance);
-            this.tpDemographics.Controls.Add(this.lInsuranceInfoId);
             this.tpDemographics.Controls.Add(this.lSecondaryInsurance);
             this.tpDemographics.Controls.Add(this.lPrimaryInsurance);
             this.tpDemographics.Controls.Add(this.lInsurance);
             this.tpDemographics.Controls.Add(this.tbPhone);
-            this.tpDemographics.Controls.Add(this.tbAge);
+            this.tpDemographics.Controls.Add(this.tbDOB);
             this.tpDemographics.Controls.Add(this.tbZip);
             this.tpDemographics.Controls.Add(this.tbState);
             this.tpDemographics.Controls.Add(this.tbCity);
@@ -110,7 +106,7 @@
             this.tpDemographics.Controls.Add(this.tbName);
             this.tpDemographics.Controls.Add(this.tbDateOfLastVisit);
             this.tpDemographics.Controls.Add(this.lPhone);
-            this.tpDemographics.Controls.Add(this.lAge);
+            this.tpDemographics.Controls.Add(this.lDOB);
             this.tpDemographics.Controls.Add(this.lZip);
             this.tpDemographics.Controls.Add(this.lState);
             this.tpDemographics.Controls.Add(this.lStreet);
@@ -164,14 +160,6 @@
             this.bDelete.Text = "Delete";
             this.bDelete.UseVisualStyleBackColor = true;
             // 
-            // tbInsuranceInfoId
-            // 
-            this.tbInsuranceInfoId.Location = new System.Drawing.Point(147, 393);
-            this.tbInsuranceInfoId.Name = "tbInsuranceInfoId";
-            this.tbInsuranceInfoId.ReadOnly = true;
-            this.tbInsuranceInfoId.Size = new System.Drawing.Size(100, 20);
-            this.tbInsuranceInfoId.TabIndex = 24;
-            // 
             // tbSecondaryInsurance
             // 
             this.tbSecondaryInsurance.Location = new System.Drawing.Point(147, 366);
@@ -187,15 +175,6 @@
             this.tbPrimaryInsurance.ReadOnly = true;
             this.tbPrimaryInsurance.Size = new System.Drawing.Size(100, 20);
             this.tbPrimaryInsurance.TabIndex = 22;
-            // 
-            // lInsuranceInfoId
-            // 
-            this.lInsuranceInfoId.AutoSize = true;
-            this.lInsuranceInfoId.Location = new System.Drawing.Point(28, 396);
-            this.lInsuranceInfoId.Name = "lInsuranceInfoId";
-            this.lInsuranceInfoId.Size = new System.Drawing.Size(89, 13);
-            this.lInsuranceInfoId.TabIndex = 21;
-            this.lInsuranceInfoId.Text = "Insurance Info ID";
             // 
             // lSecondaryInsurance
             // 
@@ -233,13 +212,14 @@
             this.tbPhone.Size = new System.Drawing.Size(100, 20);
             this.tbPhone.TabIndex = 17;
             // 
-            // tbAge
+            // tbDOB
             // 
-            this.tbAge.Location = new System.Drawing.Point(147, 227);
-            this.tbAge.Name = "tbAge";
-            this.tbAge.ReadOnly = true;
-            this.tbAge.Size = new System.Drawing.Size(100, 20);
-            this.tbAge.TabIndex = 16;
+            this.tbDOB.Location = new System.Drawing.Point(147, 227);
+            this.tbDOB.Name = "tbDOB";
+            this.tbDOB.ReadOnly = true;
+            this.tbDOB.Size = new System.Drawing.Size(100, 20);
+            this.tbDOB.TabIndex = 16;
+            this.tbDOB.TextChanged += new System.EventHandler(this.tbAge_TextChanged);
             // 
             // tbZip
             // 
@@ -307,15 +287,15 @@
             this.lPhone.TabIndex = 8;
             this.lPhone.Text = "Phone";
             // 
-            // lAge
+            // lDOB
             // 
-            this.lAge.AutoSize = true;
-            this.lAge.Location = new System.Drawing.Point(28, 230);
-            this.lAge.Name = "lAge";
-            this.lAge.Size = new System.Drawing.Size(26, 13);
-            this.lAge.TabIndex = 7;
-            this.lAge.Text = "Age";
-            this.lAge.Click += new System.EventHandler(this.label8_Click);
+            this.lDOB.AutoSize = true;
+            this.lDOB.Location = new System.Drawing.Point(28, 230);
+            this.lDOB.Name = "lDOB";
+            this.lDOB.Size = new System.Drawing.Size(66, 13);
+            this.lDOB.TabIndex = 7;
+            this.lDOB.Text = "Date of Birth";
+            this.lDOB.Click += new System.EventHandler(this.label8_Click);
             // 
             // lZip
             // 
@@ -466,7 +446,7 @@
         private System.Windows.Forms.TabPage tpLipidTest;
         private System.Windows.Forms.TabPage tpDiabeticTest;
         private System.Windows.Forms.Label lPhone;
-        private System.Windows.Forms.Label lAge;
+        private System.Windows.Forms.Label lDOB;
         private System.Windows.Forms.Label lZip;
         private System.Windows.Forms.Label lState;
         private System.Windows.Forms.Label lStreet;
@@ -480,7 +460,7 @@
         private System.Windows.Forms.TabPage tpDiabeticMeds;
         private System.Windows.Forms.TabPage tpDiabeticBackground;
         private System.Windows.Forms.TextBox tbPhone;
-        private System.Windows.Forms.TextBox tbAge;
+        private System.Windows.Forms.TextBox tbDOB;
         private System.Windows.Forms.TextBox tbZip;
         private System.Windows.Forms.TextBox tbState;
         private System.Windows.Forms.TextBox tbCity;
@@ -492,10 +472,8 @@
         private System.Windows.Forms.Button bTrends;
         private System.Windows.Forms.Button bEdit;
         private System.Windows.Forms.Button bDelete;
-        private System.Windows.Forms.TextBox tbInsuranceInfoId;
         private System.Windows.Forms.TextBox tbSecondaryInsurance;
         private System.Windows.Forms.TextBox tbPrimaryInsurance;
-        private System.Windows.Forms.Label lInsuranceInfoId;
         private System.Windows.Forms.Label lSecondaryInsurance;
         private System.Windows.Forms.Label lPrimaryInsurance;
         private System.Windows.Forms.Button bNotes;
