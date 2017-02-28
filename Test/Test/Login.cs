@@ -69,6 +69,27 @@ namespace Test
             }
 
         }
+        /*
+         *         private void button1_Click(object sender, EventArgs e)
+        {
+            int loginParameter = LoginFunction.LoginCheck(tbUsername.Text, tbPassword.Text);
+
+            if (loginParameter == 1)
+            {
+                ThreadStart hubRef = new ThreadStart(hubThreadStart);
+                Thread hubThread = new Thread(hubRef);
+                hubThread.Start();
+                this.Close();
+            }
+            else if (loginParameter == 2)
+                MessageBox.Show("Incorrect Password");
+            else if (loginParameter == 3)
+                MessageBox.Show("Incorrect Username");
+            else if (loginParameter == 4)
+                MessageBox.Show("Error Logging In");
+
+        }
+         * */
 
         private void Login_Load(object sender, EventArgs e)
         {

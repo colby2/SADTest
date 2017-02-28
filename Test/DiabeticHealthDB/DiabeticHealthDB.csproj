@@ -42,8 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DatabaseConnection.cs" />
-    <Compile Include="DemographicFunctions.cs" />
-    <Compile Include="Demographics.cs" />
+    <Compile Include="DemographicsGetSet.cs" />
+    <Compile Include="LoginFunction.cs" />
+    <Compile Include="LoginGetSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
