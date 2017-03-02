@@ -30,6 +30,8 @@
         {
             this.tcPatient = new System.Windows.Forms.TabControl();
             this.tpDemographics = new System.Windows.Forms.TabPage();
+            this.tbLastname = new System.Windows.Forms.TextBox();
+            this.lLastName = new System.Windows.Forms.Label();
             this.bNotes = new System.Windows.Forms.Button();
             this.bTrends = new System.Windows.Forms.Button();
             this.bEdit = new System.Windows.Forms.Button();
@@ -62,8 +64,6 @@
             this.tpDiabeticTest = new System.Windows.Forms.TabPage();
             this.tpLipidTest = new System.Windows.Forms.TabPage();
             this.tpDiabeticBackground = new System.Windows.Forms.TabPage();
-            this.lLastName = new System.Windows.Forms.Label();
-            this.tbLastName = new System.Windows.Forms.TextBox();
             this.tcPatient.SuspendLayout();
             this.tpDemographics.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +87,7 @@
             // 
             // tpDemographics
             // 
-            this.tpDemographics.Controls.Add(this.tbLastName);
+            this.tpDemographics.Controls.Add(this.tbLastname);
             this.tpDemographics.Controls.Add(this.lLastName);
             this.tpDemographics.Controls.Add(this.bNotes);
             this.tpDemographics.Controls.Add(this.bTrends);
@@ -123,6 +123,23 @@
             this.tpDemographics.UseVisualStyleBackColor = true;
             this.tpDemographics.Click += new System.EventHandler(this.tpDemographics_Click);
             // 
+            // tbLastname
+            // 
+            this.tbLastname.Location = new System.Drawing.Point(147, 84);
+            this.tbLastname.Name = "tbLastname";
+            this.tbLastname.ReadOnly = true;
+            this.tbLastname.Size = new System.Drawing.Size(100, 20);
+            this.tbLastname.TabIndex = 30;
+            // 
+            // lLastName
+            // 
+            this.lLastName.AutoSize = true;
+            this.lLastName.Location = new System.Drawing.Point(31, 87);
+            this.lLastName.Name = "lLastName";
+            this.lLastName.Size = new System.Drawing.Size(58, 13);
+            this.lLastName.TabIndex = 29;
+            this.lLastName.Text = "Last Name";
+            // 
             // bNotes
             // 
             this.bNotes.Location = new System.Drawing.Point(367, 532);
@@ -140,6 +157,7 @@
             this.bTrends.TabIndex = 27;
             this.bTrends.Text = "Trends";
             this.bTrends.UseVisualStyleBackColor = true;
+            this.bTrends.Click += new System.EventHandler(this.bTrends_Click);
             // 
             // bEdit
             // 
@@ -407,23 +425,6 @@
             this.tpDiabeticBackground.Text = "Diabetic Background";
             this.tpDiabeticBackground.UseVisualStyleBackColor = true;
             // 
-            // lLastName
-            // 
-            this.lLastName.AutoSize = true;
-            this.lLastName.Location = new System.Drawing.Point(31, 87);
-            this.lLastName.Name = "lLastName";
-            this.lLastName.Size = new System.Drawing.Size(58, 13);
-            this.lLastName.TabIndex = 29;
-            this.lLastName.Text = "Last Name";
-            // 
-            // tbLastName
-            // 
-            this.tbLastName.Location = new System.Drawing.Point(147, 84);
-            this.tbLastName.Name = "tbLastName";
-            this.tbLastName.ReadOnly = true;
-            this.tbLastName.Size = new System.Drawing.Size(100, 20);
-            this.tbLastName.TabIndex = 30;
-            // 
             // Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,7 +476,7 @@
         private System.Windows.Forms.Label lSecondaryInsurance;
         private System.Windows.Forms.Label lPrimaryInsurance;
         private System.Windows.Forms.Button bNotes;
-        private System.Windows.Forms.TextBox tbLastName;
+        private System.Windows.Forms.TextBox tbLastname;
         private System.Windows.Forms.Label lLastName;
     }
 }

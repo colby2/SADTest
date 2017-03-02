@@ -8,12 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DiabeticHealthDB;
 
 namespace Test
 {
     public partial class Patient : Form
     {
+
+        String PatientId;
         public Patient()
         {
             InitializeComponent();
@@ -36,8 +37,9 @@ namespace Test
 
             while (reader.Read())
             {
-                tbPatientId.Text = reader.GetString(0);
-                tbName.Text = reader.GetString(1) + reader.GetString(2);
+                PatientId = reader.GetString(0);
+                tbFirstname.Text = reader.GetString(1);
+                tbLastname.Text = reader.GetString(2);
                 tbDateOfLastVisit.Text = reader.GetString(3);
                 tbStreet.Text = reader.GetString(4);
                 tbCity.Text = reader.GetString(5);
@@ -66,8 +68,8 @@ namespace Test
 
             if (bEdit.Text == "Edit")
             {
-                tbPatientId.ReadOnly = false;
-                tbName.ReadOnly = false;
+                tbFirstname.ReadOnly = false;
+                tbLastname.ReadOnly = false;
                 tbDateOfLastVisit.ReadOnly = false;
                 tbStreet.ReadOnly = false;
                 tbCity.ReadOnly = false;
@@ -82,8 +84,8 @@ namespace Test
             }
             else if (bEdit.Text == "Submit Changes")
             {
-                tbPatientId.ReadOnly = true;
-                tbName.ReadOnly = true;
+                tbFirstname.ReadOnly = true;
+                tbLastname.ReadOnly = true;
                 tbDateOfLastVisit.ReadOnly = true;
                 tbStreet.ReadOnly = true;
                 tbCity.ReadOnly = true;
@@ -115,6 +117,11 @@ namespace Test
         }
 
         private void tbAge_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bTrends_Click(object sender, EventArgs e)
         {
 
         }
