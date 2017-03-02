@@ -95,5 +95,10 @@ namespace Test
         {
 
         }
+
+        private void bExit_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

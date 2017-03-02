@@ -8,14 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DiabeticHealthDB;
 
 namespace Test
 {
     public partial class Patient : Form
     {
-        //global to hold unique patientId
-        String PatientId;
-
         public Patient()
         {
             InitializeComponent();
@@ -38,11 +36,8 @@ namespace Test
 
             while (reader.Read())
             {
-                //assigns value to global
-                PatientId = reader.GetString(0);
-
-                tbFirstname.Text = reader.GetString(1);
-                tbLastName.Text = reader.GetString(2);
+                tbPatientId.Text = reader.GetString(0);
+                tbName.Text = reader.GetString(1) + reader.GetString(2);
                 tbDateOfLastVisit.Text = reader.GetString(3);
                 tbStreet.Text = reader.GetString(4);
                 tbCity.Text = reader.GetString(5);
@@ -71,8 +66,8 @@ namespace Test
 
             if (bEdit.Text == "Edit")
             {
-                tbFirstname.ReadOnly = false;
-                tbLastName.ReadOnly = false;
+                tbPatientId.ReadOnly = false;
+                tbName.ReadOnly = false;
                 tbDateOfLastVisit.ReadOnly = false;
                 tbStreet.ReadOnly = false;
                 tbCity.ReadOnly = false;
@@ -87,8 +82,8 @@ namespace Test
             }
             else if (bEdit.Text == "Submit Changes")
             {
-                tbFirstname.ReadOnly = true;
-                tbLastName.ReadOnly = true;
+                tbPatientId.ReadOnly = true;
+                tbName.ReadOnly = true;
                 tbDateOfLastVisit.ReadOnly = true;
                 tbStreet.ReadOnly = true;
                 tbCity.ReadOnly = true;
@@ -99,22 +94,11 @@ namespace Test
                 tbPrimaryInsurance.ReadOnly = true;
                 tbSecondaryInsurance.ReadOnly = true;
 
-
-
                 //TODO: Pull information from text boxes here and update database.
-
-                //string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
-                //MySqlConnection connection = new MySqlConnection(connectionString);
-
-                //connection.Open();
-
-                //string updateDatabase = "UPDATE Demographics SET column1 = value1, column2 = value2 WHERE PatientId='"+tbPatientId+"';";
-
-                //connection.Close();
-
-                //------------------------------------------------------------
-
+                 
                 bEdit.Text = "Edit";
+
+                
             }
 
 
