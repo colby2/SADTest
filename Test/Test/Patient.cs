@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DiabeticHealthDB;
 
 namespace Test
 {
@@ -94,8 +95,10 @@ namespace Test
                 tbSecondaryInsurance.ReadOnly = true;
 
                 //TODO: Pull information from text boxes here and update database.
-
+                 
                 bEdit.Text = "Edit";
+
+                
             }
 
 
