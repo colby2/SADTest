@@ -45,8 +45,7 @@
             this.tbState = new System.Windows.Forms.TextBox();
             this.tbCity = new System.Windows.Forms.TextBox();
             this.tbStreet = new System.Windows.Forms.TextBox();
-            this.tbPatientId = new System.Windows.Forms.TextBox();
-            this.tbName = new System.Windows.Forms.TextBox();
+            this.tbFirstname = new System.Windows.Forms.TextBox();
             this.tbDateOfLastVisit = new System.Windows.Forms.TextBox();
             this.lPhone = new System.Windows.Forms.Label();
             this.lDOB = new System.Windows.Forms.Label();
@@ -55,8 +54,7 @@
             this.lStreet = new System.Windows.Forms.Label();
             this.lCity = new System.Windows.Forms.Label();
             this.lDateOfLastVisit = new System.Windows.Forms.Label();
-            this.lName = new System.Windows.Forms.Label();
-            this.lPatientId = new System.Windows.Forms.Label();
+            this.lFirstname = new System.Windows.Forms.Label();
             this.tpAllergies = new System.Windows.Forms.TabPage();
             this.tpMedication = new System.Windows.Forms.TabPage();
             this.tpVitals = new System.Windows.Forms.TabPage();
@@ -64,6 +62,8 @@
             this.tpDiabeticTest = new System.Windows.Forms.TabPage();
             this.tpLipidTest = new System.Windows.Forms.TabPage();
             this.tpDiabeticBackground = new System.Windows.Forms.TabPage();
+            this.lLastName = new System.Windows.Forms.Label();
+            this.tbLastName = new System.Windows.Forms.TextBox();
             this.tcPatient.SuspendLayout();
             this.tpDemographics.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +87,8 @@
             // 
             // tpDemographics
             // 
+            this.tpDemographics.Controls.Add(this.tbLastName);
+            this.tpDemographics.Controls.Add(this.lLastName);
             this.tpDemographics.Controls.Add(this.bNotes);
             this.tpDemographics.Controls.Add(this.bTrends);
             this.tpDemographics.Controls.Add(this.bEdit);
@@ -102,8 +104,7 @@
             this.tpDemographics.Controls.Add(this.tbState);
             this.tpDemographics.Controls.Add(this.tbCity);
             this.tpDemographics.Controls.Add(this.tbStreet);
-            this.tpDemographics.Controls.Add(this.tbPatientId);
-            this.tpDemographics.Controls.Add(this.tbName);
+            this.tpDemographics.Controls.Add(this.tbFirstname);
             this.tpDemographics.Controls.Add(this.tbDateOfLastVisit);
             this.tpDemographics.Controls.Add(this.lPhone);
             this.tpDemographics.Controls.Add(this.lDOB);
@@ -112,8 +113,7 @@
             this.tpDemographics.Controls.Add(this.lStreet);
             this.tpDemographics.Controls.Add(this.lCity);
             this.tpDemographics.Controls.Add(this.lDateOfLastVisit);
-            this.tpDemographics.Controls.Add(this.lName);
-            this.tpDemographics.Controls.Add(this.lPatientId);
+            this.tpDemographics.Controls.Add(this.lFirstname);
             this.tpDemographics.Location = new System.Drawing.Point(4, 22);
             this.tpDemographics.Name = "tpDemographics";
             this.tpDemographics.Padding = new System.Windows.Forms.Padding(3);
@@ -206,7 +206,7 @@
             // 
             // tbPhone
             // 
-            this.tbPhone.Location = new System.Drawing.Point(147, 256);
+            this.tbPhone.Location = new System.Drawing.Point(147, 284);
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.ReadOnly = true;
             this.tbPhone.Size = new System.Drawing.Size(100, 20);
@@ -214,7 +214,7 @@
             // 
             // tbDOB
             // 
-            this.tbDOB.Location = new System.Drawing.Point(147, 227);
+            this.tbDOB.Location = new System.Drawing.Point(147, 256);
             this.tbDOB.Name = "tbDOB";
             this.tbDOB.ReadOnly = true;
             this.tbDOB.Size = new System.Drawing.Size(100, 20);
@@ -223,7 +223,7 @@
             // 
             // tbZip
             // 
-            this.tbZip.Location = new System.Drawing.Point(147, 198);
+            this.tbZip.Location = new System.Drawing.Point(147, 227);
             this.tbZip.Name = "tbZip";
             this.tbZip.ReadOnly = true;
             this.tbZip.Size = new System.Drawing.Size(100, 20);
@@ -231,7 +231,7 @@
             // 
             // tbState
             // 
-            this.tbState.Location = new System.Drawing.Point(147, 168);
+            this.tbState.Location = new System.Drawing.Point(147, 198);
             this.tbState.Name = "tbState";
             this.tbState.ReadOnly = true;
             this.tbState.Size = new System.Drawing.Size(100, 20);
@@ -239,7 +239,7 @@
             // 
             // tbCity
             // 
-            this.tbCity.Location = new System.Drawing.Point(147, 138);
+            this.tbCity.Location = new System.Drawing.Point(147, 168);
             this.tbCity.Name = "tbCity";
             this.tbCity.ReadOnly = true;
             this.tbCity.Size = new System.Drawing.Size(100, 20);
@@ -247,32 +247,24 @@
             // 
             // tbStreet
             // 
-            this.tbStreet.Location = new System.Drawing.Point(147, 110);
+            this.tbStreet.Location = new System.Drawing.Point(147, 138);
             this.tbStreet.Name = "tbStreet";
             this.tbStreet.ReadOnly = true;
             this.tbStreet.Size = new System.Drawing.Size(100, 20);
             this.tbStreet.TabIndex = 12;
             // 
-            // tbPatientId
+            // tbFirstname
             // 
-            this.tbPatientId.Location = new System.Drawing.Point(147, 27);
-            this.tbPatientId.Name = "tbPatientId";
-            this.tbPatientId.ReadOnly = true;
-            this.tbPatientId.Size = new System.Drawing.Size(100, 20);
-            this.tbPatientId.TabIndex = 11;
-            // 
-            // tbName
-            // 
-            this.tbName.Location = new System.Drawing.Point(147, 56);
-            this.tbName.Name = "tbName";
-            this.tbName.ReadOnly = true;
-            this.tbName.Size = new System.Drawing.Size(100, 20);
-            this.tbName.TabIndex = 10;
-            this.tbName.TextChanged += new System.EventHandler(this.tbName_TextChanged);
+            this.tbFirstname.Location = new System.Drawing.Point(147, 56);
+            this.tbFirstname.Name = "tbFirstname";
+            this.tbFirstname.ReadOnly = true;
+            this.tbFirstname.Size = new System.Drawing.Size(100, 20);
+            this.tbFirstname.TabIndex = 10;
+            this.tbFirstname.TextChanged += new System.EventHandler(this.tbName_TextChanged);
             // 
             // tbDateOfLastVisit
             // 
-            this.tbDateOfLastVisit.Location = new System.Drawing.Point(147, 84);
+            this.tbDateOfLastVisit.Location = new System.Drawing.Point(147, 110);
             this.tbDateOfLastVisit.Name = "tbDateOfLastVisit";
             this.tbDateOfLastVisit.ReadOnly = true;
             this.tbDateOfLastVisit.Size = new System.Drawing.Size(100, 20);
@@ -281,7 +273,7 @@
             // lPhone
             // 
             this.lPhone.AutoSize = true;
-            this.lPhone.Location = new System.Drawing.Point(28, 259);
+            this.lPhone.Location = new System.Drawing.Point(31, 287);
             this.lPhone.Name = "lPhone";
             this.lPhone.Size = new System.Drawing.Size(38, 13);
             this.lPhone.TabIndex = 8;
@@ -290,7 +282,7 @@
             // lDOB
             // 
             this.lDOB.AutoSize = true;
-            this.lDOB.Location = new System.Drawing.Point(28, 230);
+            this.lDOB.Location = new System.Drawing.Point(31, 259);
             this.lDOB.Name = "lDOB";
             this.lDOB.Size = new System.Drawing.Size(66, 13);
             this.lDOB.TabIndex = 7;
@@ -300,7 +292,7 @@
             // lZip
             // 
             this.lZip.AutoSize = true;
-            this.lZip.Location = new System.Drawing.Point(28, 201);
+            this.lZip.Location = new System.Drawing.Point(31, 230);
             this.lZip.Name = "lZip";
             this.lZip.Size = new System.Drawing.Size(22, 13);
             this.lZip.TabIndex = 6;
@@ -309,7 +301,7 @@
             // lState
             // 
             this.lState.AutoSize = true;
-            this.lState.Location = new System.Drawing.Point(28, 171);
+            this.lState.Location = new System.Drawing.Point(31, 201);
             this.lState.Name = "lState";
             this.lState.Size = new System.Drawing.Size(32, 13);
             this.lState.TabIndex = 5;
@@ -318,7 +310,7 @@
             // lStreet
             // 
             this.lStreet.AutoSize = true;
-            this.lStreet.Location = new System.Drawing.Point(28, 113);
+            this.lStreet.Location = new System.Drawing.Point(31, 141);
             this.lStreet.Name = "lStreet";
             this.lStreet.Size = new System.Drawing.Size(35, 13);
             this.lStreet.TabIndex = 4;
@@ -327,7 +319,7 @@
             // lCity
             // 
             this.lCity.AutoSize = true;
-            this.lCity.Location = new System.Drawing.Point(28, 141);
+            this.lCity.Location = new System.Drawing.Point(31, 171);
             this.lCity.Name = "lCity";
             this.lCity.Size = new System.Drawing.Size(24, 13);
             this.lCity.TabIndex = 3;
@@ -336,29 +328,20 @@
             // lDateOfLastVisit
             // 
             this.lDateOfLastVisit.AutoSize = true;
-            this.lDateOfLastVisit.Location = new System.Drawing.Point(28, 87);
+            this.lDateOfLastVisit.Location = new System.Drawing.Point(31, 113);
             this.lDateOfLastVisit.Name = "lDateOfLastVisit";
             this.lDateOfLastVisit.Size = new System.Drawing.Size(87, 13);
             this.lDateOfLastVisit.TabIndex = 2;
             this.lDateOfLastVisit.Text = "Date of Last Visit";
             // 
-            // lName
+            // lFirstname
             // 
-            this.lName.AutoSize = true;
-            this.lName.Location = new System.Drawing.Point(31, 59);
-            this.lName.Name = "lName";
-            this.lName.Size = new System.Drawing.Size(35, 13);
-            this.lName.TabIndex = 1;
-            this.lName.Text = "Name";
-            // 
-            // lPatientId
-            // 
-            this.lPatientId.AutoSize = true;
-            this.lPatientId.Location = new System.Drawing.Point(28, 30);
-            this.lPatientId.Name = "lPatientId";
-            this.lPatientId.Size = new System.Drawing.Size(54, 13);
-            this.lPatientId.TabIndex = 0;
-            this.lPatientId.Text = "Patient ID";
+            this.lFirstname.AutoSize = true;
+            this.lFirstname.Location = new System.Drawing.Point(31, 59);
+            this.lFirstname.Name = "lFirstname";
+            this.lFirstname.Size = new System.Drawing.Size(57, 13);
+            this.lFirstname.TabIndex = 1;
+            this.lFirstname.Text = "First Name";
             // 
             // tpAllergies
             // 
@@ -424,6 +407,23 @@
             this.tpDiabeticBackground.Text = "Diabetic Background";
             this.tpDiabeticBackground.UseVisualStyleBackColor = true;
             // 
+            // lLastName
+            // 
+            this.lLastName.AutoSize = true;
+            this.lLastName.Location = new System.Drawing.Point(31, 87);
+            this.lLastName.Name = "lLastName";
+            this.lLastName.Size = new System.Drawing.Size(58, 13);
+            this.lLastName.TabIndex = 29;
+            this.lLastName.Text = "Last Name";
+            // 
+            // tbLastName
+            // 
+            this.tbLastName.Location = new System.Drawing.Point(147, 84);
+            this.tbLastName.Name = "tbLastName";
+            this.tbLastName.ReadOnly = true;
+            this.tbLastName.Size = new System.Drawing.Size(100, 20);
+            this.tbLastName.TabIndex = 30;
+            // 
             // Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -432,7 +432,6 @@
             this.Controls.Add(this.tcPatient);
             this.Name = "Patient";
             this.Text = "Patient";
-            //this.Load += new System.EventHandler(this.Patient_Load);
             this.tcPatient.ResumeLayout(false);
             this.tpDemographics.ResumeLayout(false);
             this.tpDemographics.PerformLayout();
@@ -453,8 +452,7 @@
         private System.Windows.Forms.Label lStreet;
         private System.Windows.Forms.Label lCity;
         private System.Windows.Forms.Label lDateOfLastVisit;
-        private System.Windows.Forms.Label lName;
-        private System.Windows.Forms.Label lPatientId;
+        private System.Windows.Forms.Label lFirstname;
         private System.Windows.Forms.TabPage tpAllergies;
         private System.Windows.Forms.TabPage tpMedication;
         private System.Windows.Forms.TabPage tpVitals;
@@ -466,8 +464,7 @@
         private System.Windows.Forms.TextBox tbState;
         private System.Windows.Forms.TextBox tbCity;
         private System.Windows.Forms.TextBox tbStreet;
-        private System.Windows.Forms.TextBox tbPatientId;
-        private System.Windows.Forms.TextBox tbName;
+        private System.Windows.Forms.TextBox tbFirstname;
         private System.Windows.Forms.TextBox tbDateOfLastVisit;
         private System.Windows.Forms.Label lInsurance;
         private System.Windows.Forms.Button bTrends;
@@ -478,5 +475,7 @@
         private System.Windows.Forms.Label lSecondaryInsurance;
         private System.Windows.Forms.Label lPrimaryInsurance;
         private System.Windows.Forms.Button bNotes;
+        private System.Windows.Forms.TextBox tbLastName;
+        private System.Windows.Forms.Label lLastName;
     }
 }

@@ -49,6 +49,7 @@ namespace Test
            
             ThreadStart graphRef = new ThreadStart(graphThreadStart);
             Thread graphThread = new Thread(graphRef);
+            graphThread.IsBackground = true;
             graphThread.Start();
            
         }
@@ -61,29 +62,32 @@ namespace Test
         private void bSearch_Click(object sender, EventArgs e)
         {
             lbSearchList.Items.Clear();
-            string searchInput = tbSearch.Text;
-
-            string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
-            MySqlConnection connection = new MySqlConnection(connectionString);
-
-            connection.Open();
-            string searchResults = "SELECT * FROM Demographics WHERE CONCAT(PatientID, ' ', FirstName, ' ', LastName, ' ', DateofLastVisit, ' ', Street, ' ', City, ' ', State, ' ', Zip, ' ', DOB, ' ', Phone, ' ', PrimaryInsuranceProvider, ' ', SecondaryInsuranceProvider) LIKE '%" + searchInput +"%'";
-            MySqlCommand cmd = new MySqlCommand(searchResults, connection);
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-
-            String[] llSearch = new String[100];
-            int counter = 0;
-            while (reader.Read())
+            if (tbSearch.Text != "")
             {
-                llSearch[counter] = reader.GetString(0) + " " + reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3) + " " + reader.GetString(4) + " " + reader.GetString(5) + " " + reader.GetString(6) + " " + reader.GetString(7) + " " + reader.GetString(8) + " " + reader.GetString(9) + " " + reader.GetString(10) + " " + reader.GetString(11);
-                lbSearchList.Items.Add(llSearch[counter]);
-                counter++;
-            }
-            lbSearchList.Show();
+                string searchInput = tbSearch.Text;
 
-            reader.Close();
-            connection.Close();
+                string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+                MySqlConnection connection = new MySqlConnection(connectionString);
+
+                connection.Open();
+                string searchResults = "SELECT * FROM Demographics WHERE CONCAT(PatientID, ' ', FirstName, ' ', LastName, ' ', DateofLastVisit, ' ', Street, ' ', City, ' ', State, ' ', Zip, ' ', DOB, ' ', Phone, ' ', PrimaryInsuranceProvider, ' ', SecondaryInsuranceProvider) LIKE '%" + searchInput + "%'";
+                MySqlCommand cmd = new MySqlCommand(searchResults, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+
+                String[] llSearch = new String[100];
+                int counter = 0;
+                while (reader.Read())
+                {
+                    llSearch[counter] = reader.GetString(0) + " " + reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3) + " " + reader.GetString(4) + " " + reader.GetString(5) + " " + reader.GetString(6) + " " + reader.GetString(7) + " " + reader.GetString(8) + " " + reader.GetString(9) + " " + reader.GetString(10) + " " + reader.GetString(11);
+                    lbSearchList.Items.Add(llSearch[counter]);
+                    counter++;
+                }
+                lbSearchList.Show();
+
+                reader.Close();
+                connection.Close();
+            }
 
         }
 
@@ -97,6 +101,7 @@ namespace Test
 
             ThreadStart patientRef = new ThreadStart(patientThreadStart);
             Thread patientThread = new Thread(patientRef);
+            patientThread.IsBackground = true;
             patientThread.Start();
         }
 

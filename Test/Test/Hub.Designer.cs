@@ -119,12 +119,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.Button bSearch;
         private System.Windows.Forms.Button bLogout;
         private System.Windows.Forms.Button bAdd;
         private System.Windows.Forms.Button bGraphs;
         private System.Windows.Forms.ListBox lbSearchList;
+        private System.Windows.Forms.TextBox tbSearch;
     }
 }
