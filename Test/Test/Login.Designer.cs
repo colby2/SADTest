@@ -34,6 +34,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.bExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bLogin
@@ -79,12 +80,23 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Password";
             // 
+            // bExit
+            // 
+            this.bExit.Location = new System.Drawing.Point(98, 108);
+            this.bExit.Name = "bExit";
+            this.bExit.Size = new System.Drawing.Size(75, 23);
+            this.bExit.TabIndex = 5;
+            this.bExit.Text = "Exit";
+            this.bExit.UseVisualStyleBackColor = true;
+            this.bExit.Click += new System.EventHandler(this.bExit_Click);
+            // 
             // Login
             // 
             this.AcceptButton = this.bLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(223, 157);
+            this.Controls.Add(this.bExit);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tbPassword);
@@ -107,5 +119,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button bExit;
     }
 }
