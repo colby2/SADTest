@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Test
 {
@@ -22,6 +23,10 @@ namespace Test
 
         public GraphTemplate(String type)
         {
+            /*This Constructor changes the seires name to the string variable given.
+             * This should be helpful when the chart is modeling a specific value and its name should be given.
+             * (ie calling GraphTemplate("a1c") will create a chart with a1c as the series name.  
+             * */
             InitializeComponent();
             removeInitalSeries();
             graphName = type;
@@ -43,7 +48,7 @@ namespace Test
         private void button1_Click(object sender, EventArgs e)//Currently using test data, replace with real data.
         {
             
-            chart1.Series[graphName].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Column;//May not be needed
+            chart1.Series[graphName].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;//May not be needed
             chart1.Series[graphName].Points.AddY(20);
             chart1.Series[graphName].Points.AddY(10);
             chart1.Series[graphName].Points.AddY(0);
