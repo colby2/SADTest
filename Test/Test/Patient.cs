@@ -14,12 +14,23 @@ namespace Test
     public partial class Patient : Form
     {
 
-        string PatientId;
+        string PatientId;//patientid will be passed to update function 
+        string currentDate = DateTime.Now.ToString("dd/MM/yyyy");//holds full current date
+        string monthName = "";//will hold the actual name of the month
+        private string completeCurrentDate;//will hold complete current date 
+
         public Patient()
         {
             InitializeComponent();
+            
         }
+        
+        
 
+        /****************************************************************************************************
+         * Search function that will connect to DB and perform a SELECT statement on the DB bringing back all 
+         * the information that matches the users search criteria
+         * **************************************************************************************************/
         public Patient(string criteria)
         {
             InitializeComponent();
@@ -51,6 +62,69 @@ namespace Test
                 tbSecondaryInsurance.Text = reader.GetString(11);
             }
             connection.Close();
+
+         
+            string[] dateArray = currentDate.Split('/');//holds the current date in an array separated based on month, day and year
+            string monthNumber = dateArray[1].ToString();//will grab the current month in number format
+            string yearNumber = dateArray[2].ToString();//Holds current year
+            string dayNumber = dateArray[0].ToString();//Holds current Day of week 
+           /************************************************************************************************************
+            * switch statement that will take month number and (ex: 03) and turn it into the month name (ex: March)
+            * **********************************************************************************************************/
+            switch (monthNumber)
+            {
+                case "01":
+                    monthName = "Jan";
+                    break;
+                case "02":
+                    monthName = "Feb";
+                    break;
+                case "03":
+                    monthName = "Mar";
+                    break;
+                case "04":
+                    monthName = "April";
+                    break;
+                case "05":
+                    monthName = "May";
+                    break;
+                case "06":
+                    monthName = "June";
+                    break;
+                case "07":
+                    monthName = "July";
+                    break;
+                case "08":
+                    monthName = "Aug";
+                    break;
+                case "09":
+                    monthName = "Sept";
+                    break;
+                case "10":
+                    monthName = "Oct";
+                    break;
+                case "11":
+                    monthName = "Nov";
+                    break;
+                case "12":
+                    monthName = "Dec";
+                    break;
+            }
+            /*must be placed here after switch. Cannot be placed in visitDateUpdate button click function*/
+            completeCurrentDate = monthName + " " + dayNumber + ", " + yearNumber;//holds complete current date in user specified format
+
+
+
+
+        }
+        /********************************************************************************************
+         * button click for updating the date of last visit
+         * ******************************************************************************************/
+        private void visitDateUpdate_Click(object sender, EventArgs e)
+        {
+            
+            int DateUpdated = UpdateFunctions.UpdateDateOfLastVisit(Int32.Parse(PatientId), completeCurrentDate);
+            tbDateOfLastVisit.Text = completeCurrentDate;
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -62,6 +136,9 @@ namespace Test
 
         }
 
+        /********************************************************************************************
+         * Button Click that allows user to update patient demographic information
+         * ******************************************************************************************/
         private void bEdit_Click(object sender, EventArgs e)
         {
 
@@ -104,8 +181,6 @@ namespace Test
                 else
                     MessageBox.Show("No Records Updated");
                 bEdit.Text = "Edit";
-
-                
             }
 
 
@@ -135,5 +210,7 @@ namespace Test
         {
 
         }
+
+      
     }
 }

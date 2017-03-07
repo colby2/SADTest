@@ -9,9 +9,12 @@ namespace DiabeticHealthDB
 {
     public static class UpdateFunctions
     {
+        /************************************************************************************************
+        *Function that will allow users to update all of the fields the user changes on the patient form
+        * ***********************************************************************************************/
         public static int UpdateDemographics(int PatientID, string FirstName, string LastName, string DateofLastVisit, string Street, string City, string State, string Zip, string DOB, string Phone, string PrimaryInsuranceProvider, string SecondaryInsuranceProvider)
         {
-            
+
             int rowsUpdated = 0;
             MySqlConnection connection = DatabaseConnection.GetConnection();
             string updateQuery =
@@ -34,7 +37,7 @@ namespace DiabeticHealthDB
                 connection.Open();
                 rowsUpdated = command.ExecuteNonQuery();
             }
-            catch(MySqlException ex)
+            catch (MySqlException ex)
             {
                 rowsUpdated = 0;
                 throw ex;
@@ -45,7 +48,35 @@ namespace DiabeticHealthDB
             }
             return rowsUpdated;
         }
-           
 
+
+    
+
+    public static int UpdateDateOfLastVisit(int PatientID, string DateOfLastVisit)
+    {
+        int rowsUpdated = 0;
+        MySqlConnection connection = DatabaseConnection.GetConnection();
+        string updateQuery =
+                "Update Demographics Set DateOfLastVisit = @D Where PatientID = @P;";
+        MySqlCommand command = new MySqlCommand(updateQuery, connection);
+        command.Parameters.AddWithValue("@D", DateOfLastVisit);
+        command.Parameters.AddWithValue("@P", PatientID);
+        try
+        {
+            connection.Open();
+            rowsUpdated = command.ExecuteNonQuery();
+        }
+        catch (MySqlException ex)
+        {
+            rowsUpdated = 0;
+            throw ex;
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return rowsUpdated;
     }
+ }
 }
+

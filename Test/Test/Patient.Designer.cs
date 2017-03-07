@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patient));
             this.tcPatient = new System.Windows.Forms.TabControl();
             this.tpDemographics = new System.Windows.Forms.TabPage();
+            this.visitDateUpdate = new System.Windows.Forms.Button();
             this.tbLastname = new System.Windows.Forms.TextBox();
             this.lLastName = new System.Windows.Forms.Label();
             this.bNotes = new System.Windows.Forms.Button();
@@ -87,6 +89,7 @@
             // 
             // tpDemographics
             // 
+            this.tpDemographics.Controls.Add(this.visitDateUpdate);
             this.tpDemographics.Controls.Add(this.tbLastname);
             this.tpDemographics.Controls.Add(this.lLastName);
             this.tpDemographics.Controls.Add(this.bNotes);
@@ -122,6 +125,18 @@
             this.tpDemographics.Text = "Demographics";
             this.tpDemographics.UseVisualStyleBackColor = true;
             this.tpDemographics.Click += new System.EventHandler(this.tpDemographics_Click);
+            // 
+            // visitDateUpdate
+            // 
+            this.visitDateUpdate.Image = ((System.Drawing.Image)(resources.GetObject("visitDateUpdate.Image")));
+            this.visitDateUpdate.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.visitDateUpdate.Location = new System.Drawing.Point(280, 274);
+            this.visitDateUpdate.Name = "visitDateUpdate";
+            this.visitDateUpdate.Size = new System.Drawing.Size(139, 28);
+            this.visitDateUpdate.TabIndex = 31;
+            this.visitDateUpdate.Text = "Update Last Visit";
+            this.visitDateUpdate.UseVisualStyleBackColor = true;
+            this.visitDateUpdate.Click += new System.EventHandler(this.visitDateUpdate_Click);
             // 
             // tbLastname
             // 
@@ -225,7 +240,7 @@
             // 
             // tbPhone
             // 
-            this.tbPhone.Location = new System.Drawing.Point(147, 284);
+            this.tbPhone.Location = new System.Drawing.Point(147, 110);
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.ReadOnly = true;
             this.tbPhone.Size = new System.Drawing.Size(100, 20);
@@ -283,7 +298,7 @@
             // 
             // tbDateOfLastVisit
             // 
-            this.tbDateOfLastVisit.Location = new System.Drawing.Point(147, 110);
+            this.tbDateOfLastVisit.Location = new System.Drawing.Point(147, 282);
             this.tbDateOfLastVisit.Name = "tbDateOfLastVisit";
             this.tbDateOfLastVisit.ReadOnly = true;
             this.tbDateOfLastVisit.Size = new System.Drawing.Size(100, 20);
@@ -292,7 +307,7 @@
             // lPhone
             // 
             this.lPhone.AutoSize = true;
-            this.lPhone.Location = new System.Drawing.Point(31, 287);
+            this.lPhone.Location = new System.Drawing.Point(31, 117);
             this.lPhone.Name = "lPhone";
             this.lPhone.Size = new System.Drawing.Size(38, 13);
             this.lPhone.TabIndex = 8;
@@ -347,7 +362,7 @@
             // lDateOfLastVisit
             // 
             this.lDateOfLastVisit.AutoSize = true;
-            this.lDateOfLastVisit.Location = new System.Drawing.Point(31, 113);
+            this.lDateOfLastVisit.Location = new System.Drawing.Point(31, 289);
             this.lDateOfLastVisit.Name = "lDateOfLastVisit";
             this.lDateOfLastVisit.Size = new System.Drawing.Size(87, 13);
             this.lDateOfLastVisit.TabIndex = 2;
@@ -479,5 +494,6 @@
         private System.Windows.Forms.Button bNotes;
         private System.Windows.Forms.TextBox tbLastname;
         private System.Windows.Forms.Label lLastName;
+        private System.Windows.Forms.Button visitDateUpdate;
     }
 }
