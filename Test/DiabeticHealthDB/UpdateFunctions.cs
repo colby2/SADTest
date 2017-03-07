@@ -9,13 +9,13 @@ namespace DiabeticHealthDB
 {
     public static class UpdateFunctions
     {
-        public static string UpdateDemographics(int PatientID, string FirstName, string LastName, string DateofLastVisit, string Street, string City, string State, string Zip, string DOB, string Phone, string PrimaryInsurance, string SecondaryInsurance)
+        public static int UpdateDemographics(int PatientID, string FirstName, string LastName, string DateofLastVisit, string Street, string City, string State, string Zip, string DOB, string Phone, string PrimaryInsuranceProvider, string SecondaryInsuranceProvider)
         {
             
-            string rowsUpdated = "0";
+            int rowsUpdated = 0;
             MySqlConnection connection = DatabaseConnection.GetConnection();
             string updateQuery =
-                    "Update Demographics Set FirstName = @F, LastName = @L, DateOfLastVisit = @D, Street = @St, City = @C, State = @S, Zip = @Z, DOB = @DOB, Phone = @P, PrimaryInsurance = @PI, SecondayInsurance = @SI WHERE PatientID = @ID";
+                    "Update Demographics Set FirstName = @F, LastName = @L, DateOfLastVisit = @D, Street = @St, City = @C, State = @S, Zip = @Z, DOB = @DOB, Phone = @P, PrimaryInsuranceProvider = @PI, SecondaryInsuranceProvider = @SI WHERE PatientID = @ID";
             MySqlCommand command = new MySqlCommand(updateQuery, connection);
             command.Parameters.AddWithValue("@F", FirstName);
             command.Parameters.AddWithValue("@L", LastName);
@@ -26,17 +26,18 @@ namespace DiabeticHealthDB
             command.Parameters.AddWithValue("@Z", Zip);
             command.Parameters.AddWithValue("@DOB", DOB);
             command.Parameters.AddWithValue("@P", Phone);
-            command.Parameters.AddWithValue("@PI", PrimaryInsurance);
-            command.Parameters.AddWithValue("@SI", SecondaryInsurance);
+            command.Parameters.AddWithValue("@PI", PrimaryInsuranceProvider);
+            command.Parameters.AddWithValue("@SI", SecondaryInsuranceProvider);
             command.Parameters.AddWithValue("@ID", PatientID);
             try
             {
                 connection.Open();
-                rowsUpdated = command.ExecuteNonQuery().ToString();
+                rowsUpdated = command.ExecuteNonQuery();
             }
             catch(MySqlException ex)
             {
-                rowsUpdated = ex.ToString();
+                rowsUpdated = 0;
+                throw ex;
             }
             finally
             {
