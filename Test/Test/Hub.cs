@@ -70,20 +70,17 @@ namespace Test
                 MySqlConnection connection = new MySqlConnection(connectionString);
 
                 connection.Open();
-                string searchResults = "SELECT * FROM Demographics WHERE CONCAT(PatientID, ' ', FirstName, ' ', LastName, ' ', DateofLastVisit, ' ', Street, ' ', City, ' ', State, ' ', Zip, ' ', DOB, ' ', Phone, ' ', PrimaryInsuranceProvider, ' ', SecondaryInsuranceProvider) LIKE '%" + searchInput + "%'";
+                string searchResults = "SELECT * FROM Demographics WHERE CONCAT(PatientID, ' ', FirstName, ' ', LastName, ' ', DOB) LIKE '%" + searchInput + "%'";
                 MySqlCommand cmd = new MySqlCommand(searchResults, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
 
-                String[] llSearch = new String[100];
-                int counter = 0;
                 while (reader.Read())
                 {
-                    llSearch[counter] = reader.GetString(0) + " " + reader.GetString(1) + " " + reader.GetString(2) + " " + reader.GetString(3) + " " + reader.GetString(4) + " " + reader.GetString(5) + " " + reader.GetString(6) + " " + reader.GetString(7) + " " + reader.GetString(8) + " " + reader.GetString(9) + " " + reader.GetString(10) + " " + reader.GetString(11);
-                    lbSearchList.Items.Add(llSearch[counter]);
-                    counter++;
+                    string[] row = {reader.GetString(1), reader.GetString(2), reader.GetString(8), reader.GetString(0)};
+                    var listViewItem = new ListViewItem(row);
+                    lvSearchList.Items.Add(listViewItem);
                 }
-                lbSearchList.Show();
 
                 reader.Close();
                 connection.Close();
@@ -117,6 +114,16 @@ namespace Test
             Thread loginThread = new Thread(loginRef);
             loginThread.Start();
             this.Close();
+        }
+
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvSearchList.SelectedItems.Count == 1)
+            {
+                Thread patientThread = new Thread(patientThreadStart);
+                patientThreadStart(lvSearchList.SelectedItems[0].SubItems[3].Text);
+            }
         }
     }
 }

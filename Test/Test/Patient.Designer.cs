@@ -148,6 +148,7 @@
             this.bNotes.TabIndex = 28;
             this.bNotes.Text = "Notes";
             this.bNotes.UseVisualStyleBackColor = true;
+            this.bNotes.Click += new System.EventHandler(this.bNotes_Click);
             // 
             // bTrends
             // 

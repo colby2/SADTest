@@ -8,13 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DiabeticHealthDB;
 namespace Test
 {
     public partial class Patient : Form
     {
 
-        String PatientId;
+        string PatientId;
         public Patient()
         {
             InitializeComponent();
@@ -97,7 +97,12 @@ namespace Test
                 tbSecondaryInsurance.ReadOnly = true;
 
                 //TODO: Pull information from text boxes here and update database.
-                 
+                //need to fix to where if nothing is updated it doesnt output the Message box that says we have updated records for this patient
+                int Updated = UpdateFunctions.UpdateDemographics(Int32.Parse(PatientId), tbFirstname.Text, tbLastname.Text, tbDateOfLastVisit.Text, tbStreet.Text, tbCity.Text, tbState.Text, tbZip.Text, tbDOB.Text, tbPhone.Text, tbPrimaryInsurance.Text, tbSecondaryInsurance.Text);
+                if (Updated == 1)
+                    MessageBox.Show("You Have Updated the Records for This Patient");
+                else
+                    MessageBox.Show("No Records Updated");
                 bEdit.Text = "Edit";
 
                 
@@ -122,6 +127,11 @@ namespace Test
         }
 
         private void bTrends_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bNotes_Click(object sender, EventArgs e)
         {
 
         }
