@@ -19,6 +19,9 @@ namespace Test
             InitializeComponent();
         }
 
+        Thread[] allThreads = new Thread[100];
+        int threadCount = 0;
+
         public static void graphThreadStart()
         {
             GraphTemplate graph = new GraphTemplate();
@@ -32,25 +35,34 @@ namespace Test
             patient.ShowDialog();
         }
         
-        public static void loginThreadStart()
+       /* public static void patientThreadStart(string criteria)
+        {
+            Patient patient = new Patient(criteria);
+            patient.ShowDialog();
+        }//Thread Starter for patient with non-blank search*/
+
+        public static void patientThreadStart(object data)
+        {
+            Patient patient = new Patient(data.ToString());
+            patient.ShowDialog();
+        }
+
+         public static void loginThreadStart()
         {
             Login login = new Login();
             login.ShowDialog();
         }
-
-        public static void patientThreadStart(string criteria)
-        {
-            Patient patient = new Patient(criteria);
-            patient.ShowDialog();
-        }//Thread Starter for patient with non-blank search
-
         private void bGraphs_Click(object sender, EventArgs e)
         {
            
-            ThreadStart graphRef = new ThreadStart(graphThreadStart);
-            Thread graphThread = new Thread(graphRef);
-            graphThread.IsBackground = true;
-            graphThread.Start();
+           ThreadStart graphRef = new ThreadStart(graphThreadStart);
+            allThreads[threadCount] = new Thread(graphRef);
+            allThreads[threadCount].IsBackground = true;
+            allThreads[threadCount].Start();
+            threadCount++;
+            //Thread graphThread = new Thread(graphRef);
+            //graphThread.IsBackground = true;
+            //graphThread.Start();
            
         }
 
@@ -95,17 +107,23 @@ namespace Test
 
         private void bAdd_Click(object sender, EventArgs e)
         {
-
+            //Will be redirected to a different form.
             ThreadStart patientRef = new ThreadStart(patientThreadStart);
-            Thread patientThread = new Thread(patientRef);
-            patientThread.IsBackground = true;
-            patientThread.Start();
+            allThreads[threadCount] = new Thread(patientRef);//Thread patientThread = new Thread(patientRef);
+            allThreads[threadCount].IsBackground = true;//patientThread.IsBackground = true;
+            allThreads[threadCount].Start(); //patientThread.Start();
+            threadCount++;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Thread patientThread = new Thread(patientThreadStart);
-            patientThreadStart(lbSearchList.SelectedItem.ToString());
+            //Thread patientThread = new Thread(patientThreadStart);
+            // patientThreadStart(lbSearchList.SelectedItem.ToString());
+            ParameterizedThreadStart pat = new ParameterizedThreadStart(patientThreadStart);
+            allThreads[threadCount] = new Thread(pat);
+            allThreads[threadCount].IsBackground = true;
+            allThreads[threadCount].Start(lbSearchList.SelectedItem.ToString());
+            threadCount++;
         }
 
         private void bLogout_Click(object sender, EventArgs e)
@@ -113,6 +131,10 @@ namespace Test
             ThreadStart loginRef = new ThreadStart(loginThreadStart);
             Thread loginThread = new Thread(loginRef);
             loginThread.Start();
+            for(int i = 0; i< threadCount; i++)
+            {
+                allThreads[i].Abort();
+            }
             this.Close();
         }
 
@@ -121,8 +143,13 @@ namespace Test
         {
             if (lvSearchList.SelectedItems.Count == 1)
             {
-                Thread patientThread = new Thread(patientThreadStart);
-                patientThreadStart(lvSearchList.SelectedItems[0].SubItems[3].Text);
+                //Thread patientThread = new Thread(patientThreadStart);
+                // patientThreadStart(lvSearchList.SelectedItems[0].SubItems[3].Text);
+                ParameterizedThreadStart pat = new ParameterizedThreadStart(patientThreadStart);
+                allThreads[threadCount] = new Thread(pat);
+                allThreads[threadCount].Start(lvSearchList.SelectedItems[0].SubItems[3].Text);
+                threadCount++;
+
             }
         }
     }
