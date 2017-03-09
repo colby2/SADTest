@@ -133,4 +133,4 @@ C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.P
 C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.Properties.Resources.resources
 C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
 C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.InsertPatient.resources
-C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.Notes.resources
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.AddNotes.resources
