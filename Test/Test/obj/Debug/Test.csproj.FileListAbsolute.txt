@@ -116,3 +116,20 @@ C:\Users\default.DESKTOP-U2654PP\Source\Repos\SADTest\Test\Test\bin\Debug\Diabet
 C:\Users\default.DESKTOP-U2654PP\Source\Repos\SADTest\Test\Test\bin\Debug\DiabeticHealthDB.pdb
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\bin\Debug\DiabeticHealthDB.dll
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\bin\Debug\DiabeticHealthDB.pdb
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\bin\Debug\Test.exe.config
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.exe
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.pdb
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\bin\Debug\Test.exe
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\bin\Debug\Test.pdb
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\bin\Debug\DiabeticHealthDB.dll
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\bin\Debug\DiabeticHealthDB.pdb
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\bin\Debug\MySql.Data.xml
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.GraphTemplate.resources
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.LoadScreen.resources
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.Login.resources
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.Hub.resources
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.Patient.resources
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.InsertPatient.resources

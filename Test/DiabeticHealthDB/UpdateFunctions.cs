@@ -50,9 +50,11 @@ namespace DiabeticHealthDB
         }
 
 
-    
 
-    public static int UpdateDateOfLastVisit(int PatientID, string DateOfLastVisit)
+        /************************************************************************************************
+      *Function that will allow users to update only last visit date
+      * ***********************************************************************************************/
+        public static int UpdateDateOfLastVisit(int PatientID, string DateOfLastVisit)
     {
         int rowsUpdated = 0;
         MySqlConnection connection = DatabaseConnection.GetConnection();

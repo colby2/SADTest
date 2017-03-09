@@ -57,6 +57,12 @@
     <Compile Include="GraphTemplate.Designer.cs">
       <DependentUpon>GraphTemplate.cs</DependentUpon>
     </Compile>
+    <Compile Include="InsertPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertPatient.Designer.cs">
+      <DependentUpon>InsertPatient.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoadScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +91,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GraphTemplate.resx">
       <DependentUpon>GraphTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertPatient.resx">
+      <DependentUpon>InsertPatient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoadScreen.resx">
       <DependentUpon>LoadScreen.cs</DependentUpon>

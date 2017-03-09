@@ -11,3 +11,9 @@ C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\DiabeticHealthDB\bin\Debug\Diab
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\DiabeticHealthDB\bin\Debug\DiabeticHealthDB.pdb
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\DiabeticHealthDB\bin\Debug\MySql.Data.dll
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\DiabeticHealthDB\bin\Debug\MySql.Data.xml
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\DiabeticHealthDB\bin\Debug\DiabeticHealthDB.dll
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\DiabeticHealthDB\bin\Debug\DiabeticHealthDB.pdb
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\DiabeticHealthDB\bin\Debug\MySql.Data.dll
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\DiabeticHealthDB\bin\Debug\MySql.Data.xml
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.dll
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.pdb
