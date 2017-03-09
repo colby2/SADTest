@@ -52,6 +52,13 @@ namespace Test
             Login login = new Login();
             login.ShowDialog();
         }
+
+        public static void insertPatientThreadStart()
+        {
+            InsertPatient insert = new InsertPatient();
+            insert.ShowDialog();
+        }
+
         private void bGraphs_Click(object sender, EventArgs e)
         {
            
@@ -108,7 +115,7 @@ namespace Test
         private void bAdd_Click(object sender, EventArgs e)
         {
             //Will be redirected to a different form.
-            ThreadStart patientRef = new ThreadStart(patientThreadStart);
+            ThreadStart patientRef = new ThreadStart(insertPatientThreadStart);
             allThreads[threadCount] = new Thread(patientRef);//Thread patientThread = new Thread(patientRef);
             allThreads[threadCount].IsBackground = true;//patientThread.IsBackground = true;
             allThreads[threadCount].Start(); //patientThread.Start();
