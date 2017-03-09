@@ -34,7 +34,6 @@
             this.visitDateUpdate = new System.Windows.Forms.Button();
             this.tbLastname = new System.Windows.Forms.TextBox();
             this.lLastName = new System.Windows.Forms.Label();
-            this.bNotes = new System.Windows.Forms.Button();
             this.bTrends = new System.Windows.Forms.Button();
             this.bEdit = new System.Windows.Forms.Button();
             this.bDelete = new System.Windows.Forms.Button();
@@ -66,6 +65,8 @@
             this.tpDiabeticTest = new System.Windows.Forms.TabPage();
             this.tpLipidTest = new System.Windows.Forms.TabPage();
             this.tpDiabeticBackground = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tpNotes = new System.Windows.Forms.TabPage();
             this.tcPatient.SuspendLayout();
             this.tpDemographics.SuspendLayout();
             this.SuspendLayout();
@@ -80,6 +81,7 @@
             this.tcPatient.Controls.Add(this.tpDiabeticTest);
             this.tcPatient.Controls.Add(this.tpLipidTest);
             this.tcPatient.Controls.Add(this.tpDiabeticBackground);
+            this.tcPatient.Controls.Add(this.tpNotes);
             this.tcPatient.Location = new System.Drawing.Point(12, 12);
             this.tcPatient.Multiline = true;
             this.tcPatient.Name = "tcPatient";
@@ -89,10 +91,10 @@
             // 
             // tpDemographics
             // 
+            this.tpDemographics.Controls.Add(this.button1);
             this.tpDemographics.Controls.Add(this.visitDateUpdate);
             this.tpDemographics.Controls.Add(this.tbLastname);
             this.tpDemographics.Controls.Add(this.lLastName);
-            this.tpDemographics.Controls.Add(this.bNotes);
             this.tpDemographics.Controls.Add(this.bTrends);
             this.tpDemographics.Controls.Add(this.bEdit);
             this.tpDemographics.Controls.Add(this.bDelete);
@@ -154,16 +156,6 @@
             this.lLastName.Size = new System.Drawing.Size(58, 13);
             this.lLastName.TabIndex = 29;
             this.lLastName.Text = "Last Name";
-            // 
-            // bNotes
-            // 
-            this.bNotes.Location = new System.Drawing.Point(367, 532);
-            this.bNotes.Name = "bNotes";
-            this.bNotes.Size = new System.Drawing.Size(75, 23);
-            this.bNotes.TabIndex = 28;
-            this.bNotes.Text = "Notes";
-            this.bNotes.UseVisualStyleBackColor = true;
-            this.bNotes.Click += new System.EventHandler(this.bNotes_Click);
             // 
             // bTrends
             // 
@@ -441,6 +433,25 @@
             this.tpDiabeticBackground.Text = "Diabetic Background";
             this.tpDiabeticBackground.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(347, 532);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 23);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Review Notes";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // tpNotes
+            // 
+            this.tpNotes.Location = new System.Drawing.Point(4, 22);
+            this.tpNotes.Name = "tpNotes";
+            this.tpNotes.Padding = new System.Windows.Forms.Padding(3);
+            this.tpNotes.Size = new System.Drawing.Size(691, 561);
+            this.tpNotes.TabIndex = 8;
+            this.tpNotes.Text = "Notes";
+            this.tpNotes.UseVisualStyleBackColor = true;
+            // 
             // Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,9 +502,10 @@
         private System.Windows.Forms.TextBox tbPrimaryInsurance;
         private System.Windows.Forms.Label lSecondaryInsurance;
         private System.Windows.Forms.Label lPrimaryInsurance;
-        private System.Windows.Forms.Button bNotes;
         private System.Windows.Forms.TextBox tbLastname;
         private System.Windows.Forms.Label lLastName;
         private System.Windows.Forms.Button visitDateUpdate;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabPage tpNotes;
     }
 }
