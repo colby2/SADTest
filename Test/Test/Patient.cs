@@ -208,7 +208,8 @@ namespace Test
 
         private void bNotes_Click(object sender, EventArgs e)
         {
-
+            AddNotes N1 = new AddNotes();
+            N1.ShowDialog();
         }
 
       

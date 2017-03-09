@@ -66,6 +66,7 @@
             this.tpDiabeticTest = new System.Windows.Forms.TabPage();
             this.tpLipidTest = new System.Windows.Forms.TabPage();
             this.tpDiabeticBackground = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.tcPatient.SuspendLayout();
             this.tpDemographics.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +90,7 @@
             // 
             // tpDemographics
             // 
+            this.tpDemographics.Controls.Add(this.button1);
             this.tpDemographics.Controls.Add(this.visitDateUpdate);
             this.tpDemographics.Controls.Add(this.tbLastname);
             this.tpDemographics.Controls.Add(this.lLastName);
@@ -161,7 +163,7 @@
             this.bNotes.Name = "bNotes";
             this.bNotes.Size = new System.Drawing.Size(75, 23);
             this.bNotes.TabIndex = 28;
-            this.bNotes.Text = "Notes";
+            this.bNotes.Text = "Add Notes";
             this.bNotes.UseVisualStyleBackColor = true;
             this.bNotes.Click += new System.EventHandler(this.bNotes_Click);
             // 
@@ -441,6 +443,15 @@
             this.tpDiabeticBackground.Text = "Diabetic Background";
             this.tpDiabeticBackground.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(286, 532);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "ReviewNotes";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -495,5 +506,6 @@
         private System.Windows.Forms.TextBox tbLastname;
         private System.Windows.Forms.Label lLastName;
         private System.Windows.Forms.Button visitDateUpdate;
+        private System.Windows.Forms.Button button1;
     }
 }
