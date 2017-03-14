@@ -206,8 +206,27 @@ namespace Test
 
         }
 
-      
+        private void Patient_Load(object sender, EventArgs e)
+        {
 
-      
+        }
+
+        private void bDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult confirmation = new DialogResult();
+            confirmation = MessageBox.Show("WARNING: You are about to delete Patient Information. Click OK to continue", "ATTENTION: PLEASE READ", MessageBoxButtons.OKCancel);
+            if(confirmation == DialogResult.OK)
+            {
+                int deletedRows = DeleteFunctions.DeletePatient(Int32.Parse(PatientId));
+                MessageBox.Show("Patient Information Deleted");
+                this.Close();
+
+            }
+            else if(confirmation == DialogResult.Cancel)
+            {
+                MessageBox.Show("Patient NOT Deleted","", MessageBoxButtons.OK);
+
+            }
+        }
     }
 }

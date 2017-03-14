@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patient));
             this.tcPatient = new System.Windows.Forms.TabControl();
             this.tpDemographics = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.visitDateUpdate = new System.Windows.Forms.Button();
             this.tbLastname = new System.Windows.Forms.TextBox();
             this.lLastName = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@
             this.tpDiabeticTest = new System.Windows.Forms.TabPage();
             this.tpLipidTest = new System.Windows.Forms.TabPage();
             this.tpDiabeticBackground = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.tpNotes = new System.Windows.Forms.TabPage();
             this.tcPatient.SuspendLayout();
             this.tpDemographics.SuspendLayout();
@@ -128,6 +128,15 @@
             this.tpDemographics.UseVisualStyleBackColor = true;
             this.tpDemographics.Click += new System.EventHandler(this.tpDemographics_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(347, 532);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 23);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Review Notes";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // visitDateUpdate
             // 
             this.visitDateUpdate.Image = ((System.Drawing.Image)(resources.GetObject("visitDateUpdate.Image")));
@@ -179,12 +188,13 @@
             // 
             // bDelete
             // 
-            this.bDelete.Location = new System.Drawing.Point(610, 532);
+            this.bDelete.Location = new System.Drawing.Point(556, 81);
             this.bDelete.Name = "bDelete";
             this.bDelete.Size = new System.Drawing.Size(75, 23);
             this.bDelete.TabIndex = 25;
             this.bDelete.Text = "Delete";
             this.bDelete.UseVisualStyleBackColor = true;
+            this.bDelete.Click += new System.EventHandler(this.bDelete_Click);
             // 
             // tbSecondaryInsurance
             // 
@@ -433,15 +443,6 @@
             this.tpDiabeticBackground.Text = "Diabetic Background";
             this.tpDiabeticBackground.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(347, 532);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 23);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "Review Notes";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // tpNotes
             // 
             this.tpNotes.Location = new System.Drawing.Point(4, 22);
@@ -460,6 +461,7 @@
             this.Controls.Add(this.tcPatient);
             this.Name = "Patient";
             this.Text = "Patient";
+            this.Load += new System.EventHandler(this.Patient_Load);
             this.tcPatient.ResumeLayout(false);
             this.tpDemographics.ResumeLayout(false);
             this.tpDemographics.PerformLayout();
