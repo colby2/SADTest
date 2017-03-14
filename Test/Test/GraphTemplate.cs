@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
+using MySql.Data.MySqlClient;
 
 namespace Test
 {
@@ -19,6 +20,7 @@ namespace Test
             InitializeComponent();
             removeInitalSeries();
             chart1.Series.Add(graphName);//This command can only be called with the same name once.
+            testSelectBox.Text = "(Select Test)";
         }
 
         public GraphTemplate(String type)
@@ -56,6 +58,67 @@ namespace Test
             chart1.Series[graphName].Points.AddY(30);
             chart1.Series[graphName].Points.AddY(75);
             chart1.Series[graphName].ChartArea = "ChartArea1";//may not be needed
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lvSearch.SelectedItems.Count == 1)
+            {
+                //So here a person's name is selected in the search list.
+                //Now we need to determine which tests are available for this person.
+                string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+                MySqlConnection connection = new MySqlConnection(connectionString);
+                connection.Open();
+                int id = Int32.Parse(lvSearch.SelectedItems[0].SubItems[3].Text);
+                Console.WriteLine(id);
+                string testSearch = "Select * FROM LipidTestInformation WHERE PatientID =" + id + ";";
+                MySqlCommand cmd = new MySqlCommand(testSearch, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                chart1.Series[graphName].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                while (reader.Read())
+                {
+                    Console.WriteLine("got Here");
+                    chart1.Series[graphName].Points.AddY(reader.GetDouble(2));
+                    chart1.Series[graphName].Points.AddY(0);
+                }
+                chart1.Series[graphName].ChartArea = "ChartArea1";//may not be needed
+                reader.Close();
+                connection.Close();
+            }
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            if (searchButton.Text != "")
+            {
+                string searchInput = searchBar.Text;
+
+                string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+                MySqlConnection connection = new MySqlConnection(connectionString);
+
+                connection.Open();
+                string searchResults = "SELECT * FROM Demographics WHERE CONCAT(PatientID, ' ', FirstName, ' ', LastName, ' ', DOB) LIKE '%" + searchInput + "%'";
+                MySqlCommand cmd = new MySqlCommand(searchResults, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+
+                while (reader.Read())
+                {
+                    string[] row = { reader.GetString(1), reader.GetString(2), reader.GetString(8), reader.GetString(0) };
+                    var listViewItem = new ListViewItem(row);
+                    lvSearch.Items.Add(listViewItem);
+                    
+                }
+
+                reader.Close();
+                connection.Close();
+            }
+        }
+
+        private void searchBar_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

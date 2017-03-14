@@ -80,7 +80,7 @@ namespace Test
 
         private void bSearch_Click(object sender, EventArgs e)
         {
-            lbSearchList.Items.Clear();
+            lvSearchList.Items.Clear();
             if (tbSearch.Text != "")
             {
                 string searchInput = tbSearch.Text;
@@ -154,6 +154,7 @@ namespace Test
                 // patientThreadStart(lvSearchList.SelectedItems[0].SubItems[3].Text);
                 ParameterizedThreadStart pat = new ParameterizedThreadStart(patientThreadStart);
                 allThreads[threadCount] = new Thread(pat);
+                allThreads[threadCount].IsBackground = true;
                 allThreads[threadCount].Start(lvSearchList.SelectedItems[0].SubItems[3].Text);
                 threadCount++;
 
