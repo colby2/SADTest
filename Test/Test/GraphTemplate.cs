@@ -157,10 +157,10 @@ namespace Test
         private void bGraph_Click(object sender, EventArgs e)
         {
             removeAllDataPoints();
-            Console.WriteLine(cbSubTest.SelectedItem.ToString());
+            //Console.WriteLine(cbSubTest.SelectedItem.ToString());
             if (cbSubTest.SelectedItem.ToString() == "HDL")
             {
-                Console.WriteLine("got here");
+                //Console.WriteLine("got here");
                 if (id != null)
                 {
                     //So here a person's name is selected in the search list.
@@ -184,6 +184,10 @@ namespace Test
                     chart1.Series[graphName].ChartArea = "ChartArea1";//may not be needed
                     reader.Close();
                     connection.Close();
+                }
+                else if(cbSubTest.SelectedItem.ToString() == "LDL")
+                {
+
                 }
             }
         }
