@@ -162,7 +162,8 @@ namespace Test
                 lvDiabeticTestList.Items.Add(lv);
             }
             reader.Close();
-
+            
+           // string selectedNotes = "SELECT "
             connection.Close(); // close database connection
 
 
