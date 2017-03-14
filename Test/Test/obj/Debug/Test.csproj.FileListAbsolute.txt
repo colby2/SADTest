@@ -138,3 +138,7 @@ C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\bin\Debug\DiabeticHealthDB.d
 C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\bin\Debug\DiabeticHealthDB.pdb
 C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.InsertPatient.resources
 C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddNotes.resources
+C:\Users\jscoma\Source\Repos\SADTest\Test\Test\bin\Debug\DiabeticHealthDB.dll
+C:\Users\jscoma\Source\Repos\SADTest\Test\Test\bin\Debug\DiabeticHealthDB.pdb
+C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.InsertPatient.resources
+C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddNotes.resources
