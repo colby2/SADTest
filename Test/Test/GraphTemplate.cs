@@ -144,12 +144,12 @@ namespace Test
             else if (testSelectBox.SelectedIndex == 1)
             {
                 cbSubTest.Items.Add("Heart Rate");
-                cbSubTest.Items.Add("Blood Pressure");
+                //cbSubTest.Items.Add("Blood Pressure");
                 cbSubTest.Items.Add("Respiratory Rate");
                 cbSubTest.Items.Add("Oxygen Saturation");
                 cbSubTest.Items.Add("Height");
                 cbSubTest.Items.Add("Weight");
-                cbSubTest.Items.Add("BMI");
+                //cbSubTest.Items.Add("BMI");
                 cbSubTest.Items.Add("Temperature");
             }
         }
@@ -158,7 +158,7 @@ namespace Test
         {
             removeAllDataPoints();
             //Console.WriteLine(cbSubTest.SelectedItem.ToString());
-            if (cbSubTest.SelectedItem.ToString() == "HDL")
+            if (cbSubTest.SelectedItem.ToString() == "HgA1C")
             {
                 //Console.WriteLine("got here");
                 if (id != null)
@@ -179,17 +179,286 @@ namespace Test
                     {
 
                         chart1.Series[graphName].Points.AddY(reader.GetDouble(2));
-                        chart1.Series[graphName].Points.AddY(0);
                     }
                     chart1.Series[graphName].ChartArea = "ChartArea1";//may not be needed
                     reader.Close();
                     connection.Close();
                 }
-                else if(cbSubTest.SelectedItem.ToString() == "LDL")
+            }
+            else if (cbSubTest.SelectedItem.ToString() == "Cholesterol")
+            {
+                //Console.WriteLine("got here");
+                if (id != null)
                 {
+                    //So here a person's name is selected in the search list.
+                    //Now we need to determine which tests are available for this person.
+                    string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+                    MySqlConnection connection = new MySqlConnection(connectionString);
+                    connection.Open();
+                    //int id = Int32.Parse(lvSearch.SelectedItems[0].SubItems[3].Text);
 
+                    string testSearch = "Select * FROM LipidTestInformation WHERE PatientID =" + id + ";";
+                    MySqlCommand cmd = new MySqlCommand(testSearch, connection);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    chart1.Series[graphName].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                    while (reader.Read())
+                    {
+
+                        chart1.Series[graphName].Points.AddY(reader.GetDouble(3));
+                    }
+                    chart1.Series[graphName].ChartArea = "ChartArea1";//may not be needed
+                    reader.Close();
+                    connection.Close();
                 }
             }
+        
+            else if (cbSubTest.SelectedItem.ToString() == "HDL")
+            {
+                //Console.WriteLine("got here");
+                if (id != null)
+                {
+                    //So here a person's name is selected in the search list.
+                    //Now we need to determine which tests are available for this person.
+                    string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+                    MySqlConnection connection = new MySqlConnection(connectionString);
+                    connection.Open();
+                    //int id = Int32.Parse(lvSearch.SelectedItems[0].SubItems[3].Text);
+
+                    string testSearch = "Select * FROM LipidTestInformation WHERE PatientID =" + id + ";";
+                    MySqlCommand cmd = new MySqlCommand(testSearch, connection);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    chart1.Series[graphName].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                    while (reader.Read())
+                    {
+
+                        chart1.Series[graphName].Points.AddY(reader.GetDouble(4));
+                    }
+                    chart1.Series[graphName].ChartArea = "ChartArea1";//may not be needed
+                    reader.Close();
+                    connection.Close();
+                }
+            }
+            else if (cbSubTest.SelectedItem.ToString() == "LDL")
+            {
+                //Console.WriteLine("got here");
+                if (id != null)
+                {
+                    //So here a person's name is selected in the search list.
+                    //Now we need to determine which tests are available for this person.
+                    string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+                    MySqlConnection connection = new MySqlConnection(connectionString);
+                    connection.Open();
+                    //int id = Int32.Parse(lvSearch.SelectedItems[0].SubItems[3].Text);
+
+                    string testSearch = "Select * FROM LipidTestInformation WHERE PatientID =" + id + ";";
+                    MySqlCommand cmd = new MySqlCommand(testSearch, connection);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    chart1.Series[graphName].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                    while (reader.Read())
+                    {
+
+                        chart1.Series[graphName].Points.AddY(reader.GetDouble(5));
+                    }
+                    chart1.Series[graphName].ChartArea = "ChartArea1";//may not be needed
+                    reader.Close();
+                    connection.Close();
+                }
+            }
+            else if (cbSubTest.SelectedItem.ToString() == "Triglycerides")
+            {
+                //Console.WriteLine("got here");
+                if (id != null)
+                {
+                    //So here a person's name is selected in the search list.
+                    //Now we need to determine which tests are available for this person.
+                    string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+                    MySqlConnection connection = new MySqlConnection(connectionString);
+                    connection.Open();
+                    //int id = Int32.Parse(lvSearch.SelectedItems[0].SubItems[3].Text);
+
+                    string testSearch = "Select * FROM LipidTestInformation WHERE PatientID =" + id + ";";
+                    MySqlCommand cmd = new MySqlCommand(testSearch, connection);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    chart1.Series[graphName].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                    while (reader.Read())
+                    {
+
+                        chart1.Series[graphName].Points.AddY(reader.GetDouble(6));
+                    }
+                    chart1.Series[graphName].ChartArea = "ChartArea1";//may not be needed
+                    reader.Close();
+                    connection.Close();
+                }
+            }
+            else if (cbSubTest.SelectedItem.ToString() == "Heart Rate")
+            {
+                //Console.WriteLine("got here");
+                if (id != null)
+                {
+                    //So here a person's name is selected in the search list.
+                    //Now we need to determine which tests are available for this person.
+                    string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+                    MySqlConnection connection = new MySqlConnection(connectionString);
+                    connection.Open();
+                    //int id = Int32.Parse(lvSearch.SelectedItems[0].SubItems[3].Text);
+
+                    string testSearch = "Select * FROM VitalsInformation WHERE PatientID =" + id + ";";
+                    MySqlCommand cmd = new MySqlCommand(testSearch, connection);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    chart1.Series[graphName].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                    while (reader.Read())
+                    {
+
+                        chart1.Series[graphName].Points.AddY(reader.GetInt32(2));
+                    }
+                    chart1.Series[graphName].ChartArea = "ChartArea1";//may not be needed
+                    reader.Close();
+                    connection.Close();
+                }
+            }
+            else if (cbSubTest.SelectedItem.ToString() == "Respiratory Rate")
+            {
+                //Console.WriteLine("got here");
+                if (id != null)
+                {
+                    //So here a person's name is selected in the search list.
+                    //Now we need to determine which tests are available for this person.
+                    string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+                    MySqlConnection connection = new MySqlConnection(connectionString);
+                    connection.Open();
+                    //int id = Int32.Parse(lvSearch.SelectedItems[0].SubItems[3].Text);
+
+                    string testSearch = "Select * FROM VitalsInformation WHERE PatientID =" + id + ";";
+                    MySqlCommand cmd = new MySqlCommand(testSearch, connection);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    chart1.Series[graphName].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                    while (reader.Read())
+                    {
+
+                        chart1.Series[graphName].Points.AddY(reader.GetInt32(4));
+                    }
+                    chart1.Series[graphName].ChartArea = "ChartArea1";//may not be needed
+                    reader.Close();
+                    connection.Close();
+                }
+            }
+            else if (cbSubTest.SelectedItem.ToString() == "Oxygen Saturation")
+            {
+                //Console.WriteLine("got here");
+                if (id != null)
+                {
+                    //So here a person's name is selected in the search list.
+                    //Now we need to determine which tests are available for this person.
+                    string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+                    MySqlConnection connection = new MySqlConnection(connectionString);
+                    connection.Open();
+                    //int id = Int32.Parse(lvSearch.SelectedItems[0].SubItems[3].Text);
+
+                    string testSearch = "Select * FROM VitalsInformation WHERE PatientID =" + id + ";";
+                    MySqlCommand cmd = new MySqlCommand(testSearch, connection);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    chart1.Series[graphName].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                    while (reader.Read())
+                    {
+
+                        chart1.Series[graphName].Points.AddY(reader.GetInt32(5));
+                    }
+                    chart1.Series[graphName].ChartArea = "ChartArea1";//may not be needed
+                    reader.Close();
+                    connection.Close();
+                }
+            }
+            else if (cbSubTest.SelectedItem.ToString() == "Height")
+            {
+                //Console.WriteLine("got here");
+                if (id != null)
+                {
+                    //So here a person's name is selected in the search list.
+                    //Now we need to determine which tests are available for this person.
+                    string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+                    MySqlConnection connection = new MySqlConnection(connectionString);
+                    connection.Open();
+                    //int id = Int32.Parse(lvSearch.SelectedItems[0].SubItems[3].Text);
+
+                    string testSearch = "Select * FROM VitalsInformation WHERE PatientID =" + id + ";";
+                    MySqlCommand cmd = new MySqlCommand(testSearch, connection);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    chart1.Series[graphName].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                    while (reader.Read())
+                    {
+
+                        chart1.Series[graphName].Points.AddY(reader.GetInt32(7));
+                    }
+                    chart1.Series[graphName].ChartArea = "ChartArea1";//may not be needed
+                    reader.Close();
+                    connection.Close();
+                }
+            }
+            else if (cbSubTest.SelectedItem.ToString() == "Weight")
+            {
+                //Console.WriteLine("got here");
+                if (id != null)
+                {
+                    //So here a person's name is selected in the search list.
+                    //Now we need to determine which tests are available for this person.
+                    string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+                    MySqlConnection connection = new MySqlConnection(connectionString);
+                    connection.Open();
+                    //int id = Int32.Parse(lvSearch.SelectedItems[0].SubItems[3].Text);
+
+                    string testSearch = "Select * FROM VitalsInformation WHERE PatientID =" + id + ";";
+                    MySqlCommand cmd = new MySqlCommand(testSearch, connection);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    chart1.Series[graphName].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                    while (reader.Read())
+                    {
+
+                        chart1.Series[graphName].Points.AddY(reader.GetInt32(8));
+                    }
+                    chart1.Series[graphName].ChartArea = "ChartArea1";//may not be needed
+                    reader.Close();
+                    connection.Close();
+                }
+            }
+            else if (cbSubTest.SelectedItem.ToString() == "Temperature")
+            {
+                //Console.WriteLine("got here");
+                if (id != null)
+                {
+                    //So here a person's name is selected in the search list.
+                    //Now we need to determine which tests are available for this person.
+                    string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+                    MySqlConnection connection = new MySqlConnection(connectionString);
+                    connection.Open();
+                    //int id = Int32.Parse(lvSearch.SelectedItems[0].SubItems[3].Text);
+
+                    string testSearch = "Select * FROM VitalsInformation WHERE PatientID =" + id + ";";
+                    MySqlCommand cmd = new MySqlCommand(testSearch, connection);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+
+                    chart1.Series[graphName].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                    while (reader.Read())
+                    {
+
+                        chart1.Series[graphName].Points.AddY(reader.GetDouble(9));
+                    }
+                    chart1.Series[graphName].ChartArea = "ChartArea1";//may not be needed
+                    reader.Close();
+                    connection.Close();
+                }
+            }
+
+
+
         }
     }
 }
