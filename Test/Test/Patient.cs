@@ -162,7 +162,8 @@ namespace Test
                 lvDiabeticTestList.Items.Add(lv);
             }
             reader.Close();
-
+            
+           // string selectedNotes = "SELECT "
             connection.Close(); // close database connection
 
 
@@ -318,6 +319,22 @@ namespace Test
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Patient_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            tcPatient.SelectTab("tpNotes");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddNotes addNotes = new AddNotes();
+            addNotes.ShowDialog();
         }
     }
 }

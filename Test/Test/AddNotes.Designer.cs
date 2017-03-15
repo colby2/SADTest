@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.notestb = new System.Windows.Forms.TextBox();
+            this.submitNotes = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // notestb
@@ -40,13 +41,23 @@
             this.notestb.Size = new System.Drawing.Size(575, 303);
             this.notestb.TabIndex = 0;
             // 
-            // Notes
+            // submitNotes
+            // 
+            this.submitNotes.Location = new System.Drawing.Point(769, 521);
+            this.submitNotes.Name = "submitNotes";
+            this.submitNotes.Size = new System.Drawing.Size(175, 53);
+            this.submitNotes.TabIndex = 1;
+            this.submitNotes.Text = "Submit Notes";
+            this.submitNotes.UseVisualStyleBackColor = true;
+            // 
+            // AddNotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 615);
+            this.Controls.Add(this.submitNotes);
             this.Controls.Add(this.notestb);
-            this.Name = "Notes";
+            this.Name = "AddNotes";
             this.Text = "Notes";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -56,5 +67,6 @@
         #endregion
 
         private System.Windows.Forms.TextBox notestb;
+        private System.Windows.Forms.Button submitNotes;
     }
 }
