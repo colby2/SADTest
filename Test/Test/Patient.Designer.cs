@@ -98,10 +98,6 @@
             this.DiabeticEyeExam = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NutritionalCounseling = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tpLipidTest = new System.Windows.Forms.TabPage();
-            this.tpDiabeticBackground = new System.Windows.Forms.TabPage();
-            this.tpNotes = new System.Windows.Forms.TabPage();
-            this.tbNotes = new System.Windows.Forms.TextBox();
-            this.addNotes = new System.Windows.Forms.Button();
             this.lvLipidTestList = new System.Windows.Forms.ListView();
             this.DateOfLipidTest = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.HgA1C = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -110,10 +106,15 @@
             this.LDL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Triglycerides = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.TCHOLHDLRatio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tpDiabeticBackground = new System.Windows.Forms.TabPage();
             this.lvDiabeticBackgroundList = new System.Windows.Forms.ListView();
             this.DateInfoTaken = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DateDiagnosed = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.DiabetesType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tpNotes = new System.Windows.Forms.TabPage();
+            this.tbNotes = new System.Windows.Forms.TextBox();
+            this.addNotes = new System.Windows.Forms.Button();
+            this.addAllergyButton = new System.Windows.Forms.Button();
             this.tcPatient.SuspendLayout();
             this.tpDemographics.SuspendLayout();
             this.tpAllergies.SuspendLayout();
@@ -437,6 +438,7 @@
             // 
             // tpAllergies
             // 
+            this.tpAllergies.Controls.Add(this.addAllergyButton);
             this.tpAllergies.Controls.Add(this.lvAllergyList);
             this.tpAllergies.Location = new System.Drawing.Point(4, 22);
             this.tpAllergies.Name = "tpAllergies";
@@ -705,46 +707,6 @@
             this.tpLipidTest.Text = "LipidTest";
             this.tpLipidTest.UseVisualStyleBackColor = true;
             // 
-            // tpDiabeticBackground
-            // 
-            this.tpDiabeticBackground.Controls.Add(this.lvDiabeticBackgroundList);
-            this.tpDiabeticBackground.Location = new System.Drawing.Point(4, 22);
-            this.tpDiabeticBackground.Name = "tpDiabeticBackground";
-            this.tpDiabeticBackground.Size = new System.Drawing.Size(780, 561);
-            this.tpDiabeticBackground.TabIndex = 5;
-            this.tpDiabeticBackground.Text = "Diabetic Background";
-            this.tpDiabeticBackground.UseVisualStyleBackColor = true;
-            // 
-            // tpNotes
-            // 
-            this.tpNotes.Controls.Add(this.tbNotes);
-            this.tpNotes.Controls.Add(this.addNotes);
-            this.tpNotes.Location = new System.Drawing.Point(4, 22);
-            this.tpNotes.Name = "tpNotes";
-            this.tpNotes.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNotes.Size = new System.Drawing.Size(780, 561);
-            this.tpNotes.TabIndex = 8;
-            this.tpNotes.Text = "Notes";
-            this.tpNotes.UseVisualStyleBackColor = true;
-            // 
-            // tbNotes
-            // 
-            this.tbNotes.Location = new System.Drawing.Point(244, 168);
-            this.tbNotes.Multiline = true;
-            this.tbNotes.Name = "tbNotes";
-            this.tbNotes.Size = new System.Drawing.Size(279, 86);
-            this.tbNotes.TabIndex = 1;
-            // 
-            // addNotes
-            // 
-            this.addNotes.Location = new System.Drawing.Point(604, 463);
-            this.addNotes.Name = "addNotes";
-            this.addNotes.Size = new System.Drawing.Size(128, 44);
-            this.addNotes.TabIndex = 0;
-            this.addNotes.Text = "Add Notes for This Patient";
-            this.addNotes.UseVisualStyleBackColor = true;
-            this.addNotes.Click += new System.EventHandler(this.button2_Click);
-            // 
             // lvLipidTestList
             // 
             this.lvLipidTestList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -791,6 +753,16 @@
             // 
             this.TCHOLHDLRatio.Text = "TCHOLHDL Ratio";
             // 
+            // tpDiabeticBackground
+            // 
+            this.tpDiabeticBackground.Controls.Add(this.lvDiabeticBackgroundList);
+            this.tpDiabeticBackground.Location = new System.Drawing.Point(4, 22);
+            this.tpDiabeticBackground.Name = "tpDiabeticBackground";
+            this.tpDiabeticBackground.Size = new System.Drawing.Size(780, 561);
+            this.tpDiabeticBackground.TabIndex = 5;
+            this.tpDiabeticBackground.Text = "Diabetic Background";
+            this.tpDiabeticBackground.UseVisualStyleBackColor = true;
+            // 
             // lvDiabeticBackgroundList
             // 
             this.lvDiabeticBackgroundList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -815,6 +787,46 @@
             // DiabetesType
             // 
             this.DiabetesType.Text = "DiabetesType";
+            // 
+            // tpNotes
+            // 
+            this.tpNotes.Controls.Add(this.tbNotes);
+            this.tpNotes.Controls.Add(this.addNotes);
+            this.tpNotes.Location = new System.Drawing.Point(4, 22);
+            this.tpNotes.Name = "tpNotes";
+            this.tpNotes.Padding = new System.Windows.Forms.Padding(3);
+            this.tpNotes.Size = new System.Drawing.Size(780, 561);
+            this.tpNotes.TabIndex = 8;
+            this.tpNotes.Text = "Notes";
+            this.tpNotes.UseVisualStyleBackColor = true;
+            // 
+            // tbNotes
+            // 
+            this.tbNotes.Location = new System.Drawing.Point(244, 168);
+            this.tbNotes.Multiline = true;
+            this.tbNotes.Name = "tbNotes";
+            this.tbNotes.Size = new System.Drawing.Size(279, 86);
+            this.tbNotes.TabIndex = 1;
+            // 
+            // addNotes
+            // 
+            this.addNotes.Location = new System.Drawing.Point(604, 463);
+            this.addNotes.Name = "addNotes";
+            this.addNotes.Size = new System.Drawing.Size(128, 44);
+            this.addNotes.TabIndex = 0;
+            this.addNotes.Text = "Add Notes for This Patient";
+            this.addNotes.UseVisualStyleBackColor = true;
+            this.addNotes.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // addAllergyButton
+            // 
+            this.addAllergyButton.Location = new System.Drawing.Point(561, 448);
+            this.addAllergyButton.Name = "addAllergyButton";
+            this.addAllergyButton.Size = new System.Drawing.Size(127, 49);
+            this.addAllergyButton.TabIndex = 1;
+            this.addAllergyButton.Text = "Add Allergy Information for this Patient";
+            this.addAllergyButton.UseVisualStyleBackColor = true;
+            this.addAllergyButton.Click += new System.EventHandler(this.addAllergyButton_Click);
             // 
             // Patient
             // 
@@ -928,5 +940,6 @@
         private System.Windows.Forms.ColumnHeader DateInfoTaken;
         private System.Windows.Forms.ColumnHeader DateDiagnosed;
         private System.Windows.Forms.ColumnHeader DiabetesType;
+        private System.Windows.Forms.Button addAllergyButton;
     }
 }

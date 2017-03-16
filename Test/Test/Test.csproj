@@ -52,6 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAllergyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAllergyInfo.Designer.cs">
+      <DependentUpon>AddAllergyInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="GraphTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +102,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddAllergyInfo.resx">
+      <DependentUpon>AddAllergyInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GraphTemplate.resx">
       <DependentUpon>GraphTemplate.cs</DependentUpon>
     </EmbeddedResource>

@@ -399,5 +399,11 @@ namespace Test
         {
 
         }
+
+        private void addAllergyButton_Click(object sender, EventArgs e)
+        {
+            AddAllergyInfo addAllergyForm = new AddAllergyInfo(Int32.Parse(PatientId));
+            addAllergyForm.ShowDialog();
+        }
     }
 }
