@@ -366,17 +366,27 @@ namespace Test
 
         }
 
+        /********************************************************************************************
+       * Button Click that opens notes tab on Patient form
+       * ******************************************************************************************/
         private void button1_Click(object sender, EventArgs e)
         {
             tcPatient.SelectTab("tpNotes");
         }
 
+        /********************************************************************************************
+       * Button Click that opens new form for user to insert notes for the current patient
+       * ******************************************************************************************/
         private void button2_Click(object sender, EventArgs e)
         {
             AddNotes addNotes = new AddNotes();
             addNotes.ShowDialog();
         }
 
+        /********************************************************************************************
+       * Button Click that allows user to delete a user from the database. Calls the delete funciton
+       * for demographics and asks for confirmation before deleteing. 
+       * ******************************************************************************************/
         private void bDelete_Click(object sender, EventArgs e)
         {
             DialogResult confirmation = new DialogResult();
@@ -399,7 +409,9 @@ namespace Test
         {
 
         }
-
+        /********************************************************************************************
+       * Button Click that opens new form from which user can add Allergy Info for the current patient
+       * ******************************************************************************************/
         private void addAllergyButton_Click(object sender, EventArgs e)
         {
             AddAllergyInfo addAllergyForm = new AddAllergyInfo(Int32.Parse(PatientId));
