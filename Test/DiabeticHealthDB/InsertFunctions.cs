@@ -9,7 +9,9 @@ namespace DiabeticHealthDB
 {
     public static class InsertFunctions
     {
-        ////having issues with datetime differences between mysql and .net
+        /************************************************************************************************
+      * Inserts info into Demographic Table from from
+      * **********************************************************************************************/
         public static int InsertIntoDemographics(string FirstName, string LastName, string DateofLastVisit, string Street, string City, string State, string Zip, string DOB, string Phone, string PrimaryInsuranceProvider, string SecondaryInsuranceProvider)
         {
             int totalRowsInserted = 0;
@@ -47,7 +49,40 @@ namespace DiabeticHealthDB
             return totalRowsInserted;
 
         }
+        /************************************************************************************************
+         * Inserts info into AllergyInfo Table from from
+         * **********************************************************************************************/
+        public static int InsertIntoAllergyInfo(int PatientID, string AllergicTo, string Reaction)
+        {
+            int totalRowsInserted = 0;
+            MySqlConnection conn = DatabaseConnection.GetConnection();
+            string qry =
+                "INSERT INTO `AllergyInfo`(`PatientID`, `AllergicTo`, `Reaction`) VALUES (@PatientID, @AllergicTO, @Reaction);";
+            MySqlCommand cmd = new MySqlCommand(qry, conn);
+            cmd.Parameters.AddWithValue("@PatientID", PatientID);
+            cmd.Parameters.AddWithValue("@AllergicTo", AllergicTo);
+            cmd.Parameters.AddWithValue("@Reaction", Reaction);
+            try
+            {
+                conn.Open();
+                totalRowsInserted = cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)//perhaps pass exception to message box
+            {
+                totalRowsInserted = 0;
+                throw ex;
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return totalRowsInserted;
+
+        }
     }
+
+  
 }
 
 
