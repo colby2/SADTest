@@ -162,8 +162,48 @@ namespace Test
                 lvDiabeticTestList.Items.Add(lv);
             }
             reader.Close();
-            
-           // string selectedNotes = "SELECT "
+
+            /****************************************************************************************
+             * populates lvLipidTestList
+             * **************************************************************************************/
+            string LipidTestResults = "SELECT * FROM LipidTestInformation WHERE PatientID = " + selectedID + ";";
+            cmd = new MySqlCommand(LipidTestResults, connection);
+            reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem lv = new ListViewItem(reader.GetString(1));
+                lv.SubItems.Add(reader.GetString(2));
+                lv.SubItems.Add(reader.GetString(3));
+                lv.SubItems.Add(reader.GetString(4));
+                lv.SubItems.Add(reader.GetString(5));
+                lv.SubItems.Add(reader.GetString(6));
+                lv.SubItems.Add("ADD THIS LATER!");
+
+                lvLipidTestList.Items.Add(lv);
+            }
+            reader.Close();
+
+            /****************************************************************************************
+            * populates lvLipidTestList
+            * **************************************************************************************/
+            string DiabeticBackgroundResults = "SELECT * FROM DiabetesBackground WHERE PatientID = " + selectedID + ";";
+            cmd = new MySqlCommand(DiabeticBackgroundResults, connection);
+            reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem lv = new ListViewItem(reader.GetString(1));
+                lv.SubItems.Add(reader.GetString(2));
+                lv.SubItems.Add(reader.GetString(3));
+
+                lvDiabeticBackgroundList.Items.Add(lv);
+            }
+            reader.Close();
+
+
+
+            // string selectedNotes = "SELECT "
             connection.Close(); // close database connection
 
 
@@ -353,6 +393,11 @@ namespace Test
                 MessageBox.Show("Patient NOT Deleted", "", MessageBoxButtons.OK);
 
             }
+        }
+
+        private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -102,6 +102,18 @@
             this.tpNotes = new System.Windows.Forms.TabPage();
             this.tbNotes = new System.Windows.Forms.TextBox();
             this.addNotes = new System.Windows.Forms.Button();
+            this.lvLipidTestList = new System.Windows.Forms.ListView();
+            this.DateOfLipidTest = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.HgA1C = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Cholesterol = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.HDL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LDL = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Triglycerides = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TCHOLHDLRatio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lvDiabeticBackgroundList = new System.Windows.Forms.ListView();
+            this.DateInfoTaken = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DateDiagnosed = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DiabetesType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tcPatient.SuspendLayout();
             this.tpDemographics.SuspendLayout();
             this.tpAllergies.SuspendLayout();
@@ -109,6 +121,8 @@
             this.tpVitals.SuspendLayout();
             this.tpDiabeticMeds.SuspendLayout();
             this.tpDiabeticTest.SuspendLayout();
+            this.tpLipidTest.SuspendLayout();
+            this.tpDiabeticBackground.SuspendLayout();
             this.tpNotes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -682,6 +696,7 @@
             // 
             // tpLipidTest
             // 
+            this.tpLipidTest.Controls.Add(this.lvLipidTestList);
             this.tpLipidTest.Location = new System.Drawing.Point(4, 22);
             this.tpLipidTest.Name = "tpLipidTest";
             this.tpLipidTest.Padding = new System.Windows.Forms.Padding(3);
@@ -692,6 +707,7 @@
             // 
             // tpDiabeticBackground
             // 
+            this.tpDiabeticBackground.Controls.Add(this.lvDiabeticBackgroundList);
             this.tpDiabeticBackground.Location = new System.Drawing.Point(4, 22);
             this.tpDiabeticBackground.Name = "tpDiabeticBackground";
             this.tpDiabeticBackground.Size = new System.Drawing.Size(780, 561);
@@ -729,6 +745,77 @@
             this.addNotes.UseVisualStyleBackColor = true;
             this.addNotes.Click += new System.EventHandler(this.button2_Click);
             // 
+            // lvLipidTestList
+            // 
+            this.lvLipidTestList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.DateOfLipidTest,
+            this.HgA1C,
+            this.Cholesterol,
+            this.HDL,
+            this.LDL,
+            this.Triglycerides,
+            this.TCHOLHDLRatio});
+            this.lvLipidTestList.Location = new System.Drawing.Point(4, 7);
+            this.lvLipidTestList.Name = "lvLipidTestList";
+            this.lvLipidTestList.Size = new System.Drawing.Size(770, 548);
+            this.lvLipidTestList.TabIndex = 0;
+            this.lvLipidTestList.UseCompatibleStateImageBehavior = false;
+            this.lvLipidTestList.View = System.Windows.Forms.View.Details;
+            this.lvLipidTestList.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged_1);
+            // 
+            // DateOfLipidTest
+            // 
+            this.DateOfLipidTest.Text = "Date Of Test";
+            // 
+            // HgA1C
+            // 
+            this.HgA1C.Text = "HgA1C";
+            // 
+            // Cholesterol
+            // 
+            this.Cholesterol.Text = "Cholesterol";
+            // 
+            // HDL
+            // 
+            this.HDL.Text = "HDL";
+            // 
+            // LDL
+            // 
+            this.LDL.Text = "LDL";
+            // 
+            // Triglycerides
+            // 
+            this.Triglycerides.Text = "Triglycerides";
+            // 
+            // TCHOLHDLRatio
+            // 
+            this.TCHOLHDLRatio.Text = "TCHOLHDL Ratio";
+            // 
+            // lvDiabeticBackgroundList
+            // 
+            this.lvDiabeticBackgroundList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.DateInfoTaken,
+            this.DateDiagnosed,
+            this.DiabetesType});
+            this.lvDiabeticBackgroundList.Location = new System.Drawing.Point(4, 4);
+            this.lvDiabeticBackgroundList.Name = "lvDiabeticBackgroundList";
+            this.lvDiabeticBackgroundList.Size = new System.Drawing.Size(773, 554);
+            this.lvDiabeticBackgroundList.TabIndex = 0;
+            this.lvDiabeticBackgroundList.UseCompatibleStateImageBehavior = false;
+            this.lvDiabeticBackgroundList.View = System.Windows.Forms.View.Details;
+            // 
+            // DateInfoTaken
+            // 
+            this.DateInfoTaken.Text = "Date Info Taken";
+            // 
+            // DateDiagnosed
+            // 
+            this.DateDiagnosed.Text = "DateDiagnosed";
+            // 
+            // DiabetesType
+            // 
+            this.DiabetesType.Text = "DiabetesType";
+            // 
             // Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -746,6 +833,8 @@
             this.tpVitals.ResumeLayout(false);
             this.tpDiabeticMeds.ResumeLayout(false);
             this.tpDiabeticTest.ResumeLayout(false);
+            this.tpLipidTest.ResumeLayout(false);
+            this.tpDiabeticBackground.ResumeLayout(false);
             this.tpNotes.ResumeLayout(false);
             this.tpNotes.PerformLayout();
             this.ResumeLayout(false);
@@ -827,5 +916,17 @@
         private System.Windows.Forms.ColumnHeader NutritionalCounseling;
         private System.Windows.Forms.Button addNotes;
         private System.Windows.Forms.TextBox tbNotes;
+        private System.Windows.Forms.ListView lvLipidTestList;
+        private System.Windows.Forms.ColumnHeader DateOfLipidTest;
+        private System.Windows.Forms.ColumnHeader HgA1C;
+        private System.Windows.Forms.ColumnHeader Cholesterol;
+        private System.Windows.Forms.ColumnHeader HDL;
+        private System.Windows.Forms.ColumnHeader LDL;
+        private System.Windows.Forms.ColumnHeader Triglycerides;
+        private System.Windows.Forms.ColumnHeader TCHOLHDLRatio;
+        private System.Windows.Forms.ListView lvDiabeticBackgroundList;
+        private System.Windows.Forms.ColumnHeader DateInfoTaken;
+        private System.Windows.Forms.ColumnHeader DateDiagnosed;
+        private System.Windows.Forms.ColumnHeader DiabetesType;
     }
 }
