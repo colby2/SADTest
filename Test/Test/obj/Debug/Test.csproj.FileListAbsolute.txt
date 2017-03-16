@@ -160,3 +160,5 @@ C:\Users\Ryan Kesterson\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddNotes.r
 C:\Users\Ryan Kesterson\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Patient.resources
 C:\Users\Ryan Kesterson\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Properties.Resources.resources
 C:\Users\Ryan Kesterson\Source\Repos\SADTest\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\SADTest\Test\Test\obj\Debug\Test.InsertPatient.resources
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddNotes.resources

@@ -100,8 +100,8 @@
             this.tpLipidTest = new System.Windows.Forms.TabPage();
             this.tpDiabeticBackground = new System.Windows.Forms.TabPage();
             this.tpNotes = new System.Windows.Forms.TabPage();
-            this.addNotes = new System.Windows.Forms.Button();
             this.tbNotes = new System.Windows.Forms.TextBox();
+            this.addNotes = new System.Windows.Forms.Button();
             this.tcPatient.SuspendLayout();
             this.tpDemographics.SuspendLayout();
             this.tpAllergies.SuspendLayout();
@@ -236,6 +236,7 @@
             this.bDelete.TabIndex = 25;
             this.bDelete.Text = "Delete";
             this.bDelete.UseVisualStyleBackColor = true;
+            this.bDelete.Click += new System.EventHandler(this.bDelete_Click);
             // 
             // tbSecondaryInsurance
             // 
@@ -710,6 +711,14 @@
             this.tpNotes.Text = "Notes";
             this.tpNotes.UseVisualStyleBackColor = true;
             // 
+            // tbNotes
+            // 
+            this.tbNotes.Location = new System.Drawing.Point(244, 168);
+            this.tbNotes.Multiline = true;
+            this.tbNotes.Name = "tbNotes";
+            this.tbNotes.Size = new System.Drawing.Size(279, 86);
+            this.tbNotes.TabIndex = 1;
+            // 
             // addNotes
             // 
             this.addNotes.Location = new System.Drawing.Point(604, 463);
@@ -719,14 +728,6 @@
             this.addNotes.Text = "Add Notes for This Patient";
             this.addNotes.UseVisualStyleBackColor = true;
             this.addNotes.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // tbNotes
-            // 
-            this.tbNotes.Location = new System.Drawing.Point(244, 168);
-            this.tbNotes.Multiline = true;
-            this.tbNotes.Name = "tbNotes";
-            this.tbNotes.Size = new System.Drawing.Size(279, 86);
-            this.tbNotes.TabIndex = 1;
             // 
             // Patient
             // 
