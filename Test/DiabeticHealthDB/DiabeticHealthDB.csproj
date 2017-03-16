@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AllergyInfoGetSet.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="DeleteFunctions.cs" />
     <Compile Include="DemographicsGetSet.cs" />

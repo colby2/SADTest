@@ -162,3 +162,8 @@ C:\Users\Ryan Kesterson\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Properties
 C:\Users\Ryan Kesterson\Source\Repos\SADTest\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
 C:\Users\default.DESKTOP-U2654PP\Source\Repos\SADTest\Test\Test\obj\Debug\Test.InsertPatient.resources
 C:\Users\default.DESKTOP-U2654PP\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddNotes.resources
+C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\bin\Debug\DiabeticHealthDB.dll
+C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\bin\Debug\DiabeticHealthDB.pdb
+C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.InsertPatient.resources
+C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddNotes.resources
+C:\Users\default.DESKTOP-U2654PP\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddAllergyInfo.resources

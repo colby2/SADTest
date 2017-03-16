@@ -11,6 +11,7 @@ namespace DiabeticHealthDB
     {
         /************************************************************************************************
         *Function that will allow users to update all of the fields the user changes on the patient form
+        * in the demographics tab
         * ***********************************************************************************************/
         public static int UpdateDemographics(int PatientID, string FirstName, string LastName, string DateofLastVisit, string Street, string City, string State, string Zip, string DOB, string Phone, string PrimaryInsuranceProvider, string SecondaryInsuranceProvider)
         {
@@ -79,6 +80,36 @@ namespace DiabeticHealthDB
         }
         return rowsUpdated;
     }
- }
+
+        /************************************************************************************************
+    *Function that will allow users to update AllergicTo and Reaction fields in AllergyInfo Table
+    * ***********************************************************************************************/
+        public static int UpdateDateAllergyInfo(int AllergyInfoID, string AllergicTo, string Reaction)
+        {
+            int rowsUpdated = 0;
+            MySqlConnection connection = DatabaseConnection.GetConnection();
+            string updateQuery =
+                    "Update AllergyInfo Set AllergicTo = @AllergicTO, Reaction = @Reaction Where AllergyInfoID = @ID;";
+            MySqlCommand command = new MySqlCommand(updateQuery, connection);
+            command.Parameters.AddWithValue("@AllergictTo", AllergicTo);
+            command.Parameters.AddWithValue("@Reaction", Reaction);
+            command.Parameters.AddWithValue("@ID", AllergyInfoID);
+            try
+            {
+                connection.Open();
+                rowsUpdated = command.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                rowsUpdated = 0;
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return rowsUpdated;
+        }
+    }
 }
 

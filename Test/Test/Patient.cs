@@ -162,8 +162,48 @@ namespace Test
                 lvDiabeticTestList.Items.Add(lv);
             }
             reader.Close();
-            
-           // string selectedNotes = "SELECT "
+
+            /****************************************************************************************
+             * populates lvLipidTestList
+             * **************************************************************************************/
+            string LipidTestResults = "SELECT * FROM LipidTestInformation WHERE PatientID = " + selectedID + ";";
+            cmd = new MySqlCommand(LipidTestResults, connection);
+            reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem lv = new ListViewItem(reader.GetString(1));
+                lv.SubItems.Add(reader.GetString(2));
+                lv.SubItems.Add(reader.GetString(3));
+                lv.SubItems.Add(reader.GetString(4));
+                lv.SubItems.Add(reader.GetString(5));
+                lv.SubItems.Add(reader.GetString(6));
+                lv.SubItems.Add("ADD THIS LATER!");
+
+                lvLipidTestList.Items.Add(lv);
+            }
+            reader.Close();
+
+            /****************************************************************************************
+            * populates lvLipidTestList
+            * **************************************************************************************/
+            string DiabeticBackgroundResults = "SELECT * FROM DiabetesBackground WHERE PatientID = " + selectedID + ";";
+            cmd = new MySqlCommand(DiabeticBackgroundResults, connection);
+            reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem lv = new ListViewItem(reader.GetString(1));
+                lv.SubItems.Add(reader.GetString(2));
+                lv.SubItems.Add(reader.GetString(3));
+
+                lvDiabeticBackgroundList.Items.Add(lv);
+            }
+            reader.Close();
+
+
+
+            // string selectedNotes = "SELECT "
             connection.Close(); // close database connection
 
 
@@ -326,17 +366,27 @@ namespace Test
 
         }
 
+        /********************************************************************************************
+       * Button Click that opens notes tab on Patient form
+       * ******************************************************************************************/
         private void button1_Click(object sender, EventArgs e)
         {
             tcPatient.SelectTab("tpNotes");
         }
 
+        /********************************************************************************************
+       * Button Click that opens new form for user to insert notes for the current patient
+       * ******************************************************************************************/
         private void button2_Click(object sender, EventArgs e)
         {
             AddNotes addNotes = new AddNotes();
             addNotes.ShowDialog();
         }
 
+        /********************************************************************************************
+       * Button Click that allows user to delete a user from the database. Calls the delete funciton
+       * for demographics and asks for confirmation before deleteing. 
+       * ******************************************************************************************/
         private void bDelete_Click(object sender, EventArgs e)
         {
             DialogResult confirmation = new DialogResult();
@@ -353,6 +403,27 @@ namespace Test
                 MessageBox.Show("Patient NOT Deleted", "", MessageBoxButtons.OK);
 
             }
+        }
+
+        private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+        /********************************************************************************************
+       * Button Click that opens new form from which user can add Allergy Info for the current patient
+       * ******************************************************************************************/
+        private void addAllergyButton_Click(object sender, EventArgs e)
+        {
+            AddAllergyInfo addAllergyForm = new AddAllergyInfo(Int32.Parse(PatientId));
+            addAllergyForm.ShowDialog();
+            
+        }
+        /********************************************************************************************
+      * Button Click that refreshes
+      * ******************************************************************************************/
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            lvAllergyList.Update();
         }
     }
 }
