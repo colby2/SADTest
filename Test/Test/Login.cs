@@ -100,5 +100,10 @@ namespace Test
         {
             Close();
         }
+
+        private void tbUsername_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

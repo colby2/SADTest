@@ -88,10 +88,29 @@ namespace Test
                 string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
                 MySqlConnection connection = new MySqlConnection(connectionString);
 
+                
                 connection.Open();
-                string searchResults = "SELECT * FROM Demographics WHERE CONCAT(PatientID, ' ', FirstName, ' ', LastName, ' ', DOB) LIKE '%" + searchInput + "%'";
+                string searchResults = "";
+                if (cbFirstName.Checked == true && cbLastName.Checked == true && cbDOB.Checked == true)
+                    searchResults = "SELECT * FROM Demographics WHERE CONCAT(FirstName, ' ', LastName, ' ', DOB) LIKE '%" + searchInput + "%'";
+                else if (cbFirstName.Checked == true && cbLastName.Checked == true && cbDOB.Checked == false)
+                    searchResults = "SELECT * FROM Demographics WHERE CONCAT(FirstName, ' ', LastName) LIKE '%" + searchInput + "%'";
+                else if (cbFirstName.Checked == true && cbLastName.Checked == false && cbDOB.Checked == true)
+                    searchResults = "SELECT * FROM Demographics WHERE CONCAT(FirstName, ' ', DOB) LIKE '%" + searchInput + "%'";
+                else if (cbFirstName.Checked == true && cbLastName.Checked == false && cbDOB.Checked == false)
+                    searchResults = "SELECT * FROM Demographics WHERE CONCAT(FirstName) LIKE '%" + searchInput + "%'";
+                else if (cbFirstName.Checked == false && cbLastName.Checked == true && cbDOB.Checked == true)
+                    searchResults = "SELECT * FROM Demographics WHERE CONCAT(LastName, ' ', DOB) LIKE '%" + searchInput + "%'";
+                else if (cbFirstName.Checked == false && cbLastName.Checked == true && cbDOB.Checked == false)
+                    searchResults = "SELECT * FROM Demographics WHERE CONCAT(LastName) LIKE '%" + searchInput + "%'";
+                else if (cbFirstName.Checked == false && cbLastName.Checked == false && cbDOB.Checked == true)
+                    searchResults = "SELECT * FROM Demographics WHERE CONCAT(DOB) LIKE '%" + searchInput + "%'";
+                else if (cbFirstName.Checked == false && cbLastName.Checked == false && cbDOB.Checked == false) { goto End; /*redirects to End tag below*/ }
+
+
                 MySqlCommand cmd = new MySqlCommand(searchResults, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
+
 
 
                 while (reader.Read())
@@ -102,6 +121,7 @@ namespace Test
                 }
 
                 reader.Close();
+                End:
                 connection.Close();
             }
 
@@ -122,16 +142,6 @@ namespace Test
             threadCount++;
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Thread patientThread = new Thread(patientThreadStart);
-            // patientThreadStart(lbSearchList.SelectedItem.ToString());
-            ParameterizedThreadStart pat = new ParameterizedThreadStart(patientThreadStart);
-            allThreads[threadCount] = new Thread(pat);
-            allThreads[threadCount].IsBackground = true;
-            allThreads[threadCount].Start(lbSearchList.SelectedItem.ToString());
-            threadCount++;
-        }
 
         private void bLogout_Click(object sender, EventArgs e)
         {
@@ -159,6 +169,16 @@ namespace Test
                 threadCount++;
 
             }
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
