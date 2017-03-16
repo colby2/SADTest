@@ -416,6 +416,14 @@ namespace Test
         {
             AddAllergyInfo addAllergyForm = new AddAllergyInfo(Int32.Parse(PatientId));
             addAllergyForm.ShowDialog();
+            
+        }
+        /********************************************************************************************
+      * Button Click that refreshes
+      * ******************************************************************************************/
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            lvAllergyList.Update();
         }
     }
 }

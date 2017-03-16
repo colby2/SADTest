@@ -48,6 +48,7 @@ namespace Test
         {
             int insertedRows = InsertFunctions.InsertIntoAllergyInfo(PatientID, AllergicTo.Text, Reaction.Text);
             this.Close();
+            
         }
     }
 }

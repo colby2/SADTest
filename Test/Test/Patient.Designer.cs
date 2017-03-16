@@ -115,6 +115,7 @@
             this.tbNotes = new System.Windows.Forms.TextBox();
             this.addNotes = new System.Windows.Forms.Button();
             this.addAllergyButton = new System.Windows.Forms.Button();
+            this.refreshButton = new System.Windows.Forms.Button();
             this.tcPatient.SuspendLayout();
             this.tpDemographics.SuspendLayout();
             this.tpAllergies.SuspendLayout();
@@ -438,6 +439,7 @@
             // 
             // tpAllergies
             // 
+            this.tpAllergies.Controls.Add(this.refreshButton);
             this.tpAllergies.Controls.Add(this.addAllergyButton);
             this.tpAllergies.Controls.Add(this.lvAllergyList);
             this.tpAllergies.Location = new System.Drawing.Point(4, 22);
@@ -449,13 +451,17 @@
             // 
             // lvAllergyList
             // 
+            this.lvAllergyList.BackColor = System.Drawing.Color.Honeydew;
             this.lvAllergyList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.AllergicTo,
             this.Reaction});
+            this.lvAllergyList.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.lvAllergyList.GridLines = true;
             this.lvAllergyList.Location = new System.Drawing.Point(3, 3);
             this.lvAllergyList.Name = "lvAllergyList";
-            this.lvAllergyList.Size = new System.Drawing.Size(774, 555);
+            this.lvAllergyList.Size = new System.Drawing.Size(781, 555);
             this.lvAllergyList.TabIndex = 0;
+            this.lvAllergyList.TileSize = new System.Drawing.Size(3, 3);
             this.lvAllergyList.UseCompatibleStateImageBehavior = false;
             this.lvAllergyList.View = System.Windows.Forms.View.Details;
             this.lvAllergyList.SelectedIndexChanged += new System.EventHandler(this.lvAllergyList_SelectedIndexChanged);
@@ -828,6 +834,16 @@
             this.addAllergyButton.UseVisualStyleBackColor = true;
             this.addAllergyButton.Click += new System.EventHandler(this.addAllergyButton_Click);
             // 
+            // refreshButton
+            // 
+            this.refreshButton.Location = new System.Drawing.Point(380, 448);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(127, 49);
+            this.refreshButton.TabIndex = 2;
+            this.refreshButton.Text = "Refresh This Form";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
             // Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -941,5 +957,6 @@
         private System.Windows.Forms.ColumnHeader DateDiagnosed;
         private System.Windows.Forms.ColumnHeader DiabetesType;
         private System.Windows.Forms.Button addAllergyButton;
+        private System.Windows.Forms.Button refreshButton;
     }
 }
