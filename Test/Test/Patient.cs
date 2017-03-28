@@ -409,16 +409,18 @@ namespace Test
         /********************************************************************************************
       * Button Click that refreshes
       * ******************************************************************************************/
-        //private void refreshButtonAllergy_Click(object sender, EventArgs e)
-        //{
-        //    lvAllergyList.Update();
-        //}
         private void refreshButtonAllergy_Click_1(object sender, EventArgs e)
         {
-            lvAllergyList.Items.Clear();
-            InsertIntoAllergylv();
-            tcPatient.Refresh();
-            lvAllergyList.Refresh();
+          
+            if(tcPatient.SelectedTab == tcPatient.TabPages["tpAllergies"])
+            {
+                lvAllergyList.Items.Clear();
+                InsertIntoAllergylv();
+                tcPatient.Refresh();
+                lvAllergyList.Refresh();
+            }
+            //TODO: add other insert functions to this page
+            //else if
         }
 
         /****************************************************************************************
