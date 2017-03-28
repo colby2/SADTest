@@ -18,14 +18,14 @@ namespace Test
         string currentDate = DateTime.Now.ToString("dd/MM/yyyy");//holds full current date
         string monthName = "";//will hold the actual name of the month
         private string completeCurrentDate;//will hold complete current date 
-
+        string selectedID;
         public Patient()
         {
             InitializeComponent();
-            
+
         }
-        
-        
+
+
 
         /****************************************************************************************************
          * Search function that will connect to DB and perform a SELECT statement on the DB bringing back all 
@@ -34,14 +34,14 @@ namespace Test
         public Patient(string criteria)
         {
             InitializeComponent();
-            string selectedID = new String(criteria.TakeWhile(Char.IsDigit).ToArray());
+             selectedID = new String(criteria.TakeWhile(Char.IsDigit).ToArray());
 
             string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
             MySqlConnection connection = new MySqlConnection(connectionString);
 
             connection.Open();
 
-            string searchResults = "SELECT * FROM Demographics WHERE PatientID='"+ selectedID+ "'";
+            string searchResults = "SELECT * FROM Demographics WHERE PatientID='" + selectedID + "'";
 
             MySqlCommand cmd = new MySqlCommand(searchResults, connection);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -64,26 +64,14 @@ namespace Test
             reader.Close();
 
 
-            /****************************************************************************************
-             * populates lvAllergyList
-             * **************************************************************************************/
-            string AllergyResults = "SELECT * FROM AllergyInfo WHERE PatientID = " + selectedID + ";";
-            cmd = new MySqlCommand(AllergyResults, connection);
-            reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                ListViewItem lv = new ListViewItem(reader.GetString(2));
-                lv.SubItems.Add(reader.GetString(3));
-
-                lvAllergyList.Items.Add(lv);
-            }
-            reader.Close();
-
-            /****************************************************************************************
-             * populates lvMedicationList
-             * **************************************************************************************/
-            string medicationResults = "SELECT * FROM Medication WHERE PatientID = " + selectedID + ";";
+       /****************************************************************************************
+        * Function call to populate lvAllergyList
+        * **************************************************************************************/
+            InsertIntoAllergylv();
+        /****************************************************************************************
+         * populates lvMedicationList
+         * **************************************************************************************/
+        string medicationResults = "SELECT * FROM Medication WHERE PatientID = " + selectedID + ";";
             cmd = new MySqlCommand(medicationResults, connection);
             reader = cmd.ExecuteReader();
 
@@ -261,7 +249,7 @@ namespace Test
 
 
 
-        }
+    }
         /********************************************************************************************
          * button click for updating the date of last visit
          * ******************************************************************************************/
@@ -421,9 +409,48 @@ namespace Test
         /********************************************************************************************
       * Button Click that refreshes
       * ******************************************************************************************/
-        private void refreshButton_Click(object sender, EventArgs e)
+        //private void refreshButtonAllergy_Click(object sender, EventArgs e)
+        //{
+        //    lvAllergyList.Update();
+        //}
+        private void refreshButtonAllergy_Click_1(object sender, EventArgs e)
         {
-            lvAllergyList.Update();
+            lvAllergyList.Items.Clear();
+            InsertIntoAllergylv();
+            tcPatient.Refresh();
+            lvAllergyList.Refresh();
         }
+
+        /****************************************************************************************
+      * Function that populates the allergy list view
+      * **************************************************************************************/
+        public void InsertIntoAllergylv()
+        {
+            string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            connection.Open();
+            string AllergyResults = "SELECT * FROM AllergyInfo WHERE PatientID = " + selectedID + ";";
+            MySqlCommand cmd = new MySqlCommand(AllergyResults, connection);
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem lv = new ListViewItem(reader.GetString(2));
+                lv.SubItems.Add(reader.GetString(3));
+
+                lvAllergyList.Items.Add(lv);
+
+            }
+            reader.Close();
+
+        }
+
+
+
+
+
     }
 }
+

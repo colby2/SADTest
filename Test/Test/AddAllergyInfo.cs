@@ -47,7 +47,8 @@ namespace Test
         private void updateAllergyButton_Click(object sender, EventArgs e)
         {
             int insertedRows = InsertFunctions.InsertIntoAllergyInfo(PatientID, AllergicTo.Text, Reaction.Text);
-            this.Close();
+            AllergicTo.Clear();
+            Reaction.Clear();
             
         }
     }

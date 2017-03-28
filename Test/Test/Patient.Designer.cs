@@ -60,6 +60,8 @@
             this.lDateOfLastVisit = new System.Windows.Forms.Label();
             this.lFirstname = new System.Windows.Forms.Label();
             this.tpAllergies = new System.Windows.Forms.TabPage();
+            this.refreshButtonAllergy = new System.Windows.Forms.Button();
+            this.addAllergyButton = new System.Windows.Forms.Button();
             this.lvAllergyList = new System.Windows.Forms.ListView();
             this.AllergicTo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Reaction = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -114,8 +116,6 @@
             this.tpNotes = new System.Windows.Forms.TabPage();
             this.tbNotes = new System.Windows.Forms.TextBox();
             this.addNotes = new System.Windows.Forms.Button();
-            this.addAllergyButton = new System.Windows.Forms.Button();
-            this.refreshButton = new System.Windows.Forms.Button();
             this.tcPatient.SuspendLayout();
             this.tpDemographics.SuspendLayout();
             this.tpAllergies.SuspendLayout();
@@ -439,7 +439,7 @@
             // 
             // tpAllergies
             // 
-            this.tpAllergies.Controls.Add(this.refreshButton);
+            this.tpAllergies.Controls.Add(this.refreshButtonAllergy);
             this.tpAllergies.Controls.Add(this.addAllergyButton);
             this.tpAllergies.Controls.Add(this.lvAllergyList);
             this.tpAllergies.Location = new System.Drawing.Point(4, 22);
@@ -448,6 +448,26 @@
             this.tpAllergies.TabIndex = 4;
             this.tpAllergies.Text = "Allergies";
             this.tpAllergies.UseVisualStyleBackColor = true;
+            // 
+            // refreshButtonAllergy
+            // 
+            this.refreshButtonAllergy.Location = new System.Drawing.Point(380, 448);
+            this.refreshButtonAllergy.Name = "refreshButtonAllergy";
+            this.refreshButtonAllergy.Size = new System.Drawing.Size(127, 49);
+            this.refreshButtonAllergy.TabIndex = 2;
+            this.refreshButtonAllergy.Text = "Refresh This Form";
+            this.refreshButtonAllergy.UseVisualStyleBackColor = true;
+            this.refreshButtonAllergy.Click += new System.EventHandler(this.refreshButtonAllergy_Click_1);
+            // 
+            // addAllergyButton
+            // 
+            this.addAllergyButton.Location = new System.Drawing.Point(561, 448);
+            this.addAllergyButton.Name = "addAllergyButton";
+            this.addAllergyButton.Size = new System.Drawing.Size(127, 49);
+            this.addAllergyButton.TabIndex = 1;
+            this.addAllergyButton.Text = "Add Allergy Information for this Patient";
+            this.addAllergyButton.UseVisualStyleBackColor = true;
+            this.addAllergyButton.Click += new System.EventHandler(this.addAllergyButton_Click);
             // 
             // lvAllergyList
             // 
@@ -824,26 +844,6 @@
             this.addNotes.UseVisualStyleBackColor = true;
             this.addNotes.Click += new System.EventHandler(this.button2_Click);
             // 
-            // addAllergyButton
-            // 
-            this.addAllergyButton.Location = new System.Drawing.Point(561, 448);
-            this.addAllergyButton.Name = "addAllergyButton";
-            this.addAllergyButton.Size = new System.Drawing.Size(127, 49);
-            this.addAllergyButton.TabIndex = 1;
-            this.addAllergyButton.Text = "Add Allergy Information for this Patient";
-            this.addAllergyButton.UseVisualStyleBackColor = true;
-            this.addAllergyButton.Click += new System.EventHandler(this.addAllergyButton_Click);
-            // 
-            // refreshButton
-            // 
-            this.refreshButton.Location = new System.Drawing.Point(380, 448);
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(127, 49);
-            this.refreshButton.TabIndex = 2;
-            this.refreshButton.Text = "Refresh This Form";
-            this.refreshButton.UseVisualStyleBackColor = true;
-            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
-            // 
             // Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -957,6 +957,6 @@
         private System.Windows.Forms.ColumnHeader DateDiagnosed;
         private System.Windows.Forms.ColumnHeader DiabetesType;
         private System.Windows.Forms.Button addAllergyButton;
-        private System.Windows.Forms.Button refreshButton;
+        private System.Windows.Forms.Button refreshButtonAllergy;
     }
 }
