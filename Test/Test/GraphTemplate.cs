@@ -178,7 +178,7 @@ namespace Test
             if(id != null)
             {
                 connection.Open();
-                string testSearch = "Select * FROM " + test.getTestType() + " Where PatientID =" + id + ";";
+                string testSearch = "Select * FROM " + test.getTestType() + " Where PatientID =" + id +" ORDER BY DateOfTest;";
                 Console.WriteLine(testSearch);
                 MySqlCommand cmd = new MySqlCommand(testSearch, connection);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -197,51 +197,58 @@ namespace Test
         {
             removeAllDataPoints();
             //Console.WriteLine(cbSubTest.SelectedItem.ToString());
-            if (cbSubTest.SelectedItem.ToString() == "HgA1C")
+            try
             {
-                databaseSearch(HgA1C);
+                if (cbSubTest.SelectedItem.ToString() == "HgA1C")
+                {
+                    databaseSearch(HgA1C);
+                }
+                else if (cbSubTest.SelectedItem.ToString() == "Cholesterol")
+                {
+                    databaseSearch(Cholesterol);
+                }
+
+                else if (cbSubTest.SelectedItem.ToString() == "HDL")
+                {
+                    databaseSearch(HDL);
+                }
+                else if (cbSubTest.SelectedItem.ToString() == "LDL")
+                {
+                    databaseSearch(LDL);
+                }
+                else if (cbSubTest.SelectedItem.ToString() == "Triglycerides")
+                {
+                    databaseSearch(Triglycerides);
+                }
+                else if (cbSubTest.SelectedItem.ToString() == "Heart Rate")
+                {
+                    databaseSearch(Heart_Rate);
+                }
+                else if (cbSubTest.SelectedItem.ToString() == "Respiratory Rate")
+                {
+                    databaseSearch(Respiratory_Rate);
+                }
+                else if (cbSubTest.SelectedItem.ToString() == "Oxygen Saturation")
+                {
+                    databaseSearch(Oxygen_Saturation);
+                }
+                else if (cbSubTest.SelectedItem.ToString() == "Height")
+                {
+                    databaseSearch(Patient_Height);
+                }
+                else if (cbSubTest.SelectedItem.ToString() == "Weight")
+                {
+                    databaseSearch(Weight);
+                }
+                else if (cbSubTest.SelectedItem.ToString() == "Temperature")
+                {
+                    databaseSearch(Temperature);
+                }
             }
-            else if (cbSubTest.SelectedItem.ToString() == "Cholesterol")
+           catch(System.NullReferenceException)
             {
-                databaseSearch(Cholesterol);
-            }
-        
-            else if (cbSubTest.SelectedItem.ToString() == "HDL")
-            {
-                databaseSearch(HDL);
-            }
-            else if (cbSubTest.SelectedItem.ToString() == "LDL")
-            {
-                databaseSearch(LDL);
-            }
-            else if (cbSubTest.SelectedItem.ToString() == "Triglycerides")
-            {
-                databaseSearch(Triglycerides);
-            }
-            else if (cbSubTest.SelectedItem.ToString() == "Heart Rate")
-            {
-                databaseSearch(Heart_Rate);
-            }
-            else if (cbSubTest.SelectedItem.ToString() == "Respiratory Rate")
-            {
-                databaseSearch(Respiratory_Rate);
-            }
-            else if (cbSubTest.SelectedItem.ToString() == "Oxygen Saturation")
-            {
-                databaseSearch(Oxygen_Saturation);
-            }
-            else if (cbSubTest.SelectedItem.ToString() == "Height")
-            {
-                databaseSearch(Patient_Height);
-            }
-            else if (cbSubTest.SelectedItem.ToString() == "Weight")
-            {
-                databaseSearch(Weight);
-            }
-            else if (cbSubTest.SelectedItem.ToString() == "Temperature")
-            {
-                databaseSearch(Temperature);
-            }
+                System.Windows.Forms.MessageBox.Show("This Information is not available from this test.");
+            }//End Try
         }
     }
 }
