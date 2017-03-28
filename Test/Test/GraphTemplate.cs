@@ -58,6 +58,9 @@ namespace Test
             }
         }
 
+        /* This is the default constructor, it is called from the HUB form.
+         * 
+         * */
         public GraphTemplate()
         {
             InitializeComponent();
@@ -66,6 +69,7 @@ namespace Test
             testSelectBox.Text = "(Select Test)";
             cbSubTest.Text = "(Select Value)";
             connection = new MySqlConnection(connectionString);
+            lvSearch.FullRowSelect = true;
         }
 
         public GraphTemplate(String type)
@@ -177,6 +181,8 @@ namespace Test
         {
             if(id != null)
             {
+                //graphName = test.toString();
+                //chart1.Series.Add(graphName);//not working, cannot add a same series twice
                 connection.Open();
                 string testSearch = "Select * FROM " + test.getTestType() + " Where PatientID =" + id +" ORDER BY DateOfTest;";
                 Console.WriteLine(testSearch);
