@@ -80,7 +80,7 @@
             this.closeForm.Name = "closeForm";
             this.closeForm.Size = new System.Drawing.Size(146, 37);
             this.closeForm.TabIndex = 4;
-            this.closeForm.Text = "Cancel and Return to Patient Allergy Info";
+            this.closeForm.Text = "Close and Return to Allergy Info";
             this.closeForm.UseVisualStyleBackColor = true;
             this.closeForm.Click += new System.EventHandler(this.closeForm_Click);
             // 
