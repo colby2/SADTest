@@ -82,15 +82,14 @@ namespace DiabeticHealthDB
 
         }
 
-        public static int InsertIntoVitalsInformation(int PatientID, string DateOfTest, int HeartRate, string BloodPressure, int RespiratoryRate, int OxygenSaturation, string AirType, int Height, int Weight, double Temperature)
+        public static int InsertIntoVitalsInformation(string DateOfTest, int HeartRate, string BloodPressure, int RespiratoryRate, int OxygenSaturation, string AirType, int Height, int Weight, double Temperature, int PatientID)
         {
             int totalRowsInserted = 0;
             MySqlConnection conn = DatabaseConnection.GetConnection();
             string qry =
-                "INSERT INTO `VitalsInformation`(`PatientID`, `DateofTest`, `HeartRate`, `BloodPressure`, `RespiratoryRate`, `OxygenSaturation`, `AirType`, `Height`, `Weight`, `Temperature`)" +
+                "INSERT INTO `VitalsInformation`( `DateofTest`, `HeartRate`, `BloodPressure`, `RespiratoryRate`, `OxygenSaturation`, `AirType`, `Height`, `Weight`, `Temperature`, `PatientID`)" +
                 "VALUES (@PatientID, @DateOfTest, @HeartRate, @BloodPressure, @RespiratoryRate, @OxygenSaturation, @AirType, @Height, @Weight, @Temperature);";
             MySqlCommand cmd = new MySqlCommand(qry, conn);
-            cmd.Parameters.AddWithValue("@PatientID", PatientID);
             cmd.Parameters.AddWithValue("@DateOfTest", DateOfTest);
             cmd.Parameters.AddWithValue("@HeartRate", HeartRate);
             cmd.Parameters.AddWithValue("@BloodPressure", BloodPressure);
@@ -100,6 +99,7 @@ namespace DiabeticHealthDB
             cmd.Parameters.AddWithValue("@Height", Height);
             cmd.Parameters.AddWithValue("@Weight", Weight);
             cmd.Parameters.AddWithValue("@Temperature", Temperature);
+            cmd.Parameters.AddWithValue("@PatientID", PatientID);
             try
             {
                 conn.Open();

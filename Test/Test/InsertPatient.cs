@@ -34,7 +34,7 @@ namespace Test
 
         private void insertButton_Click_1(object sender, EventArgs e)
         {
-            if (dvtb.Text == "" || fnTb.Text == "" || lnTB.Text == "" || ptb.Text == "" || stb.Text == "" || sttb.Text == "" || ctb.Text == "" || ztb.Text == "" || dbtb.Text == "" || pitb.Text == "" || sitb.Text == "") ;
+            if (dvtb.Text == "" || fnTb.Text == "" || lnTB.Text == "" || ptb.Text == "" || stb.Text == "" || sttb.Text == "" || ctb.Text == "" || ztb.Text == "" || dbtb.Text == "" || pitb.Text == "" || sitb.Text == "")
             {
                 MessageBox.Show("Something must be entered for each field. If patient is not applicable for a certain field enter 'N/A'.", "Attention", MessageBoxButtons.OK);
                 return;
