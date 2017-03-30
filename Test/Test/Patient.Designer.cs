@@ -123,6 +123,7 @@
             this.adDiabeticTest = new System.Windows.Forms.Button();
             this.addLipidTestButton = new System.Windows.Forms.Button();
             this.addDiabeticBackgroundButton = new System.Windows.Forms.Button();
+            this.deleteSelectedRow = new System.Windows.Forms.Button();
             this.tcPatient.SuspendLayout();
             this.tpDemographics.SuspendLayout();
             this.tpAllergies.SuspendLayout();
@@ -225,7 +226,7 @@
             this.bTrends.Name = "bTrends";
             this.bTrends.Size = new System.Drawing.Size(75, 23);
             this.bTrends.TabIndex = 27;
-            this.bTrends.Text = "Trends";
+            this.bTrends.Text = "Graph";
             this.bTrends.UseVisualStyleBackColor = true;
             this.bTrends.Click += new System.EventHandler(this.bTrends_Click);
             // 
@@ -438,6 +439,7 @@
             this.AllergicTo,
             this.Reaction});
             this.lvAllergyList.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.lvAllergyList.FullRowSelect = true;
             this.lvAllergyList.GridLines = true;
             this.lvAllergyList.Location = new System.Drawing.Point(-4, 0);
             this.lvAllergyList.Name = "lvAllergyList";
@@ -835,9 +837,9 @@
             // 
             // gotoNoteTab
             // 
-            this.gotoNoteTab.Location = new System.Drawing.Point(1111, 126);
+            this.gotoNoteTab.Location = new System.Drawing.Point(1111, 129);
             this.gotoNoteTab.Name = "gotoNoteTab";
-            this.gotoNoteTab.Size = new System.Drawing.Size(126, 48);
+            this.gotoNoteTab.Size = new System.Drawing.Size(125, 50);
             this.gotoNoteTab.TabIndex = 32;
             this.gotoNoteTab.Text = "Review Notes";
             this.gotoNoteTab.UseVisualStyleBackColor = true;
@@ -857,7 +859,7 @@
             // 
             this.refreshButtonAllergy.Location = new System.Drawing.Point(1111, 61);
             this.refreshButtonAllergy.Name = "refreshButtonAllergy";
-            this.refreshButtonAllergy.Size = new System.Drawing.Size(126, 49);
+            this.refreshButtonAllergy.Size = new System.Drawing.Size(125, 50);
             this.refreshButtonAllergy.TabIndex = 2;
             this.refreshButtonAllergy.Text = "Refresh Recently Added Data";
             this.refreshButtonAllergy.UseVisualStyleBackColor = true;
@@ -936,11 +938,22 @@
             this.addDiabeticBackgroundButton.Text = "Add Diabetic Background Information for this Patient";
             this.addDiabeticBackgroundButton.UseVisualStyleBackColor = true;
             // 
+            // deleteSelectedRow
+            // 
+            this.deleteSelectedRow.Location = new System.Drawing.Point(1111, 198);
+            this.deleteSelectedRow.Name = "deleteSelectedRow";
+            this.deleteSelectedRow.Size = new System.Drawing.Size(125, 50);
+            this.deleteSelectedRow.TabIndex = 33;
+            this.deleteSelectedRow.Text = "Delete Selected Row";
+            this.deleteSelectedRow.UseVisualStyleBackColor = true;
+            this.deleteSelectedRow.Click += new System.EventHandler(this.deleteSelectedRow_Click);
+            // 
             // Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1249, 602);
+            this.Controls.Add(this.deleteSelectedRow);
             this.Controls.Add(this.gotoNoteTab);
             this.Controls.Add(this.addDiabeticBackgroundButton);
             this.Controls.Add(this.addLipidTestButton);
@@ -1069,5 +1082,6 @@
         private System.Windows.Forms.Button adDiabeticTest;
         private System.Windows.Forms.Button addLipidTestButton;
         private System.Windows.Forms.Button addDiabeticBackgroundButton;
+        private System.Windows.Forms.Button deleteSelectedRow;
     }
 }
