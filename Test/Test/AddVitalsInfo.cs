@@ -13,7 +13,7 @@ namespace Test
 {
     public partial class AddVitalsInfo : Form
     {
-        int PatientID;
+        public int PatientID;
         public AddVitalsInfo()
         {
             InitializeComponent();
@@ -77,7 +77,7 @@ namespace Test
                 MessageBox.Show("Something must be entered for each field. If patient is not applicable for a certain field enter 'N/A'.", "Attention", MessageBoxButtons.OK);
                 return;
             }
-            InsertFunctions.InsertIntoVitalsInformation(PatientID, datetakentb.Text, Int32.Parse(HRtb.Text), BPtb.Text, Int32.Parse(RRtb.Text), Int32.Parse(o2sattb.Text), attb.Text, Int32.Parse(htb.Text), Int32.Parse(wtb.Text), double.Parse(temptb.Text));
+            InsertFunctions.InsertIntoVitalsInformation(datetakentb.Text, int.Parse(HRtb.Text), BPtb.Text, Int32.Parse(RRtb.Text), Int32.Parse(o2sattb.Text), attb.Text, Int32.Parse(htb.Text), Int32.Parse(wtb.Text), double.Parse(temptb.Text), PatientID);
             this.Close();
         }
     }
