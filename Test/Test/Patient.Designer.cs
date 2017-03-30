@@ -192,7 +192,7 @@
             // 
             // gotoNoteTab
             // 
-            this.gotoNoteTab.Location = new System.Drawing.Point(986, 126);
+            this.gotoNoteTab.Location = new System.Drawing.Point(1111, 126);
             this.gotoNoteTab.Name = "gotoNoteTab";
             this.gotoNoteTab.Size = new System.Drawing.Size(126, 48);
             this.gotoNoteTab.TabIndex = 32;
@@ -798,14 +798,17 @@
             // DateInfoTaken
             // 
             this.DateInfoTaken.Text = "Date Info Taken";
+            this.DateInfoTaken.Width = 97;
             // 
             // DateDiagnosed
             // 
             this.DateDiagnosed.Text = "DateDiagnosed";
+            this.DateDiagnosed.Width = 111;
             // 
             // DiabetesType
             // 
             this.DiabetesType.Text = "DiabetesType";
+            this.DiabetesType.Width = 126;
             // 
             // tpNotes
             // 
@@ -852,7 +855,7 @@
             // 
             // refreshButtonAllergy
             // 
-            this.refreshButtonAllergy.Location = new System.Drawing.Point(986, 61);
+            this.refreshButtonAllergy.Location = new System.Drawing.Point(1111, 61);
             this.refreshButtonAllergy.Name = "refreshButtonAllergy";
             this.refreshButtonAllergy.Size = new System.Drawing.Size(126, 49);
             this.refreshButtonAllergy.TabIndex = 2;
