@@ -283,24 +283,26 @@ namespace Test
             addAllergyForm.ShowDialog();
             
         }
-        private void addVitalsButton_Click(object sender, EventArgs e)
-        {
-            AddVitalsInfo addVitalsForm = new AddVitalsInfo(Int32.Parse(PatientId));
-            addVitalsForm.ShowDialog();
-        }
         /********************************************************************************************
       * Button Click that refreshes
       * ******************************************************************************************/
         private void refreshButtonAllergy_Click_1(object sender, EventArgs e)
         {
-          
-            if(tcPatient.SelectedTab == tcPatient.TabPages["tpAllergies"])
+            RefreshListViews();
+        }
+
+        /*****************************************************************************************
+         * Function that refreshed all list views
+         * ***************************************************************************************/
+        public void RefreshListViews()
+        {
+            if (tcPatient.SelectedTab == tcPatient.TabPages["tpAllergies"])
             {
                 lvAllergyList.Items.Clear();
                 InsertIntoAllergylv();
                 lvAllergyList.Refresh();
             }
-            else if(tcPatient.SelectedTab == tcPatient.TabPages["tpMedication"])
+            else if (tcPatient.SelectedTab == tcPatient.TabPages["tpMedication"])
             {
                 lvMedicationList.Items.Clear();
                 InsertIntoMedicationlv();
@@ -337,8 +339,6 @@ namespace Test
                 InsertIntoDiabeticBackgroundlv();
                 lvDiabeticBackgroundList.Refresh();
             }
-
-
         }
 
         /****************************************************************************************
@@ -403,7 +403,7 @@ namespace Test
 
             while (reader.Read())
             {
-                ListViewItem lv = new ListViewItem(reader.GetString(1));
+                ListViewItem lv = new ListViewItem(Convert.ToDateTime(reader.GetString(1)).ToString("MMM dd, yyyy"));
                 lv.SubItems.Add(reader.GetString(2));
                 lv.SubItems.Add(reader.GetString(3));
                 lv.SubItems.Add(reader.GetString(4));
@@ -485,7 +485,7 @@ namespace Test
 
             while (reader.Read())
             {
-                ListViewItem lv = new ListViewItem(reader.GetString(1));
+                ListViewItem lv = new ListViewItem(Convert.ToDateTime(reader.GetString(1)).ToString("MMM dd, yyyy"));
                 lv.SubItems.Add(reader.GetString(2));
                 lv.SubItems.Add(reader.GetString(3));
                 lv.SubItems.Add(reader.GetString(4));
@@ -574,7 +574,25 @@ namespace Test
             return completeCurrentDate;
         }
 
-      
+        private void deleteSelectedRow_Click(object sender, EventArgs e)
+        {
+            if (lvAllergyList.SelectedItems.Count == 1) {
+                string allergicTo = lvAllergyList.SelectedItems[0].SubItems[0].Text;
+                string reaction = lvAllergyList.SelectedItems[0].SubItems[1].Text;
+
+                connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+                MySqlConnection connection = new MySqlConnection(connectionString);
+
+                connection.Open();
+                string deleteRow = "DELETE FROM AllergyInfo WHERE PatientID = " + selectedID + " AND AllergicTo = '" + allergicTo +"' AND Reaction = '"+ reaction +"';";
+                MySqlCommand cmd = new MySqlCommand(deleteRow, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+
+                RefreshListViews();
+
+            }
+        }
     }
 }
 
