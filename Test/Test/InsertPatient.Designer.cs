@@ -54,6 +54,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.insertButton = new System.Windows.Forms.Button();
+            this.ntb = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // fnTb
@@ -281,20 +282,33 @@
             this.insertButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.insertButton.Image = ((System.Drawing.Image)(resources.GetObject("insertButton.Image")));
             this.insertButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.insertButton.Location = new System.Drawing.Point(409, 259);
+            this.insertButton.Location = new System.Drawing.Point(658, 514);
             this.insertButton.Name = "insertButton";
-            this.insertButton.Size = new System.Drawing.Size(138, 46);
+            this.insertButton.Size = new System.Drawing.Size(156, 61);
             this.insertButton.TabIndex = 24;
             this.insertButton.Text = "Submit Patient Information";
             this.insertButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.insertButton.UseVisualStyleBackColor = true;
             this.insertButton.Click += new System.EventHandler(this.insertButton_Click_1);
             // 
+            // ntb
+            // 
+            this.ntb.Enabled = false;
+            this.ntb.Location = new System.Drawing.Point(669, 294);
+            this.ntb.Multiline = true;
+            this.ntb.Name = "ntb";
+            this.ntb.ReadOnly = true;
+            this.ntb.Size = new System.Drawing.Size(119, 31);
+            this.ntb.TabIndex = 25;
+            this.ntb.Text = "  ";
+            this.ntb.Visible = false;
+            // 
             // InsertPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 576);
+            this.Controls.Add(this.ntb);
             this.Controls.Add(this.insertButton);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -322,6 +336,7 @@
             this.Controls.Add(this.fnTb);
             this.Name = "InsertPatient";
             this.Text = "InsertPatient";
+            this.Load += new System.EventHandler(this.InsertPatient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,5 +369,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button insertButton;
+        private System.Windows.Forms.TextBox ntb;
     }
 }

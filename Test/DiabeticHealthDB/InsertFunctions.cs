@@ -12,13 +12,13 @@ namespace DiabeticHealthDB
         /************************************************************************************************
       * Inserts info into Demographic Table from from
       * **********************************************************************************************/
-        public static int InsertIntoDemographics(string FirstName, string LastName, string DateofLastVisit, string Street, string City, string State, string Zip, string DOB, string Phone, string PrimaryInsuranceProvider, string SecondaryInsuranceProvider)
+        public static int InsertIntoDemographics(string FirstName, string LastName, string DateofLastVisit, string Street, string City, string State, string Zip, string DOB, string Phone, string PrimaryInsuranceProvider, string SecondaryInsuranceProvider, string PatientNotes)
         {
             int totalRowsInserted = 0;
             MySqlConnection conn = DatabaseConnection.GetConnection();
             string qry =
-               "INSERT INTO `Demographics`(`FirstName`, `LastName`, `DateofLastVisit`, `Street`, `City`, `State`, `Zip`, `DOB`, `Phone`, `PrimaryInsuranceProvider`, `SecondaryInsuranceProvider`)" +
-               "VALUES (@FirstName, @Lastname, @DateofLastVisit, @Street, @City, @State, @Zip, @DOB, @Phone, @PrimaryInsuranceProvider, @SecondaryInsuranceProvider);";
+               "INSERT INTO `Demographics`(`FirstName`, `LastName`, `DateofLastVisit`, `Street`, `City`, `State`, `Zip`, `DOB`, `Phone`, `PrimaryInsuranceProvider`, `SecondaryInsuranceProvider`, `PatientNotes)" +
+               "VALUES (@FirstName, @Lastname, @DateofLastVisit, @Street, @City, @State, @Zip, @DOB, @Phone, @PrimaryInsuranceProvider, @SecondaryInsuranceProvider, @PatientNotes);";
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.Parameters.AddWithValue("@FirstName", FirstName);
             cmd.Parameters.AddWithValue("@LastName", LastName);
@@ -31,6 +31,7 @@ namespace DiabeticHealthDB
             cmd.Parameters.AddWithValue("@Phone", Phone);
             cmd.Parameters.AddWithValue("@PrimaryInsuranceProvider", PrimaryInsuranceProvider);
             cmd.Parameters.AddWithValue("@SecondaryInsuranceProvider", SecondaryInsuranceProvider);
+            cmd.Parameters.AddWithValue("@PatientNotes", PatientNotes);
             try
             {
                 conn.Open();

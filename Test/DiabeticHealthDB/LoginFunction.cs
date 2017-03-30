@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
+
 namespace DiabeticHealthDB
 {
     public static class LoginFunction
@@ -49,8 +50,8 @@ namespace DiabeticHealthDB
             {
                 /*add out parameter to send info back to main for message box*/
                 //MessageBox.Show("ERROR: " + ex.Message.ToString());
+                
                 connection.Close();
-                //throw ex;
                 return 4;
 
             }

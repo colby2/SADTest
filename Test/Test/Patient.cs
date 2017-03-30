@@ -61,6 +61,7 @@ namespace Test
                 tbPhone.Text = reader.GetString(9);
                 tbPrimaryInsurance.Text = reader.GetString(10);
                 tbSecondaryInsurance.Text = reader.GetString(11);
+                tbNotes.Text = reader.GetString(12);
             }
             reader.Close();
             connection.Close(); // close database connection
@@ -68,10 +69,10 @@ namespace Test
 
 
 
-            /****************************************************************************************
-             * Function call to populate lvAllergyList
-             * **************************************************************************************/
-            InsertIntoAllergylv();
+      /****************************************************************************************
+        * Function call to populate lvAllergyList
+        * **************************************************************************************/
+           InsertIntoAllergylv();
 
        /****************************************************************************************
         * lvMedicationList
@@ -270,6 +271,8 @@ namespace Test
         private void button1_Click(object sender, EventArgs e)
         {
             tcPatient.SelectTab("tpNotes");
+            string searchResults = "SELECT * FROM Demographics WHERE PatientID='" + selectedID + "'";
+            
         }
 
         /********************************************************************************************
@@ -277,8 +280,21 @@ namespace Test
        * ******************************************************************************************/
         private void button2_Click(object sender, EventArgs e)
         {
-            AddNotes addNotes = new AddNotes();
-            addNotes.ShowDialog();
+            if (addNotes.Text.Contains("Edit"))
+            {
+                tbNotes.ReadOnly = false;
+
+                addNotes.Text = "Submit Addition";
+            }
+            else if(addNotes.Text.Contains("Submit"))
+            {
+                tbNotes.ReadOnly = true;
+                UpdateFunctions.UpdateNotes(Int32.Parse(PatientId), tbNotes.Text);
+                addNotes.Text = "Edit Notes for This Patient";
+            }
+            
+           
+            
         }
 
         /********************************************************************************************

@@ -34,8 +34,13 @@ namespace Test
 
         private void insertButton_Click_1(object sender, EventArgs e)
         {
-            int rowsInserted = InsertFunctions.InsertIntoDemographics(fnTb.Text, lnTB.Text, dvtb.Text, stb.Text, ctb.Text, sttb.Text, ztb.Text, dbtb.Text, ptb.Text, pitb.Text, sitb.Text);
+            int rowsInserted = InsertFunctions.InsertIntoDemographics(fnTb.Text, lnTB.Text, dvtb.Text, stb.Text, ctb.Text, sttb.Text, ztb.Text, dbtb.Text, ptb.Text, pitb.Text, sitb.Text, ntb.Text);
             this.Close();
+        }
+
+        private void InsertPatient_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

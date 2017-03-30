@@ -37,7 +37,6 @@
             this.lLastName = new System.Windows.Forms.Label();
             this.bTrends = new System.Windows.Forms.Button();
             this.bEdit = new System.Windows.Forms.Button();
-            this.bDelete = new System.Windows.Forms.Button();
             this.tbSecondaryInsurance = new System.Windows.Forms.TextBox();
             this.tbPrimaryInsurance = new System.Windows.Forms.TextBox();
             this.lSecondaryInsurance = new System.Windows.Forms.Label();
@@ -114,6 +113,7 @@
             this.tpNotes = new System.Windows.Forms.TabPage();
             this.tbNotes = new System.Windows.Forms.TextBox();
             this.addNotes = new System.Windows.Forms.Button();
+            this.bDelete = new System.Windows.Forms.Button();
             this.refreshButtonAllergy = new System.Windows.Forms.Button();
             this.addAllergyButton = new System.Windows.Forms.Button();
             this.generalTab = new System.Windows.Forms.Label();
@@ -155,7 +155,6 @@
             // 
             // tpDemographics
             // 
-            this.tpDemographics.Controls.Add(this.gotoNoteTab);
             this.tpDemographics.Controls.Add(this.visitDateUpdate);
             this.tpDemographics.Controls.Add(this.tbLastname);
             this.tpDemographics.Controls.Add(this.lLastName);
@@ -193,9 +192,9 @@
             // 
             // gotoNoteTab
             // 
-            this.gotoNoteTab.Location = new System.Drawing.Point(517, 532);
+            this.gotoNoteTab.Location = new System.Drawing.Point(986, 126);
             this.gotoNoteTab.Name = "gotoNoteTab";
-            this.gotoNoteTab.Size = new System.Drawing.Size(95, 23);
+            this.gotoNoteTab.Size = new System.Drawing.Size(126, 48);
             this.gotoNoteTab.TabIndex = 32;
             this.gotoNoteTab.Text = "Review Notes";
             this.gotoNoteTab.UseVisualStyleBackColor = true;
@@ -249,16 +248,6 @@
             this.bEdit.Text = "Edit";
             this.bEdit.UseVisualStyleBackColor = true;
             this.bEdit.Click += new System.EventHandler(this.bEdit_Click);
-            // 
-            // bDelete
-            // 
-            this.bDelete.Location = new System.Drawing.Point(1143, 552);
-            this.bDelete.Name = "bDelete";
-            this.bDelete.Size = new System.Drawing.Size(94, 38);
-            this.bDelete.TabIndex = 25;
-            this.bDelete.Text = "Delete This Patient\'s Info";
-            this.bDelete.UseVisualStyleBackColor = true;
-            this.bDelete.Click += new System.EventHandler(this.bDelete_Click);
             // 
             // tbSecondaryInsurance
             // 
@@ -832,21 +821,34 @@
             // 
             // tbNotes
             // 
-            this.tbNotes.Location = new System.Drawing.Point(244, 168);
+            this.tbNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNotes.Location = new System.Drawing.Point(52, 42);
             this.tbNotes.Multiline = true;
             this.tbNotes.Name = "tbNotes";
-            this.tbNotes.Size = new System.Drawing.Size(279, 86);
+            this.tbNotes.ReadOnly = true;
+            this.tbNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbNotes.Size = new System.Drawing.Size(651, 410);
             this.tbNotes.TabIndex = 1;
             // 
             // addNotes
             // 
-            this.addNotes.Location = new System.Drawing.Point(604, 463);
+            this.addNotes.Location = new System.Drawing.Point(604, 478);
             this.addNotes.Name = "addNotes";
             this.addNotes.Size = new System.Drawing.Size(128, 44);
             this.addNotes.TabIndex = 0;
-            this.addNotes.Text = "Add Notes for This Patient";
+            this.addNotes.Text = "Edit Notes for This Patient";
             this.addNotes.UseVisualStyleBackColor = true;
             this.addNotes.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // bDelete
+            // 
+            this.bDelete.Location = new System.Drawing.Point(1143, 552);
+            this.bDelete.Name = "bDelete";
+            this.bDelete.Size = new System.Drawing.Size(94, 38);
+            this.bDelete.TabIndex = 25;
+            this.bDelete.Text = "Delete This Patient\'s Info";
+            this.bDelete.UseVisualStyleBackColor = true;
+            this.bDelete.Click += new System.EventHandler(this.bDelete_Click);
             // 
             // refreshButtonAllergy
             // 
@@ -936,6 +938,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1249, 602);
+            this.Controls.Add(this.gotoNoteTab);
             this.Controls.Add(this.addDiabeticBackgroundButton);
             this.Controls.Add(this.addLipidTestButton);
             this.Controls.Add(this.adDiabeticTest);

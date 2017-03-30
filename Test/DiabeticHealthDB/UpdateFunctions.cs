@@ -80,6 +80,31 @@ namespace DiabeticHealthDB
         }
         return rowsUpdated;
     }
+        public static void UpdateNotes(int PatientID, string PatientNotes)
+        {
+            int rowsUpdated = 0;
+            MySqlConnection connection = DatabaseConnection.GetConnection();
+            string updateQuery =
+                    "Update Demographics Set PatientNotes = @PN Where PatientID = @P;";
+            MySqlCommand command = new MySqlCommand(updateQuery, connection);
+            command.Parameters.AddWithValue("@PN", PatientNotes);
+            command.Parameters.AddWithValue("@P", PatientID);
+            try
+            {
+                connection.Open();
+                rowsUpdated = command.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                rowsUpdated = 0;
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+            //return rowsUpdated;
+        }
 
         /************************************************************************************************
     *Function that will allow users to update AllergicTo and Reaction fields in AllergyInfo Table

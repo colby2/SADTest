@@ -88,12 +88,6 @@
     <Compile Include="Hub.Designer.cs">
       <DependentUpon>Hub.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddNotes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddNotes.Designer.cs">
-      <DependentUpon>AddNotes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Patient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,9 +113,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Hub.resx">
       <DependentUpon>Hub.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddNotes.resx">
-      <DependentUpon>AddNotes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Patient.resx">
       <DependentUpon>Patient.cs</DependentUpon>
