@@ -33,7 +33,12 @@ namespace Test
         string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
         MySqlConnection connection;
 
-
+        /**
+         * This DataType has information corresponding to how these test's data is stored in the database.
+         * Int num is the column number of the test's value
+         * String name is the test's name
+         * String testType is the name of the table in which the test is located.
+         * */
         struct TestNum
         {
             public int num;
@@ -72,16 +77,21 @@ namespace Test
             lvSearch.FullRowSelect = true;
         }
 
-        public GraphTemplate(String type)
+        public GraphTemplate(String uniqueID)
         {
             /*This Constructor changes the seires name to the string variable given.
-             * This should be helpful when the chart is modeling a specific value and its name should be given.
-             * (ie calling GraphTemplate("a1c") will create a chart with a1c as the series name.  
+             * This should be helpful when the chart is modeling a specific patient and their patientID should be given.
+             * (ie calling GraphTemplate("1") will create a chart with 'John' as the series name.  
              * */
             InitializeComponent();
             removeInitalSeries();
-            graphName = type;
-            chart1.Series.Add(graphName);
+            graphName = uniqueID;//NO
+            chart1.Series.Add(graphName);//NO
+            testSelectBox.Text = "(Select Test)";
+            cbSubTest.Text = "(Select Value)";
+            connection = new MySqlConnection(connectionString);
+            lvSearch.FullRowSelect = true;
+            search(uniqueID);
 
         }
 
@@ -101,17 +111,17 @@ namespace Test
 
         }
 
-        private void button1_Click(object sender, EventArgs e)//Currently using test data, replace with real data.
+        private void button1_Click(object sender, EventArgs e)//Remove later
         {
             
-            chart1.Series[graphName].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;//May not be needed
+            chart1.Series[graphName].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             chart1.Series[graphName].Points.AddY(20);
             chart1.Series[graphName].Points.AddY(10);
             chart1.Series[graphName].Points.AddY(0);
             chart1.Series[graphName].Points.AddY(3);
             chart1.Series[graphName].Points.AddY(30);
             chart1.Series[graphName].Points.AddY(75);
-            chart1.Series[graphName].ChartArea = "ChartArea1";//may not be needed
+            chart1.Series[graphName].ChartArea = "ChartArea1";
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -148,6 +158,37 @@ namespace Test
             }
         }
 
+        /*
+         * This function should be called from the named contructor, where you know the patient's information.
+         * Paramater: uniqueID, this needs to correspond to the patient's patientID from the Demongraphics table.
+         * */
+        private void search(string uniqueID)
+        {
+            string searchInput = uniqueID;//search on the given info
+            id = uniqueID;
+            connection.Open();
+            string searchResults = "SELECT * FROM Demographics WHERE PatientID =" + searchInput+";";
+            MySqlCommand cmd = new MySqlCommand(searchResults, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                string[] row = { reader.GetString(1), reader.GetString(2), reader.GetString(8), reader.GetString(0) };
+                var listViewItem = new ListViewItem(row);
+                lvSearch.Items.Add(listViewItem);
+            }
+            try {
+                testSelectBox.SelectedIndex = 1;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                System.Windows.Forms.MessageBox.Show("This Patient does not appear to be in our database!");
+            }
+            testSelectBox.SelectedIndex = 1;
+            reader.Close();
+            connection.Close();
+        }
+
         private void searchBar_TextChanged(object sender, EventArgs e)
         {
 
@@ -177,6 +218,10 @@ namespace Test
             }
         }
 
+        /*
+         * Searches the database based on which test is selected in the drop down boxes
+         * Parameter Test: this should be one of the predefined test types, (I.E. 'HgA1C')
+         * */
         void databaseSearch(TestNum test)
         {
             if(id != null)
