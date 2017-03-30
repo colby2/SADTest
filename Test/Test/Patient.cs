@@ -306,6 +306,9 @@ namespace Test
             
         }
 
+        /********************************************************************************************
+    * Button Click that opens new form from which user can add Vitals Info for the current patient
+    * ******************************************************************************************/
         private void addVitalsButton_Click(object sender, EventArgs e)
         {
             AddVitalsInfo addVitalsForm = new AddVitalsInfo(Int32.Parse(PatientId));
@@ -622,7 +625,11 @@ namespace Test
             }
         }
 
-     
+        private void addVitalsButton_Click_1(object sender, EventArgs e)
+        {
+            AddVitalsInfo addVitalsForm = new AddVitalsInfo(Int32.Parse(PatientId));
+            addVitalsForm.ShowDialog();
+        }
     }
 }
 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddAllergyInfo));
             this.AllergicTo = new System.Windows.Forms.TextBox();
             this.Reaction = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -105,8 +106,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Reaction);
             this.Controls.Add(this.AllergicTo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddAllergyInfo";
-            this.Text = "AddAllergyInfo";
+            this.Text = "Add Allergy Information for Current Patient";
             this.Load += new System.EventHandler(this.AddAllergyInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

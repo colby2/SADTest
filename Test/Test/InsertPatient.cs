@@ -49,6 +49,11 @@ namespace Test
             Patient p = new Patient();
             dvtb.Text = p.getCurrentDate();
         }
+
+        private void InsertPatient_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
     

@@ -869,7 +869,7 @@
             // 
             this.addAllergyButton.Location = new System.Drawing.Point(820, 61);
             this.addAllergyButton.Name = "addAllergyButton";
-            this.addAllergyButton.Size = new System.Drawing.Size(120, 40);
+            this.addAllergyButton.Size = new System.Drawing.Size(134, 48);
             this.addAllergyButton.TabIndex = 1;
             this.addAllergyButton.Text = "Add Allergy Information for this Patient";
             this.addAllergyButton.UseVisualStyleBackColor = true;
@@ -888,7 +888,7 @@
             // 
             this.addMedicationButton.Location = new System.Drawing.Point(821, 117);
             this.addMedicationButton.Name = "addMedicationButton";
-            this.addMedicationButton.Size = new System.Drawing.Size(120, 40);
+            this.addMedicationButton.Size = new System.Drawing.Size(134, 48);
             this.addMedicationButton.TabIndex = 4;
             this.addMedicationButton.Text = "Add Medication Information for this Patient";
             this.addMedicationButton.UseVisualStyleBackColor = true;
@@ -897,17 +897,17 @@
             // 
             this.addVitalsButton.Location = new System.Drawing.Point(821, 174);
             this.addVitalsButton.Name = "addVitalsButton";
-            this.addVitalsButton.Size = new System.Drawing.Size(120, 40);
+            this.addVitalsButton.Size = new System.Drawing.Size(134, 48);
             this.addVitalsButton.TabIndex = 5;
             this.addVitalsButton.Text = "Add Vitals Information for this Patient";
             this.addVitalsButton.UseVisualStyleBackColor = true;
-            //this.addVitalsButton.Click += new System.EventHandler(this.addVitalsButton_Click);
+            this.addVitalsButton.Click += new System.EventHandler(this.addVitalsButton_Click_1);
             // 
             // addDiabeticMeds
             // 
             this.addDiabeticMeds.Location = new System.Drawing.Point(821, 230);
             this.addDiabeticMeds.Name = "addDiabeticMeds";
-            this.addDiabeticMeds.Size = new System.Drawing.Size(120, 40);
+            this.addDiabeticMeds.Size = new System.Drawing.Size(134, 48);
             this.addDiabeticMeds.TabIndex = 6;
             this.addDiabeticMeds.Text = "Add Diabetic Meds Information for this Patient";
             this.addDiabeticMeds.UseVisualStyleBackColor = true;
@@ -916,7 +916,7 @@
             // 
             this.adDiabeticTest.Location = new System.Drawing.Point(820, 287);
             this.adDiabeticTest.Name = "adDiabeticTest";
-            this.adDiabeticTest.Size = new System.Drawing.Size(120, 40);
+            this.adDiabeticTest.Size = new System.Drawing.Size(134, 48);
             this.adDiabeticTest.TabIndex = 7;
             this.adDiabeticTest.Text = "Add Diabetic Test Information for this Patient";
             this.adDiabeticTest.UseVisualStyleBackColor = true;
@@ -925,7 +925,7 @@
             // 
             this.addLipidTestButton.Location = new System.Drawing.Point(821, 342);
             this.addLipidTestButton.Name = "addLipidTestButton";
-            this.addLipidTestButton.Size = new System.Drawing.Size(120, 40);
+            this.addLipidTestButton.Size = new System.Drawing.Size(134, 48);
             this.addLipidTestButton.TabIndex = 8;
             this.addLipidTestButton.Text = "Add Lipid Test Information for this Patient";
             this.addLipidTestButton.UseVisualStyleBackColor = true;
@@ -934,7 +934,7 @@
             // 
             this.addDiabeticBackgroundButton.Location = new System.Drawing.Point(821, 400);
             this.addDiabeticBackgroundButton.Name = "addDiabeticBackgroundButton";
-            this.addDiabeticBackgroundButton.Size = new System.Drawing.Size(120, 49);
+            this.addDiabeticBackgroundButton.Size = new System.Drawing.Size(134, 48);
             this.addDiabeticBackgroundButton.TabIndex = 9;
             this.addDiabeticBackgroundButton.Text = "Add Diabetic Background Information for this Patient";
             this.addDiabeticBackgroundButton.UseVisualStyleBackColor = true;
@@ -967,8 +967,9 @@
             this.Controls.Add(this.refreshButtonAllergy);
             this.Controls.Add(this.tcPatient);
             this.Controls.Add(this.addAllergyButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Patient";
-            this.Text = "Patient";
+            this.Text = "Patient Information";
             this.Load += new System.EventHandler(this.Patient_Load);
             this.tcPatient.ResumeLayout(false);
             this.tpDemographics.ResumeLayout(false);

@@ -54,7 +54,6 @@ C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.exe
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.pdb
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\bin\Debug\Test.exe
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\bin\Debug\Test.pdb
-C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.xml
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.GraphTemplate.resources
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.LoadScreen.resources
@@ -171,3 +170,6 @@ C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddVitalsInfo.res
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddAllergyInfo.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddVitalsInfo.resources
 C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddVitalsInfo.resources
+C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddAllergyInfo.resources
+C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddVitalsInfo.resources
+C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.InsertPatient.resources

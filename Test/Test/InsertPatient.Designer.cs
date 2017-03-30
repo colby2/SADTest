@@ -292,11 +292,10 @@
             // insertButton
             // 
             this.insertButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.insertButton.Image = ((System.Drawing.Image)(resources.GetObject("insertButton.Image")));
             this.insertButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.insertButton.Location = new System.Drawing.Point(658, 514);
             this.insertButton.Name = "insertButton";
-            this.insertButton.Size = new System.Drawing.Size(156, 61);
+            this.insertButton.Size = new System.Drawing.Size(112, 61);
             this.insertButton.TabIndex = 24;
             this.insertButton.Text = "Submit Patient Information";
             this.insertButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -368,8 +367,10 @@
             this.Controls.Add(this.pitb);
             this.Controls.Add(this.ctb);
             this.Controls.Add(this.fnTb);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "InsertPatient";
-            this.Text = "InsertPatient";
+            this.Text = "Insert a Patients Demographic Information";
+            this.Load += new System.EventHandler(this.InsertPatient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
