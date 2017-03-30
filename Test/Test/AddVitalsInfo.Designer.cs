@@ -49,6 +49,8 @@
             this.datetakentb = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // heartRatelb
@@ -143,7 +145,7 @@
             // 
             this.HRtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HRtb.Location = new System.Drawing.Point(310, 45);
-            this.HRtb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HRtb.Margin = new System.Windows.Forms.Padding(4);
             this.HRtb.Multiline = true;
             this.HRtb.Name = "HRtb";
             this.HRtb.Size = new System.Drawing.Size(143, 33);
@@ -154,7 +156,7 @@
             // 
             this.RRtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RRtb.Location = new System.Drawing.Point(310, 176);
-            this.RRtb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RRtb.Margin = new System.Windows.Forms.Padding(4);
             this.RRtb.Multiline = true;
             this.RRtb.Name = "RRtb";
             this.RRtb.Size = new System.Drawing.Size(143, 33);
@@ -165,7 +167,7 @@
             // 
             this.BPtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BPtb.Location = new System.Drawing.Point(310, 115);
-            this.BPtb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BPtb.Margin = new System.Windows.Forms.Padding(4);
             this.BPtb.Multiline = true;
             this.BPtb.Name = "BPtb";
             this.BPtb.Size = new System.Drawing.Size(143, 33);
@@ -176,7 +178,7 @@
             // 
             this.attb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.attb.Location = new System.Drawing.Point(310, 311);
-            this.attb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.attb.Margin = new System.Windows.Forms.Padding(4);
             this.attb.Multiline = true;
             this.attb.Name = "attb";
             this.attb.Size = new System.Drawing.Size(143, 33);
@@ -187,7 +189,7 @@
             // 
             this.htb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.htb.Location = new System.Drawing.Point(310, 379);
-            this.htb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.htb.Margin = new System.Windows.Forms.Padding(4);
             this.htb.Multiline = true;
             this.htb.Name = "htb";
             this.htb.Size = new System.Drawing.Size(143, 33);
@@ -198,7 +200,7 @@
             // 
             this.wtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wtb.Location = new System.Drawing.Point(310, 444);
-            this.wtb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.wtb.Margin = new System.Windows.Forms.Padding(4);
             this.wtb.Multiline = true;
             this.wtb.Name = "wtb";
             this.wtb.Size = new System.Drawing.Size(143, 33);
@@ -209,7 +211,7 @@
             // 
             this.temptb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.temptb.Location = new System.Drawing.Point(310, 505);
-            this.temptb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.temptb.Margin = new System.Windows.Forms.Padding(4);
             this.temptb.Multiline = true;
             this.temptb.Name = "temptb";
             this.temptb.Size = new System.Drawing.Size(143, 33);
@@ -220,7 +222,7 @@
             // 
             this.o2sattb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.o2sattb.Location = new System.Drawing.Point(310, 244);
-            this.o2sattb.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.o2sattb.Margin = new System.Windows.Forms.Padding(4);
             this.o2sattb.Multiline = true;
             this.o2sattb.Name = "o2sattb";
             this.o2sattb.Size = new System.Drawing.Size(143, 33);
@@ -245,6 +247,7 @@
             this.datetakentb.Margin = new System.Windows.Forms.Padding(4);
             this.datetakentb.Multiline = true;
             this.datetakentb.Name = "datetakentb";
+            this.datetakentb.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.datetakentb.Size = new System.Drawing.Size(143, 33);
             this.datetakentb.TabIndex = 17;
             // 
@@ -268,11 +271,30 @@
             this.label13.TabIndex = 27;
             this.label13.Text = "Note: All Fields Must be completed!";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(544, 160);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 28;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(624, 112);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 24);
+            this.dateTimePicker1.TabIndex = 29;
+            // 
             // AddVitalsInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(904, 594);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.datetakentb);
@@ -295,7 +317,7 @@
             this.Controls.Add(this.heartRatelb);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AddVitalsInfo";
             this.Text = "Add Vitals Information";
             this.Load += new System.EventHandler(this.AddVitalsInfo_Load);
@@ -326,5 +348,7 @@
         private System.Windows.Forms.TextBox datetakentb;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
