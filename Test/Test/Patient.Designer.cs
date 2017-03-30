@@ -60,8 +60,6 @@
             this.lDateOfLastVisit = new System.Windows.Forms.Label();
             this.lFirstname = new System.Windows.Forms.Label();
             this.tpAllergies = new System.Windows.Forms.TabPage();
-            this.refreshButtonAllergy = new System.Windows.Forms.Button();
-            this.addAllergyButton = new System.Windows.Forms.Button();
             this.lvAllergyList = new System.Windows.Forms.ListView();
             this.AllergicTo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Reaction = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -116,6 +114,15 @@
             this.tpNotes = new System.Windows.Forms.TabPage();
             this.tbNotes = new System.Windows.Forms.TextBox();
             this.addNotes = new System.Windows.Forms.Button();
+            this.refreshButtonAllergy = new System.Windows.Forms.Button();
+            this.addAllergyButton = new System.Windows.Forms.Button();
+            this.generalTab = new System.Windows.Forms.Label();
+            this.addMedicationButton = new System.Windows.Forms.Button();
+            this.addVitalsButton = new System.Windows.Forms.Button();
+            this.addDiabeticMeds = new System.Windows.Forms.Button();
+            this.adDiabeticTest = new System.Windows.Forms.Button();
+            this.addLipidTestButton = new System.Windows.Forms.Button();
+            this.addDiabeticBackgroundButton = new System.Windows.Forms.Button();
             this.tcPatient.SuspendLayout();
             this.tpDemographics.SuspendLayout();
             this.tpAllergies.SuspendLayout();
@@ -154,7 +161,6 @@
             this.tpDemographics.Controls.Add(this.lLastName);
             this.tpDemographics.Controls.Add(this.bTrends);
             this.tpDemographics.Controls.Add(this.bEdit);
-            this.tpDemographics.Controls.Add(this.bDelete);
             this.tpDemographics.Controls.Add(this.tbSecondaryInsurance);
             this.tpDemographics.Controls.Add(this.tbPrimaryInsurance);
             this.tpDemographics.Controls.Add(this.lSecondaryInsurance);
@@ -246,11 +252,11 @@
             // 
             // bDelete
             // 
-            this.bDelete.Location = new System.Drawing.Point(699, 6);
+            this.bDelete.Location = new System.Drawing.Point(1143, 552);
             this.bDelete.Name = "bDelete";
-            this.bDelete.Size = new System.Drawing.Size(75, 23);
+            this.bDelete.Size = new System.Drawing.Size(94, 38);
             this.bDelete.TabIndex = 25;
-            this.bDelete.Text = "Delete";
+            this.bDelete.Text = "Delete This Patient\'s Info";
             this.bDelete.UseVisualStyleBackColor = true;
             this.bDelete.Click += new System.EventHandler(this.bDelete_Click);
             // 
@@ -296,7 +302,6 @@
             this.lInsurance.Size = new System.Drawing.Size(57, 13);
             this.lInsurance.TabIndex = 18;
             this.lInsurance.Text = "Insurance:";
-            this.lInsurance.Click += new System.EventHandler(this.label1_Click);
             // 
             // tbPhone
             // 
@@ -447,26 +452,6 @@
             this.tpAllergies.Text = "Allergies";
             this.tpAllergies.UseVisualStyleBackColor = true;
             // 
-            // refreshButtonAllergy
-            // 
-            this.refreshButtonAllergy.Location = new System.Drawing.Point(829, 119);
-            this.refreshButtonAllergy.Name = "refreshButtonAllergy";
-            this.refreshButtonAllergy.Size = new System.Drawing.Size(126, 49);
-            this.refreshButtonAllergy.TabIndex = 2;
-            this.refreshButtonAllergy.Text = "Refresh This Form";
-            this.refreshButtonAllergy.UseVisualStyleBackColor = true;
-            this.refreshButtonAllergy.Click += new System.EventHandler(this.refreshButtonAllergy_Click_1);
-            // 
-            // addAllergyButton
-            // 
-            this.addAllergyButton.Location = new System.Drawing.Point(829, 45);
-            this.addAllergyButton.Name = "addAllergyButton";
-            this.addAllergyButton.Size = new System.Drawing.Size(127, 49);
-            this.addAllergyButton.TabIndex = 1;
-            this.addAllergyButton.Text = "Add Allergy Information for this Patient";
-            this.addAllergyButton.UseVisualStyleBackColor = true;
-            this.addAllergyButton.Click += new System.EventHandler(this.addAllergyButton_Click);
-            // 
             // lvAllergyList
             // 
             this.lvAllergyList.BackColor = System.Drawing.Color.Honeydew;
@@ -506,12 +491,14 @@
             // 
             // lvMedicationList
             // 
+            this.lvMedicationList.BackColor = System.Drawing.Color.Honeydew;
             this.lvMedicationList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.MedicationName,
             this.DateStarted,
             this.Amount,
             this.Frequency,
             this.Route});
+            this.lvMedicationList.GridLines = true;
             this.lvMedicationList.Location = new System.Drawing.Point(4, 4);
             this.lvMedicationList.Name = "lvMedicationList";
             this.lvMedicationList.Size = new System.Drawing.Size(773, 554);
@@ -556,6 +543,7 @@
             // 
             // lvVitalsList
             // 
+            this.lvVitalsList.BackColor = System.Drawing.Color.Honeydew;
             this.lvVitalsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.DateTaken,
             this.HeartRate,
@@ -567,6 +555,7 @@
             this.Weight,
             this.BMI,
             this.Temperature});
+            this.lvVitalsList.GridLines = true;
             this.lvVitalsList.Location = new System.Drawing.Point(3, 4);
             this.lvVitalsList.Name = "lvVitalsList";
             this.lvVitalsList.Size = new System.Drawing.Size(774, 554);
@@ -578,17 +567,17 @@
             // DateTaken
             // 
             this.DateTaken.Text = "Date Taken";
-            this.DateTaken.Width = 75;
+            this.DateTaken.Width = 81;
             // 
             // HeartRate
             // 
             this.HeartRate.Text = "Heart Rate";
-            this.HeartRate.Width = 69;
+            this.HeartRate.Width = 76;
             // 
             // BloodPressure
             // 
             this.BloodPressure.Text = "Blood Pressure";
-            this.BloodPressure.Width = 84;
+            this.BloodPressure.Width = 92;
             // 
             // RespiratoryRate
             // 
@@ -597,30 +586,33 @@
             // 
             // OxygenSaturation
             // 
-            this.OxygenSaturation.Text = "Oxygen Saturation";
-            this.OxygenSaturation.Width = 105;
+            this.OxygenSaturation.Text = "O2 Sat";
+            this.OxygenSaturation.Width = 58;
             // 
             // AirType
             // 
             this.AirType.Text = "Air Type";
+            this.AirType.Width = 69;
             // 
             // Height
             // 
             this.Height.Text = "Height";
-            this.Height.Width = 48;
+            this.Height.Width = 54;
             // 
             // Weight
             // 
             this.Weight.Text = "Weight";
+            this.Weight.Width = 72;
             // 
             // BMI
             // 
             this.BMI.Text = "BMI";
+            this.BMI.Width = 69;
             // 
             // Temperature
             // 
             this.Temperature.Text = "Temperature";
-            this.Temperature.Width = 85;
+            this.Temperature.Width = 90;
             // 
             // tpDiabeticMeds
             // 
@@ -634,12 +626,14 @@
             // 
             // lvDiabeticMedsList
             // 
+            this.lvDiabeticMedsList.BackColor = System.Drawing.Color.Honeydew;
             this.lvDiabeticMedsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.DiabeticMedicationName,
             this.DiabeticDateStarted,
             this.DiabeticAmount,
             this.DiabeticFrequency,
             this.DiabeticRoute});
+            this.lvDiabeticMedsList.GridLines = true;
             this.lvDiabeticMedsList.Location = new System.Drawing.Point(4, 4);
             this.lvDiabeticMedsList.Name = "lvDiabeticMedsList";
             this.lvDiabeticMedsList.Size = new System.Drawing.Size(773, 554);
@@ -682,6 +676,7 @@
             // 
             // lvDiabeticTestList
             // 
+            this.lvDiabeticTestList.BackColor = System.Drawing.Color.Honeydew;
             this.lvDiabeticTestList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.DateOfTest,
             this.Microalbumin,
@@ -689,6 +684,7 @@
             this.CurrentYearVaccination,
             this.DiabeticEyeExam,
             this.NutritionalCounseling});
+            this.lvDiabeticTestList.GridLines = true;
             this.lvDiabeticTestList.Location = new System.Drawing.Point(4, 4);
             this.lvDiabeticTestList.Name = "lvDiabeticTestList";
             this.lvDiabeticTestList.Size = new System.Drawing.Size(773, 554);
@@ -699,26 +695,32 @@
             // DateOfTest
             // 
             this.DateOfTest.Text = "Date Of Test";
+            this.DateOfTest.Width = 91;
             // 
             // Microalbumin
             // 
             this.Microalbumin.Text = "Microalbumin";
+            this.Microalbumin.Width = 91;
             // 
             // FootCheck
             // 
             this.FootCheck.Text = "Foot Check";
+            this.FootCheck.Width = 90;
             // 
             // CurrentYearVaccination
             // 
             this.CurrentYearVaccination.Text = "Current Year Vaccination";
+            this.CurrentYearVaccination.Width = 138;
             // 
             // DiabeticEyeExam
             // 
             this.DiabeticEyeExam.Text = "Diabetic Eye Exam";
+            this.DiabeticEyeExam.Width = 120;
             // 
             // NutritionalCounseling
             // 
             this.NutritionalCounseling.Text = "Nutritional Counseling";
+            this.NutritionalCounseling.Width = 126;
             // 
             // tpLipidTest
             // 
@@ -733,6 +735,7 @@
             // 
             // lvLipidTestList
             // 
+            this.lvLipidTestList.BackColor = System.Drawing.Color.Honeydew;
             this.lvLipidTestList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.DateOfLipidTest,
             this.HgA1C,
@@ -741,6 +744,7 @@
             this.LDL,
             this.Triglycerides,
             this.TCHOLHDLRatio});
+            this.lvLipidTestList.GridLines = true;
             this.lvLipidTestList.Location = new System.Drawing.Point(4, 7);
             this.lvLipidTestList.Name = "lvLipidTestList";
             this.lvLipidTestList.Size = new System.Drawing.Size(770, 548);
@@ -789,10 +793,12 @@
             // 
             // lvDiabeticBackgroundList
             // 
+            this.lvDiabeticBackgroundList.BackColor = System.Drawing.Color.Honeydew;
             this.lvDiabeticBackgroundList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.DateInfoTaken,
             this.DateDiagnosed,
             this.DiabetesType});
+            this.lvDiabeticBackgroundList.GridLines = true;
             this.lvDiabeticBackgroundList.Location = new System.Drawing.Point(4, 4);
             this.lvDiabeticBackgroundList.Name = "lvDiabeticBackgroundList";
             this.lvDiabeticBackgroundList.Size = new System.Drawing.Size(773, 554);
@@ -842,11 +848,102 @@
             this.addNotes.UseVisualStyleBackColor = true;
             this.addNotes.Click += new System.EventHandler(this.button2_Click);
             // 
+            // refreshButtonAllergy
+            // 
+            this.refreshButtonAllergy.Location = new System.Drawing.Point(986, 61);
+            this.refreshButtonAllergy.Name = "refreshButtonAllergy";
+            this.refreshButtonAllergy.Size = new System.Drawing.Size(126, 49);
+            this.refreshButtonAllergy.TabIndex = 2;
+            this.refreshButtonAllergy.Text = "Refresh Recently Added Data";
+            this.refreshButtonAllergy.UseVisualStyleBackColor = true;
+            this.refreshButtonAllergy.Click += new System.EventHandler(this.refreshButtonAllergy_Click_1);
+            // 
+            // addAllergyButton
+            // 
+            this.addAllergyButton.Location = new System.Drawing.Point(820, 61);
+            this.addAllergyButton.Name = "addAllergyButton";
+            this.addAllergyButton.Size = new System.Drawing.Size(120, 40);
+            this.addAllergyButton.TabIndex = 1;
+            this.addAllergyButton.Text = "Add Allergy Information for this Patient";
+            this.addAllergyButton.UseVisualStyleBackColor = true;
+            this.addAllergyButton.Click += new System.EventHandler(this.addAllergyButton_Click);
+            // 
+            // generalTab
+            // 
+            this.generalTab.AutoSize = true;
+            this.generalTab.Location = new System.Drawing.Point(952, 34);
+            this.generalTab.Name = "generalTab";
+            this.generalTab.Size = new System.Drawing.Size(160, 13);
+            this.generalTab.TabIndex = 3;
+            this.generalTab.Text = "General Functions For This Form";
+            // 
+            // addMedicationButton
+            // 
+            this.addMedicationButton.Location = new System.Drawing.Point(821, 117);
+            this.addMedicationButton.Name = "addMedicationButton";
+            this.addMedicationButton.Size = new System.Drawing.Size(120, 40);
+            this.addMedicationButton.TabIndex = 4;
+            this.addMedicationButton.Text = "Add Medication Information for this Patient";
+            this.addMedicationButton.UseVisualStyleBackColor = true;
+            // 
+            // addVitalsButton
+            // 
+            this.addVitalsButton.Location = new System.Drawing.Point(821, 174);
+            this.addVitalsButton.Name = "addVitalsButton";
+            this.addVitalsButton.Size = new System.Drawing.Size(120, 40);
+            this.addVitalsButton.TabIndex = 5;
+            this.addVitalsButton.Text = "Add Vitals Information for this Patient";
+            this.addVitalsButton.UseVisualStyleBackColor = true;
+            // 
+            // addDiabeticMeds
+            // 
+            this.addDiabeticMeds.Location = new System.Drawing.Point(821, 230);
+            this.addDiabeticMeds.Name = "addDiabeticMeds";
+            this.addDiabeticMeds.Size = new System.Drawing.Size(120, 40);
+            this.addDiabeticMeds.TabIndex = 6;
+            this.addDiabeticMeds.Text = "Add Diabetic Meds Information for this Patient";
+            this.addDiabeticMeds.UseVisualStyleBackColor = true;
+            // 
+            // adDiabeticTest
+            // 
+            this.adDiabeticTest.Location = new System.Drawing.Point(820, 287);
+            this.adDiabeticTest.Name = "adDiabeticTest";
+            this.adDiabeticTest.Size = new System.Drawing.Size(120, 40);
+            this.adDiabeticTest.TabIndex = 7;
+            this.adDiabeticTest.Text = "Add Diabetic Test Information for this Patient";
+            this.adDiabeticTest.UseVisualStyleBackColor = true;
+            // 
+            // addLipidTestButton
+            // 
+            this.addLipidTestButton.Location = new System.Drawing.Point(821, 342);
+            this.addLipidTestButton.Name = "addLipidTestButton";
+            this.addLipidTestButton.Size = new System.Drawing.Size(120, 40);
+            this.addLipidTestButton.TabIndex = 8;
+            this.addLipidTestButton.Text = "Add Lipid Test Information for this Patient";
+            this.addLipidTestButton.UseVisualStyleBackColor = true;
+            // 
+            // addDiabeticBackgroundButton
+            // 
+            this.addDiabeticBackgroundButton.Location = new System.Drawing.Point(821, 400);
+            this.addDiabeticBackgroundButton.Name = "addDiabeticBackgroundButton";
+            this.addDiabeticBackgroundButton.Size = new System.Drawing.Size(120, 49);
+            this.addDiabeticBackgroundButton.TabIndex = 9;
+            this.addDiabeticBackgroundButton.Text = "Add Diabetic Background Information for this Patient";
+            this.addDiabeticBackgroundButton.UseVisualStyleBackColor = true;
+            // 
             // Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 602);
+            this.ClientSize = new System.Drawing.Size(1249, 602);
+            this.Controls.Add(this.addDiabeticBackgroundButton);
+            this.Controls.Add(this.addLipidTestButton);
+            this.Controls.Add(this.adDiabeticTest);
+            this.Controls.Add(this.addDiabeticMeds);
+            this.Controls.Add(this.addVitalsButton);
+            this.Controls.Add(this.addMedicationButton);
+            this.Controls.Add(this.bDelete);
+            this.Controls.Add(this.generalTab);
             this.Controls.Add(this.refreshButtonAllergy);
             this.Controls.Add(this.tcPatient);
             this.Controls.Add(this.addAllergyButton);
@@ -866,6 +963,7 @@
             this.tpNotes.ResumeLayout(false);
             this.tpNotes.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -958,5 +1056,12 @@
         private System.Windows.Forms.ColumnHeader DiabetesType;
         private System.Windows.Forms.Button addAllergyButton;
         private System.Windows.Forms.Button refreshButtonAllergy;
+        private System.Windows.Forms.Label generalTab;
+        private System.Windows.Forms.Button addMedicationButton;
+        private System.Windows.Forms.Button addVitalsButton;
+        private System.Windows.Forms.Button addDiabeticMeds;
+        private System.Windows.Forms.Button adDiabeticTest;
+        private System.Windows.Forms.Button addLipidTestButton;
+        private System.Windows.Forms.Button addDiabeticBackgroundButton;
     }
 }

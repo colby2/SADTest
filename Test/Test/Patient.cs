@@ -19,6 +19,7 @@ namespace Test
         string monthName = "";//will hold the actual name of the month
         private string completeCurrentDate;//will hold complete current date 
         string selectedID;
+        string connectionString;
         public Patient()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace Test
             InitializeComponent();
              selectedID = new String(criteria.TakeWhile(Char.IsDigit).ToArray());
 
-            string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+            connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
             MySqlConnection connection = new MySqlConnection(connectionString);
 
             connection.Open();
@@ -62,137 +63,49 @@ namespace Test
                 tbSecondaryInsurance.Text = reader.GetString(11);
             }
             reader.Close();
+            connection.Close(); // close database connection
 
+
+
+
+            /****************************************************************************************
+             * Function call to populate lvAllergyList
+             * **************************************************************************************/
+            InsertIntoAllergylv();
 
        /****************************************************************************************
-        * Function call to populate lvAllergyList
+        * lvMedicationList
         * **************************************************************************************/
-            InsertIntoAllergylv();
-        /****************************************************************************************
-         * populates lvMedicationList
+           InsertIntoMedicationlv();
+
+      /****************************************************************************************
+        * lvVitalsList
+        * **************************************************************************************/
+          InsertIntoVitalslv();
+
+      /****************************************************************************************
+        * populates lvDiabeticMedsList
+        * **************************************************************************************/
+          InsertIntoDiabeticMedslv();
+
+      /****************************************************************************************
+        * populates lvDiabetictests list
+        * **************************************************************************************/
+          InsertIntoDiabeticTestslv();
+
+       /****************************************************************************************
+         * populates lvLipidTestList
          * **************************************************************************************/
-        string medicationResults = "SELECT * FROM Medication WHERE PatientID = " + selectedID + ";";
-            cmd = new MySqlCommand(medicationResults, connection);
-            reader = cmd.ExecuteReader();
+          InsertIntoLipidTestslv();
 
-            while (reader.Read())
-            {
-                ListViewItem lv = new ListViewItem(reader.GetString(1));
-                lv.SubItems.Add(reader.GetString(2));
-                lv.SubItems.Add(reader.GetString(3));
-                lv.SubItems.Add(reader.GetString(4));
-                lv.SubItems.Add(reader.GetString(5));
-
-                lvMedicationList.Items.Add(lv);
-            }
-            reader.Close();
-
-            /****************************************************************************************
-             * populates lvVitalsList
-             * **************************************************************************************/
-            string vitalsResults = "SELECT * FROM VitalsInformation WHERE PatientID = " + selectedID + ";";
-            cmd = new MySqlCommand(vitalsResults, connection);
-            reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                ListViewItem lv = new ListViewItem(reader.GetString(1));
-                lv.SubItems.Add(reader.GetString(2));
-                lv.SubItems.Add(reader.GetString(3));
-                lv.SubItems.Add(reader.GetString(4));
-                lv.SubItems.Add(reader.GetString(5));
-                lv.SubItems.Add(reader.GetString(6));
-                lv.SubItems.Add(reader.GetString(7));
-                lv.SubItems.Add(reader.GetString(8));
-                lv.SubItems.Add("BMI GOES HERE");
-                lv.SubItems.Add(reader.GetString(9));
-
-                lvVitalsList.Items.Add(lv);
-            }
-            reader.Close();
-
-
-            /****************************************************************************************
-             * populates lvDiabeticMedsList
-             * **************************************************************************************/
-            string DiabeticMedResults = "SELECT * FROM DiabetesMedication WHERE PatientID = " + selectedID + ";";
-            cmd = new MySqlCommand(DiabeticMedResults, connection);
-            reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                ListViewItem lv = new ListViewItem(reader.GetString(1));
-                lv.SubItems.Add(reader.GetString(2));
-                lv.SubItems.Add(reader.GetString(3));
-                lv.SubItems.Add(reader.GetString(4));
-                lv.SubItems.Add(reader.GetString(5));
-
-                lvDiabeticMedsList.Items.Add(lv);
-            }
-            reader.Close();
-
-            /****************************************************************************************
-             * populates lvDiabeticMedsList
-             * **************************************************************************************/
-            string DiabeticTestResults = "SELECT * FROM DiabeticTests WHERE PatientID = " + selectedID + ";";
-            cmd = new MySqlCommand(DiabeticTestResults, connection);
-            reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                ListViewItem lv = new ListViewItem(reader.GetString(1));
-                lv.SubItems.Add(reader.GetString(2));
-                lv.SubItems.Add(reader.GetString(3));
-                lv.SubItems.Add(reader.GetString(4));
-                lv.SubItems.Add(reader.GetString(5));
-                lv.SubItems.Add(reader.GetString(6));
-
-                lvDiabeticTestList.Items.Add(lv);
-            }
-            reader.Close();
-
-            /****************************************************************************************
-             * populates lvLipidTestList
-             * **************************************************************************************/
-            string LipidTestResults = "SELECT * FROM LipidTestInformation WHERE PatientID = " + selectedID + ";";
-            cmd = new MySqlCommand(LipidTestResults, connection);
-            reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                ListViewItem lv = new ListViewItem(reader.GetString(1));
-                lv.SubItems.Add(reader.GetString(2));
-                lv.SubItems.Add(reader.GetString(3));
-                lv.SubItems.Add(reader.GetString(4));
-                lv.SubItems.Add(reader.GetString(5));
-                lv.SubItems.Add(reader.GetString(6));
-                lv.SubItems.Add("ADD THIS LATER!");
-
-                lvLipidTestList.Items.Add(lv);
-            }
-            reader.Close();
-
-            /****************************************************************************************
-            * populates lvLipidTestList
-            * **************************************************************************************/
-            string DiabeticBackgroundResults = "SELECT * FROM DiabetesBackground WHERE PatientID = " + selectedID + ";";
-            cmd = new MySqlCommand(DiabeticBackgroundResults, connection);
-            reader = cmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                ListViewItem lv = new ListViewItem(reader.GetString(1));
-                lv.SubItems.Add(reader.GetString(2));
-                lv.SubItems.Add(reader.GetString(3));
-
-                lvDiabeticBackgroundList.Items.Add(lv);
-            }
-            reader.Close();
+       /****************************************************************************************
+         * populates lvDiabeticBackground
+         * **************************************************************************************/
+          InsertIntoDiabeticBackgroundlv();
 
 
 
-            // string selectedNotes = "SELECT "
-            connection.Close(); // close database connection
+           
 
 
 
@@ -264,10 +177,7 @@ namespace Test
         {
 
         }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         /********************************************************************************************
          * Button Click that allows user to update patient demographic information
@@ -416,11 +326,47 @@ namespace Test
             {
                 lvAllergyList.Items.Clear();
                 InsertIntoAllergylv();
-                tcPatient.Refresh();
                 lvAllergyList.Refresh();
             }
-            //TODO: add other insert functions to this page
-            //else if
+            else if(tcPatient.SelectedTab == tcPatient.TabPages["tpMedication"])
+            {
+                lvMedicationList.Items.Clear();
+                InsertIntoMedicationlv();
+                lvMedicationList.Refresh();
+            }
+            else if (tcPatient.SelectedTab == tcPatient.TabPages["tpVitals"])
+            {
+                lvVitalsList.Items.Clear();
+                InsertIntoVitalslv();
+                lvVitalsList.Refresh();
+            }
+            else if (tcPatient.SelectedTab == tcPatient.TabPages["tpDiabeticMeds"])
+            {
+                lvDiabeticMedsList.Items.Clear();
+                InsertIntoDiabeticMedslv();
+                lvDiabeticMedsList.Refresh();
+
+            }
+            else if (tcPatient.SelectedTab == tcPatient.TabPages["tpDiabeticTest"])
+            {
+                lvDiabeticTestList.Items.Clear();
+                InsertIntoDiabeticTestslv();
+                lvDiabeticMedsList.Refresh();
+            }
+            else if (tcPatient.SelectedTab == tcPatient.TabPages["tpLipidTest"])
+            {
+                lvLipidTestList.Items.Clear();
+                InsertIntoLipidTestslv();
+                lvLipidTestList.Refresh();
+            }
+            else if (tcPatient.SelectedTab == tcPatient.TabPages["tpDiabeticBackground"])
+            {
+                lvDiabeticBackgroundList.Items.Clear();
+                InsertIntoDiabeticBackgroundlv();
+                lvDiabeticBackgroundList.Refresh();
+            }
+
+
         }
 
         /****************************************************************************************
@@ -428,13 +374,12 @@ namespace Test
       * **************************************************************************************/
         public void InsertIntoAllergylv()
         {
-            string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+         
             MySqlConnection connection = new MySqlConnection(connectionString);
 
             connection.Open();
             string AllergyResults = "SELECT * FROM AllergyInfo WHERE PatientID = " + selectedID + ";";
             MySqlCommand cmd = new MySqlCommand(AllergyResults, connection);
-
             MySqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
@@ -448,10 +393,161 @@ namespace Test
             reader.Close();
 
         }
+        /****************************************************************************************
+        * Function that populates the medication list view
+        * **************************************************************************************/
+        public void InsertIntoMedicationlv()
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
 
+            connection.Open();
+            string medicationResults = "SELECT * FROM Medication WHERE PatientID = " + selectedID + ";";
+            MySqlCommand cmd = new MySqlCommand(medicationResults, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
 
+            while (reader.Read())
+            {
+                ListViewItem lv = new ListViewItem(reader.GetString(1));
+                lv.SubItems.Add(reader.GetString(2));
+                lv.SubItems.Add(reader.GetString(3));
+                lv.SubItems.Add(reader.GetString(4));
+                lv.SubItems.Add(reader.GetString(5));
 
+                lvMedicationList.Items.Add(lv);
+            }
+            reader.Close();
+        }
+        /****************************************************************************************
+        * Function that populates the vitals list view
+        * **************************************************************************************/
+        public void InsertIntoVitalslv()
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
 
+            connection.Open();
+            string vitalsResults = "SELECT * FROM VitalsInformation WHERE PatientID = " + selectedID + ";";
+            MySqlCommand cmd = new MySqlCommand(vitalsResults, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem lv = new ListViewItem(reader.GetString(1));
+                lv.SubItems.Add(reader.GetString(2));
+                lv.SubItems.Add(reader.GetString(3));
+                lv.SubItems.Add(reader.GetString(4));
+                lv.SubItems.Add(reader.GetString(5));
+                lv.SubItems.Add(reader.GetString(6));
+                lv.SubItems.Add(reader.GetString(7));
+                lv.SubItems.Add(reader.GetString(8));
+                lv.SubItems.Add("BMI GOES HERE");
+                lv.SubItems.Add(reader.GetString(9));
+
+                lvVitalsList.Items.Add(lv);
+            }
+            reader.Close();
+        }
+
+        /****************************************************************************************
+       * Function that populates the Diabetic Meds list view
+       * **************************************************************************************/
+       public void InsertIntoDiabeticMedslv()
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            connection.Open();
+            string DiabeticMedResults = "SELECT * FROM DiabetesMedication WHERE PatientID = " + selectedID + ";";
+            MySqlCommand cmd = new MySqlCommand(DiabeticMedResults, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem lv = new ListViewItem(reader.GetString(1));
+                lv.SubItems.Add(reader.GetString(2));
+                lv.SubItems.Add(reader.GetString(3));
+                lv.SubItems.Add(reader.GetString(4));
+                lv.SubItems.Add(reader.GetString(5));
+
+                lvDiabeticMedsList.Items.Add(lv);
+            }
+            reader.Close();
+
+        }
+
+        /****************************************************************************************
+     * Function that populates the Diabetic Tests list view
+     * **************************************************************************************/
+        public void InsertIntoDiabeticTestslv()
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            connection.Open();
+            string DiabeticTestResults = "SELECT * FROM DiabeticTests WHERE PatientID = " + selectedID + ";";
+            MySqlCommand cmd = new MySqlCommand(DiabeticTestResults, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem lv = new ListViewItem(reader.GetString(1));
+                lv.SubItems.Add(reader.GetString(2));
+                lv.SubItems.Add(reader.GetString(3));
+                lv.SubItems.Add(reader.GetString(4));
+                lv.SubItems.Add(reader.GetString(5));
+                lv.SubItems.Add(reader.GetString(6));
+
+                lvDiabeticTestList.Items.Add(lv);
+            }
+            reader.Close();
+        }
+
+        /****************************************************************************************
+      * Function that populates the Lipid Tests list view
+      * **************************************************************************************/
+        public void InsertIntoLipidTestslv()
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            connection.Open();
+            string LipidTestResults = "SELECT * FROM LipidTestInformation WHERE PatientID = " + selectedID + ";";
+            MySqlCommand cmd = new MySqlCommand(LipidTestResults, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem lv = new ListViewItem(reader.GetString(1));
+                lv.SubItems.Add(reader.GetString(2));
+                lv.SubItems.Add(reader.GetString(3));
+                lv.SubItems.Add(reader.GetString(4));
+                lv.SubItems.Add(reader.GetString(5));
+                lv.SubItems.Add(reader.GetString(6));
+                lv.SubItems.Add("ADD THIS LATER!");
+
+                lvLipidTestList.Items.Add(lv);
+            }
+            reader.Close();
+        }
+
+       /****************************************************************************************
+      * Function that populates the Lipid Tests list view
+      * **************************************************************************************/
+        public void InsertIntoDiabeticBackgroundlv()
+        {
+            MySqlConnection connection = new MySqlConnection(connectionString);
+
+            connection.Open();
+            string DiabeticBackgroundResults = "SELECT * FROM DiabetesBackground WHERE PatientID = " + selectedID + ";";
+            MySqlCommand cmd = new MySqlCommand(DiabeticBackgroundResults, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                ListViewItem lv = new ListViewItem(reader.GetString(1));
+                lv.SubItems.Add(reader.GetString(2));
+                lv.SubItems.Add(reader.GetString(3));
+
+                lvDiabeticBackgroundList.Items.Add(lv);
+            }
+            reader.Close();
+        }
 
     }
 }
