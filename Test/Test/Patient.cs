@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DiabeticHealthDB;
@@ -195,10 +196,31 @@ namespace Test
         {
 
         }
+
+        Thread[] allThreads = new Thread[100];
+        int threadCount = 0;
         //todo: add link to graphs
         private void bTrends_Click(object sender, EventArgs e)
         {
+            ParameterizedThreadStart pat = new ParameterizedThreadStart(graphThreadStart);
+            allThreads[threadCount] = new Thread(pat);
+            allThreads[threadCount].IsBackground = true;
+            allThreads[threadCount].Start(selectedID);
+        }
 
+        private void Patient_FormClosing(Object Sender, FormClosedEventHandler e)
+        {
+            for (int i = 0; i < threadCount; i++)
+            {
+                allThreads[i].Abort();
+            }
+            this.Close();
+        }
+
+        public static void graphThreadStart(object uniqueID)
+        {
+            GraphTemplate graph = new GraphTemplate(uniqueID.ToString());
+            graph.ShowDialog();
         }
 
         private void lvAllergyList_SelectedIndexChanged(object sender, EventArgs e)

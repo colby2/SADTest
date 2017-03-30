@@ -83,7 +83,6 @@ C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.pdb
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\bin\Debug\MySql.Data.xml
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.LoadScreen.resources
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Patient.resources
-C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.xml
 C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.LoadScreen.resources
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\Test.exe
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\Test.pdb
@@ -135,7 +134,6 @@ C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\Test\obj\Debug\Test.A
 C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\bin\Debug\DiabeticHealthDB.dll
 C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\bin\Debug\DiabeticHealthDB.pdb
 C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.InsertPatient.resources
-C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddNotes.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\bin\Debug\DiabeticHealthDB.dll
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\bin\Debug\DiabeticHealthDB.pdb
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.InsertPatient.resources
@@ -172,3 +170,4 @@ C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddAllergyInf
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddVitalsInfo.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddAllergyInfo.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddVitalsInfo.resources
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddVitalsInfo.resources
