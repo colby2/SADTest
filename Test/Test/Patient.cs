@@ -106,61 +106,12 @@ namespace Test
 
 
 
+
+
+
+
+
            
-
-
-
-
-            string[] dateArray = currentDate.Split('/');//holds the current date in an array separated based on month, day and year
-            string monthNumber = dateArray[1].ToString();//will grab the current month in number format
-            string yearNumber = dateArray[2].ToString();//Holds current year
-            string dayNumber = dateArray[0].ToString();//Holds current Day of week 
-           /************************************************************************************************************
-            * switch statement that will take month number and (ex: 03) and turn it into the month name (ex: March)
-            * **********************************************************************************************************/
-            switch (monthNumber)
-            {
-                case "01":
-                    monthName = "Jan";
-                    break;
-                case "02":
-                    monthName = "Feb";
-                    break;
-                case "03":
-                    monthName = "Mar";
-                    break;
-                case "04":
-                    monthName = "April";
-                    break;
-                case "05":
-                    monthName = "May";
-                    break;
-                case "06":
-                    monthName = "June";
-                    break;
-                case "07":
-                    monthName = "July";
-                    break;
-                case "08":
-                    monthName = "Aug";
-                    break;
-                case "09":
-                    monthName = "Sept";
-                    break;
-                case "10":
-                    monthName = "Oct";
-                    break;
-                case "11":
-                    monthName = "Nov";
-                    break;
-                case "12":
-                    monthName = "Dec";
-                    break;
-            }
-            /*must be placed here after switch. Cannot be placed in visitDateUpdate button click function*/
-            completeCurrentDate = monthName + " " + dayNumber + ", " + yearNumber;//holds complete current date in user specified format
-
-
 
 
     }
@@ -170,8 +121,8 @@ namespace Test
         private void visitDateUpdate_Click(object sender, EventArgs e)
         {
             
-            int DateUpdated = UpdateFunctions.UpdateDateOfLastVisit(Int32.Parse(PatientId), completeCurrentDate);
-            tbDateOfLastVisit.Text = completeCurrentDate;
+            int DateUpdated = UpdateFunctions.UpdateDateOfLastVisit(Int32.Parse(PatientId), getCurrentDate());
+            tbDateOfLastVisit.Text = getCurrentDate();
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -244,7 +195,7 @@ namespace Test
         {
 
         }
-
+        //todo: add link to graphs
         private void bTrends_Click(object sender, EventArgs e)
         {
 
@@ -563,6 +514,59 @@ namespace Test
                 lvDiabeticBackgroundList.Items.Add(lv);
             }
             reader.Close();
+        }
+
+        public string getCurrentDate()
+        {
+            string[] dateArray = currentDate.Split('/');//holds the current date in an array separated based on month, day and year
+            string monthNumber = dateArray[1].ToString();//will grab the current month in number format
+            string yearNumber = dateArray[2].ToString();//Holds current year
+            string dayNumber = dateArray[0].ToString();//Holds current Day of week 
+                                                       /************************************************************************************************************
+                                                        * switch statement that will take month number and (ex: 03) and turn it into the month name (ex: March)
+                                                        * **********************************************************************************************************/
+            switch (monthNumber)
+            {
+                case "01":
+                    monthName = "Jan";
+                    break;
+                case "02":
+                    monthName = "Feb";
+                    break;
+                case "03":
+                    monthName = "Mar";
+                    break;
+                case "04":
+                    monthName = "April";
+                    break;
+                case "05":
+                    monthName = "May";
+                    break;
+                case "06":
+                    monthName = "June";
+                    break;
+                case "07":
+                    monthName = "July";
+                    break;
+                case "08":
+                    monthName = "Aug";
+                    break;
+                case "09":
+                    monthName = "Sept";
+                    break;
+                case "10":
+                    monthName = "Oct";
+                    break;
+                case "11":
+                    monthName = "Nov";
+                    break;
+                case "12":
+                    monthName = "Dec";
+                    break;
+            }
+            /*must be placed here after switch. Cannot be placed in visitDateUpdate button click function*/
+            completeCurrentDate = monthName + " " + dayNumber + ", " + yearNumber;//holds complete current date in user specified format
+            return completeCurrentDate;
         }
 
     }

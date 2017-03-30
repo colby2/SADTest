@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patient));
             this.tcPatient = new System.Windows.Forms.TabControl();
             this.tpDemographics = new System.Windows.Forms.TabPage();
-            this.gotoNoteTab = new System.Windows.Forms.Button();
             this.visitDateUpdate = new System.Windows.Forms.Button();
             this.tbLastname = new System.Windows.Forms.TextBox();
             this.lLastName = new System.Windows.Forms.Label();
@@ -113,6 +112,7 @@
             this.tpNotes = new System.Windows.Forms.TabPage();
             this.tbNotes = new System.Windows.Forms.TextBox();
             this.addNotes = new System.Windows.Forms.Button();
+            this.gotoNoteTab = new System.Windows.Forms.Button();
             this.bDelete = new System.Windows.Forms.Button();
             this.refreshButtonAllergy = new System.Windows.Forms.Button();
             this.addAllergyButton = new System.Windows.Forms.Button();
@@ -189,16 +189,6 @@
             this.tpDemographics.Text = "Demographics";
             this.tpDemographics.UseVisualStyleBackColor = true;
             this.tpDemographics.Click += new System.EventHandler(this.tpDemographics_Click);
-            // 
-            // gotoNoteTab
-            // 
-            this.gotoNoteTab.Location = new System.Drawing.Point(1111, 126);
-            this.gotoNoteTab.Name = "gotoNoteTab";
-            this.gotoNoteTab.Size = new System.Drawing.Size(126, 48);
-            this.gotoNoteTab.TabIndex = 32;
-            this.gotoNoteTab.Text = "Review Notes";
-            this.gotoNoteTab.UseVisualStyleBackColor = true;
-            this.gotoNoteTab.Click += new System.EventHandler(this.button1_Click);
             // 
             // visitDateUpdate
             // 
@@ -842,6 +832,16 @@
             this.addNotes.Text = "Edit Notes for This Patient";
             this.addNotes.UseVisualStyleBackColor = true;
             this.addNotes.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // gotoNoteTab
+            // 
+            this.gotoNoteTab.Location = new System.Drawing.Point(1111, 126);
+            this.gotoNoteTab.Name = "gotoNoteTab";
+            this.gotoNoteTab.Size = new System.Drawing.Size(126, 48);
+            this.gotoNoteTab.TabIndex = 32;
+            this.gotoNoteTab.Text = "Review Notes";
+            this.gotoNoteTab.UseVisualStyleBackColor = true;
+            this.gotoNoteTab.Click += new System.EventHandler(this.button1_Click);
             // 
             // bDelete
             // 

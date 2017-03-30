@@ -81,7 +81,43 @@ namespace DiabeticHealthDB
             return totalRowsInserted;
 
         }
-        
+
+        public static int InsertIntoVitalsInformation(int PatientID, string DateOfTest, int HeartRate, string BloodPressure, int RespiratoryRate, int OxygenSaturation, string AirType, int Height, int Weight, double Temperature)
+        {
+            int totalRowsInserted = 0;
+            MySqlConnection conn = DatabaseConnection.GetConnection();
+            string qry =
+                "INSERT INTO `VitalsInformation`(`PatientID`, `DateofTest`, `HeartRate`, `BloodPressure`, `RespiratoryRate`, `OxygenSaturation`, `AirType`, `Height`, `Weight`, `Temperature`)" +
+                "VALUES (@PatientID, @HeartRate, @BloodPressure, @RespiratoryRate, @OxygenSaturation, @AirType, @Height, @Weight, @Temperature);";
+            MySqlCommand cmd = new MySqlCommand(qry, conn);
+            cmd.Parameters.AddWithValue("@PatientID", PatientID);
+            cmd.Parameters.AddWithValue("@HeartRate", HeartRate);
+            cmd.Parameters.AddWithValue("@BloodPressure", BloodPressure);
+            cmd.Parameters.AddWithValue("@RespiratoryRate", RespiratoryRate);
+            cmd.Parameters.AddWithValue("@OxygenSaturation", OxygenSaturation);
+            cmd.Parameters.AddWithValue("@AirType", AirType);
+            cmd.Parameters.AddWithValue("@Height", Height);
+            cmd.Parameters.AddWithValue("@Weight", Weight);
+            cmd.Parameters.AddWithValue("@Temperature", Temperature);
+            try
+            {
+                conn.Open();
+                totalRowsInserted = cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)//perhaps pass exception to message box
+            {
+                totalRowsInserted = 0;
+                throw ex;
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return totalRowsInserted;
+
+        }
+
     }
 
   

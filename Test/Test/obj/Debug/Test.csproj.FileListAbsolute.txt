@@ -171,3 +171,4 @@ C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\DiabeticHealthDB.pdb
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddAllergyInfo.resources
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.InsertPatient.resources
 C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddAllergyInfo.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddVitalsInfo.resources

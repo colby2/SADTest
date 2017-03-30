@@ -42,7 +42,7 @@
             this.AllergicTo.Location = new System.Drawing.Point(221, 73);
             this.AllergicTo.Multiline = true;
             this.AllergicTo.Name = "AllergicTo";
-            this.AllergicTo.Size = new System.Drawing.Size(189, 83);
+            this.AllergicTo.Size = new System.Drawing.Size(389, 71);
             this.AllergicTo.TabIndex = 0;
             // 
             // Reaction
@@ -51,14 +51,14 @@
             this.Reaction.Location = new System.Drawing.Point(221, 173);
             this.Reaction.Multiline = true;
             this.Reaction.Name = "Reaction";
-            this.Reaction.Size = new System.Drawing.Size(189, 88);
+            this.Reaction.Size = new System.Drawing.Size(389, 68);
             this.Reaction.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 83);
+            this.label1.Location = new System.Drawing.Point(12, 99);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(156, 16);
             this.label1.TabIndex = 2;
@@ -68,7 +68,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 173);
+            this.label2.Location = new System.Drawing.Point(12, 195);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(182, 16);
             this.label2.TabIndex = 3;
@@ -76,7 +76,7 @@
             // 
             // closeForm
             // 
-            this.closeForm.Location = new System.Drawing.Point(443, 323);
+            this.closeForm.Location = new System.Drawing.Point(375, 323);
             this.closeForm.Name = "closeForm";
             this.closeForm.Size = new System.Drawing.Size(146, 37);
             this.closeForm.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             // updateAllergyButton
             // 
-            this.updateAllergyButton.Location = new System.Drawing.Point(236, 323);
+            this.updateAllergyButton.Location = new System.Drawing.Point(193, 323);
             this.updateAllergyButton.Name = "updateAllergyButton";
             this.updateAllergyButton.Size = new System.Drawing.Size(151, 37);
             this.updateAllergyButton.TabIndex = 5;
