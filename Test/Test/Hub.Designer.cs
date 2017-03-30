@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hub));
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.bSearch = new System.Windows.Forms.Button();
             this.bLogout = new System.Windows.Forms.Button();
@@ -185,6 +186,7 @@
             this.AcceptButton = this.bSearch;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(525, 435);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbDOB);
@@ -196,8 +198,10 @@
             this.Controls.Add(this.bLogout);
             this.Controls.Add(this.bSearch);
             this.Controls.Add(this.tbSearch);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Hub";
-            this.Text = "Main";
+            this.Text = "Search Page";
             this.Load += new System.EventHandler(this.Hub_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
