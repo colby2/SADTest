@@ -34,41 +34,45 @@ namespace Test
 
         private void insertButton_Click_1(object sender, EventArgs e)
         {
-            if (dvtb.Text == "" || dvtb.Text == null)
+            if (dvtb.Text == "" || fnTb.Text == "" || lnTB.Text == "" || ptb.Text == "" || stb.Text == "" || sttb.Text == "" || ctb.Text == "" || ztb.Text == "" || dbtb.Text == "" || pitb.Text == "" || sitb.Text == "") ;
             {
-                MessageBox.Show("Something must be entered for Date of Last Visit. If patient is not applicable enter 'N/A'.", "Attention", MessageBoxButtons.OK);
+                MessageBox.Show("Something must be entered for each field. If patient is not applicable for a certain field enter 'N/A'.", "Attention", MessageBoxButtons.OK);
                 return;
             }
             int rowsInserted = InsertFunctions.InsertIntoDemographics(fnTb.Text, lnTB.Text, dvtb.Text, stb.Text, ctb.Text, sttb.Text, ztb.Text, dbtb.Text, ptb.Text, pitb.Text, sitb.Text, ntb.Text);
             this.Close();
-        } 
-
- 
-
-        private void textbox_TextChanged(object sender, EventArgs e)
-        {
-            insertButton.Enabled = areControlsValid(this.Controls);
-        }
-        private void InsertPatient_Load(object sender, EventArgs e)
-        {
-
+            
         }
 
-        private bool areControlsValid(Control.ControlCollection controls)
+        private void currentDatebt_Click(object sender, EventArgs e)
         {
-            foreach (Control c in controls)
-            {
-                if (c is TextBox)
-                {
-                    if (string.IsNullOrEmpty(((TextBox)c).Text))
-                        return false;
-                }
-                if (c.HasChildren)
-                {
-                    areControlsValid(c.Controls);
-                }
-            }
-            return true;
+            Patient p = new Patient();
+            dvtb.Text = p.getCurrentDate();
         }
     }
 }
+    
+
+        //private void InsertPatient_Load(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private bool areControlsValid(Control.ControlCollection controls)
+        //{
+        //    foreach (Control c in controls)
+        //    {
+        //        if (c is TextBox)
+        //        {
+        //            if (string.IsNullOrEmpty(((TextBox)c).Text))
+        //                return false;
+        //        }
+        //        if (c.HasChildren)
+        //        {
+        //            areControlsValid(c.Controls);
+        //        }
+        //    }
+        //    return true;
+        //}
+    
+

@@ -56,6 +56,7 @@
             this.insertButton = new System.Windows.Forms.Button();
             this.ntb = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.currentDatebt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // fnTb
@@ -74,6 +75,7 @@
             this.ctb.Name = "ctb";
             this.ctb.Size = new System.Drawing.Size(119, 31);
             this.ctb.TabIndex = 1;
+            this.ctb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // pitb
             // 
@@ -82,6 +84,7 @@
             this.pitb.Name = "pitb";
             this.pitb.Size = new System.Drawing.Size(119, 31);
             this.pitb.TabIndex = 2;
+            this.pitb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lnTB
             // 
@@ -90,6 +93,7 @@
             this.lnTB.Name = "lnTB";
             this.lnTB.Size = new System.Drawing.Size(119, 31);
             this.lnTB.TabIndex = 3;
+            this.lnTB.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // stb
             // 
@@ -98,6 +102,7 @@
             this.stb.Name = "stb";
             this.stb.Size = new System.Drawing.Size(119, 31);
             this.stb.TabIndex = 4;
+            this.stb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // ptb
             // 
@@ -106,6 +111,7 @@
             this.ptb.Name = "ptb";
             this.ptb.Size = new System.Drawing.Size(119, 31);
             this.ptb.TabIndex = 5;
+            this.ptb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // sitb
             // 
@@ -114,6 +120,7 @@
             this.sitb.Name = "sitb";
             this.sitb.Size = new System.Drawing.Size(119, 31);
             this.sitb.TabIndex = 6;
+            this.sitb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // sttb
             // 
@@ -122,6 +129,7 @@
             this.sttb.Name = "sttb";
             this.sttb.Size = new System.Drawing.Size(119, 31);
             this.sttb.TabIndex = 7;
+            this.sttb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // ztb
             // 
@@ -130,6 +138,7 @@
             this.ztb.Name = "ztb";
             this.ztb.Size = new System.Drawing.Size(119, 31);
             this.ztb.TabIndex = 8;
+            this.ztb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // dbtb
             // 
@@ -138,6 +147,7 @@
             this.dbtb.Name = "dbtb";
             this.dbtb.Size = new System.Drawing.Size(119, 31);
             this.dbtb.TabIndex = 9;
+            this.dbtb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // dvtb
             // 
@@ -146,6 +156,7 @@
             this.dvtb.Name = "dvtb";
             this.dvtb.Size = new System.Drawing.Size(119, 31);
             this.dvtb.TabIndex = 10;
+            this.dvtb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lFirstname
             // 
@@ -280,7 +291,6 @@
             // 
             // insertButton
             // 
-            this.insertButton.Enabled = false;
             this.insertButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.insertButton.Image = ((System.Drawing.Image)(resources.GetObject("insertButton.Image")));
             this.insertButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -302,24 +312,35 @@
             this.ntb.ReadOnly = true;
             this.ntb.Size = new System.Drawing.Size(119, 31);
             this.ntb.TabIndex = 25;
-            this.ntb.Text = "  ";
+            this.ntb.Text = "-";
             this.ntb.Visible = false;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(372, 486);
+            this.label13.Location = new System.Drawing.Point(395, 534);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(257, 20);
             this.label13.TabIndex = 26;
             this.label13.Text = "Note: All Fields Must be completed!";
+            // 
+            // currentDatebt
+            // 
+            this.currentDatebt.Location = new System.Drawing.Point(264, 486);
+            this.currentDatebt.Name = "currentDatebt";
+            this.currentDatebt.Size = new System.Drawing.Size(109, 31);
+            this.currentDatebt.TabIndex = 27;
+            this.currentDatebt.Text = "Add Todays Date";
+            this.currentDatebt.UseVisualStyleBackColor = true;
+            this.currentDatebt.Click += new System.EventHandler(this.currentDatebt_Click);
             // 
             // InsertPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 576);
+            this.Controls.Add(this.currentDatebt);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.ntb);
             this.Controls.Add(this.insertButton);
@@ -349,7 +370,6 @@
             this.Controls.Add(this.fnTb);
             this.Name = "InsertPatient";
             this.Text = "InsertPatient";
-            this.Load += new System.EventHandler(this.InsertPatient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,5 +404,6 @@
         private System.Windows.Forms.Button insertButton;
         private System.Windows.Forms.TextBox ntb;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button currentDatebt;
     }
 }
