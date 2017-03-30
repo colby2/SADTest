@@ -88,9 +88,10 @@ namespace DiabeticHealthDB
             MySqlConnection conn = DatabaseConnection.GetConnection();
             string qry =
                 "INSERT INTO `VitalsInformation`(`PatientID`, `DateofTest`, `HeartRate`, `BloodPressure`, `RespiratoryRate`, `OxygenSaturation`, `AirType`, `Height`, `Weight`, `Temperature`)" +
-                "VALUES (@PatientID, @HeartRate, @BloodPressure, @RespiratoryRate, @OxygenSaturation, @AirType, @Height, @Weight, @Temperature);";
+                "VALUES (@PatientID, @DateOfTest, @HeartRate, @BloodPressure, @RespiratoryRate, @OxygenSaturation, @AirType, @Height, @Weight, @Temperature);";
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.Parameters.AddWithValue("@PatientID", PatientID);
+            cmd.Parameters.AddWithValue("@DateOfTest", DateOfTest);
             cmd.Parameters.AddWithValue("@HeartRate", HeartRate);
             cmd.Parameters.AddWithValue("@BloodPressure", BloodPressure);
             cmd.Parameters.AddWithValue("@RespiratoryRate", RespiratoryRate);
