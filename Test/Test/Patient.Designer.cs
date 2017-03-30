@@ -899,6 +899,7 @@
             this.addVitalsButton.TabIndex = 5;
             this.addVitalsButton.Text = "Add Vitals Information for this Patient";
             this.addVitalsButton.UseVisualStyleBackColor = true;
+            this.addVitalsButton.Click += new System.EventHandler(this.addVitalsButton_Click);
             // 
             // addDiabeticMeds
             // 

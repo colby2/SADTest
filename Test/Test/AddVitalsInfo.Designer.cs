@@ -45,6 +45,10 @@
             this.wtb = new System.Windows.Forms.TextBox();
             this.temptb = new System.Windows.Forms.TextBox();
             this.o2sattb = new System.Windows.Forms.TextBox();
+            this.datetakenlb = new System.Windows.Forms.Label();
+            this.datetakentb = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // heartRatelb
@@ -223,11 +227,56 @@
             this.o2sattb.TabIndex = 15;
             this.o2sattb.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
+            // datetakenlb
+            // 
+            this.datetakenlb.AutoSize = true;
+            this.datetakenlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datetakenlb.Location = new System.Drawing.Point(663, 45);
+            this.datetakenlb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.datetakenlb.Name = "datetakenlb";
+            this.datetakenlb.Size = new System.Drawing.Size(80, 18);
+            this.datetakenlb.TabIndex = 16;
+            this.datetakenlb.Text = "DateTaken";
+            // 
+            // datetakentb
+            // 
+            this.datetakentb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datetakentb.Location = new System.Drawing.Point(634, 67);
+            this.datetakentb.Margin = new System.Windows.Forms.Padding(4);
+            this.datetakentb.Multiline = true;
+            this.datetakentb.Name = "datetakentb";
+            this.datetakentb.Size = new System.Drawing.Size(143, 33);
+            this.datetakentb.TabIndex = 17;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(702, 505);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(175, 47);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "Add This Information to The patients Records";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(630, 457);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(257, 20);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Note: All Fields Must be completed!";
+            // 
             // AddVitalsInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(904, 594);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.datetakentb);
+            this.Controls.Add(this.datetakenlb);
             this.Controls.Add(this.o2sattb);
             this.Controls.Add(this.temptb);
             this.Controls.Add(this.wtb);
@@ -273,5 +322,9 @@
         private System.Windows.Forms.TextBox wtb;
         private System.Windows.Forms.TextBox temptb;
         private System.Windows.Forms.TextBox o2sattb;
+        private System.Windows.Forms.Label datetakenlb;
+        private System.Windows.Forms.TextBox datetakentb;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label13;
     }
 }

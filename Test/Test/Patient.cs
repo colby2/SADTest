@@ -283,6 +283,11 @@ namespace Test
             addAllergyForm.ShowDialog();
             
         }
+        private void addVitalsButton_Click(object sender, EventArgs e)
+        {
+            AddVitalsInfo addVitalsForm = new AddVitalsInfo(Int32.Parse(PatientId));
+            addVitalsForm.ShowDialog();
+        }
         /********************************************************************************************
       * Button Click that refreshes
       * ******************************************************************************************/
@@ -569,6 +574,7 @@ namespace Test
             return completeCurrentDate;
         }
 
+      
     }
 }
 

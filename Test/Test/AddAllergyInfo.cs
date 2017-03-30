@@ -46,6 +46,11 @@ namespace Test
        * ******************************************************************************************/
         private void updateAllergyButton_Click(object sender, EventArgs e)
         {
+            if(AllergicTo.Text == "" || Reaction.Text == "")
+            {
+                MessageBox.Show("Something must be entered for each field. If patient is not applicable for a certain field enter 'N/A'.", "Attention", MessageBoxButtons.OK);
+                return; 
+            }
             int insertedRows = InsertFunctions.InsertIntoAllergyInfo(PatientID, AllergicTo.Text, Reaction.Text);
             AllergicTo.Clear();
             Reaction.Clear();
