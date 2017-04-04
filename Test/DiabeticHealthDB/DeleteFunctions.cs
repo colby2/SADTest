@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
-
+//This class will hold general delete function(s) mainly for deleting all patient info in one function. Placed here for safety reasons.
 namespace DiabeticHealthDB
 {
    public static class DeleteFunctions

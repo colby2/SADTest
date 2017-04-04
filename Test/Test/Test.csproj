@@ -36,7 +36,7 @@
     <Reference Include="DiabeticHealthDB">
       <HintPath>..\DiabeticHealthDB\bin\Debug\DiabeticHealthDB.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.8.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -57,6 +57,12 @@
     </Compile>
     <Compile Include="AddAllergyInfo.Designer.cs">
       <DependentUpon>AddAllergyInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddMedicationInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddMedicationInfo.Designer.cs">
+      <DependentUpon>AddMedicationInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="AddVitalsInfo.cs">
       <SubType>Form</SubType>
@@ -104,6 +110,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddAllergyInfo.resx">
       <DependentUpon>AddAllergyInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMedicationInfo.resx">
+      <DependentUpon>AddMedicationInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddVitalsInfo.resx">
       <DependentUpon>AddVitalsInfo.cs</DependentUpon>

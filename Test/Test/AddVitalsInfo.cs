@@ -72,6 +72,9 @@ namespace Test
 
         private void button1_Click(object sender, EventArgs e)
         {
+            string str = htb.Text.Trim();
+            int num;
+            bool isnum = int.TryParse(str, out num);
             if(HRtb.Text == "" || BPtb.Text == "" || RRtb.Text == "" || o2sattb.Text == "" || attb.Text == "" || htb.Text == "" || wtb.Text == "" || temptb.Text == "")
             {
                 MessageBox.Show("Something must be entered for each field. If patient is not applicable for a certain field enter 'N/A'.", "Attention", MessageBoxButtons.OK);

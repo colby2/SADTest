@@ -156,6 +156,7 @@
             // 
             // tpDemographics
             // 
+            this.tpDemographics.BackColor = System.Drawing.Color.Honeydew;
             this.tpDemographics.Controls.Add(this.visitDateUpdate);
             this.tpDemographics.Controls.Add(this.tbLastname);
             this.tpDemographics.Controls.Add(this.lLastName);
@@ -188,7 +189,6 @@
             this.tpDemographics.Size = new System.Drawing.Size(780, 561);
             this.tpDemographics.TabIndex = 0;
             this.tpDemographics.Text = "Demographics";
-            this.tpDemographics.UseVisualStyleBackColor = true;
             this.tpDemographics.Click += new System.EventHandler(this.tpDemographics_Click);
             // 
             // visitDateUpdate
@@ -892,6 +892,7 @@
             this.addMedicationButton.TabIndex = 4;
             this.addMedicationButton.Text = "Add Medication Information for this Patient";
             this.addMedicationButton.UseVisualStyleBackColor = true;
+            this.addMedicationButton.Click += new System.EventHandler(this.addMedicationButton_Click);
             // 
             // addVitalsButton
             // 
@@ -953,6 +954,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(1249, 602);
             this.Controls.Add(this.deleteSelectedRow);
             this.Controls.Add(this.gotoNoteTab);
@@ -967,7 +969,9 @@
             this.Controls.Add(this.refreshButtonAllergy);
             this.Controls.Add(this.tcPatient);
             this.Controls.Add(this.addAllergyButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Patient";
             this.Text = "Patient Information";
             this.Load += new System.EventHandler(this.Patient_Load);

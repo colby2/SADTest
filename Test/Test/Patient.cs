@@ -558,9 +558,9 @@ namespace Test
             string monthNumber = dateArray[1].ToString();//will grab the current month in number format
             string yearNumber = dateArray[2].ToString();//Holds current year
             string dayNumber = dateArray[0].ToString();//Holds current Day of week 
-                                                       /************************************************************************************************************
-                                                        * switch statement that will take month number and (ex: 03) and turn it into the month name (ex: March)
-                                                        * **********************************************************************************************************/
+               /************************************************************************************************************
+                * switch statement that will take month number and (ex: 03) and turn it into the month name (ex: March)
+                * **********************************************************************************************************/
             switch (monthNumber)
             {
                 case "01":
@@ -611,8 +611,7 @@ namespace Test
                 string allergicTo = lvAllergyList.SelectedItems[0].SubItems[0].Text;
                 string reaction = lvAllergyList.SelectedItems[0].SubItems[1].Text;
 
-                connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
-                MySqlConnection connection = new MySqlConnection(connectionString);
+                MySqlConnection connection = DatabaseConnection.GetConnection();
 
                 connection.Open();
                 string deleteRow = "DELETE FROM AllergyInfo WHERE PatientID = " + selectedID + " AND AllergicTo = '" + allergicTo +"' AND Reaction = '"+ reaction +"';";
@@ -629,6 +628,12 @@ namespace Test
         {
             AddVitalsInfo addVitalsForm = new AddVitalsInfo(Int32.Parse(PatientId));
             addVitalsForm.ShowDialog();
+        }
+
+        private void addMedicationButton_Click(object sender, EventArgs e)
+        {
+            AddMedicationInfo addMedicationInfo = new AddMedicationInfo(Int32.Parse(PatientId));
+            addMedicationInfo.ShowDialog();
         }
     }
 }

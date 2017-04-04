@@ -51,7 +51,7 @@ namespace DiabeticHealthDB
 
         }
         /************************************************************************************************
-         * Inserts info into AllergyInfo Table from from
+         * Inserts info into AllergyInfo Table from form
          * **********************************************************************************************/
         public static int InsertIntoAllergyInfo(int PatientID, string AllergicTo, string Reaction)
         {
@@ -81,7 +81,9 @@ namespace DiabeticHealthDB
             return totalRowsInserted;
 
         }
-
+        /*
+         *Insert function for VitalsInforamtion Table  
+         */
         public static int InsertIntoVitalsInformation(DateTime DateOfTest, int HeartRate, string BloodPressure, int RespiratoryRate, int OxygenSaturation, string AirType, int Height, int Weight, double Temperature, int PatientID)
         {
             int totalRowsInserted = 0;
