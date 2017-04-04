@@ -21,6 +21,7 @@ namespace Test
 
         Thread[] allThreads = new Thread[100];
         int threadCount = 0;
+        int tabCount = 1;
 
         public static void graphThreadStart()
         {
@@ -61,16 +62,23 @@ namespace Test
 
         private void bGraphs_Click(object sender, EventArgs e)
         {
-           
-           ThreadStart graphRef = new ThreadStart(graphThreadStart);
-            allThreads[threadCount] = new Thread(graphRef);
-            allThreads[threadCount].IsBackground = true;
-            allThreads[threadCount].Start();
-            threadCount++;
-            //Thread graphThread = new Thread(graphRef);
-            //graphThread.IsBackground = true;
-            //graphThread.Start();
-           
+
+            //ThreadStart graphRef = new ThreadStart(graphThreadStart);
+            // allThreads[threadCount] = new Thread(graphRef);
+            // allThreads[threadCount].IsBackground = true;
+            // allThreads[threadCount].Start();
+            // threadCount++;
+            // //Thread graphThread = new Thread(graphRef);
+            // //graphThread.IsBackground = true;
+            // //graphThread.Start();
+            tabControl1.TabPages.Add(new TabPage());
+            Form frm = new GraphTemplate();
+            frm.TopLevel = false;
+            frm.Visible = true;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            tabControl1.TabPages[1].Controls.Add(frm);
+
         }
 
         private void Hub_Load(object sender, EventArgs e)
