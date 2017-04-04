@@ -121,6 +121,38 @@ namespace DiabeticHealthDB
 
         }
 
+        public static void InsertIntoMedication(string MedicationName, string DateStarted, string Amount, string Frequency, string Route, int PatientID)
+        {
+            
+            MySqlConnection conn = DatabaseConnection.GetConnection();
+            string qry =
+                "INSERT INTO `Medication`( `MedicationName`, `DateStarted`, `Amount`, `Frequency`, `Route`, `PatientID`)" +
+                "VALUES (@MedicationName, @DateStarted, @Amount, @Frequency, @Route, @PatientID);";
+            MySqlCommand cmd = new MySqlCommand(qry, conn);
+            cmd.Parameters.AddWithValue("@MedicationName", MedicationName);
+            cmd.Parameters.AddWithValue("@DateStarted", DateStarted);
+            cmd.Parameters.AddWithValue("@Amount", Amount);
+            cmd.Parameters.AddWithValue("@Frequency", Frequency);
+            cmd.Parameters.AddWithValue("@Route", Route);
+            cmd.Parameters.AddWithValue("@PatientID", PatientID);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)//perhaps pass exception to message box
+            {
+                
+                throw ex;
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            
+
+        }
     }
 
   

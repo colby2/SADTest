@@ -89,6 +89,7 @@ namespace Test
             chart1.Series.Add(graphName);//NO
             testSelectBox.Text = "(Select Test)";
             cbSubTest.Text = "(Select Value)";
+            searchBar.Text = uniqueID;
             connection = new MySqlConnection(connectionString);
             lvSearch.FullRowSelect = true;
             search(uniqueID);
@@ -300,6 +301,11 @@ namespace Test
             {
                 System.Windows.Forms.MessageBox.Show("This Information is not available from this test.");
             }//End Try
+        }
+
+        private void GraphTemplate_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -55,7 +55,7 @@
             // 
             this.heartRatelb.AutoSize = true;
             this.heartRatelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.heartRatelb.Location = new System.Drawing.Point(86, 48);
+            this.heartRatelb.Location = new System.Drawing.Point(86, 21);
             this.heartRatelb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.heartRatelb.Name = "heartRatelb";
             this.heartRatelb.Size = new System.Drawing.Size(79, 18);
@@ -66,7 +66,7 @@
             // 
             this.bplb.AutoSize = true;
             this.bplb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bplb.Location = new System.Drawing.Point(86, 118);
+            this.bplb.Location = new System.Drawing.Point(86, 79);
             this.bplb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bplb.Name = "bplb";
             this.bplb.Size = new System.Drawing.Size(111, 18);
@@ -77,7 +77,7 @@
             // 
             this.rrlb.AutoSize = true;
             this.rrlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rrlb.Location = new System.Drawing.Point(86, 179);
+            this.rrlb.Location = new System.Drawing.Point(86, 130);
             this.rrlb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.rrlb.Name = "rrlb";
             this.rrlb.Size = new System.Drawing.Size(119, 18);
@@ -88,7 +88,7 @@
             // 
             this.o2satlb.AutoSize = true;
             this.o2satlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.o2satlb.Location = new System.Drawing.Point(86, 247);
+            this.o2satlb.Location = new System.Drawing.Point(86, 191);
             this.o2satlb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.o2satlb.Name = "o2satlb";
             this.o2satlb.Size = new System.Drawing.Size(129, 18);
@@ -99,7 +99,7 @@
             // 
             this.airlb.AutoSize = true;
             this.airlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.airlb.Location = new System.Drawing.Point(86, 314);
+            this.airlb.Location = new System.Drawing.Point(86, 251);
             this.airlb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.airlb.Name = "airlb";
             this.airlb.Size = new System.Drawing.Size(61, 18);
@@ -110,7 +110,7 @@
             // 
             this.heightlb.AutoSize = true;
             this.heightlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.heightlb.Location = new System.Drawing.Point(86, 382);
+            this.heightlb.Location = new System.Drawing.Point(86, 318);
             this.heightlb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.heightlb.Name = "heightlb";
             this.heightlb.Size = new System.Drawing.Size(50, 18);
@@ -121,7 +121,7 @@
             // 
             this.weightlb.AutoSize = true;
             this.weightlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weightlb.Location = new System.Drawing.Point(86, 447);
+            this.weightlb.Location = new System.Drawing.Point(86, 379);
             this.weightlb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.weightlb.Name = "weightlb";
             this.weightlb.Size = new System.Drawing.Size(54, 18);
@@ -132,7 +132,7 @@
             // 
             this.templb.AutoSize = true;
             this.templb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.templb.Location = new System.Drawing.Point(86, 508);
+            this.templb.Location = new System.Drawing.Point(86, 435);
             this.templb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.templb.Name = "templb";
             this.templb.Size = new System.Drawing.Size(92, 18);
@@ -142,7 +142,7 @@
             // HRtb
             // 
             this.HRtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HRtb.Location = new System.Drawing.Point(310, 45);
+            this.HRtb.Location = new System.Drawing.Point(310, 21);
             this.HRtb.Margin = new System.Windows.Forms.Padding(4);
             this.HRtb.Multiline = true;
             this.HRtb.Name = "HRtb";
@@ -153,7 +153,7 @@
             // RRtb
             // 
             this.RRtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RRtb.Location = new System.Drawing.Point(310, 176);
+            this.RRtb.Location = new System.Drawing.Point(310, 130);
             this.RRtb.Margin = new System.Windows.Forms.Padding(4);
             this.RRtb.Multiline = true;
             this.RRtb.Name = "RRtb";
@@ -164,7 +164,7 @@
             // BPtb
             // 
             this.BPtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BPtb.Location = new System.Drawing.Point(310, 115);
+            this.BPtb.Location = new System.Drawing.Point(310, 79);
             this.BPtb.Margin = new System.Windows.Forms.Padding(4);
             this.BPtb.Multiline = true;
             this.BPtb.Name = "BPtb";
@@ -175,7 +175,7 @@
             // attb
             // 
             this.attb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attb.Location = new System.Drawing.Point(310, 311);
+            this.attb.Location = new System.Drawing.Point(310, 251);
             this.attb.Margin = new System.Windows.Forms.Padding(4);
             this.attb.Multiline = true;
             this.attb.Name = "attb";
@@ -186,7 +186,7 @@
             // htb
             // 
             this.htb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.htb.Location = new System.Drawing.Point(310, 379);
+            this.htb.Location = new System.Drawing.Point(310, 318);
             this.htb.Margin = new System.Windows.Forms.Padding(4);
             this.htb.Multiline = true;
             this.htb.Name = "htb";
@@ -197,7 +197,7 @@
             // wtb
             // 
             this.wtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wtb.Location = new System.Drawing.Point(310, 444);
+            this.wtb.Location = new System.Drawing.Point(310, 379);
             this.wtb.Margin = new System.Windows.Forms.Padding(4);
             this.wtb.Multiline = true;
             this.wtb.Name = "wtb";
@@ -208,7 +208,7 @@
             // temptb
             // 
             this.temptb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.temptb.Location = new System.Drawing.Point(310, 505);
+            this.temptb.Location = new System.Drawing.Point(310, 435);
             this.temptb.Margin = new System.Windows.Forms.Padding(4);
             this.temptb.Multiline = true;
             this.temptb.Name = "temptb";
@@ -219,7 +219,7 @@
             // o2sattb
             // 
             this.o2sattb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.o2sattb.Location = new System.Drawing.Point(310, 244);
+            this.o2sattb.Location = new System.Drawing.Point(310, 191);
             this.o2sattb.Margin = new System.Windows.Forms.Padding(4);
             this.o2sattb.Multiline = true;
             this.o2sattb.Name = "o2sattb";
@@ -231,7 +231,7 @@
             // 
             this.datetakenlb.AutoSize = true;
             this.datetakenlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datetakenlb.Location = new System.Drawing.Point(663, 45);
+            this.datetakenlb.Location = new System.Drawing.Point(86, 519);
             this.datetakenlb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.datetakenlb.Name = "datetakenlb";
             this.datetakenlb.Size = new System.Drawing.Size(80, 18);
@@ -240,11 +240,11 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(702, 505);
+            this.button1.Location = new System.Drawing.Point(712, 535);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(175, 47);
             this.button1.TabIndex = 18;
-            this.button1.Text = "Add This Information to The patients Records";
+            this.button1.Text = "Add This Information to The Patients Records";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -252,7 +252,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(630, 457);
+            this.label13.Location = new System.Drawing.Point(635, 502);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(257, 20);
             this.label13.TabIndex = 27;
@@ -260,7 +260,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(601, 66);
+            this.dateTimePicker1.Location = new System.Drawing.Point(310, 519);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 24);
             this.dateTimePicker1.TabIndex = 29;

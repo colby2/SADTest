@@ -62,6 +62,7 @@
             this.chart1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.chart1.BackColor = System.Drawing.Color.Honeydew;
             chartArea2.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
@@ -81,6 +82,7 @@
             // lvSearch
             // 
             this.lvSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lvSearch.BackColor = System.Drawing.SystemColors.Window;
             this.lvSearch.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.firstNameCol,
             this.lastNameCol,
@@ -141,7 +143,7 @@
             this.testSelectBox.FormattingEnabled = true;
             this.testSelectBox.Items.AddRange(new object[] {
             "Lipids",
-            "Diabetic"});
+            "Vitals"});
             this.testSelectBox.Location = new System.Drawing.Point(350, 482);
             this.testSelectBox.Name = "testSelectBox";
             this.testSelectBox.Size = new System.Drawing.Size(142, 21);
@@ -171,6 +173,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(887, 615);
             this.Controls.Add(this.bGraph);
             this.Controls.Add(this.cbSubTest);
@@ -182,6 +185,7 @@
             this.Controls.Add(this.chart1);
             this.Name = "GraphTemplate";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.GraphTemplate_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
