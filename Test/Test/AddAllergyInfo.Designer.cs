@@ -45,6 +45,7 @@
             this.AllergicTo.Name = "AllergicTo";
             this.AllergicTo.Size = new System.Drawing.Size(389, 71);
             this.AllergicTo.TabIndex = 0;
+            this.AllergicTo.TextChanged += new System.EventHandler(this.AllergicTo_TextChanged);
             // 
             // Reaction
             // 
