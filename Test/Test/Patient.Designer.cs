@@ -124,6 +124,7 @@
             this.addLipidTestButton = new System.Windows.Forms.Button();
             this.addDiabeticBackgroundButton = new System.Windows.Forms.Button();
             this.deleteSelectedRow = new System.Windows.Forms.Button();
+            this.editSelectedRow = new System.Windows.Forms.Button();
             this.tcPatient.SuspendLayout();
             this.tpDemographics.SuspendLayout();
             this.tpAllergies.SuspendLayout();
@@ -441,6 +442,7 @@
             this.lvAllergyList.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
             this.lvAllergyList.FullRowSelect = true;
             this.lvAllergyList.GridLines = true;
+            this.lvAllergyList.LabelEdit = true;
             this.lvAllergyList.Location = new System.Drawing.Point(-4, 0);
             this.lvAllergyList.Name = "lvAllergyList";
             this.lvAllergyList.Size = new System.Drawing.Size(788, 556);
@@ -737,6 +739,7 @@
             // DateOfLipidTest
             // 
             this.DateOfLipidTest.Text = "Date Of Test";
+            this.DateOfLipidTest.Width = 81;
             // 
             // HgA1C
             // 
@@ -745,6 +748,7 @@
             // Cholesterol
             // 
             this.Cholesterol.Text = "Cholesterol";
+            this.Cholesterol.Width = 76;
             // 
             // HDL
             // 
@@ -757,10 +761,12 @@
             // Triglycerides
             // 
             this.Triglycerides.Text = "Triglycerides";
+            this.Triglycerides.Width = 82;
             // 
             // TCHOLHDLRatio
             // 
             this.TCHOLHDLRatio.Text = "TCHOLHDL Ratio";
+            this.TCHOLHDLRatio.Width = 107;
             // 
             // tpDiabeticBackground
             // 
@@ -950,12 +956,23 @@
             this.deleteSelectedRow.UseVisualStyleBackColor = true;
             this.deleteSelectedRow.Click += new System.EventHandler(this.deleteSelectedRow_Click);
             // 
+            // editSelectedRow
+            // 
+            this.editSelectedRow.Location = new System.Drawing.Point(1111, 264);
+            this.editSelectedRow.Name = "editSelectedRow";
+            this.editSelectedRow.Size = new System.Drawing.Size(125, 50);
+            this.editSelectedRow.TabIndex = 34;
+            this.editSelectedRow.Text = "Edit Selected Row";
+            this.editSelectedRow.UseVisualStyleBackColor = true;
+            this.editSelectedRow.Click += new System.EventHandler(this.editSelectedRow_Click);
+            // 
             // Patient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
             this.ClientSize = new System.Drawing.Size(1249, 602);
+            this.Controls.Add(this.editSelectedRow);
             this.Controls.Add(this.deleteSelectedRow);
             this.Controls.Add(this.gotoNoteTab);
             this.Controls.Add(this.addDiabeticBackgroundButton);
@@ -1089,5 +1106,6 @@
         private System.Windows.Forms.Button addLipidTestButton;
         private System.Windows.Forms.Button addDiabeticBackgroundButton;
         private System.Windows.Forms.Button deleteSelectedRow;
+        private System.Windows.Forms.Button editSelectedRow;
     }
 }

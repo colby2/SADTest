@@ -635,6 +635,19 @@ namespace Test
             AddMedicationInfo addMedicationInfo = new AddMedicationInfo(Int32.Parse(PatientId));
             addMedicationInfo.ShowDialog();
         }
+
+        private void editSelectedRow_Click(object sender, EventArgs e)
+        {
+            if (lvAllergyList.SelectedItems.Count == 1){
+                string allergicTo = lvAllergyList.SelectedItems[0].SubItems[0].Text;
+                string reaction = lvAllergyList.SelectedItems[0].SubItems[1].Text;
+
+                AddAllergyInfo addAllergyForm = new AddAllergyInfo(Int32.Parse(PatientId), allergicTo, reaction);
+                addAllergyForm.ShowDialog();
+
+            }
+
+        }
     }
 }
 
