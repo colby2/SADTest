@@ -176,3 +176,5 @@ C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.InsertPatie
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddMedicationInfo.resources
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.dll
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.xml
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.xml
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddMedicationInfo.resources
