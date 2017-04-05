@@ -71,13 +71,14 @@ namespace Test
             // //Thread graphThread = new Thread(graphRef);
             // //graphThread.IsBackground = true;
             // //graphThread.Start();
-            tabControl1.TabPages.Add(new TabPage());
+            tabControl1.TabPages.Add(new TabPage("Graph"+tabCount.ToString()));
             Form frm = new GraphTemplate();
             frm.TopLevel = false;
             frm.Visible = true;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
-            tabControl1.TabPages[1].Controls.Add(frm);
+            tabControl1.TabPages[tabCount].Controls.Add(frm);
+            tabCount++;
 
         }
 
@@ -170,11 +171,19 @@ namespace Test
             {
                 //Thread patientThread = new Thread(patientThreadStart);
                 // patientThreadStart(lvSearchList.SelectedItems[0].SubItems[3].Text);
-                ParameterizedThreadStart pat = new ParameterizedThreadStart(patientThreadStart);
-                allThreads[threadCount] = new Thread(pat);
-                allThreads[threadCount].IsBackground = true;
-                allThreads[threadCount].Start(lvSearchList.SelectedItems[0].SubItems[3].Text);
-                threadCount++;
+                //ParameterizedThreadStart pat = new ParameterizedThreadStart(patientThreadStart);
+                //allThreads[threadCount] = new Thread(pat);
+                //allThreads[threadCount].IsBackground = true;
+                //allThreads[threadCount].Start(lvSearchList.SelectedItems[0].SubItems[3].Text);
+                //threadCount++;
+                tabControl1.TabPages.Add(new TabPage("Patient" + lvSearchList.SelectedItems[0].SubItems[3].Text));
+                Form frm = new Patient(lvSearchList.SelectedItems[0].SubItems[3].Text);
+                frm.TopLevel = false;
+                frm.Visible = true;
+                frm.FormBorderStyle = FormBorderStyle.None;
+                frm.Dock = DockStyle.Fill;
+                tabControl1.TabPages[tabCount].Controls.Add(frm);
+                tabCount++;
 
             }
         }
