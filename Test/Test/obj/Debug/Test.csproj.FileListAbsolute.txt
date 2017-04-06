@@ -181,5 +181,6 @@ C:\Users\Ryan Kesterson\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.dll
 C:\Users\Ryan Kesterson\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddAllergyInfo.resources
 C:\Users\Ryan Kesterson\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddMedicationInfo.resources
 C:\Users\Ryan Kesterson\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddVitalsInfo.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabetesMedicaitonInfo.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddLipidTestInfo.resources
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.xml
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabetesMedicaitonInfo.resources
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddMedicationInfo.resources

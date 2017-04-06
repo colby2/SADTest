@@ -139,6 +139,9 @@
             // 
             // tcPatient
             // 
+            this.tcPatient.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tcPatient.Controls.Add(this.tpDemographics);
             this.tcPatient.Controls.Add(this.tpAllergies);
             this.tcPatient.Controls.Add(this.tpMedication);
@@ -223,6 +226,7 @@
             // 
             // bTrends
             // 
+            this.bTrends.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bTrends.Location = new System.Drawing.Point(618, 532);
             this.bTrends.Name = "bTrends";
             this.bTrends.Size = new System.Drawing.Size(75, 23);
@@ -233,6 +237,7 @@
             // 
             // bEdit
             // 
+            this.bEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bEdit.Location = new System.Drawing.Point(699, 532);
             this.bEdit.Name = "bEdit";
             this.bEdit.Size = new System.Drawing.Size(75, 23);
@@ -435,6 +440,9 @@
             // 
             // lvAllergyList
             // 
+            this.lvAllergyList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvAllergyList.BackColor = System.Drawing.Color.Honeydew;
             this.lvAllergyList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.AllergicTo,
@@ -474,6 +482,9 @@
             // 
             // lvMedicationList
             // 
+            this.lvMedicationList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvMedicationList.BackColor = System.Drawing.Color.Honeydew;
             this.lvMedicationList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.MedicationName,
@@ -526,6 +537,9 @@
             // 
             // lvVitalsList
             // 
+            this.lvVitalsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvVitalsList.BackColor = System.Drawing.Color.Honeydew;
             this.lvVitalsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.DateTaken,
@@ -609,6 +623,9 @@
             // 
             // lvDiabeticMedsList
             // 
+            this.lvDiabeticMedsList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvDiabeticMedsList.BackColor = System.Drawing.Color.Honeydew;
             this.lvDiabeticMedsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.DiabeticMedicationName,
@@ -659,6 +676,9 @@
             // 
             // lvDiabeticTestList
             // 
+            this.lvDiabeticTestList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvDiabeticTestList.BackColor = System.Drawing.Color.Honeydew;
             this.lvDiabeticTestList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.DateOfTest,
@@ -718,6 +738,9 @@
             // 
             // lvLipidTestList
             // 
+            this.lvLipidTestList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvLipidTestList.BackColor = System.Drawing.Color.Honeydew;
             this.lvLipidTestList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.DateOfLipidTest,
@@ -780,6 +803,9 @@
             // 
             // lvDiabeticBackgroundList
             // 
+            this.lvDiabeticBackgroundList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lvDiabeticBackgroundList.BackColor = System.Drawing.Color.Honeydew;
             this.lvDiabeticBackgroundList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.DateInfoTaken,
@@ -822,6 +848,9 @@
             // 
             // tbNotes
             // 
+            this.tbNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbNotes.Location = new System.Drawing.Point(52, 42);
             this.tbNotes.Multiline = true;
@@ -833,6 +862,7 @@
             // 
             // addNotes
             // 
+            this.addNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.addNotes.Location = new System.Drawing.Point(604, 478);
             this.addNotes.Name = "addNotes";
             this.addNotes.Size = new System.Drawing.Size(128, 44);
@@ -843,6 +873,7 @@
             // 
             // gotoNoteTab
             // 
+            this.gotoNoteTab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gotoNoteTab.Location = new System.Drawing.Point(1111, 129);
             this.gotoNoteTab.Name = "gotoNoteTab";
             this.gotoNoteTab.Size = new System.Drawing.Size(125, 50);
@@ -853,6 +884,7 @@
             // 
             // bDelete
             // 
+            this.bDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.bDelete.Location = new System.Drawing.Point(1143, 552);
             this.bDelete.Name = "bDelete";
             this.bDelete.Size = new System.Drawing.Size(94, 38);
@@ -863,6 +895,7 @@
             // 
             // refreshButtonAllergy
             // 
+            this.refreshButtonAllergy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.refreshButtonAllergy.Location = new System.Drawing.Point(1111, 61);
             this.refreshButtonAllergy.Name = "refreshButtonAllergy";
             this.refreshButtonAllergy.Size = new System.Drawing.Size(125, 50);
@@ -873,6 +906,7 @@
             // 
             // addAllergyButton
             // 
+            this.addAllergyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addAllergyButton.Location = new System.Drawing.Point(820, 61);
             this.addAllergyButton.Name = "addAllergyButton";
             this.addAllergyButton.Size = new System.Drawing.Size(134, 48);
@@ -883,6 +917,7 @@
             // 
             // generalTab
             // 
+            this.generalTab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.generalTab.AutoSize = true;
             this.generalTab.Location = new System.Drawing.Point(952, 34);
             this.generalTab.Name = "generalTab";
@@ -892,6 +927,7 @@
             // 
             // addMedicationButton
             // 
+            this.addMedicationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addMedicationButton.Location = new System.Drawing.Point(821, 117);
             this.addMedicationButton.Name = "addMedicationButton";
             this.addMedicationButton.Size = new System.Drawing.Size(134, 48);
@@ -902,6 +938,7 @@
             // 
             // addVitalsButton
             // 
+            this.addVitalsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addVitalsButton.Location = new System.Drawing.Point(821, 174);
             this.addVitalsButton.Name = "addVitalsButton";
             this.addVitalsButton.Size = new System.Drawing.Size(134, 48);
@@ -912,6 +949,7 @@
             // 
             // addDiabeticMeds
             // 
+            this.addDiabeticMeds.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addDiabeticMeds.Location = new System.Drawing.Point(821, 230);
             this.addDiabeticMeds.Name = "addDiabeticMeds";
             this.addDiabeticMeds.Size = new System.Drawing.Size(134, 48);
@@ -922,6 +960,7 @@
             // 
             // adDiabeticTest
             // 
+            this.adDiabeticTest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.adDiabeticTest.Location = new System.Drawing.Point(820, 287);
             this.adDiabeticTest.Name = "adDiabeticTest";
             this.adDiabeticTest.Size = new System.Drawing.Size(134, 48);
@@ -931,6 +970,7 @@
             // 
             // addLipidTestButton
             // 
+            this.addLipidTestButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addLipidTestButton.Location = new System.Drawing.Point(821, 342);
             this.addLipidTestButton.Name = "addLipidTestButton";
             this.addLipidTestButton.Size = new System.Drawing.Size(134, 48);
@@ -940,6 +980,7 @@
             // 
             // addDiabeticBackgroundButton
             // 
+            this.addDiabeticBackgroundButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addDiabeticBackgroundButton.Location = new System.Drawing.Point(821, 400);
             this.addDiabeticBackgroundButton.Name = "addDiabeticBackgroundButton";
             this.addDiabeticBackgroundButton.Size = new System.Drawing.Size(134, 48);
@@ -949,6 +990,7 @@
             // 
             // deleteSelectedRow
             // 
+            this.deleteSelectedRow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.deleteSelectedRow.Location = new System.Drawing.Point(1111, 198);
             this.deleteSelectedRow.Name = "deleteSelectedRow";
             this.deleteSelectedRow.Size = new System.Drawing.Size(125, 50);
@@ -959,6 +1001,7 @@
             // 
             // editSelectedRow
             // 
+            this.editSelectedRow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.editSelectedRow.Location = new System.Drawing.Point(1111, 264);
             this.editSelectedRow.Name = "editSelectedRow";
             this.editSelectedRow.Size = new System.Drawing.Size(125, 50);
@@ -987,7 +1030,6 @@
             this.Controls.Add(this.refreshButtonAllergy);
             this.Controls.Add(this.tcPatient);
             this.Controls.Add(this.addAllergyButton);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Patient";
