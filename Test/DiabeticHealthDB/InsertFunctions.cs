@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-
+u
 namespace DiabeticHealthDB
 {
     public static class InsertFunctions
@@ -142,8 +142,8 @@ namespace DiabeticHealthDB
             }
             catch (MySqlException ex)//perhaps pass exception to message box
             {
-                
-                throw ex;
+
+                ex.ToString();
 
             }
             finally
