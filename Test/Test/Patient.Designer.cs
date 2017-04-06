@@ -492,6 +492,7 @@
             this.Amount,
             this.Frequency,
             this.Route});
+            this.lvMedicationList.FullRowSelect = true;
             this.lvMedicationList.GridLines = true;
             this.lvMedicationList.Location = new System.Drawing.Point(4, 4);
             this.lvMedicationList.Name = "lvMedicationList";
@@ -552,6 +553,7 @@
             this.Weight,
             this.BMI,
             this.Temperature});
+            this.lvVitalsList.FullRowSelect = true;
             this.lvVitalsList.GridLines = true;
             this.lvVitalsList.Location = new System.Drawing.Point(3, 4);
             this.lvVitalsList.Name = "lvVitalsList";
@@ -633,6 +635,7 @@
             this.DiabeticAmount,
             this.DiabeticFrequency,
             this.DiabeticRoute});
+            this.lvDiabeticMedsList.FullRowSelect = true;
             this.lvDiabeticMedsList.GridLines = true;
             this.lvDiabeticMedsList.Location = new System.Drawing.Point(4, 4);
             this.lvDiabeticMedsList.Name = "lvDiabeticMedsList";
@@ -687,6 +690,7 @@
             this.CurrentYearVaccination,
             this.DiabeticEyeExam,
             this.NutritionalCounseling});
+            this.lvDiabeticTestList.FullRowSelect = true;
             this.lvDiabeticTestList.GridLines = true;
             this.lvDiabeticTestList.Location = new System.Drawing.Point(4, 4);
             this.lvDiabeticTestList.Name = "lvDiabeticTestList";
@@ -750,6 +754,7 @@
             this.LDL,
             this.Triglycerides,
             this.TCHOLHDLRatio});
+            this.lvLipidTestList.FullRowSelect = true;
             this.lvLipidTestList.GridLines = true;
             this.lvLipidTestList.Location = new System.Drawing.Point(4, 7);
             this.lvLipidTestList.Name = "lvLipidTestList";
@@ -811,6 +816,7 @@
             this.DateInfoTaken,
             this.DateDiagnosed,
             this.DiabetesType});
+            this.lvDiabeticBackgroundList.FullRowSelect = true;
             this.lvDiabeticBackgroundList.GridLines = true;
             this.lvDiabeticBackgroundList.Location = new System.Drawing.Point(4, 4);
             this.lvDiabeticBackgroundList.Name = "lvDiabeticBackgroundList";
