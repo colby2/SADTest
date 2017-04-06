@@ -607,11 +607,11 @@ namespace Test
 
         private void deleteSelectedRow_Click(object sender, EventArgs e)
         {
+            MySqlConnection connection = DatabaseConnection.GetConnection();
+
             if (lvAllergyList.SelectedItems.Count == 1) {
                 string allergicTo = lvAllergyList.SelectedItems[0].SubItems[0].Text;
                 string reaction = lvAllergyList.SelectedItems[0].SubItems[1].Text;
-
-                MySqlConnection connection = DatabaseConnection.GetConnection();
 
                 connection.Open();
                 string deleteRow = "DELETE FROM AllergyInfo WHERE PatientID = " + selectedID + " AND AllergicTo = '" + allergicTo +"' AND Reaction = '"+ reaction +"';";
@@ -619,9 +619,43 @@ namespace Test
                 cmd.ExecuteNonQuery();
                 connection.Close();
 
-                RefreshListViews();
-
             }
+            else if(lvMedicationList.SelectedItems.Count == 1)
+            {
+                string medicationName = lvMedicationList.SelectedItems[0].SubItems[0].Text;
+                string dateStarted = lvMedicationList.SelectedItems[0].SubItems[1].Text;
+                string amount = lvMedicationList.SelectedItems[0].SubItems[2].Text;
+                string frequency = lvMedicationList.SelectedItems[0].SubItems[3].Text;
+                string route = lvMedicationList.SelectedItems[0].SubItems[4].Text;
+
+                connection.Open();
+                string deleteRow = "DELETE FROM Medication WHERE PatientID = " + selectedID + " AND MedicationName = '" + medicationName+ "' AND DateStarted = '"+ dateStarted +"' AND Amount = '"+amount+"' AND Frequency = '"+frequency+"' AND Route = '"+route+"';";
+                MySqlCommand cmd = new MySqlCommand(deleteRow, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            else if (lvVitalsList.SelectedItems.Count == 1)
+            {
+                string dateOfTest = lvVitalsList.SelectedItems[0].SubItems[0].Text;
+                string heartRate = lvVitalsList.SelectedItems[0].SubItems[1].Text;
+                string bloodPressure = lvVitalsList.SelectedItems[0].SubItems[2].Text;
+                string respiratoryRate = lvVitalsList.SelectedItems[0].SubItems[3].Text;
+                string oxygenSaturation = lvVitalsList.SelectedItems[0].SubItems[4].Text;
+                string airType = lvVitalsList.SelectedItems[0].SubItems[5].Text;
+                string height = lvVitalsList.SelectedItems[0].SubItems[6].Text;
+                string weight = lvVitalsList.SelectedItems[0].SubItems[7].Text;
+                string temperature = lvVitalsList.SelectedItems[0].SubItems[9].Text;
+
+                connection.Open();
+                string deleteRow = "DELETE FROM VitalsInformation WHERE PatientID = " + selectedID + " AND DateOfTest = '"+dateOfTest+"' AND HeartRate = '"+heartRate+"' AND BloodPressure = '"+bloodPressure+"' AND RespiratoryRate = '"+respiratoryRate+"' AND OxygenSaturation = '"+oxygenSaturation+"' AND AirType = '"+airType+"' AND Height = '"+height+"' AND Weight = '"+weight+"' AND Temperature = '"+temperature+"';";
+                MySqlCommand cmd = new MySqlCommand(deleteRow, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+
+
+
+            RefreshListViews();
         }
 
         private void addVitalsButton_Click_1(object sender, EventArgs e)

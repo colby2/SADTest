@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-u
+
 namespace DiabeticHealthDB
 {
     public static class InsertFunctions
@@ -153,6 +153,74 @@ namespace DiabeticHealthDB
             
 
         }
+
+        public static void InsertIntoDiabetesMedication(string MedicationName, string DateStarted, string Amount, string Frequency, string Route, int PatientID)
+        {
+
+            MySqlConnection conn = DatabaseConnection.GetConnection();
+            string qry =
+                "INSERT INTO `DiabetesMedication`( `MedicationName`, `DateStarted`, `Amount`, `Frequency`, `Route`, `PatientID`)" +
+                "VALUES (@MedicationName, @DateStarted, @Amount, @Frequency, @Route, @PatientID);";
+            MySqlCommand cmd = new MySqlCommand(qry, conn);
+            cmd.Parameters.AddWithValue("@MedicationName", MedicationName);
+            cmd.Parameters.AddWithValue("@DateStarted", DateStarted);
+            cmd.Parameters.AddWithValue("@Amount", Amount);
+            cmd.Parameters.AddWithValue("@Frequency", Frequency);
+            cmd.Parameters.AddWithValue("@Route", Route);
+            cmd.Parameters.AddWithValue("@PatientID", PatientID);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)//perhaps pass exception to message box
+            {
+
+                ex.ToString();
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+        }
+
+        public static void InsertIntoLipidTest(DateTime DateOfTest, double HgA1C, double Cholesterol, double HDL, double LDL, double Triglycerides, int PatientID)
+        {
+
+            MySqlConnection conn = DatabaseConnection.GetConnection();
+            string qry =
+                "INSERT INTO `LipidTestInformation`( `DateOfTest`, `HgA1C`, `Cholesterol`, `HDL`, `LDL`, `Triglycerides`, `PatientID`)" +
+                "VALUES (@DateOfTest, @HgA1C, @Cholesterol, @HDL, @LDL, @Triglycerides, @PatientID);";
+            MySqlCommand cmd = new MySqlCommand(qry, conn);
+            cmd.Parameters.AddWithValue("@DateOfTest", DateOfTest);
+            cmd.Parameters.AddWithValue("@HgA1C", HgA1C);
+            cmd.Parameters.AddWithValue("@Cholesterol", Cholesterol);
+            cmd.Parameters.AddWithValue("@HDL", HDL);
+            cmd.Parameters.AddWithValue("@LDL", LDL);
+            cmd.Parameters.AddWithValue("@Triglycerides", Triglycerides);
+            cmd.Parameters.AddWithValue("@PatientID", PatientID);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)//perhaps pass exception to message box
+            {
+
+                ex.ToString();
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+        }
+
     }
 
   

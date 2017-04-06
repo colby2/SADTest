@@ -58,11 +58,23 @@
     <Compile Include="AddAllergyInfo.Designer.cs">
       <DependentUpon>AddAllergyInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddDiabetesBackground.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDiabetesBackground.Designer.cs">
+      <DependentUpon>AddDiabetesBackground.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddDiabetesMedicaitonInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddDiabetesMedicaitonInfo.Designer.cs">
       <DependentUpon>AddDiabetesMedicaitonInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddLipidTestInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddLipidTestInfo.Designer.cs">
+      <DependentUpon>AddLipidTestInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="AddMedicationInfo.cs">
       <SubType>Form</SubType>
@@ -117,8 +129,14 @@
     <EmbeddedResource Include="AddAllergyInfo.resx">
       <DependentUpon>AddAllergyInfo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddDiabetesBackground.resx">
+      <DependentUpon>AddDiabetesBackground.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddDiabetesMedicaitonInfo.resx">
       <DependentUpon>AddDiabetesMedicaitonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddLipidTestInfo.resx">
+      <DependentUpon>AddLipidTestInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddMedicationInfo.resx">
       <DependentUpon>AddMedicationInfo.cs</DependentUpon>

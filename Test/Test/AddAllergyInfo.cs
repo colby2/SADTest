@@ -81,9 +81,10 @@ namespace Test
             }
             else if(editAllergicTo != "" && editReaction != "")
             {
-                UpdateAllergyInfo(PatientID, AllergicTo.Text, Reaction.Text, editAllergicTo, editReaction);
+                UpdateFunctions.UpdateAllergyInfo(PatientID, AllergicTo.Text, Reaction.Text, editAllergicTo, editReaction);
                 AllergicTo.Clear();
                 Reaction.Clear();
+                this.Close();
             }
             
         }
@@ -93,35 +94,6 @@ namespace Test
 
         }
 
-
-        public void UpdateAllergyInfo(int PatientID, string newAllergicTo, string newReaction, string oldAllergicTo, string oldReaction)
-        {
-            int rowsUpdated = 0;
-            MySqlConnection connection = DatabaseConnection.GetConnection();
-            string updateQuery =
-                    "Update AllergyInfo Set AllergicTo = @newAllergicTO, Reaction = @newReaction Where PatientID = @ID AND AllergicTo = @oldAllergicTo AND Reaction = @oldReaction;";
-            MySqlCommand command = new MySqlCommand(updateQuery, connection);
-            command.Parameters.AddWithValue("@newAllergictTo", newAllergicTo);
-            command.Parameters.AddWithValue("@newReaction", newReaction);
-            command.Parameters.AddWithValue("@ID", PatientID);
-            command.Parameters.AddWithValue("@oldAllergictTo", oldAllergicTo);
-            command.Parameters.AddWithValue("@oldReaction", oldReaction);
-            try
-            {
-                connection.Open();
-                rowsUpdated = command.ExecuteNonQuery();
-            }
-            catch (MySqlException ex)
-            {
-                rowsUpdated = 0;
-                throw ex;
-            }
-            finally
-            {
-                connection.Close();
-                this.Close();
-            }
-        }
 
 
 

@@ -31,14 +31,16 @@ namespace Test
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(medicationTb.Text == "" || amounttb.Text == "" || frequencytb.Text == "" || routeTb.Text == "")
+            if (medicationTb.Text == "" || amounttb.Text == "" || frequencytb.Text == "" || routeTb.Text == "")
             {
                 MessageBox.Show("Something must be entered for each field. If patient is not applicable for a certain field enter 'N/A'.", "Attention", MessageBoxButtons.OK);
                 return;
             }
-
-            InsertFunctions.InsertIntoMedication(medicationTb.Text, dateTimePicker1.Text, amounttb.Text, frequencytb.Text, routeTb.Text, PatientID);
-            this.Close();
+            else
+            {
+                InsertFunctions.InsertIntoMedication(medicationTb.Text, dateTimePicker1.Text, amounttb.Text, frequencytb.Text, routeTb.Text, PatientID);
+                this.Close();
+            }
         }
     }
 }

@@ -135,6 +135,34 @@ namespace DiabeticHealthDB
             }
             return rowsUpdated;
         }
+
+
+
+        /*****************************************************************************
+         * Function that will update a Users AllergicTo and Reaction when editing
+         * ***************************************************************************/
+        public static void UpdateAllergyInfo(int PatientID, string newAllergicTo, string newReaction, string oldAllergicTo, string oldReaction)
+        {
+            int rowsUpdated = 0;
+            MySqlConnection connection = DatabaseConnection.GetConnection();
+            string updateQuery = "Update AllergyInfo Set AllergicTo = '" + newAllergicTo + "' , Reaction = '" + newReaction + "' Where PatientID = '" + PatientID + "' AND AllergicTo = '" + oldAllergicTo + "' AND Reaction = '" + oldReaction + "';";
+            MySqlCommand command = new MySqlCommand(updateQuery, connection);
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                rowsUpdated = 0;
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
     }
 }
 
