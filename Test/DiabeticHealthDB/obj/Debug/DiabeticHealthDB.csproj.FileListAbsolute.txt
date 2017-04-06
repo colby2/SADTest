@@ -23,3 +23,4 @@ C:\Users\cboren2\Source\Repos\SADTest\Test\DiabeticHealthDB\bin\Debug\MySql.Data
 C:\Users\cboren2\Source\Repos\SADTest\Test\DiabeticHealthDB\bin\Debug\MySql.Data.xml
 C:\Users\cboren2\Source\Repos\SADTest\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.dll
 C:\Users\cboren2\Source\Repos\SADTest\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.pdb
+C:\Users\cboren2\Source\Repos\SADTest\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.csprojResolveAssemblyReference.cache

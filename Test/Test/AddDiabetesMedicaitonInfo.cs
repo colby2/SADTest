@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DiabeticHealthDB;
 namespace Test
 {
     public partial class AddDiabetesMedicaitonInfo : Form
@@ -31,7 +31,16 @@ namespace Test
 
         private void addInfobtn_Click(object sender, EventArgs e)
         {
-            if (medicationTb.Text == "" || amountTb.Text == "" || frequencyTb.Text == "" || routeTb.Text == "" || dateTimePicker1.Text == "") ;
+            if (medicationTb.Text == "" || amountTb.Text == "" || frequencyTb.Text == "" || routeTb.Text == "" || dateTimePicker1.Text == "")
+            {
+                MessageBox.Show("Something must be entered for each field. If patient is not applicable for a certain field enter 'N/A'.", "Attention", MessageBoxButtons.OK);
+                return;
+            }
+            else
+            {
+                InsertFunctions.InsertIntoDiabetesMedication(medicationTb.Text, dateTimePicker1.Text, amountTb.Text, frequencyTb.Text, routeTb.Text, PatientID);
+                this.Close();
+            }
         }
     }
 }
