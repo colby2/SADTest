@@ -636,6 +636,13 @@ namespace Test
             addMedicationInfo.ShowDialog();
         }
 
+        private void addDiabeticMeds_Click(object sender, EventArgs e)
+        {
+            AddDiabetesMedicaitonInfo addDiabetesMeds = new AddDiabetesMedicaitonInfo(Int32.Parse(PatientId));
+            addDiabetesMeds.ShowDialog();
+            
+        }
+
         private void editSelectedRow_Click(object sender, EventArgs e)
         {
             if (lvAllergyList.SelectedItems.Count == 1){
@@ -648,6 +655,8 @@ namespace Test
             }
 
         }
+
+       
     }
 }
 

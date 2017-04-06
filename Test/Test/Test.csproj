@@ -58,6 +58,12 @@
     <Compile Include="AddAllergyInfo.Designer.cs">
       <DependentUpon>AddAllergyInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddDiabetesMedicaitonInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDiabetesMedicaitonInfo.Designer.cs">
+      <DependentUpon>AddDiabetesMedicaitonInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddMedicationInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddAllergyInfo.resx">
       <DependentUpon>AddAllergyInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDiabetesMedicaitonInfo.resx">
+      <DependentUpon>AddDiabetesMedicaitonInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddMedicationInfo.resx">
       <DependentUpon>AddMedicationInfo.cs</DependentUpon>

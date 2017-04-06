@@ -918,6 +918,7 @@
             this.addDiabeticMeds.TabIndex = 6;
             this.addDiabeticMeds.Text = "Add Diabetic Meds Information for this Patient";
             this.addDiabeticMeds.UseVisualStyleBackColor = true;
+            this.addDiabeticMeds.Click += new System.EventHandler(this.addDiabeticMeds_Click);
             // 
             // adDiabeticTest
             // 
