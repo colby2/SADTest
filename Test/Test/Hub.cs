@@ -82,10 +82,36 @@ namespace Test
 
         }
 
+        const int LEADING_SPACE = 12;
+        const int CLOSE_SPACE = 15;
+        const int CLOSE_AREA = 15;
+
         private void Hub_Load(object sender, EventArgs e)
         {
+            int tabLength = tabControl1.ItemSize.Width;
 
-        }
+            // measure the text in each tab and make adjustment to the size
+            for (int i = 0; i < this.tabControl1.TabPages.Count; i++)
+            {
+                TabPage currentPage = tabControl1.TabPages[i];
+
+                int currentTabLength = TextRenderer.MeasureText(currentPage.Text, tabControl1.Font).Width;
+                // adjust the length for what text is written
+                currentTabLength += LEADING_SPACE + CLOSE_SPACE + CLOSE_AREA;
+
+                if (currentTabLength > tabLength)
+                {
+                    tabLength = currentTabLength;
+                }
+            }
+
+            // create the new size
+            Size newTabSize = new Size(tabLength, tabControl1.ItemSize.Height);
+            tabControl1.ItemSize = newTabSize;
+        
+    }
+
+ 
 
         private void bSearch_Click(object sender, EventArgs e)
         {
@@ -165,6 +191,8 @@ namespace Test
         }
 
 
+        
+
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lvSearchList.SelectedItems.Count == 1)
@@ -196,6 +224,31 @@ namespace Test
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tabControl1_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            //This code will render a "x" mark at the end of the Tab caption. 
+            if (!e.Index.Equals(0))
+            {
+                 e.Graphics.DrawString("x", e.Font, Brushes.Black, e.Bounds.Right - 15, e.Bounds.Top + 4);
+            }
+                e.Graphics.DrawString(this.tabControl1.TabPages[e.Index].Text, e.Font, Brushes.Black, e.Bounds.Left + 12, e.Bounds.Top + 4);
+                tabControl1.Padding = new System.Drawing.Point(21, 3);
+                e.DrawFocusRectangle();
+            
+        }
+
+        private void tabControl1_MouseClick(object sender, MouseEventArgs e)
+        {
+            Rectangle r = tabControl1.GetTabRect(this.tabControl1.SelectedIndex);
+            Rectangle closeButton = new Rectangle(r.Right - 15, r.Top + 4, 9, 7);
+            if (closeButton.Contains(e.Location) && !this.tabControl1.SelectedIndex.Equals(0))
+            {
+                this.tabControl1.TabPages.Remove(this.tabControl1.SelectedTab);
+                tabCount--;
+            }
+            
         }
     }
 }

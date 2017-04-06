@@ -111,6 +111,7 @@
             this.LastName,
             this.DOB,
             this.UniqueID});
+            this.lvSearchList.FullRowSelect = true;
             this.lvSearchList.Location = new System.Drawing.Point(9, 104);
             this.lvSearchList.Name = "lvSearchList";
             this.lvSearchList.Size = new System.Drawing.Size(500, 240);
@@ -191,11 +192,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabControl1.Location = new System.Drawing.Point(-2, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1163, 704);
             this.tabControl1.TabIndex = 11;
+            this.tabControl1.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.tabControl1_DrawItem);
+            this.tabControl1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabControl1_MouseClick);
             // 
             // tabPage1
             // 
@@ -215,7 +219,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1155, 678);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Hub";
             // 
             // Hub
             // 
