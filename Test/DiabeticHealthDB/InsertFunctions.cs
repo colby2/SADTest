@@ -9,9 +9,9 @@ namespace DiabeticHealthDB
 {
     public static class InsertFunctions
     {
-        /************************************************************************************************
+       /*
       * Inserts info into Demographic Table from from
-      * **********************************************************************************************/
+      */
         public static int InsertIntoDemographics(string FirstName, string LastName, string DateofLastVisit, string Street, string City, string State, string Zip, string DOB, string Phone, string PrimaryInsuranceProvider, string SecondaryInsuranceProvider, string PatientNotes)
         {
             int totalRowsInserted = 0;
@@ -50,9 +50,9 @@ namespace DiabeticHealthDB
             return totalRowsInserted;
 
         }
-        /************************************************************************************************
+        /*
          * Inserts info into AllergyInfo Table from form
-         * **********************************************************************************************/
+         */
         public static int InsertIntoAllergyInfo(int PatientID, string AllergicTo, string Reaction)
         {
             int totalRowsInserted = 0;
@@ -120,7 +120,9 @@ namespace DiabeticHealthDB
             return totalRowsInserted;
 
         }
-
+        /*
+       *Insert function for Medication Table  
+       */
         public static void InsertIntoMedication(string MedicationName, string DateStarted, string Amount, string Frequency, string Route, int PatientID)
         {
             
@@ -153,7 +155,9 @@ namespace DiabeticHealthDB
             
 
         }
-
+        /*
+       *Insert function for Diabetic Medication Table  
+       */
         public static void InsertIntoDiabetesMedication(string MedicationName, string DateStarted, string Amount, string Frequency, string Route, int PatientID)
         {
 
@@ -186,7 +190,9 @@ namespace DiabeticHealthDB
 
 
         }
-
+        /*
+       *Insert function for LipidTest  
+       */
         public static void InsertIntoLipidTest(DateTime DateOfTest, double HgA1C, double Cholesterol, double HDL, double LDL, double Triglycerides, int PatientID)
         {
 
