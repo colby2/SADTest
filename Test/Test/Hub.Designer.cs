@@ -268,6 +268,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        public System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }

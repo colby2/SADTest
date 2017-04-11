@@ -23,6 +23,7 @@ namespace Test
         private string completeCurrentDate;//will hold complete current date 
         string selectedID;
         string connectionString;
+        Hub Parent = null;
         public Patient()
         {
             InitializeComponent();
@@ -35,9 +36,10 @@ namespace Test
          * Search function that will connect to DB and perform a SELECT statement on the DB bringing back all 
          * the information that matches the users search criteria
          * **************************************************************************************************/
-        public Patient(string criteria)
+        public Patient(string criteria,Hub parent)
         {
             InitializeComponent();
+            this.Parent = parent;
              selectedID = new String(criteria.TakeWhile(Char.IsDigit).ToArray());
 
             connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
@@ -284,6 +286,7 @@ namespace Test
             {
                 int deletedRows = DeleteFunctions.DeletePatient(Int32.Parse(PatientId));
                 MessageBox.Show("Patient Information Deleted");
+                Parent.backgroundWorker2.RunWorkerAsync();
                 this.Close();
 
             }

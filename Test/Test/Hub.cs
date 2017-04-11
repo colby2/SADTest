@@ -42,9 +42,9 @@ namespace Test
             patient.ShowDialog();
         }//Thread Starter for patient with non-blank search*/
 
-        public static void patientThreadStart(object data)
+        public void patientThreadStart(object data)
         {
-            Patient patient = new Patient(data.ToString());
+            Patient patient = new Patient(data.ToString(),this);
             patient.ShowDialog();
         }
 
@@ -78,6 +78,7 @@ namespace Test
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
             tabControl1.TabPages[tabCount].Controls.Add(frm);
+            this.tabControl1.SelectedIndex = tabCount;
             tabCount++;
 
         }
@@ -197,7 +198,7 @@ namespace Test
 
         private void addPatientForm(object patientID)
         {
-            Form frm = new Patient(patientID.ToString());
+            Form frm = new Patient(patientID.ToString(), this);
             frm.TopLevel = false;
             frm.Visible = true;
             frm.FormBorderStyle = FormBorderStyle.None;
@@ -278,13 +279,15 @@ namespace Test
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             tabControl1.TabPages.Add(new TabPage("Patient" + lvSearchList.SelectedItems[0].SubItems[3].Text));
-            Form frm = new Patient(lvSearchList.SelectedItems[0].SubItems[3].Text);
+            Form frm = new Patient(lvSearchList.SelectedItems[0].SubItems[3].Text, this);
             frm.TopLevel = false;
             frm.Visible = true;
             frm.FormBorderStyle = FormBorderStyle.None;
             frm.Dock = DockStyle.Fill;
             this.tabControl1.TabPages[tabCount].Controls.Add(frm);
+            this.tabControl1.SelectedIndex = tabCount;
             tabCount++;
+            
         }
 
         private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
