@@ -17,7 +17,7 @@ namespace DiabeticHealthDB
             int totalRowsInserted = 0;
             MySqlConnection conn = DatabaseConnection.GetConnection();
             string qry =
-               "INSERT INTO `Demographics`(`FirstName`, `LastName`, `DateofLastVisit`, `Street`, `City`, `State`, `Zip`, `DOB`, `Phone`, `PrimaryInsuranceProvider`, `SecondaryInsuranceProvider`, `PatientNotes)" +
+               "INSERT INTO `Demographics`(`FirstName`, `LastName`, `DateofLastVisit`, `Street`, `City`, `State`, `Zip`, `DOB`, `Phone`, `PrimaryInsuranceProvider`, `SecondaryInsuranceProvider`, `PatientNotes`)" +
                "VALUES (@FirstName, @Lastname, @DateofLastVisit, @Street, @City, @State, @Zip, @DOB, @Phone, @PrimaryInsuranceProvider, @SecondaryInsuranceProvider, @PatientNotes);";
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.Parameters.AddWithValue("@FirstName", FirstName);
