@@ -50,6 +50,7 @@
             // dateInfoTaken
             // 
             this.dateInfoTaken.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateInfoTaken.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateInfoTaken.Location = new System.Drawing.Point(246, 128);
             this.dateInfoTaken.Name = "dateInfoTaken";
             this.dateInfoTaken.Size = new System.Drawing.Size(200, 24);
@@ -110,6 +111,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddDiabetesBackground";
             this.Text = "Add Diabetes Background Info";
+            this.Load += new System.EventHandler(this.AddDiabetesBackground_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

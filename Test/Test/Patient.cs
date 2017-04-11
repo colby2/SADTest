@@ -10,6 +10,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DiabeticHealthDB;
+using System.Globalization;
+
 namespace Test
 {
     public partial class Patient : Form
@@ -394,6 +396,7 @@ namespace Test
 
             }
             reader.Close();
+            connection.Close();
 
         }
         /****************************************************************************************
@@ -419,6 +422,7 @@ namespace Test
                 lvMedicationList.Items.Add(lv);
             }
             reader.Close();
+            connection.Close();
         }
         /****************************************************************************************
         * Function that populates the vitals list view
@@ -448,6 +452,7 @@ namespace Test
                 lvVitalsList.Items.Add(lv);
             }
             reader.Close();
+            connection.Close();
         }
 
         /****************************************************************************************
@@ -473,7 +478,7 @@ namespace Test
                 lvDiabeticMedsList.Items.Add(lv);
             }
             reader.Close();
-
+            connection.Close();
         }
 
         /****************************************************************************************
@@ -500,6 +505,7 @@ namespace Test
                 lvDiabeticTestList.Items.Add(lv);
             }
             reader.Close();
+            connection.Close();
         }
 
         /****************************************************************************************
@@ -527,6 +533,7 @@ namespace Test
                 lvLipidTestList.Items.Add(lv);
             }
             reader.Close();
+            connection.Close();
         }
 
        /****************************************************************************************
@@ -550,6 +557,7 @@ namespace Test
                 lvDiabeticBackgroundList.Items.Add(lv);
             }
             reader.Close();
+            connection.Close();
         }
 
         public string getCurrentDate()
@@ -637,6 +645,7 @@ namespace Test
             else if (lvVitalsList.SelectedItems.Count == 1)
             {
                 string dateOfTest = lvVitalsList.SelectedItems[0].SubItems[0].Text;
+                string formattedDateOfTest = DateTime.ParseExact(dateOfTest, "MMM dd, yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
                 string heartRate = lvVitalsList.SelectedItems[0].SubItems[1].Text;
                 string bloodPressure = lvVitalsList.SelectedItems[0].SubItems[2].Text;
                 string respiratoryRate = lvVitalsList.SelectedItems[0].SubItems[3].Text;
@@ -647,7 +656,7 @@ namespace Test
                 string temperature = lvVitalsList.SelectedItems[0].SubItems[9].Text;
 
                 connection.Open();
-                string deleteRow = "DELETE FROM VitalsInformation WHERE PatientID = " + selectedID + " AND DateOfTest = '"+dateOfTest+"' AND HeartRate = '"+heartRate+"' AND BloodPressure = '"+bloodPressure+"' AND RespiratoryRate = '"+respiratoryRate+"' AND OxygenSaturation = '"+oxygenSaturation+"' AND AirType = '"+airType+"' AND Height = '"+height+"' AND Weight = '"+weight+"' AND Temperature = '"+temperature+"';";
+                string deleteRow = "DELETE FROM VitalsInformation WHERE PatientID = " + selectedID + " AND DateOfTest = '" + formattedDateOfTest + "' AND HeartRate = '"+heartRate+"' AND BloodPressure = '"+bloodPressure+"' AND RespiratoryRate = '"+respiratoryRate+"' AND OxygenSaturation = '"+oxygenSaturation+"' AND AirType = '"+airType+"' AND Height = '"+height+"' AND Weight = '"+weight+"' AND Temperature = '"+temperature+"';";
                 MySqlCommand cmd = new MySqlCommand(deleteRow, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();

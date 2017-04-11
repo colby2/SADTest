@@ -202,6 +202,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddLipidTestInfo";
             this.Text = "Add Lipid Test Info";
+            this.Load += new System.EventHandler(this.AddLipidTestInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
