@@ -16,5 +16,10 @@ namespace Test
         {
             InitializeComponent();
         }
+
+        private void AddDiabetesBackground_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

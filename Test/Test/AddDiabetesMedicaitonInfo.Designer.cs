@@ -179,6 +179,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddDiabetesMedicaitonInfo";
             this.Text = "Add Diabetes Medicaiton Info";
+            this.Load += new System.EventHandler(this.AddDiabetesMedicaitonInfo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
