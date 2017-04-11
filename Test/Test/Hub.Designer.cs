@@ -46,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -140,6 +141,11 @@
             this.UniqueID.Text = "Unique ID";
             this.UniqueID.Width = 124;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
             // cbFirstName
             // 
             this.cbFirstName.AutoSize = true;
@@ -221,6 +227,10 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hub";
             // 
+            // backgroundWorker2
+            // 
+            this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
+            // 
             // Hub
             // 
             this.AcceptButton = this.bSearch;
@@ -258,5 +268,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }

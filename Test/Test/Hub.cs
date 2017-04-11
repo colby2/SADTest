@@ -190,7 +190,23 @@ namespace Test
             this.Close();
         }
 
+        private void addPatientForm()
+        {
+            //DO NOT CALL
+        }
 
+        private void addPatientForm(object patientID)
+        {
+            Form frm = new Patient(patientID.ToString());
+            frm.TopLevel = false;
+            frm.Visible = true;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            this.tabControl1.TabPages[tabCount].Controls.Add(frm);
+            tabCount++;
+        }
+
+        
         
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -204,14 +220,17 @@ namespace Test
                 //allThreads[threadCount].IsBackground = true;
                 //allThreads[threadCount].Start(lvSearchList.SelectedItems[0].SubItems[3].Text);
                 //threadCount++;
-                tabControl1.TabPages.Add(new TabPage("Patient" + lvSearchList.SelectedItems[0].SubItems[3].Text));
-                Form frm = new Patient(lvSearchList.SelectedItems[0].SubItems[3].Text);
-                frm.TopLevel = false;
-                frm.Visible = true;
-                frm.FormBorderStyle = FormBorderStyle.None;
-                frm.Dock = DockStyle.Fill;
-                tabControl1.TabPages[tabCount].Controls.Add(frm);
-                tabCount++;
+                //tabControl1.TabPages.Add(new TabPage("Patient" + lvSearchList.SelectedItems[0].SubItems[3].Text));
+                this.backgroundWorker1.RunWorkerAsync();
+                //this.NewPatientThread = new Thread(new ParameterizedThreadStart(addPatientForm));
+                //this.NewPatientThread.Start(lvSearchList.SelectedItems[0].SubItems[3].Text);
+                //Form frm = new Patient(lvSearchList.SelectedItems[0].SubItems[3].Text);
+                //frm.TopLevel = false;
+                // frm.Visible = true;
+                //frm.FormBorderStyle = FormBorderStyle.None;
+                //frm.Dock = DockStyle.Fill;
+                //tabControl1.TabPages[tabCount].Controls.Add(frm);
+
 
             }
         }
@@ -249,6 +268,29 @@ namespace Test
                 tabCount--;
             }
             
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            tabControl1.TabPages.Add(new TabPage("Patient" + lvSearchList.SelectedItems[0].SubItems[3].Text));
+            Form frm = new Patient(lvSearchList.SelectedItems[0].SubItems[3].Text);
+            frm.TopLevel = false;
+            frm.Visible = true;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            this.tabControl1.TabPages[tabCount].Controls.Add(frm);
+            tabCount++;
+        }
+
+        private void backgroundWorker2_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            this.tabControl1.TabPages.Remove(this.tabControl1.SelectedTab);
+            tabCount--;
         }
     }
 }
