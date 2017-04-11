@@ -208,3 +208,6 @@ C:\Users\jscoma\Source\Repos\SADTest3\Test\Test\obj\Debug\Test.csproj.GenerateRe
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabetesBackground.resources
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabetesMedicaitonInfo.resources
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddLipidTestInfo.resources
+C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddDiabetesBackground.resources
+C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddDiabetesMedicaitonInfo.resources
+C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddLipidTestInfo.resources
