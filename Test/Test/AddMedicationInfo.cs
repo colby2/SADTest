@@ -22,6 +22,8 @@ namespace Test
         {
             this.PatientID = PatientID;
             InitializeComponent();
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MMM dd, yyyy";
         }
 
         private void AddMedicationInfo_Load(object sender, EventArgs e)

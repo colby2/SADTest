@@ -22,6 +22,8 @@ namespace Test
         {
             this.PatientID = PatientID;
             InitializeComponent();
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MMM dd, yyyy";
         }
 
         private void routeTb_TextChanged(object sender, EventArgs e)
@@ -41,6 +43,11 @@ namespace Test
                 InsertFunctions.InsertIntoDiabetesMedication(medicationTb.Text, dateTimePicker1.Text, amountTb.Text, frequencyTb.Text, routeTb.Text, PatientID);
                 this.Close();
             }
+        }
+
+        private void AddDiabetesMedicaitonInfo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

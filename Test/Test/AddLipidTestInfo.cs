@@ -23,6 +23,8 @@ namespace Test
         {
             this.PatientID = PatientID;
             InitializeComponent();
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = ("MMM dd, yyyy");
         }
 
         private void addLipidInfobtn_Click(object sender, EventArgs e)
@@ -56,6 +58,11 @@ namespace Test
             {
                 MessageBox.Show("Must add numerical values for: \n\n HgA1C \n Cholesterol \n HDL \n LDL \n Triglycerides \n", "Error");
             }
+        }
+
+        private void AddLipidTestInfo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
