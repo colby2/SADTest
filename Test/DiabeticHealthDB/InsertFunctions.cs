@@ -85,17 +85,18 @@ namespace DiabeticHealthDB
         /*
          *Insert function for VitalsInforamtion Table  
          */
-        public static int InsertIntoVitalsInformation(DateTime DateOfTest, int HeartRate, string BloodPressure, int RespiratoryRate, int OxygenSaturation, string AirType, int Height, int Weight, double Temperature, int PatientID)
+        public static int InsertIntoVitalsInformation(DateTime DateOfTest, int HeartRate, int Systolic, int Diastolic, int RespiratoryRate, int OxygenSaturation, string AirType, int Height, int Weight, double Temperature, int PatientID)
         {
             int totalRowsInserted = 0;
             MySqlConnection conn = DatabaseConnection.GetConnection();
             string qry =
-                "INSERT INTO `VitalsInformation`( `DateofTest`, `HeartRate`, `BloodPressure`, `RespiratoryRate`, `OxygenSaturation`, `AirType`, `Height`, `Weight`, `Temperature`, `PatientID`)" +
-                "VALUES (@DateOfTest, @HeartRate, @BloodPressure, @RespiratoryRate, @OxygenSaturation, @AirType, @Height, @Weight, @Temperature, @PatientID);";
+                "INSERT INTO `VitalsInformation`( `DateofTest`, `HeartRate`, `Systolic`, `Diastolic`, `RespiratoryRate`, `OxygenSaturation`, `AirType`, `Height`, `Weight`, `Temperature`, `PatientID`)" +
+                "VALUES (@DateOfTest, @HeartRate, @Systolic, @Diastolic, @RespiratoryRate, @OxygenSaturation, @AirType, @Height, @Weight, @Temperature, @PatientID);";
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.Parameters.AddWithValue("@DateOfTest", DateOfTest);
             cmd.Parameters.AddWithValue("@HeartRate", HeartRate);
-            cmd.Parameters.AddWithValue("@BloodPressure", BloodPressure);
+            cmd.Parameters.AddWithValue("@Systolic", Systolic);
+            cmd.Parameters.AddWithValue("@Diastolic", Diastolic);
             cmd.Parameters.AddWithValue("@RespiratoryRate", RespiratoryRate);
             cmd.Parameters.AddWithValue("@OxygenSaturation", OxygenSaturation);
             cmd.Parameters.AddWithValue("@AirType", AirType);

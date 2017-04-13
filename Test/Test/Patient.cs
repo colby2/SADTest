@@ -293,10 +293,20 @@ namespace Test
             confirmation = MessageBox.Show("WARNING: You are about to delete Patient Information. Click OK to continue", "ATTENTION: PLEASE READ", MessageBoxButtons.OKCancel);
             if (confirmation == DialogResult.OK)
             {
-                int deletedRows = DeleteFunctions.DeletePatient(Int32.Parse(PatientId));
-                MessageBox.Show("Patient Information Deleted");
-                Parent.backgroundWorker2.RunWorkerAsync();
-                this.Close();
+                DialogResult confirmation2 = new DialogResult();
+                confirmation2 = MessageBox.Show("Warning: Are you sure you wish to delete this Patients Information?", "ATTENTION PLEASE READ", MessageBoxButtons.YesNo);
+                if (confirmation2 == DialogResult.Yes)
+                {
+                    int deletedRows = DeleteFunctions.DeletePatient(Int32.Parse(PatientId));
+                    MessageBox.Show("Patient Information Deleted");
+                    Parent.backgroundWorker2.RunWorkerAsync();
+                    this.Close();
+                }
+                else if(confirmation2 == DialogResult.No)
+                {
+
+                    MessageBox.Show("Patient NOT Deleted", "", MessageBoxButtons.OK);
+                }
 
             }
             else if (confirmation == DialogResult.Cancel)
@@ -450,6 +460,7 @@ namespace Test
 
             while (reader.Read())
             {
+
                 ListViewItem lv = new ListViewItem(Convert.ToDateTime(reader.GetString(1)).ToString("MMM dd, yyyy"));
                 lv.SubItems.Add(reader.GetString(2));
                 lv.SubItems.Add(reader.GetString(3));
@@ -458,8 +469,9 @@ namespace Test
                 lv.SubItems.Add(reader.GetString(6));
                 lv.SubItems.Add(reader.GetString(7));
                 lv.SubItems.Add(reader.GetString(8));
-                lv.SubItems.Add("BMI GOES HERE");
                 lv.SubItems.Add(reader.GetString(9));
+                lv.SubItems.Add("BMI GOES HERE");
+                lv.SubItems.Add(reader.GetString(10));
 
                 lvVitalsList.Items.Add(lv);
             }
@@ -546,7 +558,7 @@ namespace Test
                 lv.SubItems.Add(reader.GetString(6));
                 lv.SubItems.Add(TCHOL_HDL.ToString());
                 lv.UseItemStyleForSubItems = false;
-                if (TCHOL_HDL < 4 || TCHOL_HDL > 13) 
+                if (TCHOL_HDL < 4.50 || TCHOL_HDL > 6.00) 
                 {
                     lv.SubItems[6].ForeColor = Color.Red;
                 }
@@ -732,7 +744,10 @@ namespace Test
 
         }
 
-      
+        private void tbCity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

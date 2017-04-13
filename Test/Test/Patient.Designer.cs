@@ -74,7 +74,7 @@
             this.lvVitalsList = new System.Windows.Forms.ListView();
             this.DateTaken = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.HeartRate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.BloodPressure = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.SystolicPressure = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RespiratoryRate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.OxygenSaturation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AirType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -126,6 +126,7 @@
             this.addDiabeticBackgroundButton = new System.Windows.Forms.Button();
             this.deleteSelectedRow = new System.Windows.Forms.Button();
             this.editSelectedRow = new System.Windows.Forms.Button();
+            this.DiastolicPressure = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tcPatient.SuspendLayout();
             this.tpDemographics.SuspendLayout();
             this.tpAllergies.SuspendLayout();
@@ -190,6 +191,7 @@
             this.tpDemographics.Controls.Add(this.lCity);
             this.tpDemographics.Controls.Add(this.lDateOfLastVisit);
             this.tpDemographics.Controls.Add(this.lFirstname);
+            this.tpDemographics.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpDemographics.Location = new System.Drawing.Point(4, 22);
             this.tpDemographics.Name = "tpDemographics";
             this.tpDemographics.Padding = new System.Windows.Forms.Padding(3);
@@ -200,18 +202,19 @@
             // 
             // tbGender
             // 
-            this.tbGender.Location = new System.Drawing.Point(147, 110);
+            this.tbGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbGender.Location = new System.Drawing.Point(169, 114);
             this.tbGender.Name = "tbGender";
             this.tbGender.ReadOnly = true;
-            this.tbGender.Size = new System.Drawing.Size(100, 20);
-            this.tbGender.TabIndex = 33;
+            this.tbGender.Size = new System.Drawing.Size(130, 24);
+            this.tbGender.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 114);
+            this.label1.Location = new System.Drawing.Point(84, 111);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.Size = new System.Drawing.Size(57, 18);
             this.label1.TabIndex = 32;
             this.label1.Text = "Gender";
             // 
@@ -219,7 +222,7 @@
             // 
             this.visitDateUpdate.Image = ((System.Drawing.Image)(resources.GetObject("visitDateUpdate.Image")));
             this.visitDateUpdate.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.visitDateUpdate.Location = new System.Drawing.Point(280, 274);
+            this.visitDateUpdate.Location = new System.Drawing.Point(309, 345);
             this.visitDateUpdate.Name = "visitDateUpdate";
             this.visitDateUpdate.Size = new System.Drawing.Size(139, 28);
             this.visitDateUpdate.TabIndex = 31;
@@ -229,18 +232,19 @@
             // 
             // tbLastname
             // 
-            this.tbLastname.Location = new System.Drawing.Point(147, 84);
+            this.tbLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbLastname.Location = new System.Drawing.Point(169, 81);
             this.tbLastname.Name = "tbLastname";
             this.tbLastname.ReadOnly = true;
-            this.tbLastname.Size = new System.Drawing.Size(100, 20);
-            this.tbLastname.TabIndex = 30;
+            this.tbLastname.Size = new System.Drawing.Size(130, 24);
+            this.tbLastname.TabIndex = 2;
             // 
             // lLastName
             // 
             this.lLastName.AutoSize = true;
-            this.lLastName.Location = new System.Drawing.Point(31, 87);
+            this.lLastName.Location = new System.Drawing.Point(61, 81);
             this.lLastName.Name = "lLastName";
-            this.lLastName.Size = new System.Drawing.Size(58, 13);
+            this.lLastName.Size = new System.Drawing.Size(80, 18);
             this.lLastName.TabIndex = 29;
             this.lLastName.Text = "Last Name";
             // 
@@ -268,128 +272,137 @@
             // 
             // tbSecondaryInsurance
             // 
-            this.tbSecondaryInsurance.Location = new System.Drawing.Point(533, 111);
+            this.tbSecondaryInsurance.Location = new System.Drawing.Point(554, 114);
             this.tbSecondaryInsurance.Name = "tbSecondaryInsurance";
             this.tbSecondaryInsurance.ReadOnly = true;
-            this.tbSecondaryInsurance.Size = new System.Drawing.Size(100, 20);
-            this.tbSecondaryInsurance.TabIndex = 23;
+            this.tbSecondaryInsurance.Size = new System.Drawing.Size(123, 24);
+            this.tbSecondaryInsurance.TabIndex = 12;
             // 
             // tbPrimaryInsurance
             // 
-            this.tbPrimaryInsurance.Location = new System.Drawing.Point(533, 88);
+            this.tbPrimaryInsurance.Location = new System.Drawing.Point(554, 91);
             this.tbPrimaryInsurance.Name = "tbPrimaryInsurance";
             this.tbPrimaryInsurance.ReadOnly = true;
-            this.tbPrimaryInsurance.Size = new System.Drawing.Size(100, 20);
-            this.tbPrimaryInsurance.TabIndex = 22;
+            this.tbPrimaryInsurance.Size = new System.Drawing.Size(123, 24);
+            this.tbPrimaryInsurance.TabIndex = 11;
             // 
             // lSecondaryInsurance
             // 
             this.lSecondaryInsurance.AutoSize = true;
-            this.lSecondaryInsurance.Location = new System.Drawing.Point(408, 117);
+            this.lSecondaryInsurance.Location = new System.Drawing.Point(387, 117);
             this.lSecondaryInsurance.Name = "lSecondaryInsurance";
-            this.lSecondaryInsurance.Size = new System.Drawing.Size(108, 13);
+            this.lSecondaryInsurance.Size = new System.Drawing.Size(147, 18);
             this.lSecondaryInsurance.TabIndex = 20;
             this.lSecondaryInsurance.Text = "Secondary Insurance";
             // 
             // lPrimaryInsurance
             // 
             this.lPrimaryInsurance.AutoSize = true;
-            this.lPrimaryInsurance.Location = new System.Drawing.Point(408, 91);
+            this.lPrimaryInsurance.Location = new System.Drawing.Point(387, 91);
             this.lPrimaryInsurance.Name = "lPrimaryInsurance";
-            this.lPrimaryInsurance.Size = new System.Drawing.Size(91, 13);
+            this.lPrimaryInsurance.Size = new System.Drawing.Size(127, 18);
             this.lPrimaryInsurance.TabIndex = 19;
             this.lPrimaryInsurance.Text = "Primary Insurance";
             // 
             // lInsurance
             // 
             this.lInsurance.AutoSize = true;
-            this.lInsurance.Location = new System.Drawing.Point(408, 59);
+            this.lInsurance.Location = new System.Drawing.Point(387, 59);
             this.lInsurance.Name = "lInsurance";
-            this.lInsurance.Size = new System.Drawing.Size(57, 13);
+            this.lInsurance.Size = new System.Drawing.Size(76, 18);
             this.lInsurance.TabIndex = 18;
             this.lInsurance.Text = "Insurance:";
             // 
             // tbPhone
             // 
-            this.tbPhone.Location = new System.Drawing.Point(147, 137);
+            this.tbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPhone.Location = new System.Drawing.Point(169, 151);
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.ReadOnly = true;
-            this.tbPhone.Size = new System.Drawing.Size(100, 20);
-            this.tbPhone.TabIndex = 17;
+            this.tbPhone.Size = new System.Drawing.Size(130, 24);
+            this.tbPhone.TabIndex = 4;
             // 
             // tbDOB
             // 
-            this.tbDOB.Location = new System.Drawing.Point(147, 282);
+            this.tbDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDOB.Location = new System.Drawing.Point(169, 314);
             this.tbDOB.Name = "tbDOB";
             this.tbDOB.ReadOnly = true;
-            this.tbDOB.Size = new System.Drawing.Size(100, 20);
-            this.tbDOB.TabIndex = 16;
+            this.tbDOB.Size = new System.Drawing.Size(130, 24);
+            this.tbDOB.TabIndex = 9;
             this.tbDOB.TextChanged += new System.EventHandler(this.tbAge_TextChanged);
             // 
             // tbZip
             // 
-            this.tbZip.Location = new System.Drawing.Point(147, 250);
+            this.tbZip.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbZip.Location = new System.Drawing.Point(169, 279);
             this.tbZip.Name = "tbZip";
             this.tbZip.ReadOnly = true;
-            this.tbZip.Size = new System.Drawing.Size(100, 20);
-            this.tbZip.TabIndex = 15;
+            this.tbZip.Size = new System.Drawing.Size(130, 24);
+            this.tbZip.TabIndex = 8;
             // 
             // tbState
             // 
-            this.tbState.Location = new System.Drawing.Point(147, 224);
+            this.tbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbState.Location = new System.Drawing.Point(169, 247);
             this.tbState.Name = "tbState";
             this.tbState.ReadOnly = true;
-            this.tbState.Size = new System.Drawing.Size(100, 20);
-            this.tbState.TabIndex = 14;
+            this.tbState.Size = new System.Drawing.Size(130, 24);
+            this.tbState.TabIndex = 7;
             // 
             // tbCity
             // 
-            this.tbCity.Location = new System.Drawing.Point(147, 195);
+            this.tbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCity.Location = new System.Drawing.Point(169, 217);
             this.tbCity.Name = "tbCity";
             this.tbCity.ReadOnly = true;
-            this.tbCity.Size = new System.Drawing.Size(100, 20);
-            this.tbCity.TabIndex = 13;
+            this.tbCity.Size = new System.Drawing.Size(130, 24);
+            this.tbCity.TabIndex = 6;
+            this.tbCity.TextChanged += new System.EventHandler(this.tbCity_TextChanged);
             // 
             // tbStreet
             // 
-            this.tbStreet.Location = new System.Drawing.Point(147, 165);
+            this.tbStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbStreet.Location = new System.Drawing.Point(169, 187);
             this.tbStreet.Name = "tbStreet";
             this.tbStreet.ReadOnly = true;
-            this.tbStreet.Size = new System.Drawing.Size(100, 20);
-            this.tbStreet.TabIndex = 12;
+            this.tbStreet.Size = new System.Drawing.Size(130, 24);
+            this.tbStreet.TabIndex = 5;
             // 
             // tbFirstname
             // 
-            this.tbFirstname.Location = new System.Drawing.Point(147, 56);
+            this.tbFirstname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFirstname.Location = new System.Drawing.Point(169, 51);
             this.tbFirstname.Name = "tbFirstname";
             this.tbFirstname.ReadOnly = true;
-            this.tbFirstname.Size = new System.Drawing.Size(100, 20);
-            this.tbFirstname.TabIndex = 10;
+            this.tbFirstname.Size = new System.Drawing.Size(130, 24);
+            this.tbFirstname.TabIndex = 1;
             this.tbFirstname.TextChanged += new System.EventHandler(this.tbName_TextChanged);
             // 
             // tbDateOfLastVisit
             // 
-            this.tbDateOfLastVisit.Location = new System.Drawing.Point(147, 312);
+            this.tbDateOfLastVisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDateOfLastVisit.Location = new System.Drawing.Point(169, 347);
             this.tbDateOfLastVisit.Name = "tbDateOfLastVisit";
             this.tbDateOfLastVisit.ReadOnly = true;
-            this.tbDateOfLastVisit.Size = new System.Drawing.Size(100, 20);
-            this.tbDateOfLastVisit.TabIndex = 9;
+            this.tbDateOfLastVisit.Size = new System.Drawing.Size(130, 24);
+            this.tbDateOfLastVisit.TabIndex = 10;
             // 
             // lPhone
             // 
             this.lPhone.AutoSize = true;
-            this.lPhone.Location = new System.Drawing.Point(31, 140);
+            this.lPhone.Location = new System.Drawing.Point(90, 151);
             this.lPhone.Name = "lPhone";
-            this.lPhone.Size = new System.Drawing.Size(38, 13);
+            this.lPhone.Size = new System.Drawing.Size(51, 18);
             this.lPhone.TabIndex = 8;
             this.lPhone.Text = "Phone";
             // 
             // lDOB
             // 
             this.lDOB.AutoSize = true;
-            this.lDOB.Location = new System.Drawing.Point(31, 282);
+            this.lDOB.Location = new System.Drawing.Point(51, 314);
             this.lDOB.Name = "lDOB";
-            this.lDOB.Size = new System.Drawing.Size(66, 13);
+            this.lDOB.Size = new System.Drawing.Size(90, 18);
             this.lDOB.TabIndex = 7;
             this.lDOB.Text = "Date of Birth";
             this.lDOB.Click += new System.EventHandler(this.label8_Click);
@@ -397,54 +410,54 @@
             // lZip
             // 
             this.lZip.AutoSize = true;
-            this.lZip.Location = new System.Drawing.Point(31, 253);
+            this.lZip.Location = new System.Drawing.Point(113, 279);
             this.lZip.Name = "lZip";
-            this.lZip.Size = new System.Drawing.Size(22, 13);
+            this.lZip.Size = new System.Drawing.Size(28, 18);
             this.lZip.TabIndex = 6;
             this.lZip.Text = "Zip";
             // 
             // lState
             // 
             this.lState.AutoSize = true;
-            this.lState.Location = new System.Drawing.Point(31, 224);
+            this.lState.Location = new System.Drawing.Point(99, 250);
             this.lState.Name = "lState";
-            this.lState.Size = new System.Drawing.Size(32, 13);
+            this.lState.Size = new System.Drawing.Size(42, 18);
             this.lState.TabIndex = 5;
             this.lState.Text = "State";
             // 
             // lStreet
             // 
             this.lStreet.AutoSize = true;
-            this.lStreet.Location = new System.Drawing.Point(31, 164);
+            this.lStreet.Location = new System.Drawing.Point(94, 187);
             this.lStreet.Name = "lStreet";
-            this.lStreet.Size = new System.Drawing.Size(35, 13);
+            this.lStreet.Size = new System.Drawing.Size(47, 18);
             this.lStreet.TabIndex = 4;
             this.lStreet.Text = "Street";
             // 
             // lCity
             // 
             this.lCity.AutoSize = true;
-            this.lCity.Location = new System.Drawing.Point(31, 194);
+            this.lCity.Location = new System.Drawing.Point(108, 217);
             this.lCity.Name = "lCity";
-            this.lCity.Size = new System.Drawing.Size(24, 13);
+            this.lCity.Size = new System.Drawing.Size(33, 18);
             this.lCity.TabIndex = 3;
             this.lCity.Text = "City";
             // 
             // lDateOfLastVisit
             // 
             this.lDateOfLastVisit.AutoSize = true;
-            this.lDateOfLastVisit.Location = new System.Drawing.Point(31, 315);
+            this.lDateOfLastVisit.Location = new System.Drawing.Point(22, 347);
             this.lDateOfLastVisit.Name = "lDateOfLastVisit";
-            this.lDateOfLastVisit.Size = new System.Drawing.Size(87, 13);
+            this.lDateOfLastVisit.Size = new System.Drawing.Size(119, 18);
             this.lDateOfLastVisit.TabIndex = 2;
             this.lDateOfLastVisit.Text = "Date of Last Visit";
             // 
             // lFirstname
             // 
             this.lFirstname.AutoSize = true;
-            this.lFirstname.Location = new System.Drawing.Point(31, 59);
+            this.lFirstname.Location = new System.Drawing.Point(60, 51);
             this.lFirstname.Name = "lFirstname";
-            this.lFirstname.Size = new System.Drawing.Size(57, 13);
+            this.lFirstname.Size = new System.Drawing.Size(81, 18);
             this.lFirstname.TabIndex = 1;
             this.lFirstname.Text = "First Name";
             // 
@@ -565,7 +578,8 @@
             this.lvVitalsList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.DateTaken,
             this.HeartRate,
-            this.BloodPressure,
+            this.SystolicPressure,
+            this.DiastolicPressure,
             this.RespiratoryRate,
             this.OxygenSaturation,
             this.AirType,
@@ -593,10 +607,10 @@
             this.HeartRate.Text = "Heart Rate";
             this.HeartRate.Width = 76;
             // 
-            // BloodPressure
+            // SystolicPressure
             // 
-            this.BloodPressure.Text = "Blood Pressure";
-            this.BloodPressure.Width = 92;
+            this.SystolicPressure.Text = "Systolic";
+            this.SystolicPressure.Width = 92;
             // 
             // RespiratoryRate
             // 
@@ -927,7 +941,7 @@
             this.addAllergyButton.Name = "addAllergyButton";
             this.addAllergyButton.Size = new System.Drawing.Size(134, 48);
             this.addAllergyButton.TabIndex = 1;
-            this.addAllergyButton.Text = "Add Allergy Information for this Patient";
+            this.addAllergyButton.Text = "Add Allergy Information ";
             this.addAllergyButton.UseVisualStyleBackColor = true;
             this.addAllergyButton.Click += new System.EventHandler(this.addAllergyButton_Click);
             // 
@@ -948,7 +962,7 @@
             this.addMedicationButton.Name = "addMedicationButton";
             this.addMedicationButton.Size = new System.Drawing.Size(134, 48);
             this.addMedicationButton.TabIndex = 4;
-            this.addMedicationButton.Text = "Add Medication Information for this Patient";
+            this.addMedicationButton.Text = "Add Medication Information ";
             this.addMedicationButton.UseVisualStyleBackColor = true;
             this.addMedicationButton.Click += new System.EventHandler(this.addMedicationButton_Click);
             // 
@@ -959,7 +973,7 @@
             this.addVitalsButton.Name = "addVitalsButton";
             this.addVitalsButton.Size = new System.Drawing.Size(134, 48);
             this.addVitalsButton.TabIndex = 5;
-            this.addVitalsButton.Text = "Add Vitals Information for this Patient";
+            this.addVitalsButton.Text = "Add Vitals Information";
             this.addVitalsButton.UseVisualStyleBackColor = true;
             this.addVitalsButton.Click += new System.EventHandler(this.addVitalsButton_Click_1);
             // 
@@ -970,7 +984,7 @@
             this.addDiabeticMeds.Name = "addDiabeticMeds";
             this.addDiabeticMeds.Size = new System.Drawing.Size(134, 48);
             this.addDiabeticMeds.TabIndex = 6;
-            this.addDiabeticMeds.Text = "Add Diabetic Meds Information for this Patient";
+            this.addDiabeticMeds.Text = "Add Diabetic Meds Information ";
             this.addDiabeticMeds.UseVisualStyleBackColor = true;
             this.addDiabeticMeds.Click += new System.EventHandler(this.addDiabeticMeds_Click);
             // 
@@ -981,7 +995,7 @@
             this.adDiabeticTest.Name = "adDiabeticTest";
             this.adDiabeticTest.Size = new System.Drawing.Size(134, 48);
             this.adDiabeticTest.TabIndex = 7;
-            this.adDiabeticTest.Text = "Add Diabetic Test Information for this Patient";
+            this.adDiabeticTest.Text = "Add Diabetic Test Information ";
             this.adDiabeticTest.UseVisualStyleBackColor = true;
             // 
             // addLipidTestButton
@@ -991,7 +1005,7 @@
             this.addLipidTestButton.Name = "addLipidTestButton";
             this.addLipidTestButton.Size = new System.Drawing.Size(134, 48);
             this.addLipidTestButton.TabIndex = 8;
-            this.addLipidTestButton.Text = "Add Lipid Test Information for this Patient";
+            this.addLipidTestButton.Text = "Add Lipid Test Information ";
             this.addLipidTestButton.UseVisualStyleBackColor = true;
             // 
             // addDiabeticBackgroundButton
@@ -1001,7 +1015,7 @@
             this.addDiabeticBackgroundButton.Name = "addDiabeticBackgroundButton";
             this.addDiabeticBackgroundButton.Size = new System.Drawing.Size(134, 48);
             this.addDiabeticBackgroundButton.TabIndex = 9;
-            this.addDiabeticBackgroundButton.Text = "Add Diabetic Background Information for this Patient";
+            this.addDiabeticBackgroundButton.Text = "Add Diabetic Background Information ";
             this.addDiabeticBackgroundButton.UseVisualStyleBackColor = true;
             // 
             // deleteSelectedRow
@@ -1025,6 +1039,10 @@
             this.editSelectedRow.Text = "Edit Selected Row";
             this.editSelectedRow.UseVisualStyleBackColor = true;
             this.editSelectedRow.Click += new System.EventHandler(this.editSelectedRow_Click);
+            // 
+            // DiastolicPressure
+            // 
+            this.DiastolicPressure.Text = "Diastolic";
             // 
             // Patient
             // 
@@ -1118,7 +1136,7 @@
         private System.Windows.Forms.ListView lvVitalsList;
         private System.Windows.Forms.ColumnHeader DateTaken;
         private System.Windows.Forms.ColumnHeader HeartRate;
-        private System.Windows.Forms.ColumnHeader BloodPressure;
+        private System.Windows.Forms.ColumnHeader SystolicPressure;
         private System.Windows.Forms.ColumnHeader RespiratoryRate;
         private System.Windows.Forms.ColumnHeader OxygenSaturation;
         private System.Windows.Forms.ColumnHeader AirType;
@@ -1166,5 +1184,6 @@
         private System.Windows.Forms.Button editSelectedRow;
         private System.Windows.Forms.TextBox tbGender;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColumnHeader DiastolicPressure;
     }
 }
