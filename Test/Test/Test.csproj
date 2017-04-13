@@ -70,6 +70,12 @@
     <Compile Include="AddDiabetesMedicaitonInfo.Designer.cs">
       <DependentUpon>AddDiabetesMedicaitonInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddDiabeticTestInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDiabeticTestInfo.Designer.cs">
+      <DependentUpon>AddDiabeticTestInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddLipidTestInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddDiabetesMedicaitonInfo.resx">
       <DependentUpon>AddDiabetesMedicaitonInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDiabeticTestInfo.resx">
+      <DependentUpon>AddDiabeticTestInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddLipidTestInfo.resx">
       <DependentUpon>AddLipidTestInfo.cs</DependentUpon>

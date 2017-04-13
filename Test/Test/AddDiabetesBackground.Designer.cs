@@ -35,6 +35,8 @@
             this.heartRatelb = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.addBackgroundInfobtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // diabetesType
@@ -97,11 +99,34 @@
             this.label2.TabIndex = 14;
             this.label2.Text = "Diabetes Type";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(457, 266);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(257, 20);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "Note: All Fields Must be completed!";
+            // 
+            // addBackgroundInfobtn
+            // 
+            this.addBackgroundInfobtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBackgroundInfobtn.Location = new System.Drawing.Point(539, 338);
+            this.addBackgroundInfobtn.Name = "addBackgroundInfobtn";
+            this.addBackgroundInfobtn.Size = new System.Drawing.Size(175, 47);
+            this.addBackgroundInfobtn.TabIndex = 29;
+            this.addBackgroundInfobtn.Text = "Add This Information to The Patients Records";
+            this.addBackgroundInfobtn.UseVisualStyleBackColor = true;
+            this.addBackgroundInfobtn.Click += new System.EventHandler(this.addBackgroundInfobtn_Click);
+            // 
             // AddDiabetesBackground
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 397);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.addBackgroundInfobtn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.heartRatelb);
@@ -125,5 +150,7 @@
         private System.Windows.Forms.Label heartRatelb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button addBackgroundInfobtn;
     }
 }

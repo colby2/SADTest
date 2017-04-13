@@ -8,31 +8,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DiabeticHealthDB;
-
 namespace Test
 {
-    public partial class AddDiabetesBackground : Form
+    public partial class AddDiabeticTestInfo : Form
     {
-        public AddDiabetesBackground()
+        public AddDiabeticTestInfo()
         {
             InitializeComponent();
         }
 
-        private void AddDiabetesBackground_Load(object sender, EventArgs e)
+        private void addDiabeticTestbtn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void addBackgroundInfobtn_Click(object sender, EventArgs e)
-        {
-            if(diabetesType.Text == "")
+            if(microalbumintb.Text == "" || footchecktb.Text == "" || cyvtb.Text == "" || eyeexamtb.Text == "" || counselingtb.Text == "" || datetestTaken.Text == "")
             {
                 MessageBox.Show("Something must be entered for each field. If patient is not applicable for a certain field enter 'N/A'.", "Attention", MessageBoxButtons.OK);
                 return;
             }
+
             else
             {
-                //InsertFunctions.InsertIntoDiabetesBackground(dateInfoTaken.Text, dateDiagnosed.Text, diabetesType.Text, PatientID);
+                //InsertFunctions.InsertIntoDiabeticTests(datetestTaken.Text, microalbumintb.Text, footchecktb.Text, cyvtb.Text, eyeexamtb.Text, counselingtb.Text, PatientID);
             }
         }
     }
