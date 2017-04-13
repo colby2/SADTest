@@ -443,7 +443,10 @@ namespace Test
 
             while (reader.Read())
             {
-
+                double BMI, height, weight;
+                height = reader.GetDouble(8);
+                weight = reader.GetDouble(9);
+                BMI = (weight * 0.45) / Math.Pow((height * 0.025), 2);
                 ListViewItem lv = new ListViewItem(Convert.ToDateTime(reader.GetString(1)).ToString("MMM dd, yyyy"));
                 lv.SubItems.Add(reader.GetString(2));
                 lv.SubItems.Add(reader.GetString(3));
@@ -453,7 +456,7 @@ namespace Test
                 lv.SubItems.Add(reader.GetString(7));
                 lv.SubItems.Add(reader.GetString(8));
                 lv.SubItems.Add(reader.GetString(9));
-                lv.SubItems.Add("BMI GOES HERE");
+                lv.SubItems.Add(BMI.ToString());
                 lv.SubItems.Add(reader.GetString(10));
 
                 lvVitalsList.Items.Add(lv);
