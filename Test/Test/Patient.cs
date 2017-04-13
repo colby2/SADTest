@@ -534,23 +534,39 @@ namespace Test
 
             while (reader.Read())
             {
+                
+                double TCHOL_HDL;
                 ListViewItem lv = new ListViewItem(Convert.ToDateTime(reader.GetString(1)).ToString("MMM dd, yyyy"));
+                TCHOL_HDL = reader.GetDouble(3) / reader.GetDouble(4);
+                TCHOL_HDL = Math.Round(TCHOL_HDL, 2, MidpointRounding.AwayFromZero);
                 lv.SubItems.Add(reader.GetString(2));
                 lv.SubItems.Add(reader.GetString(3));
                 lv.SubItems.Add(reader.GetString(4));
                 lv.SubItems.Add(reader.GetString(5));
                 lv.SubItems.Add(reader.GetString(6));
-                lv.SubItems.Add("ADD THIS LATER!");
-
+                lv.SubItems.Add(TCHOL_HDL.ToString());
+                lv.UseItemStyleForSubItems = false;
+                if (TCHOL_HDL < 4 || TCHOL_HDL > 13) 
+                {
+                    lv.SubItems[6].ForeColor = Color.Red;
+                }
+                else{
+                    lv.SubItems[6].ForeColor = Color.Black;
+                }
                 lvLipidTestList.Items.Add(lv);
+
+                
+
             }
             reader.Close();
             connection.Close();
         }
 
-       /****************************************************************************************
-      * Function that populates the Lipid Tests list view
-      * **************************************************************************************/
+        
+
+        /****************************************************************************************
+       * Function that populates the Lipid Tests list view
+       * **************************************************************************************/
         public void InsertIntoDiabeticBackgroundlv()
         {
             MySqlConnection connection = new MySqlConnection(connectionString);
