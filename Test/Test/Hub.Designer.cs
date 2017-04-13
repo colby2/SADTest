@@ -212,7 +212,6 @@
             this.tabPage1.BackColor = System.Drawing.Color.Honeydew;
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.bGraphs);
-            this.tabPage1.Controls.Add(this.lvSearchList);
             this.tabPage1.Controls.Add(this.bAdd);
             this.tabPage1.Controls.Add(this.cbFirstName);
             this.tabPage1.Controls.Add(this.bLogout);
@@ -220,6 +219,7 @@
             this.tabPage1.Controls.Add(this.cbDOB);
             this.tabPage1.Controls.Add(this.tbSearch);
             this.tabPage1.Controls.Add(this.cbLastName);
+            this.tabPage1.Controls.Add(this.lvSearchList);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);

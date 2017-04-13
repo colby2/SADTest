@@ -12,16 +12,17 @@ namespace DiabeticHealthDB
        /*
       * Inserts info into Demographic Table from from
       */
-        public static int InsertIntoDemographics(string FirstName, string LastName, string DateofLastVisit, string Street, string City, string State, string Zip, string DOB, string Phone, string PrimaryInsuranceProvider, string SecondaryInsuranceProvider, string PatientNotes)
+        public static int InsertIntoDemographics(string FirstName, string LastName, string Gender, string DateofLastVisit, string Street, string City, string State, string Zip, string DOB, string Phone, string PrimaryInsuranceProvider, string SecondaryInsuranceProvider, string PatientNotes)
         {
             int totalRowsInserted = 0;
             MySqlConnection conn = DatabaseConnection.GetConnection();
             string qry =
-               "INSERT INTO `Demographics`(`FirstName`, `LastName`, `DateofLastVisit`, `Street`, `City`, `State`, `Zip`, `DOB`, `Phone`, `PrimaryInsuranceProvider`, `SecondaryInsuranceProvider`, `PatientNotes`)" +
-               "VALUES (@FirstName, @Lastname, @DateofLastVisit, @Street, @City, @State, @Zip, @DOB, @Phone, @PrimaryInsuranceProvider, @SecondaryInsuranceProvider, @PatientNotes);";
+               "INSERT INTO `Demographics`(`FirstName`, `LastName`, `Gender`, `DateofLastVisit`, `Street`, `City`, `State`, `Zip`, `DOB`, `Phone`, `PrimaryInsuranceProvider`, `SecondaryInsuranceProvider`, `PatientNotes`)" +
+               "VALUES (@FirstName, @Lastname, @Gender, @DateofLastVisit, @Street, @City, @State, @Zip, @DOB, @Phone, @PrimaryInsuranceProvider, @SecondaryInsuranceProvider, @PatientNotes);";
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.Parameters.AddWithValue("@FirstName", FirstName);
             cmd.Parameters.AddWithValue("@LastName", LastName);
+            cmd.Parameters.AddWithValue("@Gender", Gender);
             cmd.Parameters.AddWithValue("@DateofLastVisit", DateofLastVisit);//might drop this one
             cmd.Parameters.AddWithValue("@Street", Street);
             cmd.Parameters.AddWithValue("@City", City);

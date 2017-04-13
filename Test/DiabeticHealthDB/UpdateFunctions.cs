@@ -13,16 +13,17 @@ namespace DiabeticHealthDB
         *Function that will allow users to update all of the fields the user changes on the patient form
         * in the demographics tab
         * ***********************************************************************************************/
-        public static int UpdateDemographics(int PatientID, string FirstName, string LastName, string DateofLastVisit, string Street, string City, string State, string Zip, string DOB, string Phone, string PrimaryInsuranceProvider, string SecondaryInsuranceProvider)
+        public static int UpdateDemographics(int PatientID, string FirstName, string LastName, string Gender, string DateofLastVisit, string Street, string City, string State, string Zip, string DOB, string Phone, string PrimaryInsuranceProvider, string SecondaryInsuranceProvider)
         {
 
             int rowsUpdated = 0;
             MySqlConnection connection = DatabaseConnection.GetConnection();
             string updateQuery =
-                    "Update Demographics Set FirstName = @F, LastName = @L, DateOfLastVisit = @D, Street = @St, City = @C, State = @S, Zip = @Z, DOB = @DOB, Phone = @P, PrimaryInsuranceProvider = @PI, SecondaryInsuranceProvider = @SI WHERE PatientID = @ID";
+                    "Update Demographics Set FirstName = @F, LastName = @L, Gender = @G, DateOfLastVisit = @D, Street = @St, City = @C, State = @S, Zip = @Z, DOB = @DOB, Phone = @P, PrimaryInsuranceProvider = @PI, SecondaryInsuranceProvider = @SI WHERE PatientID = @ID";
             MySqlCommand command = new MySqlCommand(updateQuery, connection);
             command.Parameters.AddWithValue("@F", FirstName);
             command.Parameters.AddWithValue("@L", LastName);
+            command.Parameters.AddWithValue("@G", Gender);
             command.Parameters.AddWithValue("@D", DateofLastVisit);
             command.Parameters.AddWithValue("@St", Street);
             command.Parameters.AddWithValue("@C", City);

@@ -57,16 +57,17 @@ namespace Test
                 PatientId = reader.GetString(0);
                 tbFirstname.Text = reader.GetString(1);
                 tbLastname.Text = reader.GetString(2);
-                tbDateOfLastVisit.Text = reader.GetString(3);
-                tbStreet.Text = reader.GetString(4);
-                tbCity.Text = reader.GetString(5);
-                tbState.Text = reader.GetString(6);
-                tbZip.Text = reader.GetString(7);
-                tbDOB.Text = reader.GetString(8);
-                tbPhone.Text = reader.GetString(9);
-                tbPrimaryInsurance.Text = reader.GetString(10);
-                tbSecondaryInsurance.Text = reader.GetString(11);
-                tbNotes.Text = reader.GetString(12);
+                tbGender.Text = reader.GetString(3);
+                tbDateOfLastVisit.Text = reader.GetString(4);
+                tbStreet.Text = reader.GetString(5);
+                tbCity.Text = reader.GetString(6);
+                tbState.Text = reader.GetString(7);
+                tbZip.Text = reader.GetString(8);
+                tbDOB.Text = reader.GetString(9);
+                tbPhone.Text = reader.GetString(10);
+                tbPrimaryInsurance.Text = reader.GetString(11);
+                tbSecondaryInsurance.Text = reader.GetString(12);
+                tbNotes.Text = reader.GetString(13);
             }
             reader.Close();
             connection.Close(); // close database connection
@@ -147,6 +148,7 @@ namespace Test
             {
                 tbFirstname.ReadOnly = false;
                 tbLastname.ReadOnly = false;
+                tbGender.ReadOnly = false;
                 tbDateOfLastVisit.ReadOnly = false;
                 tbStreet.ReadOnly = false;
                 tbCity.ReadOnly = false;
@@ -163,6 +165,7 @@ namespace Test
             {
                 tbFirstname.ReadOnly = true;
                 tbLastname.ReadOnly = true;
+                tbGender.ReadOnly = true;
                 tbDateOfLastVisit.ReadOnly = true;
                 tbStreet.ReadOnly = true;
                 tbCity.ReadOnly = true;
@@ -175,7 +178,7 @@ namespace Test
 
                 //TODO: Pull information from text boxes here and update database.
                 //need to fix to where if nothing is updated it doesnt output the Message box that says we have updated records for this patient
-                int Updated = UpdateFunctions.UpdateDemographics(Int32.Parse(PatientId), tbFirstname.Text, tbLastname.Text, tbDateOfLastVisit.Text, tbStreet.Text, tbCity.Text, tbState.Text, tbZip.Text, tbDOB.Text, tbPhone.Text, tbPrimaryInsurance.Text, tbSecondaryInsurance.Text);
+                int Updated = UpdateFunctions.UpdateDemographics(Int32.Parse(PatientId), tbFirstname.Text, tbLastname.Text, tbGender.Text, tbDateOfLastVisit.Text, tbStreet.Text, tbCity.Text, tbState.Text, tbZip.Text, tbDOB.Text, tbPhone.Text, tbPrimaryInsurance.Text, tbSecondaryInsurance.Text);
                 if (Updated == 1)
                     MessageBox.Show("You Have Updated the Records for This Patient");
                 else
@@ -260,14 +263,16 @@ namespace Test
             if (addNotes.Text.Contains("Edit"))
             {
                 tbNotes.ReadOnly = false;
-
+                tbNotes.Text = tbNotes.Text + "\n\n " + completeCurrentDate + "\n";
                 addNotes.Text = "Submit Addition";
             }
             else if(addNotes.Text.Contains("Submit"))
             {
                 tbNotes.ReadOnly = true;
+              
                 UpdateFunctions.UpdateNotes(Int32.Parse(PatientId), tbNotes.Text);
-                addNotes.Text = "Edit Notes for This Patient";
+                addNotes.Text = "Edit Notes";
+
             }
             
            
@@ -702,7 +707,10 @@ namespace Test
 
         }
 
-       
+        private void tpNotes_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
