@@ -151,7 +151,7 @@ namespace Test
 
                 while (reader.Read())
                 {
-                    string[] row = {reader.GetString(1), reader.GetString(2), reader.GetString(8), reader.GetString(0)};
+                    string[] row = {reader.GetString(1), reader.GetString(2), reader.GetString(9), reader.GetString(0)};
                     var listViewItem = new ListViewItem(row);
                     lvSearchList.Items.Add(listViewItem);
                 }

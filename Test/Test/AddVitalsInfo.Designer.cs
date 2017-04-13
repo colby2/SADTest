@@ -39,7 +39,7 @@
             this.templb = new System.Windows.Forms.Label();
             this.HRtb = new System.Windows.Forms.TextBox();
             this.RRtb = new System.Windows.Forms.TextBox();
-            this.BPtb = new System.Windows.Forms.TextBox();
+            this.systolictb = new System.Windows.Forms.TextBox();
             this.attb = new System.Windows.Forms.TextBox();
             this.htb = new System.Windows.Forms.TextBox();
             this.wtb = new System.Windows.Forms.TextBox();
@@ -49,6 +49,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.diastolictb = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // heartRatelb
@@ -69,9 +71,10 @@
             this.bplb.Location = new System.Drawing.Point(86, 79);
             this.bplb.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.bplb.Name = "bplb";
-            this.bplb.Size = new System.Drawing.Size(111, 18);
+            this.bplb.Size = new System.Drawing.Size(60, 18);
             this.bplb.TabIndex = 1;
-            this.bplb.Text = "Blood Pressure";
+            this.bplb.Text = "Systolic";
+            this.bplb.Click += new System.EventHandler(this.bplb_Click);
             // 
             // rrlb
             // 
@@ -142,7 +145,7 @@
             // HRtb
             // 
             this.HRtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.HRtb.Location = new System.Drawing.Point(310, 21);
+            this.HRtb.Location = new System.Drawing.Point(267, 21);
             this.HRtb.Margin = new System.Windows.Forms.Padding(4);
             this.HRtb.Multiline = true;
             this.HRtb.Name = "HRtb";
@@ -153,7 +156,7 @@
             // RRtb
             // 
             this.RRtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RRtb.Location = new System.Drawing.Point(310, 130);
+            this.RRtb.Location = new System.Drawing.Point(267, 130);
             this.RRtb.Margin = new System.Windows.Forms.Padding(4);
             this.RRtb.Multiline = true;
             this.RRtb.Name = "RRtb";
@@ -161,21 +164,21 @@
             this.RRtb.TabIndex = 9;
             this.RRtb.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // BPtb
+            // systolictb
             // 
-            this.BPtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BPtb.Location = new System.Drawing.Point(310, 79);
-            this.BPtb.Margin = new System.Windows.Forms.Padding(4);
-            this.BPtb.Multiline = true;
-            this.BPtb.Name = "BPtb";
-            this.BPtb.Size = new System.Drawing.Size(143, 33);
-            this.BPtb.TabIndex = 10;
-            this.BPtb.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.systolictb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.systolictb.Location = new System.Drawing.Point(267, 79);
+            this.systolictb.Margin = new System.Windows.Forms.Padding(4);
+            this.systolictb.Multiline = true;
+            this.systolictb.Name = "systolictb";
+            this.systolictb.Size = new System.Drawing.Size(143, 33);
+            this.systolictb.TabIndex = 10;
+            this.systolictb.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // attb
             // 
             this.attb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attb.Location = new System.Drawing.Point(310, 251);
+            this.attb.Location = new System.Drawing.Point(267, 251);
             this.attb.Margin = new System.Windows.Forms.Padding(4);
             this.attb.Multiline = true;
             this.attb.Name = "attb";
@@ -186,7 +189,7 @@
             // htb
             // 
             this.htb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.htb.Location = new System.Drawing.Point(310, 318);
+            this.htb.Location = new System.Drawing.Point(267, 318);
             this.htb.Margin = new System.Windows.Forms.Padding(4);
             this.htb.Multiline = true;
             this.htb.Name = "htb";
@@ -197,7 +200,7 @@
             // wtb
             // 
             this.wtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wtb.Location = new System.Drawing.Point(310, 379);
+            this.wtb.Location = new System.Drawing.Point(267, 379);
             this.wtb.Margin = new System.Windows.Forms.Padding(4);
             this.wtb.Multiline = true;
             this.wtb.Name = "wtb";
@@ -208,7 +211,7 @@
             // temptb
             // 
             this.temptb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.temptb.Location = new System.Drawing.Point(310, 435);
+            this.temptb.Location = new System.Drawing.Point(267, 435);
             this.temptb.Margin = new System.Windows.Forms.Padding(4);
             this.temptb.Multiline = true;
             this.temptb.Name = "temptb";
@@ -219,7 +222,7 @@
             // o2sattb
             // 
             this.o2sattb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.o2sattb.Location = new System.Drawing.Point(310, 191);
+            this.o2sattb.Location = new System.Drawing.Point(267, 191);
             this.o2sattb.Margin = new System.Windows.Forms.Padding(4);
             this.o2sattb.Multiline = true;
             this.o2sattb.Name = "o2sattb";
@@ -265,11 +268,34 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 24);
             this.dateTimePicker1.TabIndex = 29;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(450, 86);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 18);
+            this.label1.TabIndex = 30;
+            this.label1.Text = "Diastolic";
+            // 
+            // diastolictb
+            // 
+            this.diastolictb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.diastolictb.Location = new System.Drawing.Point(569, 79);
+            this.diastolictb.Margin = new System.Windows.Forms.Padding(4);
+            this.diastolictb.Multiline = true;
+            this.diastolictb.Name = "diastolictb";
+            this.diastolictb.Size = new System.Drawing.Size(143, 33);
+            this.diastolictb.TabIndex = 31;
+            // 
             // AddVitalsInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(904, 594);
+            this.Controls.Add(this.diastolictb);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.button1);
@@ -279,7 +305,7 @@
             this.Controls.Add(this.wtb);
             this.Controls.Add(this.htb);
             this.Controls.Add(this.attb);
-            this.Controls.Add(this.BPtb);
+            this.Controls.Add(this.systolictb);
             this.Controls.Add(this.RRtb);
             this.Controls.Add(this.HRtb);
             this.Controls.Add(this.templb);
@@ -313,7 +339,7 @@
         private System.Windows.Forms.Label templb;
         private System.Windows.Forms.TextBox HRtb;
         private System.Windows.Forms.TextBox RRtb;
-        private System.Windows.Forms.TextBox BPtb;
+        private System.Windows.Forms.TextBox systolictb;
         private System.Windows.Forms.TextBox attb;
         private System.Windows.Forms.TextBox htb;
         private System.Windows.Forms.TextBox wtb;
@@ -323,5 +349,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox diastolictb;
     }
 }

@@ -80,8 +80,10 @@ namespace Test
             string str3 = HRtb.Text.Trim();
             string str4 = RRtb.Text.Trim();
             string str5 = temptb.Text.Trim();
+            string str6 = systolictb.Text.Trim();
+            string str7 = diastolictb.Text.Trim();
 
-            int heightCheck, weightCheck, o2Check, heartRateCheck, respiratoryRateCheck;
+            int heightCheck, weightCheck, o2Check, heartRateCheck, respiratoryRateCheck, systolicCheck, diastolicCheck;
             double temperatureCheck;
 
             bool isHeightCheck = int.TryParse(str, out heightCheck);
@@ -90,29 +92,37 @@ namespace Test
             bool isHeartRateCheck= int.TryParse(str3, out heartRateCheck);
             bool isRespiratoryRateCheck = int.TryParse(str4, out respiratoryRateCheck);
             bool isTemperatureCheck = double.TryParse(str5, out temperatureCheck);
+            bool isSystolicCheck = int.TryParse(str6, out systolicCheck);
+            bool isDiastolicCheck = int.TryParse(str7, out diastolicCheck);
 
 
 
 
-            if (HRtb.Text == "" || BPtb.Text == "" || RRtb.Text == "" || o2sattb.Text == "" || attb.Text == "" || htb.Text == "" || wtb.Text == "" || temptb.Text == "")
+
+            if (HRtb.Text == "" || systolictb.Text == "" || diastolictb.Text =="" || RRtb.Text == "" || o2sattb.Text == "" || attb.Text == "" || htb.Text == "" || wtb.Text == "" || temptb.Text == "")
             {
                 MessageBox.Show("Something must be entered for each field. If patient is not applicable for a certain field enter 'N/A'.", "Attention", MessageBoxButtons.OK);
                 return;
             }
             if (isHeightCheck && isWeightCheck && isO2Check && isHeartRateCheck && isRespiratoryRateCheck && isTemperatureCheck)
             {
-                InsertFunctions.InsertIntoVitalsInformation(DateTime.Parse(dateTimePicker1.Text), int.Parse(HRtb.Text), BPtb.Text, Int32.Parse(RRtb.Text), Int32.Parse(o2sattb.Text), attb.Text, Int32.Parse(htb.Text), Int32.Parse(wtb.Text), double.Parse(temptb.Text), PatientID);
+                InsertFunctions.InsertIntoVitalsInformation(DateTime.Parse(dateTimePicker1.Text), int.Parse(HRtb.Text), Int32.Parse(systolictb.Text), Int32.Parse(RRtb.Text), Int32.Parse(diastolictb.Text), Int32.Parse(o2sattb.Text), attb.Text, Int32.Parse(htb.Text), Int32.Parse(wtb.Text), double.Parse(temptb.Text), PatientID);
                 this.Close();
             }
             else
             {//if you have time check each individual text box
-                MessageBox.Show("Must add numerical values for: \n\n Heart Rate \n Respiratory Rate \n Oxygen Saturation \n Height \n Weight \n Temperature", "Error");
+                MessageBox.Show("Must add numerical values for: \n\n Heart Rate \n Blood Pressure Values \n Respiratory Rate \n Oxygen Saturation \n Height \n Weight \n Temperature", "Error");
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Console.WriteLine(PatientID);
+        }
+
+        private void bplb_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
