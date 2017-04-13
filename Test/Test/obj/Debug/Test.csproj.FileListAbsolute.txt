@@ -234,3 +234,5 @@ C:\Users\rkesterson1\Source\Repos\SADTest2\Test\Test\bin\Debug\Test.pdb
 C:\Users\rkesterson1\Source\Repos\SADTest2\Test\Test\bin\Debug\DiabeticHealthDB.dll
 C:\Users\rkesterson1\Source\Repos\SADTest2\Test\Test\bin\Debug\DiabeticHealthDB.pdb
 C:\Users\rkesterson1\Source\Repos\SADTest2\Test\Test\bin\Debug\MySql.Data.xml
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabetesBackground.resources
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddLipidTestInfo.resources

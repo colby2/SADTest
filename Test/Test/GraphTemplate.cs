@@ -25,11 +25,15 @@ namespace Test
         TestNum LDL = new TestNum("HgA1C", "LipidTestInformation", 5);
         TestNum Triglycerides = new TestNum("Triglycerides", "LipidTestInformation", 6);
         TestNum Heart_Rate = new TestNum("Heart Rate", "VitalsInformation", 2);
-        TestNum Respiratory_Rate = new TestNum("Respiratory Rate", "VitalsInformation", 4);
-        TestNum Oxygen_Saturation = new TestNum("Oxygen Saturation", "VitalsInformation", 5);
-        TestNum Patient_Height = new TestNum("Height", "VitalsInformation", 7);//Renamed from height since a inherited variable is named height.
-        TestNum Weight = new TestNum("Weight", "VitalsInformation", 8);
-        TestNum Temperature = new TestNum("Temperature", "VitalsInformation", 9);
+        TestNum Respiratory_Rate = new TestNum("Respiratory Rate", "VitalsInformation", 5);
+        TestNum Oxygen_Saturation = new TestNum("Oxygen Saturation", "VitalsInformation", 6);
+        TestNum Patient_Height = new TestNum("Height", "VitalsInformation", 8);//Renamed from height since a inherited variable is named height.
+        TestNum Weight = new TestNum("Weight", "VitalsInformation", 9);
+        TestNum Temperature = new TestNum("Temperature", "VitalsInformation", 10);
+        //TestNum BMI = new TestNum("BMI", "VitalsInformation", 10);
+        TestNum Systolic = new TestNum("Systolic", "VitalsInformation", 3);
+        TestNum Diastolic = new TestNum("Diastolic", "VitalsInformation", 4);
+
         string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
         MySqlConnection connection;
 
@@ -209,12 +213,13 @@ namespace Test
             else if (testSelectBox.SelectedIndex == 1)
             {
                 cbSubTest.Items.Add("Heart Rate");
-                //cbSubTest.Items.Add("Blood Pressure");
+                cbSubTest.Items.Add("Systolic");
+                cbSubTest.Items.Add("Diastolic");
                 cbSubTest.Items.Add("Respiratory Rate");
                 cbSubTest.Items.Add("Oxygen Saturation");
                 cbSubTest.Items.Add("Height");
                 cbSubTest.Items.Add("Weight");
-                //cbSubTest.Items.Add("BMI");
+                cbSubTest.Items.Add("BMI");// (weight *.45)/((height*.025)^2)
                 cbSubTest.Items.Add("Temperature");
             }
         }
@@ -242,6 +247,54 @@ namespace Test
                 chart1.Series[graphName].ChartArea = "ChartArea1";
                 reader.Close();
                 connection.Close();
+            }
+        }
+
+        void BMIDatabaseSearch()// (weight *.45)/((height*.025)^2)
+        {
+            if (id != null)
+            {
+                //graphName = test.toString();
+                //chart1.Series.Add(graphName);//not working, cannot add a same series twice
+                connection.Open();
+                string testSearch = "Select * FROM " + Weight.getTestType() + " Where PatientID =" + id + " ORDER BY DateOfTest;";
+                Console.WriteLine(testSearch);
+                MySqlCommand cmd = new MySqlCommand(testSearch, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+
+
+                chart1.Series[graphName].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                int i = 0;
+                List<double>w = new List<double>();
+                while (reader.Read())
+                {
+                    w.Add(reader.GetDouble(Weight.getDouble()));
+                    i++;
+                }
+                i = 0;
+                
+                testSearch = "Select * FROM " + Weight.getTestType() + " Where PatientID =" + id + " ORDER BY DateOfTest;";
+                Console.WriteLine(testSearch);
+                 cmd = new MySqlCommand(testSearch, connection);
+                reader.Close();
+                 reader = cmd.ExecuteReader();
+                List<double> h = new List<double>();
+                while (reader.Read())
+                {
+                    h.Add(reader.GetDouble(Patient_Height.getDouble()));
+                    i++;
+                }
+                Console.WriteLine("GotHere");
+                for(int j = 0; j < i; j++)
+                {
+                    Console.WriteLine(w[j] * .45 / ((h[j] * .025) * (h[j] * .025)));
+                    chart1.Series[graphName].Points.AddY(w[j]*.45/((h[j]*.025)*(h[j]*.025)));
+                }
+                Console.WriteLine("GotHere2");
+                reader.Close();
+                connection.Close();
+                chart1.Series[graphName].ChartArea = "ChartArea1";
             }
         }
 
@@ -295,6 +348,18 @@ namespace Test
                 else if (cbSubTest.SelectedItem.ToString() == "Temperature")
                 {
                     databaseSearch(Temperature);
+                }
+                else if(cbSubTest.SelectedItem.ToString() == "BMI")
+                {
+                    BMIDatabaseSearch();
+                }
+                else if(cbSubTest.SelectedItem.ToString() == "Systolic")
+                {
+                    databaseSearch(Systolic);
+                }
+                else if(cbSubTest.SelectedItem.ToString() == "Diastolic")
+                {
+                    databaseSearch(Diastolic);
                 }
             }
            catch(System.NullReferenceException)
