@@ -228,6 +228,78 @@ namespace DiabeticHealthDB
 
 
         }
+        /*
+       *Insert function for Diabetes Background  
+       */
+        public static void InsertIntoDiabetesBackground(string DateInfoTaken, string DateDiagnosed, string DiabetesType, int PatientID)
+        {
+
+            MySqlConnection conn = DatabaseConnection.GetConnection();
+            string qry =
+                "INSERT INTO `DiabtetesBackground`( `DateInfoTaken`, `DateDiagnosed`, `DiabetesType`, `PatientID`)" +
+                "VALUES (@DateInfoTaken, @DateDiagnosed, @DiabetesType, @PatientID);";
+            MySqlCommand cmd = new MySqlCommand(qry, conn);
+            cmd.Parameters.AddWithValue("@DateInfoTaken", DateInfoTaken);
+            cmd.Parameters.AddWithValue("@DateDiagnosed", DateDiagnosed);
+            cmd.Parameters.AddWithValue("@DiabetesType", DiabetesType);
+            cmd.Parameters.AddWithValue("@PatientID", PatientID);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)//perhaps pass exception to message box
+            {
+
+                ex.ToString();
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+        }
+
+        /*
+       *Insert function for DiabeticTests
+       */
+        public static void InsertIntoDiabeticTests(string DateOfTest, string Microalbumin, string FootCheck, string CurrentYearVaccination, string DiabeticEyeExam, string NutritionalCounseling, int PatientID)
+        {
+
+            MySqlConnection conn = DatabaseConnection.GetConnection();
+            string qry =
+                "INSERT INTO `LipidTestInformation`( `DateOfTest`, `Microalbumin`, `FootCheck`, `CurrentYearVaccination`, `DiabeticEyeExam`, `NutritionCounseling`, `PatientID`)" +
+                "VALUES (@DateOfTest, @Microalbumin, @FootCheck, @CurrentYearVaccination, @DiabeticEyeExam, @NutritionCounseling, @PatientID);";
+            MySqlCommand cmd = new MySqlCommand(qry, conn);
+            cmd.Parameters.AddWithValue("@DateOfTest", DateOfTest);
+            cmd.Parameters.AddWithValue("@Microalbumin", Microalbumin);
+            cmd.Parameters.AddWithValue("@FootCheck", FootCheck);
+            cmd.Parameters.AddWithValue("@CurrentYearVaccination", CurrentYearVaccination);
+            cmd.Parameters.AddWithValue("@DiabeticEyeExam", DiabeticEyeExam);
+            cmd.Parameters.AddWithValue("@NutritionalCounseling", NutritionalCounseling);
+            cmd.Parameters.AddWithValue("@PatientID", PatientID);
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)//perhaps pass exception to message box
+            {
+
+                ex.ToString();
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+        }
+
+
 
     }
 
