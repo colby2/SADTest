@@ -75,6 +75,7 @@
             this.DateTaken = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.HeartRate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SystolicPressure = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.DiastolicPressure = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RespiratoryRate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.OxygenSaturation = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AirType = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -126,7 +127,6 @@
             this.addDiabeticBackgroundButton = new System.Windows.Forms.Button();
             this.deleteSelectedRow = new System.Windows.Forms.Button();
             this.editSelectedRow = new System.Windows.Forms.Button();
-            this.DiastolicPressure = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tcPatient.SuspendLayout();
             this.tpDemographics.SuspendLayout();
             this.tpAllergies.SuspendLayout();
@@ -224,7 +224,7 @@
             this.visitDateUpdate.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.visitDateUpdate.Location = new System.Drawing.Point(309, 345);
             this.visitDateUpdate.Name = "visitDateUpdate";
-            this.visitDateUpdate.Size = new System.Drawing.Size(139, 28);
+            this.visitDateUpdate.Size = new System.Drawing.Size(164, 28);
             this.visitDateUpdate.TabIndex = 31;
             this.visitDateUpdate.Text = "Update Last Visit";
             this.visitDateUpdate.UseVisualStyleBackColor = true;
@@ -307,9 +307,10 @@
             // lInsurance
             // 
             this.lInsurance.AutoSize = true;
+            this.lInsurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lInsurance.Location = new System.Drawing.Point(387, 59);
             this.lInsurance.Name = "lInsurance";
-            this.lInsurance.Size = new System.Drawing.Size(76, 18);
+            this.lInsurance.Size = new System.Drawing.Size(86, 18);
             this.lInsurance.TabIndex = 18;
             this.lInsurance.Text = "Insurance:";
             // 
@@ -611,6 +612,10 @@
             // 
             this.SystolicPressure.Text = "Systolic";
             this.SystolicPressure.Width = 92;
+            // 
+            // DiastolicPressure
+            // 
+            this.DiastolicPressure.Text = "Diastolic";
             // 
             // RespiratoryRate
             // 
@@ -997,6 +1002,7 @@
             this.adDiabeticTest.TabIndex = 7;
             this.adDiabeticTest.Text = "Add Diabetic Test Information ";
             this.adDiabeticTest.UseVisualStyleBackColor = true;
+            this.adDiabeticTest.Click += new System.EventHandler(this.adDiabeticTest_Click);
             // 
             // addLipidTestButton
             // 
@@ -1007,6 +1013,7 @@
             this.addLipidTestButton.TabIndex = 8;
             this.addLipidTestButton.Text = "Add Lipid Test Information ";
             this.addLipidTestButton.UseVisualStyleBackColor = true;
+            this.addLipidTestButton.Click += new System.EventHandler(this.addLipidTestButton_Click);
             // 
             // addDiabeticBackgroundButton
             // 
@@ -1017,6 +1024,7 @@
             this.addDiabeticBackgroundButton.TabIndex = 9;
             this.addDiabeticBackgroundButton.Text = "Add Diabetic Background Information ";
             this.addDiabeticBackgroundButton.UseVisualStyleBackColor = true;
+            this.addDiabeticBackgroundButton.Click += new System.EventHandler(this.addDiabeticBackgroundButton_Click);
             // 
             // deleteSelectedRow
             // 
@@ -1039,10 +1047,6 @@
             this.editSelectedRow.Text = "Edit Selected Row";
             this.editSelectedRow.UseVisualStyleBackColor = true;
             this.editSelectedRow.Click += new System.EventHandler(this.editSelectedRow_Click);
-            // 
-            // DiastolicPressure
-            // 
-            this.DiastolicPressure.Text = "Diastolic";
             // 
             // Patient
             // 

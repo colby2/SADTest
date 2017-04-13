@@ -13,10 +13,22 @@ namespace Test
 {
     public partial class AddDiabetesBackground : Form
     {
+        int PatientID;
         public AddDiabetesBackground()
         {
             InitializeComponent();
         }
+
+        public AddDiabetesBackground(int PatientID)
+        {
+            this.PatientID = PatientID;
+            InitializeComponent();
+            dateDiagnosed.Format = DateTimePickerFormat.Custom;
+            dateDiagnosed.CustomFormat = ("MMM dd, yyyy");
+            dateInfoTaken.Format = DateTimePickerFormat.Custom;
+            dateInfoTaken.CustomFormat = ("MMM dd, yyyy");
+        }
+
 
         private void AddDiabetesBackground_Load(object sender, EventArgs e)
         {

@@ -12,9 +12,18 @@ namespace Test
 {
     public partial class AddDiabeticTestInfo : Form
     {
+        int PatientID;
         public AddDiabeticTestInfo()
         {
             InitializeComponent();
+        }
+
+        public AddDiabeticTestInfo(int PatientID)
+        {
+            this.PatientID = PatientID;
+            InitializeComponent();
+            datetestTaken.Format = DateTimePickerFormat.Custom;
+            datetestTaken.CustomFormat = ("MMM dd, yyyy");
         }
 
         private void addDiabeticTestbtn_Click(object sender, EventArgs e)
@@ -29,6 +38,11 @@ namespace Test
             {
                 //InsertFunctions.InsertIntoDiabeticTests(datetestTaken.Text, microalbumintb.Text, footchecktb.Text, cyvtb.Text, eyeexamtb.Text, counselingtb.Text, PatientID);
             }
+        }
+
+        private void AddDiabeticTestInfo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

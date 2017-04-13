@@ -320,24 +320,7 @@ namespace Test
         {
 
         }
-        /********************************************************************************************
-       * Button Click that opens new form from which user can add Allergy Info for the current patient
-       * ******************************************************************************************/
-        private void addAllergyButton_Click(object sender, EventArgs e)
-        {
-            AddAllergyInfo addAllergyForm = new AddAllergyInfo(Int32.Parse(PatientId));
-            addAllergyForm.ShowDialog();
-            
-        }
 
-        /********************************************************************************************
-    * Button Click that opens new form from which user can add Vitals Info for the current patient
-    * ******************************************************************************************/
-        private void addVitalsButton_Click(object sender, EventArgs e)
-        {
-            AddVitalsInfo addVitalsForm = new AddVitalsInfo(Int32.Parse(PatientId));
-            addVitalsForm.ShowDialog();
-        }
         /********************************************************************************************
       * Button Click that refreshes
       * ******************************************************************************************/
@@ -770,6 +753,23 @@ namespace Test
             RefreshListViews();
         }
 
+        /*
+         *Buttons that open new forms that are used for inserting data into the database 
+         * */
+         
+        private void addAllergyButton_Click(object sender, EventArgs e)
+        {
+            AddAllergyInfo addAllergyForm = new AddAllergyInfo(Int32.Parse(PatientId));
+            addAllergyForm.ShowDialog();
+
+        }
+
+        private void addVitalsButton_Click(object sender, EventArgs e)
+        {
+            AddVitalsInfo addVitalsForm = new AddVitalsInfo(Int32.Parse(PatientId));
+            addVitalsForm.ShowDialog();
+        }
+
         private void addVitalsButton_Click_1(object sender, EventArgs e)
         {
             AddVitalsInfo addVitalsForm = new AddVitalsInfo(Int32.Parse(PatientId));
@@ -789,6 +789,24 @@ namespace Test
             
         }
 
+        private void adDiabeticTest_Click(object sender, EventArgs e)
+        {
+            AddDiabeticTestInfo addDiabetesTest = new AddDiabeticTestInfo(Int32.Parse(PatientId));
+            addDiabetesTest.ShowDialog();
+        }
+
+        private void addDiabeticBackgroundButton_Click(object sender, EventArgs e)
+        {
+            AddDiabetesBackground addDiabetesBackground = new AddDiabetesBackground(Int32.Parse(PatientId));
+            addDiabetesBackground.ShowDialog();
+        }
+
+        private void addLipidTestButton_Click(object sender, EventArgs e)
+        {
+            AddLipidTestInfo addLipidTestInfo = new AddLipidTestInfo(Int32.Parse(PatientId));
+            addLipidTestInfo.ShowDialog();
+        }
+
         private void editSelectedRow_Click(object sender, EventArgs e)
         {
             if (lvAllergyList.SelectedItems.Count == 1){
@@ -802,6 +820,10 @@ namespace Test
 
         }
 
+     
+
+       
+
         private void tpNotes_Click(object sender, EventArgs e)
         {
 
@@ -811,6 +833,8 @@ namespace Test
         {
 
         }
+
+       
     }
 }
 

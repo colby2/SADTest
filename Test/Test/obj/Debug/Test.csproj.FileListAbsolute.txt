@@ -236,3 +236,10 @@ C:\Users\rkesterson1\Source\Repos\SADTest2\Test\Test\bin\Debug\DiabeticHealthDB.
 C:\Users\rkesterson1\Source\Repos\SADTest2\Test\Test\bin\Debug\MySql.Data.xml
 C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabetesBackground.resources
 C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddLipidTestInfo.resources
+C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.dll
+C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.xml
+C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabetesBackground.resources
+C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabetesMedicaitonInfo.resources
+C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabeticTestInfo.resources
+C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddLipidTestInfo.resources
+C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddMedicationInfo.resources
