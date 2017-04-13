@@ -260,16 +260,20 @@ namespace Test
        * ******************************************************************************************/
         private void button2_Click(object sender, EventArgs e)
         {
+            
             if (addNotes.Text.Contains("Edit"))
             {
                 tbNotes.ReadOnly = false;
-                tbNotes.Text = tbNotes.Text + "\n\n " + completeCurrentDate + "\n";
+                
                 addNotes.Text = "Submit Addition";
+                tbNotes.AppendText(System.Environment.NewLine + System.Environment.NewLine + getCurrentDate() + "\n");
+                tbNotes.Focus();
+                
             }
             else if(addNotes.Text.Contains("Submit"))
             {
                 tbNotes.ReadOnly = true;
-              
+               
                 UpdateFunctions.UpdateNotes(Int32.Parse(PatientId), tbNotes.Text);
                 addNotes.Text = "Edit Notes";
 
@@ -711,6 +715,8 @@ namespace Test
         {
 
         }
+
+      
     }
 }
 

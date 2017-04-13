@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Patient));
             this.tcPatient = new System.Windows.Forms.TabControl();
             this.tpDemographics = new System.Windows.Forms.TabPage();
+            this.tbGender = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.visitDateUpdate = new System.Windows.Forms.Button();
             this.tbLastname = new System.Windows.Forms.TextBox();
             this.lLastName = new System.Windows.Forms.Label();
@@ -124,8 +126,6 @@
             this.addDiabeticBackgroundButton = new System.Windows.Forms.Button();
             this.deleteSelectedRow = new System.Windows.Forms.Button();
             this.editSelectedRow = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbGender = new System.Windows.Forms.TextBox();
             this.tcPatient.SuspendLayout();
             this.tpDemographics.SuspendLayout();
             this.tpAllergies.SuspendLayout();
@@ -198,6 +198,23 @@
             this.tpDemographics.Text = "Demographics";
             this.tpDemographics.Click += new System.EventHandler(this.tpDemographics_Click);
             // 
+            // tbGender
+            // 
+            this.tbGender.Location = new System.Drawing.Point(147, 110);
+            this.tbGender.Name = "tbGender";
+            this.tbGender.ReadOnly = true;
+            this.tbGender.Size = new System.Drawing.Size(100, 20);
+            this.tbGender.TabIndex = 33;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 114);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.TabIndex = 32;
+            this.label1.Text = "Gender";
+            // 
             // visitDateUpdate
             // 
             this.visitDateUpdate.Image = ((System.Drawing.Image)(resources.GetObject("visitDateUpdate.Image")));
@@ -251,7 +268,7 @@
             // 
             // tbSecondaryInsurance
             // 
-            this.tbSecondaryInsurance.Location = new System.Drawing.Point(593, 111);
+            this.tbSecondaryInsurance.Location = new System.Drawing.Point(533, 111);
             this.tbSecondaryInsurance.Name = "tbSecondaryInsurance";
             this.tbSecondaryInsurance.ReadOnly = true;
             this.tbSecondaryInsurance.Size = new System.Drawing.Size(100, 20);
@@ -259,7 +276,7 @@
             // 
             // tbPrimaryInsurance
             // 
-            this.tbPrimaryInsurance.Location = new System.Drawing.Point(593, 80);
+            this.tbPrimaryInsurance.Location = new System.Drawing.Point(533, 88);
             this.tbPrimaryInsurance.Name = "tbPrimaryInsurance";
             this.tbPrimaryInsurance.ReadOnly = true;
             this.tbPrimaryInsurance.Size = new System.Drawing.Size(100, 20);
@@ -268,7 +285,7 @@
             // lSecondaryInsurance
             // 
             this.lSecondaryInsurance.AutoSize = true;
-            this.lSecondaryInsurance.Location = new System.Drawing.Point(441, 117);
+            this.lSecondaryInsurance.Location = new System.Drawing.Point(408, 117);
             this.lSecondaryInsurance.Name = "lSecondaryInsurance";
             this.lSecondaryInsurance.Size = new System.Drawing.Size(108, 13);
             this.lSecondaryInsurance.TabIndex = 20;
@@ -277,7 +294,7 @@
             // lPrimaryInsurance
             // 
             this.lPrimaryInsurance.AutoSize = true;
-            this.lPrimaryInsurance.Location = new System.Drawing.Point(441, 87);
+            this.lPrimaryInsurance.Location = new System.Drawing.Point(408, 91);
             this.lPrimaryInsurance.Name = "lPrimaryInsurance";
             this.lPrimaryInsurance.Size = new System.Drawing.Size(91, 13);
             this.lPrimaryInsurance.TabIndex = 19;
@@ -286,7 +303,7 @@
             // lInsurance
             // 
             this.lInsurance.AutoSize = true;
-            this.lInsurance.Location = new System.Drawing.Point(441, 59);
+            this.lInsurance.Location = new System.Drawing.Point(408, 59);
             this.lInsurance.Name = "lInsurance";
             this.lInsurance.Size = new System.Drawing.Size(57, 13);
             this.lInsurance.TabIndex = 18;
@@ -1008,23 +1025,6 @@
             this.editSelectedRow.Text = "Edit Selected Row";
             this.editSelectedRow.UseVisualStyleBackColor = true;
             this.editSelectedRow.Click += new System.EventHandler(this.editSelectedRow_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 114);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Gender";
-            // 
-            // tbGender
-            // 
-            this.tbGender.Location = new System.Drawing.Point(147, 110);
-            this.tbGender.Name = "tbGender";
-            this.tbGender.ReadOnly = true;
-            this.tbGender.Size = new System.Drawing.Size(100, 20);
-            this.tbGender.TabIndex = 33;
             // 
             // Patient
             // 
