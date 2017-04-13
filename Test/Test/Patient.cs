@@ -701,6 +701,69 @@ namespace Test
                 cmd.ExecuteNonQuery();
                 connection.Close();
             }
+            else if(lvDiabeticMedsList.SelectedItems.Count == 1)
+            {
+                string medicationName = lvDiabeticMedsList.SelectedItems[0].SubItems[0].Text;
+                string dateStarted = lvDiabeticMedsList.SelectedItems[0].SubItems[1].Text;
+                string amount = lvDiabeticMedsList.SelectedItems[0].SubItems[2].Text;
+                string frequency = lvDiabeticMedsList.SelectedItems[0].SubItems[3].Text;
+                string route = lvDiabeticMedsList.SelectedItems[0].SubItems[4].Text;
+
+                connection.Open();
+                string deleteRow = "DELETE FROM DiabetesMedication WHERE PatientID = " + selectedID + " AND MedicationName = '" + medicationName + "' AND DateStarted = '" + dateStarted + "' AND Amount = '" + amount + "' and Frequency = '" + frequency + "' AND Route = '" + route + "';";
+                MySqlCommand cmd = new MySqlCommand(deleteRow, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+
+            }
+            else if(lvDiabeticTestList.SelectedItems.Count == 1)
+            {
+                string dateOfTest = lvDiabeticTestList.SelectedItems[0].SubItems[0].Text;
+                string microalbumin = lvDiabeticTestList.SelectedItems[0].SubItems[1].Text;
+                string footCheck = lvDiabeticTestList.SelectedItems[0].SubItems[2].Text;
+                string currentYearVaccination = lvDiabeticTestList.SelectedItems[0].SubItems[3].Text;
+                string diabeticEyeExam = lvDiabeticTestList.SelectedItems[0].SubItems[4].Text;
+                string nutritionalCounseling = lvDiabeticTestList.SelectedItems[0].SubItems[5].Text;
+
+                connection.Open();
+                string deleteRow = "DELETE FROM DiabeticTests WHERE PatientID = " + selectedID + " AND DateOfTest = '" + dateOfTest + "' AND Microalbumin = '" + microalbumin + "' AND FootCheck = '" + footCheck +"' AND CurrentYearVaccination = '" + currentYearVaccination + "' AND DiabeticEyeExam = '" + diabeticEyeExam + "' AND NutritionalCounseling = '" +nutritionalCounseling +"';";
+                MySqlCommand cmd = new MySqlCommand(deleteRow, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+            else if (lvLipidTestList.SelectedItems.Count == 1)
+            {
+                string dateOfTest = lvLipidTestList.SelectedItems[0].SubItems[0].Text;
+
+                string formattedDateOfTest = DateTime.ParseExact(dateOfTest, "MMM dd, yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+
+                string HgA1C = lvLipidTestList.SelectedItems[0].SubItems[1].Text;
+                string cholesterol = lvLipidTestList.SelectedItems[0].SubItems[2].Text;
+                string HDL = lvLipidTestList.SelectedItems[0].SubItems[3].Text;
+                string LDL = lvLipidTestList.SelectedItems[0].SubItems[4].Text;
+                string triglycerides = lvLipidTestList.SelectedItems[0].SubItems[5].Text;
+                string TCHOLHDLRation = lvLipidTestList.SelectedItems[0].SubItems[6].Text;
+
+                connection.Open();
+                string deleteRow = "DELETE FROM LipidTestInformation WHERE PatientID = " + selectedID + " AND DateOfTest = '" + formattedDateOfTest + "' AND HgA1C = '" + HgA1C + "' AND Cholesterol = '" + cholesterol + "' AND HDL = '" + HDL + "' AND LDL = '" + LDL + "' AND Triglycerides = '" + triglycerides + "';";
+                MySqlCommand cmd = new MySqlCommand(deleteRow, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+
+            }
+            else if(lvDiabeticBackgroundList.SelectedItems.Count == 1)
+            {
+                string dateInfoTaken = lvDiabeticBackgroundList.SelectedItems[0].SubItems[0].Text;
+                string dateDiagnosed = lvDiabeticBackgroundList.SelectedItems[0].SubItems[1].Text;
+                string diabetesType =lvDiabeticBackgroundList.SelectedItems[0].SubItems[2].Text;
+
+                connection.Open();
+                string deleteRow = "DELETE FROM DiabetesBackground WHERE PatientID='" + selectedID + "' AND DateInfoTaken = '" + dateInfoTaken + "' AND DateDiagnosed = '" + dateDiagnosed + "' AND DiabetesType = '" + diabetesType + "';";
+                MySqlCommand cmd = new MySqlCommand(deleteRow, connection);
+                cmd.ExecuteNonQuery();
+                connection.Close();
+            }
+
 
 
 
