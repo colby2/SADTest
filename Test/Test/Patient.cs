@@ -232,7 +232,7 @@ namespace Test
 
         private void lvAllergyList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -812,7 +812,8 @@ namespace Test
 
         private void editSelectedRow_Click(object sender, EventArgs e)
         {
-            if (lvAllergyList.SelectedItems.Count == 1){
+            if (lvAllergyList.SelectedItems.Count == 1)
+            {
                 string allergicTo = lvAllergyList.SelectedItems[0].SubItems[0].Text;
                 string reaction = lvAllergyList.SelectedItems[0].SubItems[1].Text;
 
@@ -820,6 +821,62 @@ namespace Test
                 addAllergyForm.ShowDialog();
 
             }
+
+            else if (lvMedicationList.SelectedItems.Count == 1) {
+                string medicationName = lvMedicationList.SelectedItems[0].SubItems[0].Text;
+                string dateStarted = lvMedicationList.SelectedItems[0].SubItems[1].Text;
+                string amount = lvMedicationList.SelectedItems[0].SubItems[2].Text;
+                string frequency = lvMedicationList.SelectedItems[0].SubItems[3].Text;
+                string route = lvMedicationList.SelectedItems[0].SubItems[4].Text;
+
+                AddMedicationInfo addMedicationInfo = new AddMedicationInfo(Int32.Parse(PatientId), medicationName, dateStarted, amount, frequency, route);
+                addMedicationInfo.ShowDialog();
+
+            }
+            else if (lvVitalsList.SelectedItems.Count == 1) {
+                string dateTaken = lvVitalsList.SelectedItems[0].SubItems[0].Text;
+                string heartRate = lvVitalsList.SelectedItems[0].SubItems[1].Text;
+                string systolic = lvVitalsList.SelectedItems[0].SubItems[2].Text;
+                string diastolic = lvVitalsList.SelectedItems[0].SubItems[3].Text;
+                string respiratoryRate = lvVitalsList.SelectedItems[0].SubItems[4].Text;
+                string O2Sat = lvVitalsList.SelectedItems[0].SubItems[5].Text;
+                string airType = lvVitalsList.SelectedItems[0].SubItems[6].Text;
+                string height = lvVitalsList.SelectedItems[0].SubItems[7].Text;
+                string weight = lvVitalsList.SelectedItems[0].SubItems[8].Text;
+                string BMI = lvVitalsList.SelectedItems[0].SubItems[9].Text;
+                string temperature = lvVitalsList.SelectedItems[0].SubItems[10].Text;
+            }
+
+            else if (lvDiabeticMedsList.SelectedItems.Count == 1) {
+                string medName = lvDiabeticMedsList.SelectedItems[0].SubItems[0].Text;
+                string dateTaken = lvDiabeticMedsList.SelectedItems[0].SubItems[1].Text;
+                string amount = lvDiabeticMedsList.SelectedItems[0].SubItems[2].Text;
+                string frequency = lvDiabeticMedsList.SelectedItems[0].SubItems[3].Text;
+                string route = lvDiabeticMedsList.SelectedItems[0].SubItems[4].Text;
+            }
+            else if (lvDiabeticTestList.SelectedItems.Count == 1) {
+                string dateOfTest = lvDiabeticTestList.SelectedItems[0].SubItems[0].Text;
+                string microalbiumin = lvDiabeticTestList.SelectedItems[0].SubItems[1].Text;
+                string footCheck = lvDiabeticTestList.SelectedItems[0].SubItems[2].Text;
+                string currentYearVaccination = lvDiabeticTestList.SelectedItems[0].SubItems[3].Text;
+                string diabeticEyeExam = lvDiabeticTestList.SelectedItems[0].SubItems[4].Text;
+                string nutritionalCounseling = lvDiabeticTestList.SelectedItems[0].SubItems[5].Text;
+            }
+            else if (lvLipidTestList.SelectedItems.Count == 1) {
+                string dateOfTest = lvLipidTestList.SelectedItems[0].SubItems[0].Text;
+                string HgA1C = lvLipidTestList.SelectedItems[0].SubItems[1].Text;
+                string cholesterol = lvLipidTestList.SelectedItems[0].SubItems[2].Text;
+                string HDL = lvLipidTestList.SelectedItems[0].SubItems[3].Text;
+                string LDL = lvLipidTestList.SelectedItems[0].SubItems[4].Text;
+                string triglycerides = lvLipidTestList.SelectedItems[0].SubItems[5].Text;
+                string TCHOLHDLRation = lvLipidTestList.SelectedItems[0].SubItems[6].Text;
+            }
+            else if (lvDiabeticBackgroundList.SelectedItems.Count == 1) {
+                string dateInfoTaken = lvDiabeticBackgroundList.SelectedItems[0].SubItems[0].Text;
+                string dateDiagnosed = lvDiabeticBackgroundList.SelectedItems[0].SubItems[1].Text;
+                string diabetesType = lvDiabeticBackgroundList.SelectedItems[0].SubItems[2].Text;
+            }
+
 
         }
 

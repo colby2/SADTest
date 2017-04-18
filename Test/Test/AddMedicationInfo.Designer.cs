@@ -60,6 +60,7 @@
             this.amounttb.Name = "amounttb";
             this.amounttb.Size = new System.Drawing.Size(143, 33);
             this.amounttb.TabIndex = 2;
+            this.amounttb.TextChanged += new System.EventHandler(this.amounttb_TextChanged);
             // 
             // frequencytb
             // 

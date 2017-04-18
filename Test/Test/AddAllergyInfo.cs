@@ -17,6 +17,7 @@ namespace Test
         public int PatientID;
         public string editAllergicTo = "";
         public string editReaction = "";
+        public bool editing = false;
 
         public AddAllergyInfo()
         {
@@ -34,9 +35,11 @@ namespace Test
 
         /*******************************************************************************************
          * Consctructor that accepts PatientID, as well as selected AllergicTo and Reaction
-         */
+         *******************************************************************************************/
          public AddAllergyInfo(int PatientID, string editAllergicTo, string editReaction)
         {
+
+            this.editing = true;
             this.PatientID = PatientID;
             this.editAllergicTo = editAllergicTo;
             this.editReaction = editReaction;
@@ -73,13 +76,13 @@ namespace Test
                     MessageBox.Show("Something must be entered for each field. If patient is not applicable for a certain field enter 'N/A'.", "Attention", MessageBoxButtons.OK);
                     return;
                 }
-            if (editAllergicTo == "" && editReaction == "")
+            if (editing == false)
             {
                 int insertedRows = InsertFunctions.InsertIntoAllergyInfo(PatientID, AllergicTo.Text, Reaction.Text);
                 AllergicTo.Clear();
                 Reaction.Clear();
             }
-            else if(editAllergicTo != "" && editReaction != "")
+            else if(editing == true)
             {
                 UpdateFunctions.UpdateAllergyInfo(PatientID, AllergicTo.Text, Reaction.Text, editAllergicTo, editReaction);
                 AllergicTo.Clear();
