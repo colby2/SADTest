@@ -47,6 +47,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.TrendButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -210,6 +211,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Honeydew;
+            this.tabPage1.Controls.Add(this.TrendButton);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.bGraphs);
             this.tabPage1.Controls.Add(this.bAdd);
@@ -230,6 +232,16 @@
             // backgroundWorker2
             // 
             this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
+            // 
+            // TrendButton
+            // 
+            this.TrendButton.Location = new System.Drawing.Point(1074, 162);
+            this.TrendButton.Name = "TrendButton";
+            this.TrendButton.Size = new System.Drawing.Size(75, 23);
+            this.TrendButton.TabIndex = 11;
+            this.TrendButton.Text = "Trends";
+            this.TrendButton.UseVisualStyleBackColor = true;
+            this.TrendButton.Click += new System.EventHandler(this.TrendButton_Click);
             // 
             // Hub
             // 
@@ -269,5 +281,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         public System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.Button TrendButton;
     }
 }

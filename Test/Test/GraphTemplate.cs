@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using MySql.Data.MySqlClient;
+using DiabeticHealthDB;
 
 namespace Test
 {
@@ -34,8 +35,8 @@ namespace Test
         TestNum Systolic = new TestNum("Systolic", "VitalsInformation", 3);
         TestNum Diastolic = new TestNum("Diastolic", "VitalsInformation", 4);
 
-        string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
-        MySqlConnection connection;
+        //"SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
+        MySqlConnection connection = DiabeticHealthDB.DatabaseConnection.GetConnection();
 
         /**
          * This DataType has information corresponding to how these test's data is stored in the database.
@@ -77,7 +78,7 @@ namespace Test
             chart1.Series.Add(graphName);//This command can only be called with the same name once.
             testSelectBox.Text = "(Select Test)";
             cbSubTest.Text = "(Select Value)";
-            connection = new MySqlConnection(connectionString);
+            //connection = new MySqlConnection(connectionString);
             lvSearch.FullRowSelect = true;
         }
 
@@ -94,7 +95,7 @@ namespace Test
             testSelectBox.Text = "(Select Test)";
             cbSubTest.Text = "(Select Value)";
             searchBar.Text = uniqueID;
-            connection = new MySqlConnection(connectionString);
+            //connection = new MySqlConnection(connectionString);
             lvSearch.FullRowSelect = true;
             search(uniqueID);
 

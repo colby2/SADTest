@@ -94,6 +94,12 @@
     <Compile Include="AddVitalsInfo.Designer.cs">
       <DependentUpon>AddVitalsInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Trends.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trends.Designer.cs">
+      <DependentUpon>Trends.cs</DependentUpon>
+    </Compile>
     <Compile Include="GraphTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddVitalsInfo.resx">
       <DependentUpon>AddVitalsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trends.resx">
+      <DependentUpon>Trends.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GraphTemplate.resx">
       <DependentUpon>GraphTemplate.cs</DependentUpon>

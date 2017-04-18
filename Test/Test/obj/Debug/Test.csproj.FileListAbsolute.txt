@@ -244,3 +244,5 @@ C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabetic
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddLipidTestInfo.resources
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddMedicationInfo.resources
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabeticTestInfo.resources
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabeticTestInfo.resources
+C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Trends.resources

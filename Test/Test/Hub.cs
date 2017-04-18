@@ -295,5 +295,18 @@ namespace Test
             this.tabControl1.TabPages.Remove(this.tabControl1.SelectedTab);
             tabCount--;
         }
+
+        private void TrendButton_Click(object sender, EventArgs e)
+        {
+            tabControl1.TabPages.Add(new TabPage("Trend" + tabCount.ToString()));
+            Form frm = new Trends();
+            frm.TopLevel = false;
+            frm.Visible = true;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            tabControl1.TabPages[tabCount].Controls.Add(frm);
+            this.tabControl1.SelectedIndex = tabCount;
+            tabCount++;
+        }
     }
 }
