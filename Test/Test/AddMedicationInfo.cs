@@ -8,11 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DiabeticHealthDB;
+using System.Globalization;
+
 namespace Test
 {
     public partial class AddMedicationInfo : Form
     {
         public int PatientID;
+        public string editMedicationName = "";
+        public string editDateStarted = "";
+        public string editAmount = "";
+        public string editFrequency = "";
+        public string editRoute = "";
+
         public AddMedicationInfo()
         {
             InitializeComponent();
@@ -25,6 +33,31 @@ namespace Test
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "MMM dd, yyyy";
         }
+
+        public AddMedicationInfo(int PatientID, string editMedicationName, string editDateStarted, string editAmount, string editFrequency, string editRoute)
+        {
+            this.PatientID = PatientID;
+            this.editMedicationName = editMedicationName;
+            this.editDateStarted = editDateStarted;
+            this.editAmount = editAmount;
+            this.editFrequency = editFrequency;
+            this.editRoute = editRoute;
+
+            InitializeComponent();
+
+            editDateStarted = DateTime.ParseExact(editDateStarted, "MMM dd, yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+            string[] yearMonthDay = editDateStarted.Split('-');
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MMM dd, yyyy";
+            dateTimePicker1.Value = new DateTime(int.Parse(yearMonthDay[0]), int.Parse(yearMonthDay[1]), int.Parse(yearMonthDay[2]));
+
+            medicationTb.Text = editMedicationName;
+            amounttb.Text = editAmount;
+            frequencytb.Text = editFrequency;
+            routeTb.Text = editRoute;
+
+        }
+
 
         private void AddMedicationInfo_Load(object sender, EventArgs e)
         {
@@ -43,6 +76,11 @@ namespace Test
                 InsertFunctions.InsertIntoMedication(medicationTb.Text, dateTimePicker1.Text, amounttb.Text, frequencytb.Text, routeTb.Text, PatientID);
                 this.Close();
             }
+        }
+
+        private void amounttb_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
