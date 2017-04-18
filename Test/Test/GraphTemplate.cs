@@ -373,5 +373,27 @@ namespace Test
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            Bitmap memoryImage;
+            memoryImage = new Bitmap(1000, 900);
+            Size s = new Size(memoryImage.Width, memoryImage.Height);
+
+            Graphics memoryGraphics = Graphics.FromImage(memoryImage);
+
+            memoryGraphics.CopyFromScreen(0, 0, 0, 0, s);
+
+           
+            string graphScreenShot = string.Format(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures) +
+                      @"\Screenshot" + "_" +
+                      DateTime.Now.ToString("(dd_MMMM_hh_mm_ss_tt)") + ".png");
+
+          
+            memoryImage.Save(graphScreenShot);
+
+
+        }
     }
 }
