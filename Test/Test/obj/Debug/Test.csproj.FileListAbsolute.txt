@@ -253,3 +253,6 @@ C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddMedicationInfo.
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\MySqlBackup.dll
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Trends.resources
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Backup.resources
+C:\Users\jscoma\Source\Repos\SADTest\Test\Test\bin\Debug\MySqlBackup.dll
+C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Backup.resources
+C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Trends.resources

@@ -60,6 +60,7 @@
             this.amountTb.Name = "amountTb";
             this.amountTb.Size = new System.Drawing.Size(143, 33);
             this.amountTb.TabIndex = 2;
+            this.amountTb.TextChanged += new System.EventHandler(this.amountTb_TextChanged);
             // 
             // routeTb
             // 

@@ -8,11 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DiabeticHealthDB;
+using System.Globalization;
+
 namespace Test
 {
     public partial class AddDiabetesMedicaitonInfo : Form
     {
         int PatientID;
+
+        bool editing = false;
+
+        string medName;
+        string dateTaken;
+        string amount;
+        string frequency;
+        string route;
+
         public AddDiabetesMedicaitonInfo()
         {
             InitializeComponent();
@@ -25,6 +36,35 @@ namespace Test
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "MMM dd, yyyy";
         }
+
+        public AddDiabetesMedicaitonInfo(int PatientID, string medName, string dateTaken, string amount,string frequency, string route)
+        {
+            this.editing = true;
+
+            this.PatientID = PatientID;
+            this.medName = medName;
+            this.dateTaken = dateTaken;
+            this.amount = amount;
+            this.frequency = frequency;
+            this.route = route;
+
+            InitializeComponent();
+
+            dateTaken = DateTime.ParseExact(dateTaken, "MMM dd, yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+            string[] yearMonthDay = dateTaken.Split('-');
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MMM dd, yyyy";
+            dateTimePicker1.Value = new DateTime(int.Parse(yearMonthDay[0]), int.Parse(yearMonthDay[1]), int.Parse(yearMonthDay[2]));
+
+            medicationTb.Text = medName;
+            amountTb.Text = amount;
+            frequencyTb.Text = frequency;
+            routeTb.Text = route;
+
+
+
+        }
+
 
         private void routeTb_TextChanged(object sender, EventArgs e)
         {
@@ -46,6 +86,11 @@ namespace Test
         }
 
         private void AddDiabetesMedicaitonInfo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void amountTb_TextChanged(object sender, EventArgs e)
         {
 
         }

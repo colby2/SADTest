@@ -8,11 +8,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DiabeticHealthDB;
+using System.Globalization;
+
 namespace Test
 {
     public partial class AddDiabeticTestInfo : Form
     {
         int PatientID;
+
+        bool editing = false;
+
+        string dateOfTest;
+        string microalbiumin;
+        string footCheck;
+        string currentYearVaccination;
+        string diabeticEyeExam;
+        string nutritionalCounseling;
+
+
         public AddDiabeticTestInfo()
         {
             InitializeComponent();
@@ -25,6 +38,37 @@ namespace Test
             datetestTaken.Format = DateTimePickerFormat.Custom;
             datetestTaken.CustomFormat = ("MMM dd, yyyy");
         }
+
+        public AddDiabeticTestInfo(int PatientID, string dateOfTest, string microalbiumin, string footCheck, string currentYearVaccination, string diabeticEyeExam, string nutritionalCounseling)
+        {
+            this.editing = true;
+
+            this.PatientID = PatientID;
+            this.dateOfTest = dateOfTest;
+            this.microalbiumin = microalbiumin;
+            this.footCheck = footCheck;
+            this.currentYearVaccination = currentYearVaccination;
+            this.diabeticEyeExam = diabeticEyeExam;
+            this.nutritionalCounseling = nutritionalCounseling;
+
+            InitializeComponent();
+
+
+            dateOfTest = DateTime.ParseExact(dateOfTest, "MMM dd, yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+            string[] yearMonthDay = dateOfTest.Split('-');
+            datetestTaken.Format = DateTimePickerFormat.Custom;
+            datetestTaken.CustomFormat = "MMM dd, yyyy";
+            datetestTaken.Value = new DateTime(int.Parse(yearMonthDay[0]), int.Parse(yearMonthDay[1]), int.Parse(yearMonthDay[2]));
+
+            microalbumintb.Text = microalbiumin;
+            footchecktb.Text = footCheck;
+            cyvtb.Text = currentYearVaccination;
+            eyeexamtb.Text = diabeticEyeExam;
+            counselingtb.Text = nutritionalCounseling;
+
+
+        }
+
 
         private void addDiabeticTestbtn_Click(object sender, EventArgs e)
         {
@@ -41,6 +85,11 @@ namespace Test
         }
 
         private void AddDiabeticTestInfo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void datetestTaken_ValueChanged(object sender, EventArgs e)
         {
 
         }

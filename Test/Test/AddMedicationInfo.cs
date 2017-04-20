@@ -15,6 +15,7 @@ namespace Test
     public partial class AddMedicationInfo : Form
     {
         public int PatientID;
+        public bool editing = false;
         public string editMedicationName = "";
         public string editDateStarted = "";
         public string editAmount = "";
@@ -36,6 +37,8 @@ namespace Test
 
         public AddMedicationInfo(int PatientID, string editMedicationName, string editDateStarted, string editAmount, string editFrequency, string editRoute)
         {
+            this.editing = true;
+
             this.PatientID = PatientID;
             this.editMedicationName = editMedicationName;
             this.editDateStarted = editDateStarted;
@@ -56,6 +59,8 @@ namespace Test
             frequencytb.Text = editFrequency;
             routeTb.Text = editRoute;
 
+            
+
         }
 
 
@@ -71,14 +76,24 @@ namespace Test
                 MessageBox.Show("Something must be entered for each field. If patient is not applicable for a certain field enter 'N/A'.", "Attention", MessageBoxButtons.OK);
                 return;
             }
-            else
+            if (editing == false)
             {
                 InsertFunctions.InsertIntoMedication(medicationTb.Text, dateTimePicker1.Text, amounttb.Text, frequencytb.Text, routeTb.Text, PatientID);
+                this.Close();
+            }
+            else if (editing == true)
+            {
+                //UpdateFunctions.UpdateAllergyInfo(PatientID, AllergicTo.Text, Reaction.Text, editAllergicTo, editReaction);
                 this.Close();
             }
         }
 
         private void amounttb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }

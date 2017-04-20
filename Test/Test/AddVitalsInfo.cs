@@ -8,12 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DiabeticHealthDB;
+using System.Globalization;
 
 namespace Test
 {
     public partial class AddVitalsInfo : Form
     {
         public int PatientID;
+
+        public bool editing = false;
+
+        public string dateTaken = "";
+        public string heartRate = "";
+        public string systolic = "";
+        public string diastolic = "";
+        public string respiratoryRate = "";
+        public string O2Sat = "";
+        public string airType = "";
+        public string height = "";
+        public string weight = "";
+        public string BMI = "";
+        public string temperature = "";
+
+
+
         public AddVitalsInfo()
         {
             InitializeComponent();
@@ -25,6 +43,45 @@ namespace Test
             InitializeComponent();
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "MMM dd, yyyy";
+        }
+
+        public AddVitalsInfo(int PatientID, string dateTaken, string heartRate, string systolic , string diastolic, string respiratoryRate, string O2Sat, string airType, string height, string weight, string BMI, string temperature )
+        {
+            this.editing = true;
+
+            this.PatientID = PatientID;
+            this.dateTaken = dateTaken;
+            this.heartRate = heartRate;
+            this.systolic = systolic;
+            this.diastolic = diastolic;
+            this.respiratoryRate = respiratoryRate;
+            this.O2Sat = O2Sat;
+            this.airType = airType;
+            this.height = height;
+            this.weight = weight;
+            this.BMI = BMI;
+            this.temperature = temperature;
+
+            InitializeComponent();
+
+            dateTaken = DateTime.ParseExact(dateTaken, "MMM dd, yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+            string[] yearMonthDay = dateTaken.Split('-');
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MMM dd, yyyy";
+            dateTimePicker1.Value = new DateTime(int.Parse(yearMonthDay[0]), int.Parse(yearMonthDay[1]), int.Parse(yearMonthDay[2]));
+
+            HRtb.Text = heartRate;
+            systolictb.Text = systolic;
+            diastolictb.Text = diastolic;
+            RRtb.Text = respiratoryRate;
+            o2sattb.Text = O2Sat;
+            attb.Text = airType;
+            htb.Text = height;
+            wtb.Text = weight;
+            temptb.Text = temperature;
+            
+
+
         }
 
         private void AddVitalsInfo_Load(object sender, EventArgs e)

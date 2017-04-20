@@ -8,12 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DiabeticHealthDB;
+using System.Globalization;
 
 namespace Test
 {
     public partial class AddDiabetesBackground : Form
     {
+        bool editing = false;
+
         int PatientID;
+        public string editDateInfoTaken;
+        public string editDateDiagnosed;
+        public string editDiabetesType;
+
         public AddDiabetesBackground()
         {
             InitializeComponent();
@@ -27,6 +34,28 @@ namespace Test
             dateDiagnosed.CustomFormat = ("MMM dd, yyyy");
             dateInfoTaken.Format = DateTimePickerFormat.Custom;
             dateInfoTaken.CustomFormat = ("MMM dd, yyyy");
+        }
+
+        public AddDiabetesBackground(int PatientID, string dateInfoTaken, string dateDiagnosed, string diabetesType)
+        {
+            this.editing = true;
+
+            this.PatientID = PatientID;
+            this.editDateInfoTaken = dateInfoTaken;
+            this.editDateDiagnosed = dateDiagnosed;
+            this.editDiabetesType = diabetesType;
+            
+            InitializeComponent();
+
+            //Start Here
+
+
+            //dateDiagnosed = DateTime.ParseExact(dateDiagnosed, "MMM dd, yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+            //string[] yearMonthDay = dateDiagnosed.Split('-');
+            //dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            //dateTimePicker1.CustomFormat = "MMM dd, yyyy";
+            //dateTimePicker1.Value = new DateTime(int.Parse(yearMonthDay[0]), int.Parse(yearMonthDay[1]), int.Parse(yearMonthDay[2]));
+
         }
 
 
@@ -46,6 +75,11 @@ namespace Test
             {
                 //InsertFunctions.InsertIntoDiabetesBackground(dateInfoTaken.Text, dateDiagnosed.Text, diabetesType.Text, PatientID);
             }
+        }
+
+        private void dateDiagnosed_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

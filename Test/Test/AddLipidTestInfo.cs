@@ -8,11 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DiabeticHealthDB;
+using System.Globalization;
+
 namespace Test
 {
     public partial class AddLipidTestInfo : Form
     {
-        int PatientID = 3;//remove
+        bool editing = false;
+
+        int PatientID;
+        string dateOfTest;
+        string HgA1C;
+        string cholesterol;
+        string HDL;
+        string LDL;
+        string triglycerides;
+        string TCHOLHDLRatio;
+
+
+
         public AddLipidTestInfo()
         {
             InitializeComponent();
@@ -26,6 +40,40 @@ namespace Test
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = ("MMM dd, yyyy");
         }
+
+        public AddLipidTestInfo(int PatientID, string dateOfTest, string HgA1C, string cholesterol, string HDL, string LDL, string triglycerides, string TCHOLHDLRatio)
+        {
+            this.editing = true;
+
+            this.PatientID = PatientID;
+            this.dateOfTest = dateOfTest;
+            this.HgA1C = HgA1C;
+            this.cholesterol = cholesterol;
+            this.HDL = HDL;
+            this.LDL = LDL;
+            this.triglycerides = triglycerides;
+            this.TCHOLHDLRatio = TCHOLHDLRatio;
+
+            InitializeComponent();
+
+            dateOfTest = DateTime.ParseExact(dateOfTest, "MMM dd, yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+            string[] yearMonthDay = dateOfTest.Split('-');
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "MMM dd, yyyy";
+            dateTimePicker1.Value = new DateTime(int.Parse(yearMonthDay[0]), int.Parse(yearMonthDay[1]), int.Parse(yearMonthDay[2]));
+
+            HgA1ctb.Text = HgA1C;
+            cholesterolTb.Text = cholesterol;
+            HDLtb.Text = HDL;
+            LDLtb.Text = LDL;
+            trigylceridesTb.Text = triglycerides;
+            
+
+
+        }
+
+
+
 
         private void addLipidInfobtn_Click(object sender, EventArgs e)
         {
@@ -61,6 +109,11 @@ namespace Test
         }
 
         private void AddLipidTestInfo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HgA1ctb_TextChanged(object sender, EventArgs e)
         {
 
         }

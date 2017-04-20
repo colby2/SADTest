@@ -74,6 +74,7 @@
             this.datetestTaken.Name = "datetestTaken";
             this.datetestTaken.Size = new System.Drawing.Size(200, 24);
             this.datetestTaken.TabIndex = 14;
+            this.datetestTaken.ValueChanged += new System.EventHandler(this.datetestTaken_ValueChanged);
             // 
             // footchecktb
             // 
