@@ -46,9 +46,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.backupButton = new System.Windows.Forms.Button();
             this.TrendButton = new System.Windows.Forms.Button();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.backupButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -56,18 +56,20 @@
             // tbSearch
             // 
             this.tbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbSearch.Location = new System.Drawing.Point(881, 77);
+            this.tbSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSearch.Location = new System.Drawing.Point(831, 77);
+            this.tbSearch.Multiline = true;
             this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(187, 20);
+            this.tbSearch.Size = new System.Drawing.Size(187, 30);
             this.tbSearch.TabIndex = 0;
             this.tbSearch.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // bSearch
             // 
             this.bSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bSearch.Location = new System.Drawing.Point(1074, 74);
+            this.bSearch.Location = new System.Drawing.Point(1049, 77);
             this.bSearch.Name = "bSearch";
-            this.bSearch.Size = new System.Drawing.Size(75, 23);
+            this.bSearch.Size = new System.Drawing.Size(100, 30);
             this.bSearch.TabIndex = 1;
             this.bSearch.Text = "Search";
             this.bSearch.UseVisualStyleBackColor = true;
@@ -76,9 +78,9 @@
             // bLogout
             // 
             this.bLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bLogout.Location = new System.Drawing.Point(1074, 6);
+            this.bLogout.Location = new System.Drawing.Point(1049, 9);
             this.bLogout.Name = "bLogout";
-            this.bLogout.Size = new System.Drawing.Size(75, 23);
+            this.bLogout.Size = new System.Drawing.Size(100, 30);
             this.bLogout.TabIndex = 2;
             this.bLogout.Text = "Logout";
             this.bLogout.UseVisualStyleBackColor = true;
@@ -87,9 +89,9 @@
             // bAdd
             // 
             this.bAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bAdd.Location = new System.Drawing.Point(1074, 103);
+            this.bAdd.Location = new System.Drawing.Point(1049, 106);
             this.bAdd.Name = "bAdd";
-            this.bAdd.Size = new System.Drawing.Size(75, 23);
+            this.bAdd.Size = new System.Drawing.Size(100, 30);
             this.bAdd.TabIndex = 3;
             this.bAdd.Text = "Add";
             this.bAdd.UseVisualStyleBackColor = true;
@@ -98,9 +100,9 @@
             // bGraphs
             // 
             this.bGraphs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bGraphs.Location = new System.Drawing.Point(1074, 132);
+            this.bGraphs.Location = new System.Drawing.Point(1049, 135);
             this.bGraphs.Name = "bGraphs";
-            this.bGraphs.Size = new System.Drawing.Size(75, 23);
+            this.bGraphs.Size = new System.Drawing.Size(100, 30);
             this.bGraphs.TabIndex = 4;
             this.bGraphs.Text = "Graphs";
             this.bGraphs.UseVisualStyleBackColor = true;
@@ -114,10 +116,11 @@
             this.LastName,
             this.DOB,
             this.UniqueID});
+            this.lvSearchList.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lvSearchList.FullRowSelect = true;
             this.lvSearchList.Location = new System.Drawing.Point(9, 104);
             this.lvSearchList.Name = "lvSearchList";
-            this.lvSearchList.Size = new System.Drawing.Size(500, 240);
+            this.lvSearchList.Size = new System.Drawing.Size(674, 358);
             this.lvSearchList.TabIndex = 6;
             this.lvSearchList.UseCompatibleStateImageBehavior = false;
             this.lvSearchList.View = System.Windows.Forms.View.Details;
@@ -141,7 +144,7 @@
             // UniqueID
             // 
             this.UniqueID.Text = "Unique ID";
-            this.UniqueID.Width = 124;
+            this.UniqueID.Width = 166;
             // 
             // backgroundWorker1
             // 
@@ -231,11 +234,23 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hub";
             // 
+            // backupButton
+            // 
+            this.backupButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.backupButton.Location = new System.Drawing.Point(1049, 194);
+            this.backupButton.Name = "backupButton";
+            this.backupButton.Size = new System.Drawing.Size(100, 30);
+            this.backupButton.TabIndex = 12;
+            this.backupButton.Text = "BackUp";
+            this.backupButton.UseVisualStyleBackColor = true;
+            this.backupButton.Click += new System.EventHandler(this.backupButton_Click);
+            // 
             // TrendButton
             // 
-            this.TrendButton.Location = new System.Drawing.Point(1074, 162);
+            this.TrendButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TrendButton.Location = new System.Drawing.Point(1049, 165);
             this.TrendButton.Name = "TrendButton";
-            this.TrendButton.Size = new System.Drawing.Size(75, 23);
+            this.TrendButton.Size = new System.Drawing.Size(100, 30);
             this.TrendButton.TabIndex = 11;
             this.TrendButton.Text = "Trends";
             this.TrendButton.UseVisualStyleBackColor = true;
@@ -244,16 +259,6 @@
             // backgroundWorker2
             // 
             this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
-            // 
-            // backupButton
-            // 
-            this.backupButton.Location = new System.Drawing.Point(1074, 191);
-            this.backupButton.Name = "backupButton";
-            this.backupButton.Size = new System.Drawing.Size(75, 23);
-            this.backupButton.TabIndex = 12;
-            this.backupButton.Text = "BackUp";
-            this.backupButton.UseVisualStyleBackColor = true;
-            this.backupButton.Click += new System.EventHandler(this.backupButton_Click);
             // 
             // Hub
             // 
