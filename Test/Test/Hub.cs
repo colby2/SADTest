@@ -9,11 +9,15 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DiabeticHealthDB;
+using MySql.Data.Types;
+
 
 namespace Test
 {
     public partial class Hub : Form
     {
+        
         public Hub()
         {
             InitializeComponent();
@@ -121,10 +125,10 @@ namespace Test
             {
                 string searchInput = tbSearch.Text;
 
-                string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
-                MySqlConnection connection = new MySqlConnection(connectionString);
-
                 
+                MySqlConnection connection = DatabaseConnection.GetConnection();
+
+
                 connection.Open();
                 string searchResults = "";
                 if (cbFirstName.Checked == true && cbLastName.Checked == true && cbDOB.Checked == true)
@@ -307,6 +311,12 @@ namespace Test
             tabControl1.TabPages[tabCount].Controls.Add(frm);
             this.tabControl1.SelectedIndex = tabCount;
             tabCount++;
+        }
+
+        private void backupButton_Click(object sender, EventArgs e)
+        {
+            Backup newBackup = new Backup();
+            newBackup.ShowDialog();
         }
     }
 }

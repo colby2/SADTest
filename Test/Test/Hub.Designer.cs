@@ -46,8 +46,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.TrendButton = new System.Windows.Forms.Button();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.backupButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -211,6 +212,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Honeydew;
+            this.tabPage1.Controls.Add(this.backupButton);
             this.tabPage1.Controls.Add(this.TrendButton);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.bGraphs);
@@ -229,10 +231,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Hub";
             // 
-            // backgroundWorker2
-            // 
-            this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
-            // 
             // TrendButton
             // 
             this.TrendButton.Location = new System.Drawing.Point(1074, 162);
@@ -242,6 +240,20 @@
             this.TrendButton.Text = "Trends";
             this.TrendButton.UseVisualStyleBackColor = true;
             this.TrendButton.Click += new System.EventHandler(this.TrendButton_Click);
+            // 
+            // backgroundWorker2
+            // 
+            this.backgroundWorker2.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker2_RunWorkerCompleted);
+            // 
+            // backupButton
+            // 
+            this.backupButton.Location = new System.Drawing.Point(1074, 191);
+            this.backupButton.Name = "backupButton";
+            this.backupButton.Size = new System.Drawing.Size(75, 23);
+            this.backupButton.TabIndex = 12;
+            this.backupButton.Text = "BackUp";
+            this.backupButton.UseVisualStyleBackColor = true;
+            this.backupButton.Click += new System.EventHandler(this.backupButton_Click);
             // 
             // Hub
             // 
@@ -282,5 +294,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         public System.ComponentModel.BackgroundWorker backgroundWorker2;
         private System.Windows.Forms.Button TrendButton;
+        private System.Windows.Forms.Button backupButton;
     }
 }
