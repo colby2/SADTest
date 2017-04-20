@@ -275,10 +275,10 @@ namespace Test
                 }
                 i = 0;
                 
-                testSearch = "Select * FROM " + Weight.getTestType() + " Where PatientID =" + id + " ORDER BY DateOfTest;";
-                Console.WriteLine(testSearch);
+                testSearch = "Select * FROM " + Patient_Height.getTestType() + " Where PatientID =" + id + " ORDER BY DateOfTest;";
+           
                  cmd = new MySqlCommand(testSearch, connection);
-                reader.Close();
+                 reader.Close();
                  reader = cmd.ExecuteReader();
                 List<double> h = new List<double>();
                 while (reader.Read())
@@ -286,13 +286,13 @@ namespace Test
                     h.Add(reader.GetDouble(Patient_Height.getDouble()));
                     i++;
                 }
-                Console.WriteLine("GotHere");
+
                 for(int j = 0; j < i; j++)
                 {
                     Console.WriteLine(w[j] * .45 / ((h[j] * .025) * (h[j] * .025)));
                     chart1.Series[graphName].Points.AddY(w[j]*.45/((h[j]*.025)*(h[j]*.025)));
                 }
-                Console.WriteLine("GotHere2");
+
                 reader.Close();
                 connection.Close();
                 chart1.Series[graphName].ChartArea = "ChartArea1";

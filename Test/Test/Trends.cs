@@ -141,14 +141,142 @@ namespace Test
             return lv;
         }
 
+        private ListViewItem MaleDiabeticSearch()
+        {
+            connection.Open();
+            string testSearch = "Select * FROM " + HgA1C.getTestType() + " where (PatientID, DateOfTest) in (select PatientID , max(DateOfTest) as date from " + HgA1C.getTestType() +" Where PatientID in (Select PatientID from Demographics where Gender = \"m\") group by PatientID )";
+
+            Console.WriteLine(testSearch);
+            MySqlCommand cmd = new MySqlCommand(testSearch, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            int i = 0;
+            double HDLCount = 0;
+            double HgA1cCount = 0;
+            while (reader.Read())
+            {
+                HDLCount += reader.GetDouble(HDL.getDouble());
+                HgA1cCount += reader.GetDouble(HgA1C.getDouble());
+                i++;
+            }
+            HDLCount /= i;
+            ListViewItem lv = new ListViewItem(HDLCount.ToString());
+            HgA1cCount /= i;
+            lv.SubItems.Add(HgA1cCount.ToString());
+            connection.Close();
+            reader.Close();
+            return lv;
+        }
+
+        private ListViewItem MaleBMISearch(ListViewItem lv)
+        {
+            connection.Open();
+            string testSearch = "Select* FROM " + Patient_Height.getTestType() + " where(PatientID, DateOfTest) in (select PatientID, max(DateOfTest) as date from " + Patient_Height.getTestType() +" Where PatientID in (Select PatientID from Demographics where Gender = \"m\") group by PatientID )";
+            Console.WriteLine(testSearch);
+            MySqlCommand cmd = new MySqlCommand(testSearch, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            int i = 0;
+            List<double> w = new List<double>();
+            while (reader.Read())
+            {
+                w.Add(reader.GetDouble(Weight.getDouble()));
+                Console.WriteLine(w[i]);
+                i++;
+            }
+            i = 0;
+
+            testSearch = "Select * FROM " + Weight.getTestType() + " where (PatientID, DateOfTest) in (select PatientID , max(DateOfTest) as date from " + Weight.getTestType() + " Where PatientID in (Select PatientID from Demographics where Gender = \"m\") group by PatientID )";
+
+            cmd = new MySqlCommand(testSearch, connection);
+            reader.Close();
+            reader = cmd.ExecuteReader();
+            List<double> h = new List<double>();
+            while (reader.Read())
+            {
+                h.Add(reader.GetDouble(Patient_Height.getDouble()));
+                Console.WriteLine(h[i]);
+                i++;
+            }
+
+            int k = 0;
+            double totalBMI = 0;
+            for (int j = 0; j < i; j++)
+            {
+                totalBMI += ((w[j] * .45) / ((h[j] * .025) * (h[j] * .025)));
+                Console.WriteLine((w[j] * .45) + " / " + ((h[j] * .025) * (h[j] * .025)));
+                Console.WriteLine(totalBMI);
+                k++;
+            }
+            totalBMI /= k;
+            lv.SubItems.Add(totalBMI.ToString());
+            reader.Close();
+            connection.Close();
+            return lv;
+        }
+
         private ListViewItem BMISearch(ListViewItem lv)
         {
+            connection.Open();
+            string testSearch = "Select * FROM " + Weight.getTestType() + " where (PatientID, DateOfTest) in (select PatientID, max(DateOfTest) as date from " + Weight.getTestType() + " group by PatientID )";
+            Console.WriteLine(testSearch);
+            MySqlCommand cmd = new MySqlCommand(testSearch, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            int i = 0;
+            List<double> w = new List<double>();
+            while (reader.Read())
+            {
+                w.Add(reader.GetDouble(Weight.getDouble()));
+                Console.WriteLine(w[i]);
+                i++;
+            }
+            i = 0;
+
+           testSearch = "Select * FROM " + Patient_Height.getTestType() + " where (PatientID, DateOfTest) in (select PatientID, max(DateOfTest) as date from " + Patient_Height.getTestType() + " group by PatientID )";
+
+            cmd = new MySqlCommand(testSearch, connection);
+            reader.Close();
+            reader = cmd.ExecuteReader();
+            List<double> h = new List<double>();
+            while (reader.Read())
+            {
+                h.Add(reader.GetDouble(Patient_Height.getDouble()));
+                Console.WriteLine(h[i]);
+                i++;
+            }
+
+            int k = 0;
+            double totalBMI = 0;
+            for (int j = 0; j < i; j++)
+            {
+                totalBMI+= ((w[j] * .45) / ((h[j] * .025) * (h[j] * .025)));
+                Console.WriteLine((w[j] * .45) + " / " + ((h[j] * .025) * (h[j] * .025)));
+                Console.WriteLine(totalBMI);
+                k++;
+            }
+            totalBMI /= k;
+            lv.SubItems.Add(totalBMI.ToString());
+            reader.Close();
+            connection.Close();
             return lv;
         }
 
         private void SearchButton_Click(object sender, EventArgs e)
         {
-            TrendLV.Items.Add(BMISearch(DiabeticSearch()));
+            if (checkedListBox1.Items.GetEnumerator().Equals(0)) {
+                TrendLV.Items.Add(BMISearch(DiabeticSearch()));
+            }
+                
+            else
+                TrendLV.Items.Add(MaleBMISearch(MaleDiabeticSearch()));
+
+        }
+
+        private void TrendLV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }  

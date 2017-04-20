@@ -32,10 +32,10 @@
             this.TrendLV = new System.Windows.Forms.ListView();
             this.HDL_ = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.HgA1C_ = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.Filters = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.SearchButton = new System.Windows.Forms.Button();
             this.BMI = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.Filters = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // button1
@@ -62,6 +62,7 @@
             this.TrendLV.TabIndex = 9;
             this.TrendLV.UseCompatibleStateImageBehavior = false;
             this.TrendLV.View = System.Windows.Forms.View.Details;
+            this.TrendLV.SelectedIndexChanged += new System.EventHandler(this.TrendLV_SelectedIndexChanged);
             // 
             // HDL_
             // 
@@ -73,6 +74,10 @@
             this.HgA1C_.Text = "HgA1C";
             this.HgA1C_.Width = 100;
             // 
+            // BMI
+            // 
+            this.BMI.Text = "BMI";
+            // 
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
@@ -82,12 +87,7 @@
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(280, 94);
             this.checkedListBox1.TabIndex = 10;
-            // 
-            // Filters
-            // 
-            this.Filters.DisplayIndex = 2;
-            this.Filters.Text = "Filters";
-            this.Filters.Width = 98;
+            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // SearchButton
             // 
@@ -99,10 +99,9 @@
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // BMI
+            // Filters
             // 
-            this.BMI.DisplayIndex = 3;
-            this.BMI.Text = "BMI";
+            this.Filters.Text = "Filters";
             // 
             // Trends
             // 
@@ -126,9 +125,9 @@
         private System.Windows.Forms.ListView TrendLV;
         private System.Windows.Forms.ColumnHeader HDL_;
         private System.Windows.Forms.ColumnHeader HgA1C_;
-        private System.Windows.Forms.ColumnHeader Filters;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.ColumnHeader BMI;
+        private System.Windows.Forms.ColumnHeader Filters;
     }
 }
