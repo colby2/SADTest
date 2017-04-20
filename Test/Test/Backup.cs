@@ -36,5 +36,29 @@ namespace Test
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DialogResult confirmation = new DialogResult();
+            MessageBox.Show("Information may be lost if you have not recently backed up your database. Are you sure you wish to proceed?", "ATTENTION", MessageBoxButtons.YesNo);
+            if (confirmation == DialogResult.Yes)
+            {
+                string fileName = "C:\\DBBackup\\PatientDatabase.sql";
+                using (MySqlConnection connection = DatabaseConnection.GetConnection())
+                {
+                    using (MySqlCommand cmd = new MySqlCommand())
+                    {
+                        using (MySqlBackup restoreDB = new MySqlBackup(cmd))
+                        {
+                            cmd.Connection = connection;
+                            connection.Open();
+                            restoreDB.ImportFromFile(fileName);
+                            connection.Close();
+                        }
+                    }
+                }
+
+            }
+        }
     }
 }
