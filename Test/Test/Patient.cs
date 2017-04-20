@@ -820,6 +820,11 @@ namespace Test
                 AddAllergyInfo addAllergyForm = new AddAllergyInfo(Int32.Parse(PatientId), allergicTo, reaction);
                 addAllergyForm.ShowDialog();
 
+                foreach (ListViewItem i in lvAllergyList.SelectedItems)
+                {
+                    i.Selected = false;
+                }
+
             }
 
             else if (lvMedicationList.SelectedItems.Count == 1) {
@@ -831,6 +836,13 @@ namespace Test
 
                 AddMedicationInfo addMedicationInfo = new AddMedicationInfo(Int32.Parse(PatientId), medicationName, dateStarted, amount, frequency, route);
                 addMedicationInfo.ShowDialog();
+
+
+                foreach (ListViewItem i in lvMedicationList.SelectedItems)
+                {
+                    i.Selected = false;
+                }
+
 
             }
             else if (lvVitalsList.SelectedItems.Count == 1) {
@@ -845,6 +857,16 @@ namespace Test
                 string weight = lvVitalsList.SelectedItems[0].SubItems[8].Text;
                 string BMI = lvVitalsList.SelectedItems[0].SubItems[9].Text;
                 string temperature = lvVitalsList.SelectedItems[0].SubItems[10].Text;
+
+                AddVitalsInfo addVitalsInfo = new AddVitalsInfo(Int32.Parse(PatientId), dateTaken, heartRate, systolic, diastolic, respiratoryRate, O2Sat, airType, height, weight, BMI, temperature);
+                addVitalsInfo.ShowDialog();
+
+
+                foreach (ListViewItem i in lvVitalsList.SelectedItems)
+                {
+                    i.Selected = false;
+                }
+
             }
 
             else if (lvDiabeticMedsList.SelectedItems.Count == 1) {
@@ -853,6 +875,15 @@ namespace Test
                 string amount = lvDiabeticMedsList.SelectedItems[0].SubItems[2].Text;
                 string frequency = lvDiabeticMedsList.SelectedItems[0].SubItems[3].Text;
                 string route = lvDiabeticMedsList.SelectedItems[0].SubItems[4].Text;
+
+                AddDiabetesMedicaitonInfo addDiabetesMedicationInfo = new AddDiabetesMedicaitonInfo(Int32.Parse(PatientId), medName, dateTaken, amount, frequency, route);
+                addDiabetesMedicationInfo.ShowDialog();
+
+                foreach (ListViewItem i in lvDiabeticMedsList.SelectedItems)
+                {
+                    i.Selected = false;
+                }
+
             }
             else if (lvDiabeticTestList.SelectedItems.Count == 1) {
                 string dateOfTest = lvDiabeticTestList.SelectedItems[0].SubItems[0].Text;
@@ -861,6 +892,16 @@ namespace Test
                 string currentYearVaccination = lvDiabeticTestList.SelectedItems[0].SubItems[3].Text;
                 string diabeticEyeExam = lvDiabeticTestList.SelectedItems[0].SubItems[4].Text;
                 string nutritionalCounseling = lvDiabeticTestList.SelectedItems[0].SubItems[5].Text;
+
+                AddDiabeticTestInfo addDiabeticTestInfo = new AddDiabeticTestInfo(Int32.Parse(PatientId), dateOfTest, microalbiumin, footCheck, currentYearVaccination, diabeticEyeExam, nutritionalCounseling);
+                addDiabeticTestInfo.ShowDialog();
+
+
+                foreach (ListViewItem i in lvDiabeticTestList.SelectedItems)
+                {
+                    i.Selected = false;
+                }
+
             }
             else if (lvLipidTestList.SelectedItems.Count == 1) {
                 string dateOfTest = lvLipidTestList.SelectedItems[0].SubItems[0].Text;
@@ -869,12 +910,30 @@ namespace Test
                 string HDL = lvLipidTestList.SelectedItems[0].SubItems[3].Text;
                 string LDL = lvLipidTestList.SelectedItems[0].SubItems[4].Text;
                 string triglycerides = lvLipidTestList.SelectedItems[0].SubItems[5].Text;
-                string TCHOLHDLRation = lvLipidTestList.SelectedItems[0].SubItems[6].Text;
+                string TCHOLHDLRatio = lvLipidTestList.SelectedItems[0].SubItems[6].Text;
+
+                AddLipidTestInfo addLipidTestInfo = new AddLipidTestInfo(Int32.Parse(PatientId), dateOfTest, HgA1C, cholesterol, HDL, LDL, triglycerides, TCHOLHDLRatio);
+                addLipidTestInfo.ShowDialog();
+
+
+                foreach (ListViewItem i in lvLipidTestList.SelectedItems)
+                {
+                    i.Selected = false;
+                }
             }
             else if (lvDiabeticBackgroundList.SelectedItems.Count == 1) {
                 string dateInfoTaken = lvDiabeticBackgroundList.SelectedItems[0].SubItems[0].Text;
                 string dateDiagnosed = lvDiabeticBackgroundList.SelectedItems[0].SubItems[1].Text;
                 string diabetesType = lvDiabeticBackgroundList.SelectedItems[0].SubItems[2].Text;
+
+                AddDiabetesBackground addDiabetesBackground = new AddDiabetesBackground(Int32.Parse(PatientId), dateInfoTaken, dateDiagnosed, diabetesType);
+                addDiabetesBackground.ShowDialog();
+
+                foreach (ListViewItem i in lvDiabeticBackgroundList.SelectedItems)
+                {
+                    i.Selected = false;
+                }
+
             }
 
 

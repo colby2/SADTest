@@ -172,7 +172,6 @@ C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddAllergyI
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddVitalsInfo.resources
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.InsertPatient.resources
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddMedicationInfo.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.dll
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.xml
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddAllergyInfo.resources
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddMedicationInfo.resources
@@ -253,7 +252,6 @@ C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddMedicationInfo.
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\MySqlBackup.dll
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Trends.resources
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Backup.resources
-C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\bin\Debug\MySqlBackup.dll
-C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabeticTestInfo.resources
-C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Backup.resources
-C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Trends.resources
+C:\Users\jscoma\Source\Repos\SADTest\Test\Test\bin\Debug\MySqlBackup.dll
+C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Backup.resources
+C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Trends.resources

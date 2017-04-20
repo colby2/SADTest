@@ -52,6 +52,7 @@
             this.HgA1ctb.Name = "HgA1ctb";
             this.HgA1ctb.Size = new System.Drawing.Size(143, 29);
             this.HgA1ctb.TabIndex = 0;
+            this.HgA1ctb.TextChanged += new System.EventHandler(this.HgA1ctb_TextChanged);
             // 
             // LDLtb
             // 

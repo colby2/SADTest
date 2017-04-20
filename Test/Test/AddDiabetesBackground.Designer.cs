@@ -65,6 +65,7 @@
             this.dateDiagnosed.Name = "dateDiagnosed";
             this.dateDiagnosed.Size = new System.Drawing.Size(200, 24);
             this.dateDiagnosed.TabIndex = 11;
+            this.dateDiagnosed.ValueChanged += new System.EventHandler(this.dateDiagnosed_ValueChanged);
             // 
             // heartRatelb
             // 
