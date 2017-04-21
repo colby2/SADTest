@@ -255,3 +255,31 @@ C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Backup.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\bin\Debug\MySqlBackup.dll
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Backup.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Trends.resources
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\bin\Debug\Test.exe.config
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.exe
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.pdb
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\bin\Debug\Test.exe
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\bin\Debug\Test.pdb
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\bin\Debug\DiabeticHealthDB.dll
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\bin\Debug\MySql.Data.dll
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\bin\Debug\MySqlBackup.dll
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\bin\Debug\DiabeticHealthDB.pdb
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\bin\Debug\MySql.Data.xml
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddAllergyInfo.resources
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddDiabetesBackground.resources
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddDiabetesMedicaitonInfo.resources
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddDiabeticTestInfo.resources
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddLipidTestInfo.resources
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddMedicationInfo.resources
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddVitalsInfo.resources
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Backup.resources
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Trends.resources
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.GraphTemplate.resources
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.InsertPatient.resources
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.LoadScreen.resources
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Login.resources
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Hub.resources
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Patient.resources
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
