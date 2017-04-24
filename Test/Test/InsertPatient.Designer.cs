@@ -76,7 +76,7 @@
             this.ctb.Multiline = true;
             this.ctb.Name = "ctb";
             this.ctb.Size = new System.Drawing.Size(119, 31);
-            this.ctb.TabIndex = 1;
+            this.ctb.TabIndex = 5;
             this.ctb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // pitb
@@ -85,7 +85,7 @@
             this.pitb.Multiline = true;
             this.pitb.Name = "pitb";
             this.pitb.Size = new System.Drawing.Size(119, 31);
-            this.pitb.TabIndex = 2;
+            this.pitb.TabIndex = 10;
             this.pitb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lnTB
@@ -94,7 +94,7 @@
             this.lnTB.Multiline = true;
             this.lnTB.Name = "lnTB";
             this.lnTB.Size = new System.Drawing.Size(119, 31);
-            this.lnTB.TabIndex = 3;
+            this.lnTB.TabIndex = 1;
             this.lnTB.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // stb
@@ -112,7 +112,7 @@
             this.ptb.Multiline = true;
             this.ptb.Name = "ptb";
             this.ptb.Size = new System.Drawing.Size(119, 31);
-            this.ptb.TabIndex = 5;
+            this.ptb.TabIndex = 3;
             this.ptb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // sitb
@@ -121,7 +121,7 @@
             this.sitb.Multiline = true;
             this.sitb.Name = "sitb";
             this.sitb.Size = new System.Drawing.Size(119, 31);
-            this.sitb.TabIndex = 6;
+            this.sitb.TabIndex = 11;
             this.sitb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // sttb
@@ -130,7 +130,7 @@
             this.sttb.Multiline = true;
             this.sttb.Name = "sttb";
             this.sttb.Size = new System.Drawing.Size(119, 31);
-            this.sttb.TabIndex = 7;
+            this.sttb.TabIndex = 6;
             this.sttb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // ztb
@@ -139,7 +139,7 @@
             this.ztb.Multiline = true;
             this.ztb.Name = "ztb";
             this.ztb.Size = new System.Drawing.Size(119, 31);
-            this.ztb.TabIndex = 8;
+            this.ztb.TabIndex = 7;
             this.ztb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // dbtb
@@ -148,7 +148,7 @@
             this.dbtb.Multiline = true;
             this.dbtb.Name = "dbtb";
             this.dbtb.Size = new System.Drawing.Size(119, 31);
-            this.dbtb.TabIndex = 9;
+            this.dbtb.TabIndex = 8;
             this.dbtb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // dvtb
@@ -157,7 +157,7 @@
             this.dvtb.Multiline = true;
             this.dvtb.Name = "dvtb";
             this.dvtb.Size = new System.Drawing.Size(119, 31);
-            this.dvtb.TabIndex = 10;
+            this.dvtb.TabIndex = 9;
             this.dvtb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lFirstname
@@ -342,7 +342,7 @@
             this.gtb.Multiline = true;
             this.gtb.Name = "gtb";
             this.gtb.Size = new System.Drawing.Size(119, 31);
-            this.gtb.TabIndex = 28;
+            this.gtb.TabIndex = 2;
             // 
             // label14
             // 
