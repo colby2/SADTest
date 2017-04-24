@@ -144,7 +144,6 @@ namespace DiabeticHealthDB
          * ***************************************************************************/
         public static void UpdateAllergyInfo(int PatientID, string newAllergicTo, string newReaction, string oldAllergicTo, string oldReaction)
         {
-            int rowsUpdated = 0;
             MySqlConnection connection = DatabaseConnection.GetConnection();
             string updateQuery = "Update AllergyInfo Set AllergicTo = '" + newAllergicTo + "' , Reaction = '" + newReaction + "' Where PatientID = '" + PatientID + "' AND AllergicTo = '" + oldAllergicTo + "' AND Reaction = '" + oldReaction + "';";
             MySqlCommand command = new MySqlCommand(updateQuery, connection);
@@ -155,7 +154,6 @@ namespace DiabeticHealthDB
             }
             catch (MySqlException ex)
             {
-                rowsUpdated = 0;
                 throw ex;
             }
             finally
@@ -163,6 +161,29 @@ namespace DiabeticHealthDB
                 connection.Close();
             }
         }
+
+        public static void UpdateMedicationInfo(int PatientID, string newMedication, string newDateStarted, string newAmount, string newFrequency, string newRoute, string oldMedicationName, string oldDateStarted, string oldAmount, string oldFrequency, string oldRoute)
+        {
+            MySqlConnection connection = DatabaseConnection.GetConnection();
+            string updateQuery = "Update Medication Set MedicationName = '" + newMedication + "', DateStarted = '" + newDateStarted + "', Amount = '" + newAmount + "', Frequency = '" + newFrequency + "', Route = '" + newRoute + "' Where PatientID ='" + PatientID + "' AND MedicationName = '" + newMedication + "'AND DateStarted = '" + oldDateStarted + "' AND Amount = '" + oldAmount + "'AND Frequency = '" + oldFrequency + "'AND Route = '" + oldRoute + "';";
+            MySqlCommand command = new MySqlCommand(updateQuery, connection);
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+
+        }
+
 
     }
 }

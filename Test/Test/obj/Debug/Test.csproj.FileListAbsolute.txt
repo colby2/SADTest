@@ -283,3 +283,29 @@ C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Hub.resou
 C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Patient.resources
 C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Properties.Resources.resources
 C:\Users\Ryan Kesterson\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\bin\Debug\Test.exe.config
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.exe
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.pdb
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\bin\Debug\Test.exe
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\bin\Debug\Test.pdb
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\bin\Debug\DiabeticHealthDB.dll
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\bin\Debug\MySqlBackup.dll
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\bin\Debug\DiabeticHealthDB.pdb
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.AddAllergyInfo.resources
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.AddDiabetesBackground.resources
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.AddDiabetesMedicaitonInfo.resources
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.AddDiabeticTestInfo.resources
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.AddLipidTestInfo.resources
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.AddMedicationInfo.resources
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.AddVitalsInfo.resources
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.Backup.resources
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.Trends.resources
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.GraphTemplate.resources
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.InsertPatient.resources
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.LoadScreen.resources
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.Login.resources
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.Hub.resources
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.Patient.resources
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache

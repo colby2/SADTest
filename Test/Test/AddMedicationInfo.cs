@@ -83,7 +83,7 @@ namespace Test
             }
             else if (editing == true)
             {
-                //UpdateFunctions.UpdateAllergyInfo(PatientID, AllergicTo.Text, Reaction.Text, editAllergicTo, editReaction);
+                UpdateFunctions.UpdateMedicationInfo(PatientID, medicationTb.Text, dateTimePicker1.Text, amounttb.Text, frequencytb.Text, routeTb.Text, editMedicationName, editDateStarted, editAmount, editFrequency, editRoute);
                 this.Close();
             }
         }

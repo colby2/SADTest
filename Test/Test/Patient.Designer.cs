@@ -153,11 +153,12 @@
             this.tcPatient.Controls.Add(this.tpLipidTest);
             this.tcPatient.Controls.Add(this.tpDiabeticBackground);
             this.tcPatient.Controls.Add(this.tpNotes);
-            this.tcPatient.Location = new System.Drawing.Point(12, 12);
+            this.tcPatient.Location = new System.Drawing.Point(18, 18);
+            this.tcPatient.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tcPatient.Multiline = true;
             this.tcPatient.Name = "tcPatient";
             this.tcPatient.SelectedIndex = 0;
-            this.tcPatient.Size = new System.Drawing.Size(788, 587);
+            this.tcPatient.Size = new System.Drawing.Size(1182, 903);
             this.tcPatient.TabIndex = 0;
             // 
             // tpDemographics
@@ -192,10 +193,11 @@
             this.tpDemographics.Controls.Add(this.lDateOfLastVisit);
             this.tpDemographics.Controls.Add(this.lFirstname);
             this.tpDemographics.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpDemographics.Location = new System.Drawing.Point(4, 22);
+            this.tpDemographics.Location = new System.Drawing.Point(4, 29);
+            this.tpDemographics.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpDemographics.Name = "tpDemographics";
-            this.tpDemographics.Padding = new System.Windows.Forms.Padding(3);
-            this.tpDemographics.Size = new System.Drawing.Size(780, 561);
+            this.tpDemographics.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpDemographics.Size = new System.Drawing.Size(1174, 870);
             this.tpDemographics.TabIndex = 0;
             this.tpDemographics.Text = "Demographics";
             this.tpDemographics.Click += new System.EventHandler(this.tpDemographics_Click);
@@ -203,16 +205,18 @@
             // tbGender
             // 
             this.tbGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbGender.Location = new System.Drawing.Point(169, 114);
+            this.tbGender.Location = new System.Drawing.Point(254, 175);
+            this.tbGender.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbGender.Name = "tbGender";
             this.tbGender.ReadOnly = true;
-            this.tbGender.Size = new System.Drawing.Size(130, 24);
+            this.tbGender.Size = new System.Drawing.Size(193, 24);
             this.tbGender.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(84, 111);
+            this.label1.Location = new System.Drawing.Point(126, 171);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 18);
             this.label1.TabIndex = 32;
@@ -222,9 +226,10 @@
             // 
             this.visitDateUpdate.Image = ((System.Drawing.Image)(resources.GetObject("visitDateUpdate.Image")));
             this.visitDateUpdate.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.visitDateUpdate.Location = new System.Drawing.Point(309, 345);
+            this.visitDateUpdate.Location = new System.Drawing.Point(464, 531);
+            this.visitDateUpdate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.visitDateUpdate.Name = "visitDateUpdate";
-            this.visitDateUpdate.Size = new System.Drawing.Size(164, 28);
+            this.visitDateUpdate.Size = new System.Drawing.Size(246, 43);
             this.visitDateUpdate.TabIndex = 31;
             this.visitDateUpdate.Text = "Update Last Visit";
             this.visitDateUpdate.UseVisualStyleBackColor = true;
@@ -233,16 +238,18 @@
             // tbLastname
             // 
             this.tbLastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbLastname.Location = new System.Drawing.Point(169, 81);
+            this.tbLastname.Location = new System.Drawing.Point(254, 125);
+            this.tbLastname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbLastname.Name = "tbLastname";
             this.tbLastname.ReadOnly = true;
-            this.tbLastname.Size = new System.Drawing.Size(130, 24);
+            this.tbLastname.Size = new System.Drawing.Size(193, 24);
             this.tbLastname.TabIndex = 2;
             // 
             // lLastName
             // 
             this.lLastName.AutoSize = true;
-            this.lLastName.Location = new System.Drawing.Point(61, 81);
+            this.lLastName.Location = new System.Drawing.Point(92, 125);
+            this.lLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lLastName.Name = "lLastName";
             this.lLastName.Size = new System.Drawing.Size(80, 18);
             this.lLastName.TabIndex = 29;
@@ -251,9 +258,10 @@
             // bTrends
             // 
             this.bTrends.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bTrends.Location = new System.Drawing.Point(618, 532);
+            this.bTrends.Location = new System.Drawing.Point(927, 843);
+            this.bTrends.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bTrends.Name = "bTrends";
-            this.bTrends.Size = new System.Drawing.Size(75, 23);
+            this.bTrends.Size = new System.Drawing.Size(112, 35);
             this.bTrends.TabIndex = 27;
             this.bTrends.Text = "Graph";
             this.bTrends.UseVisualStyleBackColor = true;
@@ -262,9 +270,10 @@
             // bEdit
             // 
             this.bEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bEdit.Location = new System.Drawing.Point(699, 532);
+            this.bEdit.Location = new System.Drawing.Point(1048, 843);
+            this.bEdit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bEdit.Name = "bEdit";
-            this.bEdit.Size = new System.Drawing.Size(75, 23);
+            this.bEdit.Size = new System.Drawing.Size(112, 35);
             this.bEdit.TabIndex = 26;
             this.bEdit.Text = "Edit";
             this.bEdit.UseVisualStyleBackColor = true;
@@ -272,24 +281,27 @@
             // 
             // tbSecondaryInsurance
             // 
-            this.tbSecondaryInsurance.Location = new System.Drawing.Point(554, 114);
+            this.tbSecondaryInsurance.Location = new System.Drawing.Point(831, 175);
+            this.tbSecondaryInsurance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbSecondaryInsurance.Name = "tbSecondaryInsurance";
             this.tbSecondaryInsurance.ReadOnly = true;
-            this.tbSecondaryInsurance.Size = new System.Drawing.Size(123, 24);
+            this.tbSecondaryInsurance.Size = new System.Drawing.Size(182, 24);
             this.tbSecondaryInsurance.TabIndex = 12;
             // 
             // tbPrimaryInsurance
             // 
-            this.tbPrimaryInsurance.Location = new System.Drawing.Point(554, 91);
+            this.tbPrimaryInsurance.Location = new System.Drawing.Point(831, 140);
+            this.tbPrimaryInsurance.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbPrimaryInsurance.Name = "tbPrimaryInsurance";
             this.tbPrimaryInsurance.ReadOnly = true;
-            this.tbPrimaryInsurance.Size = new System.Drawing.Size(123, 24);
+            this.tbPrimaryInsurance.Size = new System.Drawing.Size(182, 24);
             this.tbPrimaryInsurance.TabIndex = 11;
             // 
             // lSecondaryInsurance
             // 
             this.lSecondaryInsurance.AutoSize = true;
-            this.lSecondaryInsurance.Location = new System.Drawing.Point(387, 117);
+            this.lSecondaryInsurance.Location = new System.Drawing.Point(580, 180);
+            this.lSecondaryInsurance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lSecondaryInsurance.Name = "lSecondaryInsurance";
             this.lSecondaryInsurance.Size = new System.Drawing.Size(147, 18);
             this.lSecondaryInsurance.TabIndex = 20;
@@ -298,7 +310,8 @@
             // lPrimaryInsurance
             // 
             this.lPrimaryInsurance.AutoSize = true;
-            this.lPrimaryInsurance.Location = new System.Drawing.Point(387, 91);
+            this.lPrimaryInsurance.Location = new System.Drawing.Point(580, 140);
+            this.lPrimaryInsurance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lPrimaryInsurance.Name = "lPrimaryInsurance";
             this.lPrimaryInsurance.Size = new System.Drawing.Size(127, 18);
             this.lPrimaryInsurance.TabIndex = 19;
@@ -308,7 +321,8 @@
             // 
             this.lInsurance.AutoSize = true;
             this.lInsurance.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lInsurance.Location = new System.Drawing.Point(387, 59);
+            this.lInsurance.Location = new System.Drawing.Point(580, 91);
+            this.lInsurance.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lInsurance.Name = "lInsurance";
             this.lInsurance.Size = new System.Drawing.Size(86, 18);
             this.lInsurance.TabIndex = 18;
@@ -317,82 +331,91 @@
             // tbPhone
             // 
             this.tbPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPhone.Location = new System.Drawing.Point(169, 151);
+            this.tbPhone.Location = new System.Drawing.Point(254, 232);
+            this.tbPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbPhone.Name = "tbPhone";
             this.tbPhone.ReadOnly = true;
-            this.tbPhone.Size = new System.Drawing.Size(130, 24);
+            this.tbPhone.Size = new System.Drawing.Size(193, 24);
             this.tbPhone.TabIndex = 4;
             // 
             // tbDOB
             // 
             this.tbDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDOB.Location = new System.Drawing.Point(169, 314);
+            this.tbDOB.Location = new System.Drawing.Point(254, 483);
+            this.tbDOB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbDOB.Name = "tbDOB";
             this.tbDOB.ReadOnly = true;
-            this.tbDOB.Size = new System.Drawing.Size(130, 24);
+            this.tbDOB.Size = new System.Drawing.Size(193, 24);
             this.tbDOB.TabIndex = 9;
             this.tbDOB.TextChanged += new System.EventHandler(this.tbAge_TextChanged);
             // 
             // tbZip
             // 
             this.tbZip.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbZip.Location = new System.Drawing.Point(169, 279);
+            this.tbZip.Location = new System.Drawing.Point(254, 429);
+            this.tbZip.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbZip.Name = "tbZip";
             this.tbZip.ReadOnly = true;
-            this.tbZip.Size = new System.Drawing.Size(130, 24);
+            this.tbZip.Size = new System.Drawing.Size(193, 24);
             this.tbZip.TabIndex = 8;
             // 
             // tbState
             // 
             this.tbState.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbState.Location = new System.Drawing.Point(169, 247);
+            this.tbState.Location = new System.Drawing.Point(254, 380);
+            this.tbState.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbState.Name = "tbState";
             this.tbState.ReadOnly = true;
-            this.tbState.Size = new System.Drawing.Size(130, 24);
+            this.tbState.Size = new System.Drawing.Size(193, 24);
             this.tbState.TabIndex = 7;
             // 
             // tbCity
             // 
             this.tbCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCity.Location = new System.Drawing.Point(169, 217);
+            this.tbCity.Location = new System.Drawing.Point(254, 334);
+            this.tbCity.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbCity.Name = "tbCity";
             this.tbCity.ReadOnly = true;
-            this.tbCity.Size = new System.Drawing.Size(130, 24);
+            this.tbCity.Size = new System.Drawing.Size(193, 24);
             this.tbCity.TabIndex = 6;
             this.tbCity.TextChanged += new System.EventHandler(this.tbCity_TextChanged);
             // 
             // tbStreet
             // 
             this.tbStreet.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbStreet.Location = new System.Drawing.Point(169, 187);
+            this.tbStreet.Location = new System.Drawing.Point(254, 288);
+            this.tbStreet.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbStreet.Name = "tbStreet";
             this.tbStreet.ReadOnly = true;
-            this.tbStreet.Size = new System.Drawing.Size(130, 24);
+            this.tbStreet.Size = new System.Drawing.Size(193, 24);
             this.tbStreet.TabIndex = 5;
             // 
             // tbFirstname
             // 
             this.tbFirstname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFirstname.Location = new System.Drawing.Point(169, 51);
+            this.tbFirstname.Location = new System.Drawing.Point(254, 78);
+            this.tbFirstname.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbFirstname.Name = "tbFirstname";
             this.tbFirstname.ReadOnly = true;
-            this.tbFirstname.Size = new System.Drawing.Size(130, 24);
+            this.tbFirstname.Size = new System.Drawing.Size(193, 24);
             this.tbFirstname.TabIndex = 1;
             this.tbFirstname.TextChanged += new System.EventHandler(this.tbName_TextChanged);
             // 
             // tbDateOfLastVisit
             // 
             this.tbDateOfLastVisit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDateOfLastVisit.Location = new System.Drawing.Point(169, 347);
+            this.tbDateOfLastVisit.Location = new System.Drawing.Point(254, 534);
+            this.tbDateOfLastVisit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbDateOfLastVisit.Name = "tbDateOfLastVisit";
             this.tbDateOfLastVisit.ReadOnly = true;
-            this.tbDateOfLastVisit.Size = new System.Drawing.Size(130, 24);
+            this.tbDateOfLastVisit.Size = new System.Drawing.Size(193, 24);
             this.tbDateOfLastVisit.TabIndex = 10;
             // 
             // lPhone
             // 
             this.lPhone.AutoSize = true;
-            this.lPhone.Location = new System.Drawing.Point(90, 151);
+            this.lPhone.Location = new System.Drawing.Point(135, 232);
+            this.lPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lPhone.Name = "lPhone";
             this.lPhone.Size = new System.Drawing.Size(51, 18);
             this.lPhone.TabIndex = 8;
@@ -401,7 +424,8 @@
             // lDOB
             // 
             this.lDOB.AutoSize = true;
-            this.lDOB.Location = new System.Drawing.Point(51, 314);
+            this.lDOB.Location = new System.Drawing.Point(76, 483);
+            this.lDOB.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lDOB.Name = "lDOB";
             this.lDOB.Size = new System.Drawing.Size(90, 18);
             this.lDOB.TabIndex = 7;
@@ -411,7 +435,8 @@
             // lZip
             // 
             this.lZip.AutoSize = true;
-            this.lZip.Location = new System.Drawing.Point(113, 279);
+            this.lZip.Location = new System.Drawing.Point(170, 429);
+            this.lZip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lZip.Name = "lZip";
             this.lZip.Size = new System.Drawing.Size(28, 18);
             this.lZip.TabIndex = 6;
@@ -420,7 +445,8 @@
             // lState
             // 
             this.lState.AutoSize = true;
-            this.lState.Location = new System.Drawing.Point(99, 250);
+            this.lState.Location = new System.Drawing.Point(148, 385);
+            this.lState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lState.Name = "lState";
             this.lState.Size = new System.Drawing.Size(42, 18);
             this.lState.TabIndex = 5;
@@ -429,7 +455,8 @@
             // lStreet
             // 
             this.lStreet.AutoSize = true;
-            this.lStreet.Location = new System.Drawing.Point(94, 187);
+            this.lStreet.Location = new System.Drawing.Point(141, 288);
+            this.lStreet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lStreet.Name = "lStreet";
             this.lStreet.Size = new System.Drawing.Size(47, 18);
             this.lStreet.TabIndex = 4;
@@ -438,7 +465,8 @@
             // lCity
             // 
             this.lCity.AutoSize = true;
-            this.lCity.Location = new System.Drawing.Point(108, 217);
+            this.lCity.Location = new System.Drawing.Point(162, 334);
+            this.lCity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lCity.Name = "lCity";
             this.lCity.Size = new System.Drawing.Size(33, 18);
             this.lCity.TabIndex = 3;
@@ -447,7 +475,8 @@
             // lDateOfLastVisit
             // 
             this.lDateOfLastVisit.AutoSize = true;
-            this.lDateOfLastVisit.Location = new System.Drawing.Point(22, 347);
+            this.lDateOfLastVisit.Location = new System.Drawing.Point(33, 534);
+            this.lDateOfLastVisit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lDateOfLastVisit.Name = "lDateOfLastVisit";
             this.lDateOfLastVisit.Size = new System.Drawing.Size(119, 18);
             this.lDateOfLastVisit.TabIndex = 2;
@@ -456,7 +485,8 @@
             // lFirstname
             // 
             this.lFirstname.AutoSize = true;
-            this.lFirstname.Location = new System.Drawing.Point(60, 51);
+            this.lFirstname.Location = new System.Drawing.Point(90, 78);
+            this.lFirstname.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lFirstname.Name = "lFirstname";
             this.lFirstname.Size = new System.Drawing.Size(81, 18);
             this.lFirstname.TabIndex = 1;
@@ -465,9 +495,10 @@
             // tpAllergies
             // 
             this.tpAllergies.Controls.Add(this.lvAllergyList);
-            this.tpAllergies.Location = new System.Drawing.Point(4, 22);
+            this.tpAllergies.Location = new System.Drawing.Point(4, 54);
+            this.tpAllergies.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpAllergies.Name = "tpAllergies";
-            this.tpAllergies.Size = new System.Drawing.Size(780, 561);
+            this.tpAllergies.Size = new System.Drawing.Size(1174, 845);
             this.tpAllergies.TabIndex = 4;
             this.tpAllergies.Text = "Allergies";
             this.tpAllergies.UseVisualStyleBackColor = true;
@@ -485,9 +516,10 @@
             this.lvAllergyList.FullRowSelect = true;
             this.lvAllergyList.GridLines = true;
             this.lvAllergyList.LabelEdit = true;
-            this.lvAllergyList.Location = new System.Drawing.Point(-4, 0);
+            this.lvAllergyList.Location = new System.Drawing.Point(-6, 0);
+            this.lvAllergyList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lvAllergyList.Name = "lvAllergyList";
-            this.lvAllergyList.Size = new System.Drawing.Size(788, 556);
+            this.lvAllergyList.Size = new System.Drawing.Size(1180, 853);
             this.lvAllergyList.TabIndex = 0;
             this.lvAllergyList.TileSize = new System.Drawing.Size(3, 3);
             this.lvAllergyList.UseCompatibleStateImageBehavior = false;
@@ -507,9 +539,10 @@
             // tpMedication
             // 
             this.tpMedication.Controls.Add(this.lvMedicationList);
-            this.tpMedication.Location = new System.Drawing.Point(4, 22);
+            this.tpMedication.Location = new System.Drawing.Point(4, 29);
+            this.tpMedication.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpMedication.Name = "tpMedication";
-            this.tpMedication.Size = new System.Drawing.Size(780, 561);
+            this.tpMedication.Size = new System.Drawing.Size(1174, 870);
             this.tpMedication.TabIndex = 7;
             this.tpMedication.Text = "Medication";
             this.tpMedication.UseVisualStyleBackColor = true;
@@ -528,9 +561,10 @@
             this.Route});
             this.lvMedicationList.FullRowSelect = true;
             this.lvMedicationList.GridLines = true;
-            this.lvMedicationList.Location = new System.Drawing.Point(4, 4);
+            this.lvMedicationList.Location = new System.Drawing.Point(6, 6);
+            this.lvMedicationList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lvMedicationList.Name = "lvMedicationList";
-            this.lvMedicationList.Size = new System.Drawing.Size(773, 554);
+            this.lvMedicationList.Size = new System.Drawing.Size(1158, 875);
             this.lvMedicationList.TabIndex = 0;
             this.lvMedicationList.UseCompatibleStateImageBehavior = false;
             this.lvMedicationList.View = System.Windows.Forms.View.Details;
@@ -563,9 +597,10 @@
             // tpVitals
             // 
             this.tpVitals.Controls.Add(this.lvVitalsList);
-            this.tpVitals.Location = new System.Drawing.Point(4, 22);
+            this.tpVitals.Location = new System.Drawing.Point(4, 54);
+            this.tpVitals.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpVitals.Name = "tpVitals";
-            this.tpVitals.Size = new System.Drawing.Size(780, 561);
+            this.tpVitals.Size = new System.Drawing.Size(1174, 845);
             this.tpVitals.TabIndex = 6;
             this.tpVitals.Text = "Vitals";
             this.tpVitals.UseVisualStyleBackColor = true;
@@ -590,9 +625,10 @@
             this.Temperature});
             this.lvVitalsList.FullRowSelect = true;
             this.lvVitalsList.GridLines = true;
-            this.lvVitalsList.Location = new System.Drawing.Point(3, 4);
+            this.lvVitalsList.Location = new System.Drawing.Point(4, 6);
+            this.lvVitalsList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lvVitalsList.Name = "lvVitalsList";
-            this.lvVitalsList.Size = new System.Drawing.Size(774, 554);
+            this.lvVitalsList.Size = new System.Drawing.Size(1159, 850);
             this.lvVitalsList.TabIndex = 0;
             this.lvVitalsList.UseCompatibleStateImageBehavior = false;
             this.lvVitalsList.View = System.Windows.Forms.View.Details;
@@ -655,9 +691,10 @@
             // tpDiabeticMeds
             // 
             this.tpDiabeticMeds.Controls.Add(this.lvDiabeticMedsList);
-            this.tpDiabeticMeds.Location = new System.Drawing.Point(4, 22);
+            this.tpDiabeticMeds.Location = new System.Drawing.Point(4, 54);
+            this.tpDiabeticMeds.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpDiabeticMeds.Name = "tpDiabeticMeds";
-            this.tpDiabeticMeds.Size = new System.Drawing.Size(780, 561);
+            this.tpDiabeticMeds.Size = new System.Drawing.Size(1174, 845);
             this.tpDiabeticMeds.TabIndex = 3;
             this.tpDiabeticMeds.Text = "Diabetic Meds";
             this.tpDiabeticMeds.UseVisualStyleBackColor = true;
@@ -676,9 +713,10 @@
             this.DiabeticRoute});
             this.lvDiabeticMedsList.FullRowSelect = true;
             this.lvDiabeticMedsList.GridLines = true;
-            this.lvDiabeticMedsList.Location = new System.Drawing.Point(4, 4);
+            this.lvDiabeticMedsList.Location = new System.Drawing.Point(6, 6);
+            this.lvDiabeticMedsList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lvDiabeticMedsList.Name = "lvDiabeticMedsList";
-            this.lvDiabeticMedsList.Size = new System.Drawing.Size(773, 554);
+            this.lvDiabeticMedsList.Size = new System.Drawing.Size(1158, 850);
             this.lvDiabeticMedsList.TabIndex = 0;
             this.lvDiabeticMedsList.UseCompatibleStateImageBehavior = false;
             this.lvDiabeticMedsList.View = System.Windows.Forms.View.Details;
@@ -709,9 +747,10 @@
             // tpDiabeticTest
             // 
             this.tpDiabeticTest.Controls.Add(this.lvDiabeticTestList);
-            this.tpDiabeticTest.Location = new System.Drawing.Point(4, 22);
+            this.tpDiabeticTest.Location = new System.Drawing.Point(4, 54);
+            this.tpDiabeticTest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpDiabeticTest.Name = "tpDiabeticTest";
-            this.tpDiabeticTest.Size = new System.Drawing.Size(780, 561);
+            this.tpDiabeticTest.Size = new System.Drawing.Size(1174, 845);
             this.tpDiabeticTest.TabIndex = 2;
             this.tpDiabeticTest.Text = "DiabeticTest";
             this.tpDiabeticTest.UseVisualStyleBackColor = true;
@@ -731,9 +770,10 @@
             this.NutritionalCounseling});
             this.lvDiabeticTestList.FullRowSelect = true;
             this.lvDiabeticTestList.GridLines = true;
-            this.lvDiabeticTestList.Location = new System.Drawing.Point(4, 4);
+            this.lvDiabeticTestList.Location = new System.Drawing.Point(6, 6);
+            this.lvDiabeticTestList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lvDiabeticTestList.Name = "lvDiabeticTestList";
-            this.lvDiabeticTestList.Size = new System.Drawing.Size(773, 554);
+            this.lvDiabeticTestList.Size = new System.Drawing.Size(1158, 850);
             this.lvDiabeticTestList.TabIndex = 0;
             this.lvDiabeticTestList.UseCompatibleStateImageBehavior = false;
             this.lvDiabeticTestList.View = System.Windows.Forms.View.Details;
@@ -771,10 +811,11 @@
             // tpLipidTest
             // 
             this.tpLipidTest.Controls.Add(this.lvLipidTestList);
-            this.tpLipidTest.Location = new System.Drawing.Point(4, 22);
+            this.tpLipidTest.Location = new System.Drawing.Point(4, 54);
+            this.tpLipidTest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpLipidTest.Name = "tpLipidTest";
-            this.tpLipidTest.Padding = new System.Windows.Forms.Padding(3);
-            this.tpLipidTest.Size = new System.Drawing.Size(780, 561);
+            this.tpLipidTest.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpLipidTest.Size = new System.Drawing.Size(1174, 845);
             this.tpLipidTest.TabIndex = 1;
             this.tpLipidTest.Text = "LipidTest";
             this.tpLipidTest.UseVisualStyleBackColor = true;
@@ -795,9 +836,10 @@
             this.TCHOLHDLRatio});
             this.lvLipidTestList.FullRowSelect = true;
             this.lvLipidTestList.GridLines = true;
-            this.lvLipidTestList.Location = new System.Drawing.Point(4, 7);
+            this.lvLipidTestList.Location = new System.Drawing.Point(6, 11);
+            this.lvLipidTestList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lvLipidTestList.Name = "lvLipidTestList";
-            this.lvLipidTestList.Size = new System.Drawing.Size(770, 548);
+            this.lvLipidTestList.Size = new System.Drawing.Size(1153, 841);
             this.lvLipidTestList.TabIndex = 0;
             this.lvLipidTestList.UseCompatibleStateImageBehavior = false;
             this.lvLipidTestList.View = System.Windows.Forms.View.Details;
@@ -838,9 +880,10 @@
             // tpDiabeticBackground
             // 
             this.tpDiabeticBackground.Controls.Add(this.lvDiabeticBackgroundList);
-            this.tpDiabeticBackground.Location = new System.Drawing.Point(4, 22);
+            this.tpDiabeticBackground.Location = new System.Drawing.Point(4, 54);
+            this.tpDiabeticBackground.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpDiabeticBackground.Name = "tpDiabeticBackground";
-            this.tpDiabeticBackground.Size = new System.Drawing.Size(780, 561);
+            this.tpDiabeticBackground.Size = new System.Drawing.Size(1174, 845);
             this.tpDiabeticBackground.TabIndex = 5;
             this.tpDiabeticBackground.Text = "Diabetic Background";
             this.tpDiabeticBackground.UseVisualStyleBackColor = true;
@@ -857,9 +900,10 @@
             this.DiabetesType});
             this.lvDiabeticBackgroundList.FullRowSelect = true;
             this.lvDiabeticBackgroundList.GridLines = true;
-            this.lvDiabeticBackgroundList.Location = new System.Drawing.Point(4, 4);
+            this.lvDiabeticBackgroundList.Location = new System.Drawing.Point(6, 6);
+            this.lvDiabeticBackgroundList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lvDiabeticBackgroundList.Name = "lvDiabeticBackgroundList";
-            this.lvDiabeticBackgroundList.Size = new System.Drawing.Size(773, 554);
+            this.lvDiabeticBackgroundList.Size = new System.Drawing.Size(1158, 850);
             this.lvDiabeticBackgroundList.TabIndex = 0;
             this.lvDiabeticBackgroundList.UseCompatibleStateImageBehavior = false;
             this.lvDiabeticBackgroundList.View = System.Windows.Forms.View.Details;
@@ -883,10 +927,11 @@
             // 
             this.tpNotes.Controls.Add(this.tbNotes);
             this.tpNotes.Controls.Add(this.addNotes);
-            this.tpNotes.Location = new System.Drawing.Point(4, 22);
+            this.tpNotes.Location = new System.Drawing.Point(4, 54);
+            this.tpNotes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tpNotes.Name = "tpNotes";
-            this.tpNotes.Padding = new System.Windows.Forms.Padding(3);
-            this.tpNotes.Size = new System.Drawing.Size(780, 561);
+            this.tpNotes.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tpNotes.Size = new System.Drawing.Size(1174, 845);
             this.tpNotes.TabIndex = 8;
             this.tpNotes.Text = "Notes";
             this.tpNotes.UseVisualStyleBackColor = true;
@@ -898,20 +943,22 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tbNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNotes.Location = new System.Drawing.Point(52, 42);
+            this.tbNotes.Location = new System.Drawing.Point(78, 65);
+            this.tbNotes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbNotes.Multiline = true;
             this.tbNotes.Name = "tbNotes";
             this.tbNotes.ReadOnly = true;
             this.tbNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbNotes.Size = new System.Drawing.Size(651, 410);
+            this.tbNotes.Size = new System.Drawing.Size(974, 629);
             this.tbNotes.TabIndex = 1;
             // 
             // addNotes
             // 
             this.addNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addNotes.Location = new System.Drawing.Point(604, 478);
+            this.addNotes.Location = new System.Drawing.Point(906, 735);
+            this.addNotes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addNotes.Name = "addNotes";
-            this.addNotes.Size = new System.Drawing.Size(128, 44);
+            this.addNotes.Size = new System.Drawing.Size(192, 68);
             this.addNotes.TabIndex = 0;
             this.addNotes.Text = "Edit Notes for This Patient";
             this.addNotes.UseVisualStyleBackColor = true;
@@ -920,9 +967,10 @@
             // bDelete
             // 
             this.bDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bDelete.Location = new System.Drawing.Point(1143, 552);
+            this.bDelete.Location = new System.Drawing.Point(1714, 849);
+            this.bDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bDelete.Name = "bDelete";
-            this.bDelete.Size = new System.Drawing.Size(94, 38);
+            this.bDelete.Size = new System.Drawing.Size(141, 58);
             this.bDelete.TabIndex = 25;
             this.bDelete.Text = "Delete This Patient\'s Info";
             this.bDelete.UseVisualStyleBackColor = true;
@@ -931,9 +979,10 @@
             // refreshButtonAllergy
             // 
             this.refreshButtonAllergy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.refreshButtonAllergy.Location = new System.Drawing.Point(1111, 61);
+            this.refreshButtonAllergy.Location = new System.Drawing.Point(1666, 94);
+            this.refreshButtonAllergy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.refreshButtonAllergy.Name = "refreshButtonAllergy";
-            this.refreshButtonAllergy.Size = new System.Drawing.Size(125, 50);
+            this.refreshButtonAllergy.Size = new System.Drawing.Size(188, 77);
             this.refreshButtonAllergy.TabIndex = 2;
             this.refreshButtonAllergy.Text = "Refresh Recently Added Data";
             this.refreshButtonAllergy.UseVisualStyleBackColor = true;
@@ -942,9 +991,10 @@
             // addAllergyButton
             // 
             this.addAllergyButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addAllergyButton.Location = new System.Drawing.Point(820, 61);
+            this.addAllergyButton.Location = new System.Drawing.Point(1230, 94);
+            this.addAllergyButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addAllergyButton.Name = "addAllergyButton";
-            this.addAllergyButton.Size = new System.Drawing.Size(134, 48);
+            this.addAllergyButton.Size = new System.Drawing.Size(201, 74);
             this.addAllergyButton.TabIndex = 1;
             this.addAllergyButton.Text = "Add Allergy Information ";
             this.addAllergyButton.UseVisualStyleBackColor = true;
@@ -954,18 +1004,20 @@
             // 
             this.generalTab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.generalTab.AutoSize = true;
-            this.generalTab.Location = new System.Drawing.Point(952, 34);
+            this.generalTab.Location = new System.Drawing.Point(1428, 52);
+            this.generalTab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.generalTab.Name = "generalTab";
-            this.generalTab.Size = new System.Drawing.Size(160, 13);
+            this.generalTab.Size = new System.Drawing.Size(242, 20);
             this.generalTab.TabIndex = 3;
             this.generalTab.Text = "General Functions For This Form";
             // 
             // addMedicationButton
             // 
             this.addMedicationButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addMedicationButton.Location = new System.Drawing.Point(821, 117);
+            this.addMedicationButton.Location = new System.Drawing.Point(1232, 180);
+            this.addMedicationButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addMedicationButton.Name = "addMedicationButton";
-            this.addMedicationButton.Size = new System.Drawing.Size(134, 48);
+            this.addMedicationButton.Size = new System.Drawing.Size(201, 74);
             this.addMedicationButton.TabIndex = 4;
             this.addMedicationButton.Text = "Add Medication Information ";
             this.addMedicationButton.UseVisualStyleBackColor = true;
@@ -974,9 +1026,10 @@
             // addVitalsButton
             // 
             this.addVitalsButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addVitalsButton.Location = new System.Drawing.Point(821, 174);
+            this.addVitalsButton.Location = new System.Drawing.Point(1232, 268);
+            this.addVitalsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addVitalsButton.Name = "addVitalsButton";
-            this.addVitalsButton.Size = new System.Drawing.Size(134, 48);
+            this.addVitalsButton.Size = new System.Drawing.Size(201, 74);
             this.addVitalsButton.TabIndex = 5;
             this.addVitalsButton.Text = "Add Vitals Information";
             this.addVitalsButton.UseVisualStyleBackColor = true;
@@ -985,9 +1038,10 @@
             // addDiabeticMeds
             // 
             this.addDiabeticMeds.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addDiabeticMeds.Location = new System.Drawing.Point(821, 230);
+            this.addDiabeticMeds.Location = new System.Drawing.Point(1232, 354);
+            this.addDiabeticMeds.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addDiabeticMeds.Name = "addDiabeticMeds";
-            this.addDiabeticMeds.Size = new System.Drawing.Size(134, 48);
+            this.addDiabeticMeds.Size = new System.Drawing.Size(201, 74);
             this.addDiabeticMeds.TabIndex = 6;
             this.addDiabeticMeds.Text = "Add Diabetic Meds Information ";
             this.addDiabeticMeds.UseVisualStyleBackColor = true;
@@ -996,9 +1050,10 @@
             // adDiabeticTest
             // 
             this.adDiabeticTest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.adDiabeticTest.Location = new System.Drawing.Point(820, 287);
+            this.adDiabeticTest.Location = new System.Drawing.Point(1230, 442);
+            this.adDiabeticTest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.adDiabeticTest.Name = "adDiabeticTest";
-            this.adDiabeticTest.Size = new System.Drawing.Size(134, 48);
+            this.adDiabeticTest.Size = new System.Drawing.Size(201, 74);
             this.adDiabeticTest.TabIndex = 7;
             this.adDiabeticTest.Text = "Add Diabetic Test Information ";
             this.adDiabeticTest.UseVisualStyleBackColor = true;
@@ -1007,9 +1062,10 @@
             // addLipidTestButton
             // 
             this.addLipidTestButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addLipidTestButton.Location = new System.Drawing.Point(821, 342);
+            this.addLipidTestButton.Location = new System.Drawing.Point(1232, 526);
+            this.addLipidTestButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addLipidTestButton.Name = "addLipidTestButton";
-            this.addLipidTestButton.Size = new System.Drawing.Size(134, 48);
+            this.addLipidTestButton.Size = new System.Drawing.Size(201, 74);
             this.addLipidTestButton.TabIndex = 8;
             this.addLipidTestButton.Text = "Add Lipid Test Information ";
             this.addLipidTestButton.UseVisualStyleBackColor = true;
@@ -1018,9 +1074,10 @@
             // addDiabeticBackgroundButton
             // 
             this.addDiabeticBackgroundButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addDiabeticBackgroundButton.Location = new System.Drawing.Point(821, 400);
+            this.addDiabeticBackgroundButton.Location = new System.Drawing.Point(1232, 615);
+            this.addDiabeticBackgroundButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.addDiabeticBackgroundButton.Name = "addDiabeticBackgroundButton";
-            this.addDiabeticBackgroundButton.Size = new System.Drawing.Size(134, 48);
+            this.addDiabeticBackgroundButton.Size = new System.Drawing.Size(201, 74);
             this.addDiabeticBackgroundButton.TabIndex = 9;
             this.addDiabeticBackgroundButton.Text = "Add Diabetic Background Information ";
             this.addDiabeticBackgroundButton.UseVisualStyleBackColor = true;
@@ -1029,9 +1086,10 @@
             // deleteSelectedRow
             // 
             this.deleteSelectedRow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteSelectedRow.Location = new System.Drawing.Point(1111, 198);
+            this.deleteSelectedRow.Location = new System.Drawing.Point(1666, 305);
+            this.deleteSelectedRow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.deleteSelectedRow.Name = "deleteSelectedRow";
-            this.deleteSelectedRow.Size = new System.Drawing.Size(125, 50);
+            this.deleteSelectedRow.Size = new System.Drawing.Size(188, 77);
             this.deleteSelectedRow.TabIndex = 33;
             this.deleteSelectedRow.Text = "Delete Selected Row";
             this.deleteSelectedRow.UseVisualStyleBackColor = true;
@@ -1040,9 +1098,10 @@
             // editSelectedRow
             // 
             this.editSelectedRow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.editSelectedRow.Location = new System.Drawing.Point(1111, 264);
+            this.editSelectedRow.Location = new System.Drawing.Point(1666, 406);
+            this.editSelectedRow.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.editSelectedRow.Name = "editSelectedRow";
-            this.editSelectedRow.Size = new System.Drawing.Size(125, 50);
+            this.editSelectedRow.Size = new System.Drawing.Size(188, 77);
             this.editSelectedRow.TabIndex = 34;
             this.editSelectedRow.Text = "Edit Selected Row";
             this.editSelectedRow.UseVisualStyleBackColor = true;
@@ -1050,10 +1109,10 @@
             // 
             // Patient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(1249, 602);
+            this.ClientSize = new System.Drawing.Size(1874, 926);
             this.Controls.Add(this.editSelectedRow);
             this.Controls.Add(this.deleteSelectedRow);
             this.Controls.Add(this.addDiabeticBackgroundButton);
@@ -1068,6 +1127,7 @@
             this.Controls.Add(this.tcPatient);
             this.Controls.Add(this.addAllergyButton);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "Patient";
             this.Text = "Patient Information";
