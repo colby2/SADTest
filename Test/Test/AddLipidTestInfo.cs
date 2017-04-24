@@ -97,9 +97,14 @@ namespace Test
                 MessageBox.Show("Something must be entered for each field. If patient is not applicable for a certain field enter 'N/A'.", "Attention", MessageBoxButtons.OK);
                 return;
             }
-            if (ischolesterolCheck && ishgCheck && isHDLCheck && isLDLCheck && isTRICheck)
+            if (ischolesterolCheck && ishgCheck && isHDLCheck && isLDLCheck && isTRICheck && editing == false)
             {
                 InsertFunctions.InsertIntoLipidTest(DateTime.Parse(dateTimePicker1.Text), double.Parse(HgA1ctb.Text), double.Parse(cholesterolTb.Text), double.Parse(HDLtb.Text), double.Parse(LDLtb.Text), double.Parse(trigylceridesTb.Text), PatientID);
+                this.Close();
+            }
+            else if( editing == true)
+            {
+                UpdateFunctions.UpdateLipidTestInfo(PatientID, DateTime.Parse(dateTimePicker1.Text), HgA1ctb.Text, cholesterolTb.Text, HDLtb.Text, LDLtb.Text, trigylceridesTb.Text, DateTime.Parse(dateOfTest), HgA1C, cholesterol, HDL, LDL, triglycerides);
                 this.Close();
             }
             else

@@ -31,7 +31,6 @@ C:\Users\jscoma\Source\Repos\SADTest3\Test\DiabeticHealthDB\bin\Debug\DiabeticHe
 C:\Users\jscoma\Source\Repos\SADTest3\Test\DiabeticHealthDB\bin\Debug\MySql.Data.xml
 C:\Users\Owner\Source\Repos\SADTest4\Test\DiabeticHealthDB\bin\Debug\DiabeticHealthDB.dll
 C:\Users\Owner\Source\Repos\SADTest4\Test\DiabeticHealthDB\bin\Debug\DiabeticHealthDB.pdb
-C:\Users\Owner\Source\Repos\SADTest4\Test\DiabeticHealthDB\bin\Debug\MySql.Data.xml
 C:\Users\Owner\Source\Repos\SADTest4\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.csprojResolveAssemblyReference.cache
 C:\Users\Owner\Source\Repos\SADTest4\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.dll
 C:\Users\Owner\Source\Repos\SADTest4\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.pdb

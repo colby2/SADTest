@@ -27,7 +27,6 @@ namespace Test
         public string airType = "";
         public string height = "";
         public string weight = "";
-        public string BMI = "";
         public string temperature = "";
 
 
@@ -59,7 +58,6 @@ namespace Test
             this.airType = airType;
             this.height = height;
             this.weight = weight;
-            this.BMI = BMI;
             this.temperature = temperature;
 
             InitializeComponent();
@@ -161,9 +159,14 @@ namespace Test
                 MessageBox.Show("Something must be entered for each field. If patient is not applicable for a certain field enter 'N/A'.", "Attention", MessageBoxButtons.OK);
                 return;
             }
-            if (isHeightCheck && isWeightCheck && isO2Check && isHeartRateCheck && isRespiratoryRateCheck && isTemperatureCheck)
+            if (isHeightCheck && isWeightCheck && isO2Check && isHeartRateCheck && isRespiratoryRateCheck && isTemperatureCheck && editing == false)
             {
                 InsertFunctions.InsertIntoVitalsInformation(DateTime.Parse(dateTimePicker1.Text), int.Parse(HRtb.Text), Int32.Parse(systolictb.Text), Int32.Parse(RRtb.Text), Int32.Parse(diastolictb.Text), Int32.Parse(o2sattb.Text), attb.Text, Int32.Parse(htb.Text), Int32.Parse(wtb.Text), double.Parse(temptb.Text), PatientID);
+                this.Close();
+            }
+            else if (editing == true)
+            {
+                UpdateFunctions.UpdateVitalsInfo(PatientID, DateTime.Parse(dateTimePicker1.Text), HRtb.Text, systolictb.Text, RRtb.Text, diastolictb.Text, o2sattb.Text, attb.Text, htb.Text, wtb.Text, temptb.Text, DateTime.Parse(dateTaken), heartRate, systolic, diastolic, respiratoryRate, O2Sat, airType, height, weight, temperature  );
                 this.Close();
             }
             else

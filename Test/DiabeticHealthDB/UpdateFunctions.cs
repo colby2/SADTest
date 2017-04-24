@@ -165,7 +165,7 @@ namespace DiabeticHealthDB
         public static void UpdateMedicationInfo(int PatientID, string newMedication, string newDateStarted, string newAmount, string newFrequency, string newRoute, string oldMedicationName, string oldDateStarted, string oldAmount, string oldFrequency, string oldRoute)
         {
             MySqlConnection connection = DatabaseConnection.GetConnection();
-            string updateQuery = "Update Medication Set MedicationName = '" + newMedication + "', DateStarted = '" + newDateStarted + "', Amount = '" + newAmount + "', Frequency = '" + newFrequency + "', Route = '" + newRoute + "' Where PatientID ='" + PatientID + "' AND MedicationName = '" + newMedication + "'AND DateStarted = '" + oldDateStarted + "' AND Amount = '" + oldAmount + "'AND Frequency = '" + oldFrequency + "'AND Route = '" + oldRoute + "';";
+            string updateQuery = "Update Medication Set MedicationName = '" + newMedication + "', DateStarted = '" + newDateStarted + "', Amount = '" + newAmount + "', Frequency = '" + newFrequency + "', Route = '" + newRoute + "' Where PatientID ='" + PatientID + "' AND MedicationName = '" + oldMedicationName + "'AND DateStarted = '" + oldDateStarted + "' AND Amount = '" + oldAmount + "'AND Frequency = '" + oldFrequency + "'AND Route = '" + oldRoute + "';";
             MySqlCommand command = new MySqlCommand(updateQuery, connection);
             try
             {
@@ -183,6 +183,119 @@ namespace DiabeticHealthDB
 
 
         }
+
+
+        public static void UpdateVitalsInfo(int PatientID, DateTime newDateOfTest, string newHR, string newSystolic, string newRR, string newDiastolic, string newO2sat, string newAirType, string newheight, string newweight, string newtemperature, DateTime olddateTaken, string oldheartRate, string oldsystolic, string olddiastolic, string oldrespiratoryRate, string oldO2Sat, string oldAirType, string oldHeight, string oldWeight, string oldTemperature)
+        {
+            string formattedNewDateOfTest = newDateOfTest.ToString("yyyy-MM-dd");
+            string formattedOldDateOfTest = olddateTaken.ToString("yyyy-MM-dd");
+
+            MySqlConnection connection = DatabaseConnection.GetConnection();
+            string updateQuery = "Update VitalsInformation Set DateOfTest = '" + formattedNewDateOfTest + "', HeartRate = '" + newHR + "', Systolic = '" + newSystolic + "', Diastolic = '" + newDiastolic + "', RespiratoryRate = '" + newRR + "', OxygenSaturation = '" + newO2sat + "', AirType = '" + newAirType + "', Height ='" + newheight + "', Weight ='" + newweight +"', Temperature = '" + newtemperature + "' Where PatientID ='" + PatientID + "' AND DateOfTest = '" + formattedOldDateOfTest + "' AND HeartRate = '" + oldheartRate  + "' AND Systolic = '" + oldsystolic + "'AND Diastolic = '" + olddiastolic + "'AND RespiratoryRate = '" + oldrespiratoryRate + "' AND OxygenSaturation = '" + oldO2Sat +"' AND AirType = '" + oldAirType+ "' AND Height = '" + oldHeight + "' AND Weight = '" + oldWeight + "' AND Temperature = '" +oldTemperature+"';";
+            MySqlCommand command = new MySqlCommand(updateQuery, connection);
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public static void UpdateDiabetesMedicationInfo(int PatientID, string newmedication, string newdateStarted, string newamount, string newfrequency, string newroute, string oldmedName, string olddateStarted, string oldamount, string oldfrequency, string oldroute)
+        {
+
+            MySqlConnection connection = DatabaseConnection.GetConnection();
+            string updateQuery = "Update DiabetesMedication Set MedicationName = '" + newmedication + "', DateStarted = '" + newdateStarted + "', Amount = '" + newamount + "', Frequency = '" + newfrequency + "', Route = '" + newroute + "' Where PatientID ='" + PatientID + "' AND MedicationName = '" + oldmedName + "' AND DateStarted = '" + olddateStarted + "' AND Amount = '" + oldamount + "'AND Frequency = '" + oldfrequency + "'AND Route = '" + oldroute + "';";
+            MySqlCommand command = new MySqlCommand(updateQuery, connection);
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+
+
+        public static void UpdateDiabeticTestInfo(int PatientID, string newdatetestTaken, string newmicroalbumin, string newfootcheck, string newcyv, string neweyeexam, string newcounseling, string olddateOfTest, string oldmicroalbiumin, string oldfootCheck, string oldcurrentYearVaccination, string olddiabeticEyeExam, string oldnutritionalCounseling)
+        {
+
+            MySqlConnection connection = DatabaseConnection.GetConnection();
+            string updateQuery = "Update DiabeticTests Set DateOfTest = '" + newdatetestTaken + "', Microalbumin = '" + newmicroalbumin + "', FootCheck = '" + newfootcheck + "', CurrentYearVaccination = '" + newcyv + "', DiabeticEyeExam = '" + neweyeexam + "', NutritionalCounseling = '" + newcounseling + "' Where PatientID ='" + PatientID + "' AND DateOfTest = '" + olddateOfTest + "' AND Microalbumin = '" + oldmicroalbiumin + "' AND FootCheck = '" + oldfootCheck + "'AND CurrentYearVaccination = '" + oldcurrentYearVaccination + "'AND DiabeticEyeExam = '" + olddiabeticEyeExam + "' AND NutritionalCounseling = '" + oldnutritionalCounseling + "';";
+            MySqlCommand command = new MySqlCommand(updateQuery, connection);
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public static void UpdateLipidTestInfo(int PatientID, DateTime newDateOfTest, string newHgA1c, string newcholesterol, string newHDL, string newLDL, string newtrigylcerides, DateTime olddateOfTest, string oldHgA1C, string oldcholesterol, string oldHDL, string oldLDL, string oldtriglycerides)
+        {
+            string formattedNewDateOfTest = newDateOfTest.ToString("yyyy-MM-dd");
+            string formattedOldDateOfTest = olddateOfTest.ToString("yyyy-MM-dd");
+
+            MySqlConnection connection = DatabaseConnection.GetConnection();
+            string updateQuery = "Update LipidTestInformation Set DateOfTest = '" + formattedNewDateOfTest + "', HgA1C = '" + newHgA1c + "', Cholesterol = '" + newcholesterol + "', HDL = '" + newHDL + "', LDL = '" + newLDL + "', Triglycerides = '" + newtrigylcerides + "' Where PatientID ='" + PatientID + "' AND DateOfTest = '" + formattedOldDateOfTest + "' AND HgA1C = '" + oldHgA1C + "' AND Cholesterol = '" + oldcholesterol + "'AND HDL = '" + oldHDL + "'AND LDL = '" + oldLDL + "' AND Triglycerides = '" + oldtriglycerides + "';";
+            MySqlCommand command = new MySqlCommand(updateQuery, connection);
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+
+        public static void UpdateDiabetesBackgroundInfo(int PatientID, string newdateInfoTaken, string newdateDiagnosed, string newdiabetesType, string oldDateInfoTaken, string oldDateDiagnosed, string oldDiabetesType)
+        {
+            MySqlConnection connection = DatabaseConnection.GetConnection();
+            string updateQuery = "Update DiabetesBackground Set DateInfoTaken = '" + newdateInfoTaken + "', DateDiagnosed = '" + newdateDiagnosed + "', DiabetesType = '" + newdiabetesType + "' Where PatientID ='" + PatientID + "' AND DateInfoTaken = '" + oldDateInfoTaken + "' AND DateDiagnosed = '" + oldDateDiagnosed + "' AND DiabetesType = '" + oldDiabetesType + "';";
+            MySqlCommand command = new MySqlCommand(updateQuery, connection);
+            try
+            {
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
 
 
     }

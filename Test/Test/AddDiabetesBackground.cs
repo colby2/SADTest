@@ -36,25 +36,32 @@ namespace Test
             dateInfoTaken.CustomFormat = ("MMM dd, yyyy");
         }
 
-        public AddDiabetesBackground(int PatientID, string dateInfoTaken, string dateDiagnosed, string diabetesType)
+        public AddDiabetesBackground(int PatientID, string dateInfoTakenString, string dateDiagnosedString, string diabetesTypeString)
         {
             this.editing = true;
 
             this.PatientID = PatientID;
-            this.editDateInfoTaken = dateInfoTaken;
-            this.editDateDiagnosed = dateDiagnosed;
-            this.editDiabetesType = diabetesType;
+            this.editDateInfoTaken = dateInfoTakenString;
+            this.editDateDiagnosed = dateDiagnosedString;
+            this.editDiabetesType = diabetesTypeString;
             
             InitializeComponent();
 
-            //Start Here
+
+            dateDiagnosedString = DateTime.ParseExact(dateDiagnosedString, "MMM dd, yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+            string[] yearMonthDay = dateDiagnosedString.Split('-');
+            dateDiagnosed.Format = DateTimePickerFormat.Custom;
+            dateDiagnosed.CustomFormat = "MMM dd, yyyy";
+            dateDiagnosed.Value = new DateTime(int.Parse(yearMonthDay[0]), int.Parse(yearMonthDay[1]), int.Parse(yearMonthDay[2]));
+
+            dateInfoTakenString = DateTime.ParseExact(dateInfoTakenString, "MMM dd, yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+            string[] yearMonthDay2 = dateInfoTakenString.Split('-');
+            dateInfoTaken.Format = DateTimePickerFormat.Custom;
+            dateInfoTaken.CustomFormat = "MMM dd, yyyy";
+            dateInfoTaken.Value = new DateTime(int.Parse(yearMonthDay2[0]), int.Parse(yearMonthDay2[1]), int.Parse(yearMonthDay2[2]));
 
 
-            //dateDiagnosed = DateTime.ParseExact(dateDiagnosed, "MMM dd, yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
-            //string[] yearMonthDay = dateDiagnosed.Split('-');
-            //dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            //dateTimePicker1.CustomFormat = "MMM dd, yyyy";
-            //dateTimePicker1.Value = new DateTime(int.Parse(yearMonthDay[0]), int.Parse(yearMonthDay[1]), int.Parse(yearMonthDay[2]));
+            diabetesType.Text = diabetesTypeString;
 
         }
 
@@ -66,14 +73,19 @@ namespace Test
 
         private void addBackgroundInfobtn_Click(object sender, EventArgs e)
         {
-            if(diabetesType.Text == "")
+            if (diabetesType.Text == "")
             {
                 MessageBox.Show("Something must be entered for each field. If patient is not applicable for a certain field enter 'N/A'.", "Attention", MessageBoxButtons.OK);
                 return;
             }
-            else
+            else if (editing == false)
             {
                 //InsertFunctions.InsertIntoDiabetesBackground(dateInfoTaken.Text, dateDiagnosed.Text, diabetesType.Text, PatientID);
+            }
+            else if (editing == true)
+            {
+                UpdateFunctions.UpdateDiabetesBackgroundInfo(PatientID, dateInfoTaken.Text, dateDiagnosed.Text, diabetesType.Text, editDateInfoTaken, editDateDiagnosed, editDiabetesType);
+                this.Close();
             }
         }
 

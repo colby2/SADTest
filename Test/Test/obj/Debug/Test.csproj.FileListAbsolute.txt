@@ -291,7 +291,6 @@ C:\Users\Owner\Source\Repos\SADTest4\Test\Test\bin\Debug\Test.pdb
 C:\Users\Owner\Source\Repos\SADTest4\Test\Test\bin\Debug\DiabeticHealthDB.dll
 C:\Users\Owner\Source\Repos\SADTest4\Test\Test\bin\Debug\MySqlBackup.dll
 C:\Users\Owner\Source\Repos\SADTest4\Test\Test\bin\Debug\DiabeticHealthDB.pdb
-C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
 C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.AddAllergyInfo.resources
 C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.AddDiabetesBackground.resources
 C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.AddDiabetesMedicaitonInfo.resources
@@ -309,3 +308,4 @@ C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.Hub.resources
 C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.Patient.resources
 C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.Properties.Resources.resources
 C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache

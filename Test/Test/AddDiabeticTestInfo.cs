@@ -78,10 +78,16 @@ namespace Test
                 return;
             }
 
-            else
+            else if(editing == false)
             {
                 //InsertFunctions.InsertIntoDiabeticTests(datetestTaken.Text, microalbumintb.Text, footchecktb.Text, cyvtb.Text, eyeexamtb.Text, counselingtb.Text, PatientID);
             }
+            else if(editing == true)
+            {
+                UpdateFunctions.UpdateDiabeticTestInfo(PatientID, datetestTaken.Text, microalbumintb.Text, footchecktb.Text, cyvtb.Text, eyeexamtb.Text, counselingtb.Text, dateOfTest, microalbiumin, footCheck, currentYearVaccination, diabeticEyeExam, nutritionalCounseling);
+                this.Close();
+            }
+
         }
 
         private void AddDiabeticTestInfo_Load(object sender, EventArgs e)

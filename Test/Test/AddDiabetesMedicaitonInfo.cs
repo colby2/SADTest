@@ -78,9 +78,14 @@ namespace Test
                 MessageBox.Show("Something must be entered for each field. If patient is not applicable for a certain field enter 'N/A'.", "Attention", MessageBoxButtons.OK);
                 return;
             }
-            else
+            else if(editing == false)
             {
                 InsertFunctions.InsertIntoDiabetesMedication(medicationTb.Text, dateTimePicker1.Text, amountTb.Text, frequencyTb.Text, routeTb.Text, PatientID);
+                this.Close();
+            }
+            else if(editing == true)
+            {
+                UpdateFunctions.UpdateDiabetesMedicationInfo(PatientID, medicationTb.Text, dateTimePicker1.Text, amountTb.Text, frequencyTb.Text, routeTb.Text, medName, dateTaken, amount, frequency ,route);
                 this.Close();
             }
         }
