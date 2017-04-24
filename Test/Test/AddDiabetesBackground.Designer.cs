@@ -47,7 +47,7 @@
             this.diabetesType.Multiline = true;
             this.diabetesType.Name = "diabetesType";
             this.diabetesType.Size = new System.Drawing.Size(143, 33);
-            this.diabetesType.TabIndex = 9;
+            this.diabetesType.TabIndex = 3;
             // 
             // dateInfoTaken
             // 
@@ -56,7 +56,7 @@
             this.dateInfoTaken.Location = new System.Drawing.Point(246, 128);
             this.dateInfoTaken.Name = "dateInfoTaken";
             this.dateInfoTaken.Size = new System.Drawing.Size(200, 24);
-            this.dateInfoTaken.TabIndex = 10;
+            this.dateInfoTaken.TabIndex = 2;
             // 
             // dateDiagnosed
             // 
@@ -64,7 +64,7 @@
             this.dateDiagnosed.Location = new System.Drawing.Point(246, 63);
             this.dateDiagnosed.Name = "dateDiagnosed";
             this.dateDiagnosed.Size = new System.Drawing.Size(200, 24);
-            this.dateDiagnosed.TabIndex = 11;
+            this.dateDiagnosed.TabIndex = 1;
             this.dateDiagnosed.ValueChanged += new System.EventHandler(this.dateDiagnosed_ValueChanged);
             // 
             // heartRatelb
@@ -116,7 +116,7 @@
             this.addBackgroundInfobtn.Location = new System.Drawing.Point(539, 338);
             this.addBackgroundInfobtn.Name = "addBackgroundInfobtn";
             this.addBackgroundInfobtn.Size = new System.Drawing.Size(175, 47);
-            this.addBackgroundInfobtn.TabIndex = 29;
+            this.addBackgroundInfobtn.TabIndex = 4;
             this.addBackgroundInfobtn.Text = "Add This Information to The Patients Records";
             this.addBackgroundInfobtn.UseVisualStyleBackColor = true;
             this.addBackgroundInfobtn.Click += new System.EventHandler(this.addBackgroundInfobtn_Click);

@@ -81,7 +81,7 @@
             this.closeForm.Location = new System.Drawing.Point(375, 323);
             this.closeForm.Name = "closeForm";
             this.closeForm.Size = new System.Drawing.Size(146, 37);
-            this.closeForm.TabIndex = 4;
+            this.closeForm.TabIndex = 3;
             this.closeForm.Text = "Close and Return to Main Page";
             this.closeForm.UseVisualStyleBackColor = true;
             this.closeForm.Click += new System.EventHandler(this.closeForm_Click);
@@ -91,7 +91,7 @@
             this.updateAllergyButton.Location = new System.Drawing.Point(193, 323);
             this.updateAllergyButton.Name = "updateAllergyButton";
             this.updateAllergyButton.Size = new System.Drawing.Size(151, 37);
-            this.updateAllergyButton.TabIndex = 5;
+            this.updateAllergyButton.TabIndex = 2;
             this.updateAllergyButton.Text = "Add this Information to the Patients Records";
             this.updateAllergyButton.UseVisualStyleBackColor = true;
             this.updateAllergyButton.Click += new System.EventHandler(this.updateAllergyButton_Click);

@@ -51,7 +51,7 @@
             this.HgA1ctb.Location = new System.Drawing.Point(233, 91);
             this.HgA1ctb.Name = "HgA1ctb";
             this.HgA1ctb.Size = new System.Drawing.Size(143, 29);
-            this.HgA1ctb.TabIndex = 0;
+            this.HgA1ctb.TabIndex = 1;
             this.HgA1ctb.TextChanged += new System.EventHandler(this.HgA1ctb_TextChanged);
             // 
             // LDLtb
@@ -60,7 +60,7 @@
             this.LDLtb.Location = new System.Drawing.Point(233, 276);
             this.LDLtb.Name = "LDLtb";
             this.LDLtb.Size = new System.Drawing.Size(143, 29);
-            this.LDLtb.TabIndex = 1;
+            this.LDLtb.TabIndex = 4;
             // 
             // trigylceridesTb
             // 
@@ -68,7 +68,7 @@
             this.trigylceridesTb.Location = new System.Drawing.Point(233, 351);
             this.trigylceridesTb.Name = "trigylceridesTb";
             this.trigylceridesTb.Size = new System.Drawing.Size(143, 29);
-            this.trigylceridesTb.TabIndex = 2;
+            this.trigylceridesTb.TabIndex = 5;
             // 
             // HDLtb
             // 
@@ -84,7 +84,7 @@
             this.cholesterolTb.Location = new System.Drawing.Point(233, 147);
             this.cholesterolTb.Name = "cholesterolTb";
             this.cholesterolTb.Size = new System.Drawing.Size(143, 29);
-            this.cholesterolTb.TabIndex = 4;
+            this.cholesterolTb.TabIndex = 2;
             // 
             // heartRatelb
             // 
@@ -147,7 +147,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(233, 421);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 24);
-            this.dateTimePicker1.TabIndex = 10;
+            this.dateTimePicker1.TabIndex = 6;
             // 
             // label5
             // 
@@ -166,7 +166,7 @@
             this.addLipidInfobtn.Location = new System.Drawing.Point(677, 498);
             this.addLipidInfobtn.Name = "addLipidInfobtn";
             this.addLipidInfobtn.Size = new System.Drawing.Size(175, 47);
-            this.addLipidInfobtn.TabIndex = 19;
+            this.addLipidInfobtn.TabIndex = 7;
             this.addLipidInfobtn.Text = "Add This Information to The Patients Records";
             this.addLipidInfobtn.UseVisualStyleBackColor = true;
             this.addLipidInfobtn.Click += new System.EventHandler(this.addLipidInfobtn_Click);

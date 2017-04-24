@@ -42,8 +42,8 @@ namespace Test
             this.Parent = parent;
              selectedID = new String(criteria.TakeWhile(Char.IsDigit).ToArray());
 
-            connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
-            MySqlConnection connection = new MySqlConnection(connectionString);
+            connectionString = DatabaseConnection.GetConnection().ToString();
+            MySqlConnection connection = DatabaseConnection.GetConnection();
 
             connection.Open();
 
@@ -248,12 +248,12 @@ namespace Test
         /********************************************************************************************
        * Button Click that opens notes tab on Patient form
        * ******************************************************************************************/
-        private void button1_Click(object sender, EventArgs e)
-        {
-            tcPatient.SelectTab("tpNotes");
-            string searchResults = "SELECT * FROM Demographics WHERE PatientID='" + selectedID + "'";
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    tcPatient.SelectTab("tpNotes");
+        //    string searchResults = "SELECT * FROM Demographics WHERE PatientID='" + selectedID + "'";
             
-        }
+        //}
 
         /********************************************************************************************
        * Button Click that opens new form for user to insert notes for the current patient
@@ -385,7 +385,7 @@ namespace Test
         public void InsertIntoAllergylv()
         {
          
-            MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlConnection connection = DatabaseConnection.GetConnection();
 
             connection.Open();
             string AllergyResults = "SELECT * FROM AllergyInfo WHERE PatientID = " + selectedID + ";";
@@ -409,7 +409,7 @@ namespace Test
         * **************************************************************************************/
         public void InsertIntoMedicationlv()
         {
-            MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlConnection connection = DatabaseConnection.GetConnection();
 
             connection.Open();
             string medicationResults = "SELECT * FROM Medication WHERE PatientID = " + selectedID + ";";
@@ -434,7 +434,7 @@ namespace Test
         * **************************************************************************************/
         public void InsertIntoVitalslv()
         {
-            MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlConnection connection = DatabaseConnection.GetConnection();
 
             connection.Open();
             string vitalsResults = "SELECT * FROM VitalsInformation WHERE PatientID = " + selectedID + ";";
@@ -470,7 +470,7 @@ namespace Test
        * **************************************************************************************/
        public void InsertIntoDiabeticMedslv()
         {
-            MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlConnection connection = DatabaseConnection.GetConnection();
 
             connection.Open();
             string DiabeticMedResults = "SELECT * FROM DiabetesMedication WHERE PatientID = " + selectedID + ";";
@@ -496,7 +496,7 @@ namespace Test
      * **************************************************************************************/
         public void InsertIntoDiabeticTestslv()
         {
-            MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlConnection connection = DatabaseConnection.GetConnection();
 
             connection.Open();
             string DiabeticTestResults = "SELECT * FROM DiabeticTests WHERE PatientID = " + selectedID + ";";
@@ -523,7 +523,7 @@ namespace Test
       * **************************************************************************************/
         public void InsertIntoLipidTestslv()
         {
-            MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlConnection connection = DatabaseConnection.GetConnection();
 
             connection.Open();
             string LipidTestResults = "SELECT * FROM LipidTestInformation WHERE PatientID = " + selectedID + ";";
@@ -567,7 +567,7 @@ namespace Test
        * **************************************************************************************/
         public void InsertIntoDiabeticBackgroundlv()
         {
-            MySqlConnection connection = new MySqlConnection(connectionString);
+            MySqlConnection connection = DatabaseConnection.GetConnection();
 
             connection.Open();
             string DiabeticBackgroundResults = "SELECT * FROM DiabetesBackground WHERE PatientID = " + selectedID + ";";

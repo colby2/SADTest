@@ -150,7 +150,7 @@
             this.HRtb.Multiline = true;
             this.HRtb.Name = "HRtb";
             this.HRtb.Size = new System.Drawing.Size(143, 33);
-            this.HRtb.TabIndex = 8;
+            this.HRtb.TabIndex = 1;
             this.HRtb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // RRtb
@@ -161,7 +161,7 @@
             this.RRtb.Multiline = true;
             this.RRtb.Name = "RRtb";
             this.RRtb.Size = new System.Drawing.Size(143, 33);
-            this.RRtb.TabIndex = 9;
+            this.RRtb.TabIndex = 4;
             this.RRtb.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // systolictb
@@ -172,7 +172,7 @@
             this.systolictb.Multiline = true;
             this.systolictb.Name = "systolictb";
             this.systolictb.Size = new System.Drawing.Size(143, 33);
-            this.systolictb.TabIndex = 10;
+            this.systolictb.TabIndex = 2;
             this.systolictb.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // attb
@@ -183,7 +183,7 @@
             this.attb.Multiline = true;
             this.attb.Name = "attb";
             this.attb.Size = new System.Drawing.Size(143, 33);
-            this.attb.TabIndex = 11;
+            this.attb.TabIndex = 6;
             this.attb.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // htb
@@ -194,7 +194,7 @@
             this.htb.Multiline = true;
             this.htb.Name = "htb";
             this.htb.Size = new System.Drawing.Size(143, 33);
-            this.htb.TabIndex = 12;
+            this.htb.TabIndex = 7;
             this.htb.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // wtb
@@ -205,7 +205,7 @@
             this.wtb.Multiline = true;
             this.wtb.Name = "wtb";
             this.wtb.Size = new System.Drawing.Size(143, 33);
-            this.wtb.TabIndex = 13;
+            this.wtb.TabIndex = 8;
             this.wtb.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // temptb
@@ -216,7 +216,7 @@
             this.temptb.Multiline = true;
             this.temptb.Name = "temptb";
             this.temptb.Size = new System.Drawing.Size(143, 33);
-            this.temptb.TabIndex = 14;
+            this.temptb.TabIndex = 9;
             this.temptb.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
             // 
             // o2sattb
@@ -227,7 +227,7 @@
             this.o2sattb.Multiline = true;
             this.o2sattb.Name = "o2sattb";
             this.o2sattb.Size = new System.Drawing.Size(143, 33);
-            this.o2sattb.TabIndex = 15;
+            this.o2sattb.TabIndex = 5;
             this.o2sattb.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             // 
             // datetakenlb
@@ -246,7 +246,7 @@
             this.button1.Location = new System.Drawing.Point(712, 535);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(175, 47);
-            this.button1.TabIndex = 18;
+            this.button1.TabIndex = 11;
             this.button1.Text = "Add This Information to The Patients Records";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -266,7 +266,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(310, 519);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 24);
-            this.dateTimePicker1.TabIndex = 29;
+            this.dateTimePicker1.TabIndex = 10;
             // 
             // label1
             // 
@@ -287,7 +287,7 @@
             this.diastolictb.Multiline = true;
             this.diastolictb.Name = "diastolictb";
             this.diastolictb.Size = new System.Drawing.Size(143, 33);
-            this.diastolictb.TabIndex = 31;
+            this.diastolictb.TabIndex = 3;
             // 
             // AddVitalsInfo
             // 

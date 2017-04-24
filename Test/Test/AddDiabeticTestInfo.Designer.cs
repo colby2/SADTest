@@ -73,7 +73,7 @@
             this.datetestTaken.Location = new System.Drawing.Point(279, 377);
             this.datetestTaken.Name = "datetestTaken";
             this.datetestTaken.Size = new System.Drawing.Size(200, 24);
-            this.datetestTaken.TabIndex = 14;
+            this.datetestTaken.TabIndex = 6;
             this.datetestTaken.ValueChanged += new System.EventHandler(this.datetestTaken_ValueChanged);
             // 
             // footchecktb
@@ -187,7 +187,7 @@
             this.addDiabeticTestbtn.Location = new System.Drawing.Point(717, 535);
             this.addDiabeticTestbtn.Name = "addDiabeticTestbtn";
             this.addDiabeticTestbtn.Size = new System.Drawing.Size(175, 47);
-            this.addDiabeticTestbtn.TabIndex = 29;
+            this.addDiabeticTestbtn.TabIndex = 7;
             this.addDiabeticTestbtn.Text = "Add This Information to The Patients Records";
             this.addDiabeticTestbtn.UseVisualStyleBackColor = true;
             this.addDiabeticTestbtn.Click += new System.EventHandler(this.addDiabeticTestbtn_Click);

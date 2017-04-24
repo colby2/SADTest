@@ -50,7 +50,7 @@
             this.medicationTb.Multiline = true;
             this.medicationTb.Name = "medicationTb";
             this.medicationTb.Size = new System.Drawing.Size(143, 33);
-            this.medicationTb.TabIndex = 0;
+            this.medicationTb.TabIndex = 1;
             // 
             // amounttb
             // 
@@ -59,7 +59,7 @@
             this.amounttb.Multiline = true;
             this.amounttb.Name = "amounttb";
             this.amounttb.Size = new System.Drawing.Size(143, 33);
-            this.amounttb.TabIndex = 2;
+            this.amounttb.TabIndex = 3;
             this.amounttb.TextChanged += new System.EventHandler(this.amounttb_TextChanged);
             // 
             // frequencytb
@@ -69,7 +69,7 @@
             this.frequencytb.Multiline = true;
             this.frequencytb.Name = "frequencytb";
             this.frequencytb.Size = new System.Drawing.Size(143, 33);
-            this.frequencytb.TabIndex = 3;
+            this.frequencytb.TabIndex = 4;
             // 
             // routeTb
             // 
@@ -78,7 +78,7 @@
             this.routeTb.Multiline = true;
             this.routeTb.Name = "routeTb";
             this.routeTb.Size = new System.Drawing.Size(143, 33);
-            this.routeTb.TabIndex = 4;
+            this.routeTb.TabIndex = 5;
             // 
             // dateTimePicker1
             // 
@@ -86,7 +86,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(232, 185);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 24);
-            this.dateTimePicker1.TabIndex = 5;
+            this.dateTimePicker1.TabIndex = 2;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label1
@@ -145,7 +145,7 @@
             this.button1.Location = new System.Drawing.Point(717, 535);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(175, 47);
-            this.button1.TabIndex = 11;
+            this.button1.TabIndex = 6;
             this.button1.Text = "Add This Information to The Patients Records";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);

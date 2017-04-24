@@ -309,3 +309,4 @@ C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.Patient.resources
 C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.Properties.Resources.resources
 C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
 C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.dll

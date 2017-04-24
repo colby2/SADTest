@@ -43,13 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AllergyInfoGetSet.cs" />
     <Compile Include="DatabaseConnection.cs" />
     <Compile Include="DeleteFunctions.cs" />
-    <Compile Include="DemographicsGetSet.cs" />
     <Compile Include="InsertFunctions.cs" />
     <Compile Include="LoginFunction.cs" />
-    <Compile Include="LoginGetSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UpdateFunctions.cs" />
   </ItemGroup>

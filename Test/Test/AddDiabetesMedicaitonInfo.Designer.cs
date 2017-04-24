@@ -59,7 +59,7 @@
             this.amountTb.Multiline = true;
             this.amountTb.Name = "amountTb";
             this.amountTb.Size = new System.Drawing.Size(143, 33);
-            this.amountTb.TabIndex = 2;
+            this.amountTb.TabIndex = 3;
             this.amountTb.TextChanged += new System.EventHandler(this.amountTb_TextChanged);
             // 
             // routeTb
@@ -69,7 +69,7 @@
             this.routeTb.Multiline = true;
             this.routeTb.Name = "routeTb";
             this.routeTb.Size = new System.Drawing.Size(143, 33);
-            this.routeTb.TabIndex = 3;
+            this.routeTb.TabIndex = 5;
             this.routeTb.TextChanged += new System.EventHandler(this.routeTb_TextChanged);
             // 
             // frequencyTb
@@ -87,7 +87,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(260, 184);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 24);
-            this.dateTimePicker1.TabIndex = 5;
+            this.dateTimePicker1.TabIndex = 2;
             // 
             // label1
             // 
@@ -145,7 +145,7 @@
             this.addInfobtn.Location = new System.Drawing.Point(717, 535);
             this.addInfobtn.Name = "addInfobtn";
             this.addInfobtn.Size = new System.Drawing.Size(175, 47);
-            this.addInfobtn.TabIndex = 11;
+            this.addInfobtn.TabIndex = 6;
             this.addInfobtn.Text = "Add This Information to The Patients Records";
             this.addInfobtn.UseVisualStyleBackColor = true;
             this.addInfobtn.Click += new System.EventHandler(this.addInfobtn_Click);

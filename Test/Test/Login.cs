@@ -27,28 +27,29 @@ namespace Test
 
         private void bLogin_Click(object sender, EventArgs e)
         {
-            int loginParameter = LoginFunction.LoginCheck(tbUsername.Text, tbPassword.Text);
+            //int loginParameter = LoginFunction.LoginCheck(tbUsername.Text, tbPassword.Text);
 
-            if (loginParameter == 1)
-            {
-                ThreadStart hubRef = new ThreadStart(hubThreadStart);
-                Thread hubThread = new Thread(hubRef);
-                hubThread.Start();
-                this.Close();
-            }
-            else if (loginParameter == 2)
-                MessageBox.Show("Incorrect Password");
-            else if (loginParameter == 3)
-                MessageBox.Show("Incorrect Username");
-            else if (loginParameter == 4)
-                MessageBox.Show("Error Logging In");
+            //if (loginParameter == 1)
+            //{
+            //    ThreadStart hubRef = new ThreadStart(hubThreadStart);
+            //    Thread hubThread = new Thread(hubRef);
+            //    hubThread.Start();
+            //    this.Close();
+            //}
+            //else if (loginParameter == 2)
+            //    MessageBox.Show("Incorrect Username or Password");
+            //else if (loginParameter == 3)
+            //    MessageBox.Show("Incorrect Username");
+            //else if (loginParameter == 4)
+            //    MessageBox.Show("Error Logging In");
+
             //Connects to the Database
-            // string connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE=sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
-            //MySqlConnection connection = new MySqlConnection(connectionString);
+            
+            MySqlConnection connection = DatabaseConnection.GetConnection();
 
-            //string checkUsername = "Select count(*) FROM Login WHERE LoginID ='" + tbUsername.Text + "'";
+            string checkUsername = "Select count(*) FROM Login WHERE LoginID ='" + tbUsername.Text + "'";
 
-            /* try
+             try
              {
                  connection.Open();
                  MySqlCommand cmd = new MySqlCommand(checkUsername, connection);
@@ -81,7 +82,7 @@ namespace Test
              {
                  MessageBox.Show("ERROR: " + ex.Message.ToString());
              }
-             */
+             
         }
         
                   private void button1_Click(object sender, EventArgs e)
