@@ -12,9 +12,9 @@ namespace DiabeticHealthDB
        /*
       * Inserts info into Demographic Table from from
       */
-        public static int InsertIntoDemographics(string FirstName, string LastName, string Gender, string DateofLastVisit, string Street, string City, string State, string Zip, string DOB, string Phone, string PrimaryInsuranceProvider, string SecondaryInsuranceProvider, string PatientNotes)
+        public static string InsertIntoDemographics(string FirstName, string LastName, string Gender, string DateofLastVisit, string Street, string City, string State, string Zip, string DOB, string Phone, string PrimaryInsuranceProvider, string SecondaryInsuranceProvider, string PatientNotes)
         {
-            int totalRowsInserted = 0;
+            string inserted = "";
             MySqlConnection conn = DatabaseConnection.GetConnection();
             string qry =
                "INSERT INTO `Demographics`(`FirstName`, `LastName`, `Gender`, `DateofLastVisit`, `Street`, `City`, `State`, `Zip`, `DOB`, `Phone`, `PrimaryInsuranceProvider`, `SecondaryInsuranceProvider`, `PatientNotes`)" +
@@ -36,27 +36,27 @@ namespace DiabeticHealthDB
             try
             {
                 conn.Open();
-                totalRowsInserted = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+                inserted = "Successfully Inserted";
             }
             catch(MySqlException ex)//perhaps pass exception to message box
             {
-                totalRowsInserted = 0;
-                throw ex;
+                inserted = "Error Has Occured";
                
             }
             finally
             {
                 conn.Close();
             }
-            return totalRowsInserted;
+            return inserted;
 
         }
         /*
          * Inserts info into AllergyInfo Table from form
          */
-        public static int InsertIntoAllergyInfo(int PatientID, string AllergicTo, string Reaction)
+        public static string InsertIntoAllergyInfo(int PatientID, string AllergicTo, string Reaction)
         {
-            int totalRowsInserted = 0;
+            string inserted = "";
             MySqlConnection conn = DatabaseConnection.GetConnection();
             string qry =
                 "INSERT INTO `AllergyInfo`(`PatientID`, `AllergicTo`, `Reaction`) VALUES (@PatientID, @AllergicTO, @Reaction);";
@@ -67,27 +67,27 @@ namespace DiabeticHealthDB
             try
             {
                 conn.Open();
-                totalRowsInserted = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+                inserted = "Successfully Inserted";
             }
             catch (MySqlException ex)//perhaps pass exception to message box
             {
-                totalRowsInserted = 0;
-                throw ex;
+                inserted = ex.ToString();
 
             }
             finally
             {
                 conn.Close();
             }
-            return totalRowsInserted;
+            return inserted;
 
         }
         /*
          *Insert function for VitalsInforamtion Table  
          */
-        public static int InsertIntoVitalsInformation(DateTime DateOfTest, int HeartRate, int Systolic, int Diastolic, int RespiratoryRate, int OxygenSaturation, string AirType, int Height, int Weight, double Temperature, int PatientID)
+        public static string InsertIntoVitalsInformation(DateTime DateOfTest, int HeartRate, int Systolic, int Diastolic, int RespiratoryRate, int OxygenSaturation, string AirType, int Height, int Weight, double Temperature, int PatientID)
         {
-            int totalRowsInserted = 0;
+            string inserted = "";
             MySqlConnection conn = DatabaseConnection.GetConnection();
             string qry =
                 "INSERT INTO `VitalsInformation`( `DateofTest`, `HeartRate`, `Systolic`, `Diastolic`, `RespiratoryRate`, `OxygenSaturation`, `AirType`, `Height`, `Weight`, `Temperature`, `PatientID`)" +
@@ -107,26 +107,27 @@ namespace DiabeticHealthDB
             try
             {
                 conn.Open();
-                totalRowsInserted = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+                inserted = "Successfully Inserted";
             }
             catch (MySqlException ex)//perhaps pass exception to message box
             {
-                totalRowsInserted = 0;
-                throw ex;
+                inserted = ex.ToString();
+                
 
             }
             finally
             {
                 conn.Close();
             }
-            return totalRowsInserted;
-
+            return inserted;
         }
         /*
        *Insert function for Medication Table  
        */
-        public static void InsertIntoMedication(string MedicationName, string DateStarted, string Amount, string Frequency, string Route, int PatientID)
+        public static string InsertIntoMedication(string MedicationName, string DateStarted, string Amount, string Frequency, string Route, int PatientID)
         {
+            string inserted = "";
             
             MySqlConnection conn = DatabaseConnection.GetConnection();
             string qry =
@@ -143,25 +144,27 @@ namespace DiabeticHealthDB
             {
                 conn.Open();
                 cmd.ExecuteNonQuery();
+                inserted = "Successfully Inserted";
             }
             catch (MySqlException ex)//perhaps pass exception to message box
             {
 
-                ex.ToString();
+                inserted = ex.ToString();
 
             }
             finally
             {
                 conn.Close();
             }
-            
+            return inserted;
 
         }
         /*
        *Insert function for Diabetic Medication Table  
        */
-        public static void InsertIntoDiabetesMedication(string MedicationName, string DateStarted, string Amount, string Frequency, string Route, int PatientID)
+        public static string InsertIntoDiabetesMedication(string MedicationName, string DateStarted, string Amount, string Frequency, string Route, int PatientID)
         {
+            string inserted = "";
 
             MySqlConnection conn = DatabaseConnection.GetConnection();
             string qry =
@@ -178,26 +181,27 @@ namespace DiabeticHealthDB
             {
                 conn.Open();
                 cmd.ExecuteNonQuery();
+                inserted = "Successfully Inserted";
             }
             catch (MySqlException ex)//perhaps pass exception to message box
             {
 
-                ex.ToString();
+                inserted = ex.ToString();
 
             }
             finally
             {
                 conn.Close();
             }
-
+            return inserted;
 
         }
         /*
        *Insert function for LipidTest  
        */
-        public static void InsertIntoLipidTest(DateTime DateOfTest, double HgA1C, double Cholesterol, double HDL, double LDL, double Triglycerides, int PatientID)
+        public static string InsertIntoLipidTest(DateTime DateOfTest, double HgA1C, double Cholesterol, double HDL, double LDL, double Triglycerides, int PatientID)
         {
-
+            string inserted = ""; 
             MySqlConnection conn = DatabaseConnection.GetConnection();
             string qry =
                 "INSERT INTO `LipidTestInformation`( `DateOfTest`, `HgA1C`, `Cholesterol`, `HDL`, `LDL`, `Triglycerides`, `PatientID`)" +
@@ -214,26 +218,27 @@ namespace DiabeticHealthDB
             {
                 conn.Open();
                 cmd.ExecuteNonQuery();
+                inserted = "Successfully Inserted";
             }
             catch (MySqlException ex)//perhaps pass exception to message box
             {
 
-                ex.ToString();
+                inserted = ex.ToString();
 
             }
             finally
             {
                 conn.Close();
             }
-
+            return inserted;
 
         }
         /*
        *Insert function for Diabetes Background  
        */
-        public static void InsertIntoDiabetesBackground(string DateInfoTaken, string DateDiagnosed, string DiabetesType, int PatientID)
+        public static string InsertIntoDiabetesBackground(string DateInfoTaken, string DateDiagnosed, string DiabetesType, int PatientID)
         {
-
+            string inserted = "";
             MySqlConnection conn = DatabaseConnection.GetConnection();
             string qry =
                 "INSERT INTO `DiabetesBackground`( `DateInfoTaken`, `DateDiagnosed`, `DiabetesType`, `PatientID`)" +
@@ -247,11 +252,12 @@ namespace DiabeticHealthDB
             {
                 conn.Open();
                 cmd.ExecuteNonQuery();
+                inserted = "Successfully Inserted";
             }
             catch (MySqlException ex)//perhaps pass exception to message box
             {
 
-                throw ex;
+                inserted = ex.ToString();
 
             }
             finally
@@ -259,16 +265,16 @@ namespace DiabeticHealthDB
                 conn.Close();
                 
             }
-
+            return inserted;
 
         }
 
         /*
        *Insert function for DiabeticTests
        */
-        public static void InsertIntoDiabeticTests(string DateOfTest, string Microalbumin, string FootCheck, string CurrentYearVaccination, string DiabeticEyeExam, string NutritionalCounseling, int PatientID)
+        public static string InsertIntoDiabeticTests(string DateOfTest, string Microalbumin, string FootCheck, string CurrentYearVaccination, string DiabeticEyeExam, string NutritionalCounseling, int PatientID)
         {
-
+            string inserted = "";
             MySqlConnection conn = DatabaseConnection.GetConnection();
             string qry =
                 "INSERT INTO `DiabeticTests`( `DateOfTest`, `Microalbumin`, `FootCheck`, `CurrentYearVaccination`, `DiabeticEyeExam`, `NutritionalCounseling`, `PatientID`)" +
@@ -285,18 +291,19 @@ namespace DiabeticHealthDB
             {
                 conn.Open();
                 cmd.ExecuteNonQuery();
+                inserted = "Successfully Inserted";
             }
             catch (MySqlException ex)//perhaps pass exception to message box
             {
 
-                throw ex;
+                inserted = ex.ToString();
 
             }
             finally
             {
                 conn.Close();
             }
-
+            return inserted;
 
         }
 

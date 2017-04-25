@@ -99,7 +99,8 @@ namespace Test
             }
             if (ischolesterolCheck && ishgCheck && isHDLCheck && isLDLCheck && isTRICheck && editing == false)
             {
-                InsertFunctions.InsertIntoLipidTest(DateTime.Parse(dateTimePicker1.Text), double.Parse(HgA1ctb.Text), double.Parse(cholesterolTb.Text), double.Parse(HDLtb.Text), double.Parse(LDLtb.Text), double.Parse(trigylceridesTb.Text), PatientID);
+                string inserted = InsertFunctions.InsertIntoLipidTest(DateTime.Parse(dateTimePicker1.Text), double.Parse(HgA1ctb.Text), double.Parse(cholesterolTb.Text), double.Parse(HDLtb.Text), double.Parse(LDLtb.Text), double.Parse(trigylceridesTb.Text), PatientID);
+                MessageBox.Show(inserted);
                 this.Close();
             }
             else if( editing == true)

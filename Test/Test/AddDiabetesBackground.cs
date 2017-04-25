@@ -80,7 +80,8 @@ namespace Test
             }
             else if (editing == false)
             {
-                InsertFunctions.InsertIntoDiabetesBackground(dateInfoTaken.Text, dateDiagnosed.Text, diabetesType.Text, PatientID);
+                string inserted = InsertFunctions.InsertIntoDiabetesBackground(dateInfoTaken.Text, dateDiagnosed.Text, diabetesType.Text, PatientID);
+                MessageBox.Show(inserted);
                 this.Close();
             }
             else if (editing == true)

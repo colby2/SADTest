@@ -161,7 +161,8 @@ namespace Test
             }
             if (isHeightCheck && isWeightCheck && isO2Check && isHeartRateCheck && isRespiratoryRateCheck && isTemperatureCheck && editing == false)
             {
-                InsertFunctions.InsertIntoVitalsInformation(DateTime.Parse(dateTimePicker1.Text), int.Parse(HRtb.Text), Int32.Parse(systolictb.Text), Int32.Parse(RRtb.Text), Int32.Parse(diastolictb.Text), Int32.Parse(o2sattb.Text), attb.Text, Int32.Parse(htb.Text), Int32.Parse(wtb.Text), double.Parse(temptb.Text), PatientID);
+                string inserted = InsertFunctions.InsertIntoVitalsInformation(DateTime.Parse(dateTimePicker1.Text), int.Parse(HRtb.Text), Int32.Parse(systolictb.Text), Int32.Parse(RRtb.Text), Int32.Parse(diastolictb.Text), Int32.Parse(o2sattb.Text), attb.Text, Int32.Parse(htb.Text), Int32.Parse(wtb.Text), double.Parse(temptb.Text), PatientID);
+                MessageBox.Show(inserted);
                 this.Close();
             }
             else if (editing == true)

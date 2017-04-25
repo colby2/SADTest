@@ -78,7 +78,8 @@ namespace Test
             }
             if (editing == false)
             {
-                InsertFunctions.InsertIntoMedication(medicationTb.Text, dateTimePicker1.Text, amounttb.Text, frequencytb.Text, routeTb.Text, PatientID);
+                string inserted = InsertFunctions.InsertIntoMedication(medicationTb.Text, dateTimePicker1.Text, amounttb.Text, frequencytb.Text, routeTb.Text, PatientID);
+                MessageBox.Show(inserted);
                 this.Close();
             }
             else if (editing == true)

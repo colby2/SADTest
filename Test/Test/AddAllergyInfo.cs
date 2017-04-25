@@ -78,7 +78,8 @@ namespace Test
                 }
             if (editing == false)
             {
-                int insertedRows = InsertFunctions.InsertIntoAllergyInfo(PatientID, AllergicTo.Text, Reaction.Text);
+                string insertedRows = InsertFunctions.InsertIntoAllergyInfo(PatientID, AllergicTo.Text, Reaction.Text);
+                MessageBox.Show(insertedRows);
                 AllergicTo.Clear();
                 Reaction.Clear();
             }
