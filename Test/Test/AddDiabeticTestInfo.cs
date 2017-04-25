@@ -80,7 +80,9 @@ namespace Test
 
             else if(editing == false)
             {
-                //InsertFunctions.InsertIntoDiabeticTests(datetestTaken.Text, microalbumintb.Text, footchecktb.Text, cyvtb.Text, eyeexamtb.Text, counselingtb.Text, PatientID);
+                string inserted = InsertFunctions.InsertIntoDiabeticTests(datetestTaken.Text, microalbumintb.Text, footchecktb.Text, cyvtb.Text, eyeexamtb.Text, counselingtb.Text, PatientID);
+                MessageBox.Show(inserted);
+                this.Close();
             }
             else if(editing == true)
             {

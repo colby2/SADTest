@@ -39,7 +39,8 @@ namespace Test
                 MessageBox.Show("Something must be entered for each field. If patient is not applicable for a certain field enter 'N/A'.", "Attention", MessageBoxButtons.OK);
                 return;
             }
-            int rowsInserted = InsertFunctions.InsertIntoDemographics(fnTb.Text, lnTB.Text, gtb.Text, dvtb.Text, stb.Text, ctb.Text, sttb.Text, ztb.Text, dbtb.Text, ptb.Text, pitb.Text, sitb.Text, ntb.Text);
+            string rowsInserted = InsertFunctions.InsertIntoDemographics(fnTb.Text, lnTB.Text, gtb.Text, dvtb.Text, stb.Text, ctb.Text, sttb.Text, ztb.Text, dbtb.Text, ptb.Text, pitb.Text, sitb.Text, ntb.Text);
+            MessageBox.Show(rowsInserted);
             this.Close();
             
         }
