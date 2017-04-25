@@ -331,7 +331,7 @@
             this.tbDOB.ReadOnly = true;
             this.tbDOB.Size = new System.Drawing.Size(130, 24);
             this.tbDOB.TabIndex = 9;
-            this.tbDOB.TextChanged += new System.EventHandler(this.tbAge_TextChanged);
+           // this.tbDOB.TextChanged += new System.EventHandler(this.tbAge_TextChanged);
             // 
             // tbZip
             // 

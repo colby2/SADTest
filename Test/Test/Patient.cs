@@ -14,6 +14,9 @@ using System.Globalization;
 
 namespace Test
 {
+    /// <summary>
+    /// This class represent the Form for controlling patient information.
+    /// </summary>
     public partial class Patient : Form
     {
 
@@ -23,23 +26,35 @@ namespace Test
         private string completeCurrentDate;//will hold complete current date 
         string selectedID;
         string connectionString;
-        Hub Parent = null;
+        int threadCount = 0;
+        Thread[] allThreads = new Thread[100];
+        Hub parentHub = null;
+
+        /// <summary>
+        /// Default Contructor: Do not call, used for debugging
+        /// </summary>
         public Patient()
         {
             InitializeComponent();
 
         }
 
-
-
-        /****************************************************************************************************
-         * Search function that will connect to DB and perform a SELECT statement on the DB bringing back all 
-         * the information that matches the users search criteria
-         * **************************************************************************************************/
-        public Patient(string criteria,Hub parent)
+        /// <summary>
+        /// Constructor that creates patient form and automatically runs a Search function that will connect 
+        /// to DB and perform a SELECT statement on the DB bringing back all the information that matches the 
+        /// users search criteria.
+        /// </summary>
+        /// <param name="criteria">
+        /// Criteria is the patient's PatientID in the database.
+        /// </param>
+        /// <param name="parent">
+        /// Parent is a reference to the calling HUB form, this is needed so any new forms created here can be 
+        /// tabs within the parent HUB form.
+        /// </param>
+        public Patient(string criteria,Hub parentHub)
         {
             InitializeComponent();
-            this.Parent = parent;
+            this.parentHub = parentHub;
              selectedID = new String(criteria.TakeWhile(Char.IsDigit).ToArray());
 
             connectionString = DatabaseConnection.GetConnection().ToString();
@@ -109,229 +124,81 @@ namespace Test
          * populates lvDiabeticBackground
          * **************************************************************************************/
           InsertIntoDiabeticBackgroundlv();
-
-
-
-
-
-
-
-
-           
-
-
     }
-        /********************************************************************************************
-         * button click for updating the date of last visit
-         * ******************************************************************************************/
-        private void visitDateUpdate_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Function that calculates the current date in the format "Jan 01, 2000".
+        /// </summary>
+        /// <returns>
+        /// Returns the current date as a string in the format. 
+        /// </returns>
+        public string getCurrentDate()
         {
-            
-            int DateUpdated = UpdateFunctions.UpdateDateOfLastVisit(Int32.Parse(PatientId), getCurrentDate());
-            tbDateOfLastVisit.Text = getCurrentDate();
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-      
-
-        /********************************************************************************************
-         * Button Click that allows user to update patient demographic information
-         * ******************************************************************************************/
-        private void bEdit_Click(object sender, EventArgs e)
-        {
-
-
-            if (bEdit.Text == "Edit")
+            string[] dateArray = currentDate.Split('/');//holds the current date in an array separated based on month, day and year
+            string monthNumber = dateArray[1].ToString();//will grab the current month in number format
+            string yearNumber = dateArray[2].ToString();//Holds current year
+            string dayNumber = dateArray[0].ToString();//Holds current Day of week 
+                                                       /************************************************************************************************************
+                                                        * switch statement that will take month number and (ex: 03) and turn it into the month name (ex: March)
+                                                        * **********************************************************************************************************/
+            switch (monthNumber)
             {
-                tbFirstname.ReadOnly = false;
-                tbLastname.ReadOnly = false;
-                tbGender.ReadOnly = false;
-                tbDateOfLastVisit.ReadOnly = false;
-                tbStreet.ReadOnly = false;
-                tbCity.ReadOnly = false;
-                tbState.ReadOnly = false;
-                tbZip.ReadOnly = false;
-                tbDOB.ReadOnly = false;
-                tbPhone.ReadOnly = false;
-                tbPrimaryInsurance.ReadOnly = false;
-                tbSecondaryInsurance.ReadOnly = false;
-
-                bEdit.Text = "Submit Changes";
+                case "01":
+                    monthName = "Jan";
+                    break;
+                case "02":
+                    monthName = "Feb";
+                    break;
+                case "03":
+                    monthName = "Mar";
+                    break;
+                case "04":
+                    monthName = "April";
+                    break;
+                case "05":
+                    monthName = "May";
+                    break;
+                case "06":
+                    monthName = "June";
+                    break;
+                case "07":
+                    monthName = "July";
+                    break;
+                case "08":
+                    monthName = "Aug";
+                    break;
+                case "09":
+                    monthName = "Sept";
+                    break;
+                case "10":
+                    monthName = "Oct";
+                    break;
+                case "11":
+                    monthName = "Nov";
+                    break;
+                case "12":
+                    monthName = "Dec";
+                    break;
             }
-            else if (bEdit.Text == "Submit Changes")
-            {
-                tbFirstname.ReadOnly = true;
-                tbLastname.ReadOnly = true;
-                tbGender.ReadOnly = true;
-                tbDateOfLastVisit.ReadOnly = true;
-                tbStreet.ReadOnly = true;
-                tbCity.ReadOnly = true;
-                tbState.ReadOnly = true;
-                tbZip.ReadOnly = true;
-                tbDOB.ReadOnly = true;
-                tbPhone.ReadOnly = true;
-                tbPrimaryInsurance.ReadOnly = true;
-                tbSecondaryInsurance.ReadOnly = true;
+            /*must be placed here after switch. Cannot be placed in visitDateUpdate button click function*/
+            completeCurrentDate = monthName + " " + dayNumber + ", " + yearNumber;//holds complete current date in user specified format
+            return completeCurrentDate;
+        }        
+        
 
-                //TODO: Pull information from text boxes here and update database.
-                //need to fix to where if nothing is updated it doesnt output the Message box that says we have updated records for this patient
-                int Updated = UpdateFunctions.UpdateDemographics(Int32.Parse(PatientId), tbFirstname.Text, tbLastname.Text, tbGender.Text, tbDateOfLastVisit.Text, tbStreet.Text, tbCity.Text, tbState.Text, tbZip.Text, tbDOB.Text, tbPhone.Text, tbPrimaryInsurance.Text, tbSecondaryInsurance.Text);
-                if (Updated == 1)
-                    MessageBox.Show("You Have Updated the Records for This Patient");
-                else
-                    MessageBox.Show("No Records Updated");
-                bEdit.Text = "Edit";
-            }
-
-
-        }
-
-        private void tpDemographics_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbAge_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        Thread[] allThreads = new Thread[100];
-        int threadCount = 0;
-        //todo: add link to graphs
-        private void bTrends_Click(object sender, EventArgs e)
-        {
-            ParameterizedThreadStart pat = new ParameterizedThreadStart(graphThreadStart);
-            allThreads[threadCount] = new Thread(pat);
-            allThreads[threadCount].IsBackground = true;
-            allThreads[threadCount].Start(selectedID);
-        }
-
-        private void Patient_FormClosing(Object Sender, FormClosedEventHandler e)
-        {
-            for (int i = 0; i < threadCount; i++)
-            {
-                allThreads[i].Abort();
-            }
-            this.Close();
-        }
-
-        public static void graphThreadStart(object uniqueID)
-        {
-            GraphTemplate graph = new GraphTemplate(uniqueID.ToString());
-            graph.ShowDialog();
-        }
-
-        private void lvAllergyList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Patient_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        /********************************************************************************************
-       * Button Click that opens notes tab on Patient form
-       * ******************************************************************************************/
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    tcPatient.SelectTab("tpNotes");
-        //    string searchResults = "SELECT * FROM Demographics WHERE PatientID='" + selectedID + "'";
-            
-        //}
-
-        /********************************************************************************************
-       * Button Click that opens new form for user to insert notes for the current patient
-       * ******************************************************************************************/
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-            if (addNotes.Text.Contains("Edit"))
-            {
-                tbNotes.ReadOnly = false;
-                
-                addNotes.Text = "Submit Addition";
-                tbNotes.AppendText(System.Environment.NewLine + System.Environment.NewLine + getCurrentDate() + "\n");
-                tbNotes.Focus();
-                
-            }
-            else if(addNotes.Text.Contains("Submit"))
-            {
-                tbNotes.ReadOnly = true;
-               
-                UpdateFunctions.UpdateNotes(Int32.Parse(PatientId), tbNotes.Text);
-                addNotes.Text = "Edit Notes";
-
-            }
-            
-           
-            
-        }
-
-        /********************************************************************************************
-       * Button Click that allows user to delete a user from the database. Calls the delete funciton
-       * for demographics and asks for confirmation before deleteing. 
-       * ******************************************************************************************/
-        private void bDelete_Click(object sender, EventArgs e)
-        {
-            DialogResult confirmation = new DialogResult();
-            confirmation = MessageBox.Show("WARNING: You are about to delete Patient Information. Click OK to continue", "ATTENTION: PLEASE READ", MessageBoxButtons.OKCancel);
-            if (confirmation == DialogResult.OK)
-            {
-                DialogResult confirmation2 = new DialogResult();
-                confirmation2 = MessageBox.Show("Warning: Are you sure you wish to delete this Patients Information?", "ATTENTION PLEASE READ", MessageBoxButtons.YesNo);
-                if (confirmation2 == DialogResult.Yes)
-                {
-                    int deletedRows = DeleteFunctions.DeletePatient(Int32.Parse(PatientId));
-                    MessageBox.Show("Patient Information Deleted");
-                    Parent.backgroundWorker2.RunWorkerAsync();
-                    this.Close();
-                }
-                else if(confirmation2 == DialogResult.No)
-                {
-
-                    MessageBox.Show("Patient NOT Deleted", "", MessageBoxButtons.OK);
-                }
-
-            }
-            else if (confirmation == DialogResult.Cancel)
-            {
-                MessageBox.Show("Patient NOT Deleted", "", MessageBoxButtons.OK);
-
-            }
-        }
-
-        private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        /********************************************************************************************
-      * Button Click that refreshes
-      * ******************************************************************************************/
+        /// <summary>
+        /// Button Click that refreshes
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void refreshButtonAllergy_Click_1(object sender, EventArgs e)
         {
             RefreshListViews();
         }
 
-        /*****************************************************************************************
-         * Function that refreshed all list views
-         * ***************************************************************************************/
+
+        /// <summary>
+        /// Function that refreshed all list views
+        /// </summary>
         public void RefreshListViews()
         {
             if (tcPatient.SelectedTab == tcPatient.TabPages["tpAllergies"])
@@ -379,9 +246,10 @@ namespace Test
             }
         }
 
-        /****************************************************************************************
-      * Function that populates the allergy list view
-      * **************************************************************************************/
+
+        /// <summary>
+        /// Function that populates the allergy list view
+        /// </summary>
         public void InsertIntoAllergylv()
         {
          
@@ -404,9 +272,10 @@ namespace Test
             connection.Close();
 
         }
-        /****************************************************************************************
-        * Function that populates the medication list view
-        * **************************************************************************************/
+
+        /// <summary>
+        /// Function that populates the medication list view
+        /// </summary>
         public void InsertIntoMedicationlv()
         {
             MySqlConnection connection = DatabaseConnection.GetConnection();
@@ -429,9 +298,10 @@ namespace Test
             reader.Close();
             connection.Close();
         }
-        /****************************************************************************************
-        * Function that populates the vitals list view
-        * **************************************************************************************/
+
+        /// <summary>
+        /// Function that populates the vitals list view
+        /// </summary>
         public void InsertIntoVitalslv()
         {
             MySqlConnection connection = DatabaseConnection.GetConnection();
@@ -465,10 +335,11 @@ namespace Test
             connection.Close();
         }
 
-        /****************************************************************************************
-       * Function that populates the Diabetic Meds list view
-       * **************************************************************************************/
-       public void InsertIntoDiabeticMedslv()
+
+        /// <summary>
+        /// Function that populates the Diabetic Meds list view
+        /// </summary>
+        public void InsertIntoDiabeticMedslv()
         {
             MySqlConnection connection = DatabaseConnection.GetConnection();
 
@@ -491,9 +362,10 @@ namespace Test
             connection.Close();
         }
 
-        /****************************************************************************************
-     * Function that populates the Diabetic Tests list view
-     * **************************************************************************************/
+
+        /// <summary>
+        /// Function that populates the Diabetic Tests list view
+        /// </summary>
         public void InsertIntoDiabeticTestslv()
         {
             MySqlConnection connection = DatabaseConnection.GetConnection();
@@ -518,9 +390,10 @@ namespace Test
             connection.Close();
         }
 
-        /****************************************************************************************
-      * Function that populates the Lipid Tests list view
-      * **************************************************************************************/
+
+        /// <summary>
+        /// Function that populates the Lipid Tests list view
+        /// </summary>
         public void InsertIntoLipidTestslv()
         {
             MySqlConnection connection = DatabaseConnection.GetConnection();
@@ -560,11 +433,9 @@ namespace Test
             connection.Close();
         }
 
-        
-
-        /****************************************************************************************
-       * Function that populates the Lipid Tests list view
-       * **************************************************************************************/
+        /// <summary>
+        /// Function that populates the Lipid Tests list view
+        /// </summary>
         public void InsertIntoDiabeticBackgroundlv()
         {
             MySqlConnection connection = DatabaseConnection.GetConnection();
@@ -585,59 +456,7 @@ namespace Test
             reader.Close();
             connection.Close();
         }
-
-        public string getCurrentDate()
-        {
-            string[] dateArray = currentDate.Split('/');//holds the current date in an array separated based on month, day and year
-            string monthNumber = dateArray[1].ToString();//will grab the current month in number format
-            string yearNumber = dateArray[2].ToString();//Holds current year
-            string dayNumber = dateArray[0].ToString();//Holds current Day of week 
-               /************************************************************************************************************
-                * switch statement that will take month number and (ex: 03) and turn it into the month name (ex: March)
-                * **********************************************************************************************************/
-            switch (monthNumber)
-            {
-                case "01":
-                    monthName = "Jan";
-                    break;
-                case "02":
-                    monthName = "Feb";
-                    break;
-                case "03":
-                    monthName = "Mar";
-                    break;
-                case "04":
-                    monthName = "April";
-                    break;
-                case "05":
-                    monthName = "May";
-                    break;
-                case "06":
-                    monthName = "June";
-                    break;
-                case "07":
-                    monthName = "July";
-                    break;
-                case "08":
-                    monthName = "Aug";
-                    break;
-                case "09":
-                    monthName = "Sept";
-                    break;
-                case "10":
-                    monthName = "Oct";
-                    break;
-                case "11":
-                    monthName = "Nov";
-                    break;
-                case "12":
-                    monthName = "Dec";
-                    break;
-            }
-            /*must be placed here after switch. Cannot be placed in visitDateUpdate button click function*/
-            completeCurrentDate = monthName + " " + dayNumber + ", " + yearNumber;//holds complete current date in user specified format
-            return completeCurrentDate;
-        }
+        
 
         private void deleteSelectedRow_Click(object sender, EventArgs e)
         {
@@ -756,10 +575,201 @@ namespace Test
             RefreshListViews();
         }
 
+        /********************************************************************************************
+        * button click for updating the date of last visit
+        * ******************************************************************************************/
+        private void visitDateUpdate_Click(object sender, EventArgs e)
+        {
+
+            int DateUpdated = UpdateFunctions.UpdateDateOfLastVisit(Int32.Parse(PatientId), getCurrentDate());
+            tbDateOfLastVisit.Text = getCurrentDate();
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        /********************************************************************************************
+         * Button Click that allows user to update patient demographic information
+         * ******************************************************************************************/
+        private void bEdit_Click(object sender, EventArgs e)
+        {
+
+
+            if (bEdit.Text == "Edit")
+            {
+                tbFirstname.ReadOnly = false;
+                tbLastname.ReadOnly = false;
+                tbGender.ReadOnly = false;
+                tbDateOfLastVisit.ReadOnly = false;
+                tbStreet.ReadOnly = false;
+                tbCity.ReadOnly = false;
+                tbState.ReadOnly = false;
+                tbZip.ReadOnly = false;
+                tbDOB.ReadOnly = false;
+                tbPhone.ReadOnly = false;
+                tbPrimaryInsurance.ReadOnly = false;
+                tbSecondaryInsurance.ReadOnly = false;
+
+                bEdit.Text = "Submit Changes";
+            }
+            else if (bEdit.Text == "Submit Changes")
+            {
+                tbFirstname.ReadOnly = true;
+                tbLastname.ReadOnly = true;
+                tbGender.ReadOnly = true;
+                tbDateOfLastVisit.ReadOnly = true;
+                tbStreet.ReadOnly = true;
+                tbCity.ReadOnly = true;
+                tbState.ReadOnly = true;
+                tbZip.ReadOnly = true;
+                tbDOB.ReadOnly = true;
+                tbPhone.ReadOnly = true;
+                tbPrimaryInsurance.ReadOnly = true;
+                tbSecondaryInsurance.ReadOnly = true;
+
+                //TODO: Pull information from text boxes here and update database.
+                //need to fix to where if nothing is updated it doesnt output the Message box that says we have updated records for this patient
+                int Updated = UpdateFunctions.UpdateDemographics(Int32.Parse(PatientId), tbFirstname.Text, tbLastname.Text, tbGender.Text, tbDateOfLastVisit.Text, tbStreet.Text, tbCity.Text, tbState.Text, tbZip.Text, tbDOB.Text, tbPhone.Text, tbPrimaryInsurance.Text, tbSecondaryInsurance.Text);
+                if (Updated == 1)
+                    MessageBox.Show("You Have Updated the Records for This Patient");
+                else
+                    MessageBox.Show("No Records Updated");
+                bEdit.Text = "Edit";
+            }
+
+
+        }
+
+        private void tpDemographics_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Creates a Graph Thread in a new window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bTrends_Click(object sender, EventArgs e)
+        {
+            ParameterizedThreadStart pat = new ParameterizedThreadStart(graphThreadStart);
+            allThreads[threadCount] = new Thread(pat);
+            allThreads[threadCount].IsBackground = true;
+            allThreads[threadCount].Start(selectedID);
+        }
+
+        private void Patient_FormClosing(Object Sender, FormClosedEventHandler e)
+        {
+            for (int i = 0; i < threadCount; i++)
+            {
+                allThreads[i].Abort();
+            }
+            this.Close();
+        }
+
+        public static void graphThreadStart(object uniqueID)
+        {
+            GraphTemplate graph = new GraphTemplate(uniqueID.ToString());
+            graph.ShowDialog();
+        }
+
+        private void lvAllergyList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Patient_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        /********************************************************************************************
+       * Button Click that opens new form for user to insert notes for the current patient
+       * ******************************************************************************************/
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            if (addNotes.Text.Contains("Edit"))
+            {
+                tbNotes.ReadOnly = false;
+
+                addNotes.Text = "Submit Addition";
+                tbNotes.AppendText(System.Environment.NewLine + System.Environment.NewLine + getCurrentDate() + "\n");
+                tbNotes.Focus();
+
+            }
+            else if (addNotes.Text.Contains("Submit"))
+            {
+                tbNotes.ReadOnly = true;
+
+                UpdateFunctions.UpdateNotes(Int32.Parse(PatientId), tbNotes.Text);
+                addNotes.Text = "Edit Notes";
+
+            }
+
+
+
+        }
+
+
+        /// <summary>
+        /// Button Click that allows user to delete a user from the database. Calls the delete funciton
+        ///for demographics and asks for confirmation before deleteing.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bDelete_Click(object sender, EventArgs e)
+        {
+            DialogResult confirmation = new DialogResult();
+            confirmation = MessageBox.Show("WARNING: You are about to delete Patient Information. Click OK to continue", "ATTENTION: PLEASE READ", MessageBoxButtons.OKCancel);
+            if (confirmation == DialogResult.OK)
+            {
+                DialogResult confirmation2 = new DialogResult();
+                confirmation2 = MessageBox.Show("Warning: Are you sure you wish to delete this Patients Information?", "ATTENTION PLEASE READ", MessageBoxButtons.YesNo);
+                if (confirmation2 == DialogResult.Yes)
+                {
+                    int deletedRows = DeleteFunctions.DeletePatient(Int32.Parse(PatientId));
+                    MessageBox.Show("Patient Information Deleted");
+                    parentHub.backgroundWorker2.RunWorkerAsync();
+                    this.Close();
+                }
+                else if (confirmation2 == DialogResult.No)
+                {
+
+                    MessageBox.Show("Patient NOT Deleted", "", MessageBoxButtons.OK);
+                }
+
+            }
+            else if (confirmation == DialogResult.Cancel)
+            {
+                MessageBox.Show("Patient NOT Deleted", "", MessageBoxButtons.OK);
+
+            }
+        }
+
+        private void listView1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+
         /*
          *Buttons that open new forms that are used for inserting data into the database 
          * */
-         
+
         private void addAllergyButton_Click(object sender, EventArgs e)
         {
             AddAllergyInfo addAllergyForm = new AddAllergyInfo(Int32.Parse(PatientId));
@@ -953,7 +963,6 @@ namespace Test
 
         }
 
-       
     }
 }
 

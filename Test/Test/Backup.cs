@@ -20,6 +20,13 @@ namespace Test
             InitializeComponent();
         }
 
+        string passPhrase = "Pas5pr@se";        // can be any string
+        string saltValue = "s@1tValue";        // can be any string
+        string hashAlgorithm = "SHA1";             // can be "MD5"
+        int passwordIterations = 2;                // can be any number
+        string initVector = "@1B2c3D4e5F6g7H8"; // must be 16 bytes
+        int keySize = 256;                // can be 192 or 128
+
         private void backupBtn_Click(object sender, EventArgs e)
         {
             
@@ -44,7 +51,26 @@ namespace Test
                                 connection.Open();
                                 backup.ExportToFile(fileName);
                                 connection.Close();
+                                string wholeFile = RijndaelSimple.Encrypt(File.ReadAllText(fileName), passPhrase, saltValue, hashAlgorithm, passwordIterations, initVector, keySize);
+                                File.WriteAllText(fileName, wholeFile);
                             }
+                        }
+                    }
+                }
+            }
+            else {
+                using (MySqlConnection connection = DatabaseConnection.GetConnection())
+                {
+                    using (MySqlCommand cmd = new MySqlCommand())
+                    {
+                        using (MySqlBackup backup = new MySqlBackup(cmd))
+                        {
+                            cmd.Connection = connection;
+                            connection.Open();
+                            backup.ExportToFile(fileName);
+                            connection.Close();
+                            string wholeFile = RijndaelSimple.Encrypt(File.ReadAllText(fileName), passPhrase, saltValue, hashAlgorithm, passwordIterations, initVector, keySize);
+                            File.WriteAllText(fileName, wholeFile);
                         }
                     }
                 }
@@ -66,8 +92,13 @@ namespace Test
                         {
                             cmd.Connection = connection;
                             connection.Open();
+                            string wholeFile = RijndaelSimple.Decrypt(File.ReadAllText(fileName), passPhrase, saltValue, hashAlgorithm, passwordIterations, initVector, keySize);
+                            File.WriteAllText(fileName, wholeFile);
                             restoreDB.ImportFromFile(fileName);
                             connection.Close();
+                            wholeFile = RijndaelSimple.Encrypt(File.ReadAllText(fileName), passPhrase, saltValue, hashAlgorithm, passwordIterations, initVector, keySize);
+                            File.WriteAllText(fileName, wholeFile);
+
                         }
                     }
                 }

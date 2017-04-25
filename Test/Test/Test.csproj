@@ -104,6 +104,7 @@
     <Compile Include="Backup.Designer.cs">
       <DependentUpon>Backup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Rijndael.cs" />
     <Compile Include="Trends.cs">
       <SubType>Form</SubType>
     </Compile>
