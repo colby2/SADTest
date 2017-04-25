@@ -328,7 +328,7 @@
             // 
             // currentDatebt
             // 
-            this.currentDatebt.Location = new System.Drawing.Point(264, 486);
+            this.currentDatebt.Location = new System.Drawing.Point(262, 529);
             this.currentDatebt.Name = "currentDatebt";
             this.currentDatebt.Size = new System.Drawing.Size(109, 31);
             this.currentDatebt.TabIndex = 27;
