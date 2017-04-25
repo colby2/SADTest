@@ -236,7 +236,7 @@ namespace DiabeticHealthDB
 
             MySqlConnection conn = DatabaseConnection.GetConnection();
             string qry =
-                "INSERT INTO `DiabtetesBackground`( `DateInfoTaken`, `DateDiagnosed`, `DiabetesType`, `PatientID`)" +
+                "INSERT INTO `DiabetesBackground`( `DateInfoTaken`, `DateDiagnosed`, `DiabetesType`, `PatientID`)" +
                 "VALUES (@DateInfoTaken, @DateDiagnosed, @DiabetesType, @PatientID);";
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.Parameters.AddWithValue("@DateInfoTaken", DateInfoTaken);
@@ -251,12 +251,13 @@ namespace DiabeticHealthDB
             catch (MySqlException ex)//perhaps pass exception to message box
             {
 
-                ex.ToString();
+                throw ex;
 
             }
             finally
             {
                 conn.Close();
+                
             }
 
 
@@ -270,8 +271,8 @@ namespace DiabeticHealthDB
 
             MySqlConnection conn = DatabaseConnection.GetConnection();
             string qry =
-                "INSERT INTO `LipidTestInformation`( `DateOfTest`, `Microalbumin`, `FootCheck`, `CurrentYearVaccination`, `DiabeticEyeExam`, `NutritionCounseling`, `PatientID`)" +
-                "VALUES (@DateOfTest, @Microalbumin, @FootCheck, @CurrentYearVaccination, @DiabeticEyeExam, @NutritionCounseling, @PatientID);";
+                "INSERT INTO `DiabeticTests`( `DateOfTest`, `Microalbumin`, `FootCheck`, `CurrentYearVaccination`, `DiabeticEyeExam`, `NutritionalCounseling`, `PatientID`)" +
+                "VALUES (@DateOfTest, @Microalbumin, @FootCheck, @CurrentYearVaccination, @DiabeticEyeExam, @NutritionalCounseling, @PatientID);";
             MySqlCommand cmd = new MySqlCommand(qry, conn);
             cmd.Parameters.AddWithValue("@DateOfTest", DateOfTest);
             cmd.Parameters.AddWithValue("@Microalbumin", Microalbumin);
@@ -288,7 +289,7 @@ namespace DiabeticHealthDB
             catch (MySqlException ex)//perhaps pass exception to message box
             {
 
-                ex.ToString();
+                throw ex;
 
             }
             finally
