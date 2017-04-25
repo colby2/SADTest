@@ -44,7 +44,6 @@ namespace Test
                                 connection.Open();
                                 backup.ExportToFile(fileName);
                                 connection.Close();
-                                Console.WriteLine("Got HERE!");
                             }
                         }
                     }
