@@ -18,8 +18,6 @@ namespace Test
         /***********************************************************
          * Declaration of global variables used throughout the form
          * *********************************************************/
-        String graphName = "Default";
-        String id;
         TestNum HgA1C = new TestNum("HgA1C", "LipidTestInformation", 2);
         TestNum Cholesterol = new TestNum("Cholesterol", "LipidTestInformation", 3);
         TestNum HDL = new TestNum("HDL", "LipidTestInformation", 4);
