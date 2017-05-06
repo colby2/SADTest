@@ -15,7 +15,7 @@ namespace DiabeticHealthDB
             // it can be referenced in other classes to provide a connection to the database where needed
             //For example, a function containing a query on the DB
             string connectionString;
-            connectionString = "SERVER=localhost; DATABASE =dhrp; USERNAME=root; Password=password";
+            connectionString = "SERVER=sql9.freemysqlhosting.net; DATABASE =sql9160618; USERNAME=sql9160618; Password=uyRtRHT7yM";
             MySqlConnection conn = new MySqlConnection(connectionString);
             return conn;
         }

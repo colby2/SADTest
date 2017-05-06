@@ -86,10 +86,10 @@ namespace Test
             double cholesterolCheck, hgCheck, HDLCheck, LDLCheck, triglyceridesCheck;
 
             bool ischolesterolCheck= double.TryParse(str, out cholesterolCheck);
-            bool ishgCheck = double.TryParse(str, out hgCheck);
-            bool isHDLCheck = double.TryParse(str, out HDLCheck);
-            bool isLDLCheck = double.TryParse(str, out LDLCheck);
-            bool isTRICheck = double.TryParse(str, out triglyceridesCheck);
+            bool ishgCheck = double.TryParse(str1, out hgCheck);
+            bool isHDLCheck = double.TryParse(str2, out HDLCheck);
+            bool isLDLCheck = double.TryParse(str3, out LDLCheck);
+            bool isTRICheck = double.TryParse(str4, out triglyceridesCheck);
 
 
             if (HgA1ctb.Text == "" || cholesterolTb.Text == "" || HDLtb.Text == "" || LDLtb.Text == "" || trigylceridesTb.Text == "")
