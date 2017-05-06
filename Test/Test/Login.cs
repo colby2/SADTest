@@ -18,31 +18,21 @@ namespace Test
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Creates new Hub, call after successful login
+        /// </summary>
         public static void hubThreadStart()
         {
             Hub main = new Hub();
             main.ShowDialog();
         }
-
+        /// <summary>
+        /// Connects to database and determines if Username and Password match. If successful start the hub.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bLogin_Click(object sender, EventArgs e)
         {
-            //int loginParameter = LoginFunction.LoginCheck(tbUsername.Text, tbPassword.Text);
-
-            //if (loginParameter == 1)
-            //{
-            //    ThreadStart hubRef = new ThreadStart(hubThreadStart);
-            //    Thread hubThread = new Thread(hubRef);
-            //    hubThread.Start();
-            //    this.Close();
-            //}
-            //else if (loginParameter == 2)
-            //    MessageBox.Show("Incorrect Username or Password");
-            //else if (loginParameter == 3)
-            //    MessageBox.Show("Incorrect Username");
-            //else if (loginParameter == 4)
-            //    MessageBox.Show("Error Logging In");
-
             //Connects to the Database
             
             MySqlConnection connection = DatabaseConnection.GetConnection();

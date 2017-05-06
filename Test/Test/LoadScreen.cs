@@ -33,7 +33,11 @@ namespace Test
         }
 
         public int timeLeft { get; set; }
-
+        /// <summary>
+        /// Isn't actually loading any data, currently is based on a timer. After finished starts login form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (timeLeft > 0)
