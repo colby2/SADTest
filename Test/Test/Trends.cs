@@ -31,7 +31,6 @@ namespace Test
         TestNum Patient_Height = new TestNum("Height", "VitalsInformation", 8);//Renamed from height since a inherited variable is named height.
         TestNum Weight = new TestNum("Weight", "VitalsInformation", 9);
         TestNum Temperature = new TestNum("Temperature", "VitalsInformation", 10);
-        //TestNum BMI = new TestNum("BMI", "VitalsInformation", 10);
         TestNum Systolic = new TestNum("Systolic", "VitalsInformation", 3);
         TestNum Diastolic = new TestNum("Diastolic", "VitalsInformation", 4);
 
@@ -115,7 +114,12 @@ namespace Test
         {
 
         }
-
+        /// <summary>
+        /// General search that returns the average of the most recent HgA1C and HDL test for all patients.
+        /// </summary>
+        /// <returns>
+        /// Returns a ListViewItem with the first slot being HDL and second being HgA1C.
+        /// </returns>
        private ListViewItem DiabeticSearch()
         {
             connection.Open();
@@ -140,7 +144,12 @@ namespace Test
             reader.Close();
             return lv;
         }
-
+        /// <summary>
+        /// Search that returns the average of the most recent HgA1C and HDL test for all male patients.
+        /// </summary>
+        /// <returns>
+        /// Returns a ListViewItem with the first slot being HDL and second being HgA1C.
+        /// </returns>
         private ListViewItem MaleDiabeticSearch()
         {
             connection.Open();
@@ -166,7 +175,12 @@ namespace Test
             reader.Close();
             return lv;
         }
-
+        /// <summary>
+        /// Search that returns the average of the most recent HgA1C and HDL test for all female patients.
+        /// </summary>
+        /// <returns>
+        /// Returns a ListViewItem with the first slot being HDL and second being HgA1C.
+        /// </returns>
         private ListViewItem FemaleDiabeticSearch()
         {
             connection.Open();
@@ -192,7 +206,15 @@ namespace Test
             reader.Close();
             return lv;
         }
-
+        /// <summary>
+        /// Search that returns the average BMI for all male patients based on the most recent height and weight measurements
+        /// </summary>
+        /// <param name="lv">
+        /// Needs to be the ListViewItem returned by MaleDiabeticSearch()
+        /// </param>
+        /// <returns>
+        /// Returns a ListViewItem with the thrid slot being BMI, First and Second slot should be set by earlier MaleDiabeticSearch.
+        /// </returns>
         private ListViewItem MaleBMISearch(ListViewItem lv)
         {
             connection.Open();
@@ -239,7 +261,15 @@ namespace Test
             connection.Close();
             return lv;
         }
-
+        /// <summary>
+        /// Search that returns the average BMI for all female patients based on the most recent height and weight measurements
+        /// </summary>
+        /// <param name="lv">
+        /// Needs to be the ListViewItem returned by FemaleDiabeticSearch()
+        /// </param>
+        /// <returns>
+        /// Returns a ListViewItem with the thrid slot being BMI, First and Second slot should be set by earlier FemaleDiabeticSearch.
+        /// </returns>
         private ListViewItem FemaleBMISearch(ListViewItem lv)
         {
             connection.Open();
@@ -286,7 +316,15 @@ namespace Test
             connection.Close();
             return lv;
         }
-
+        /// <summary>
+        /// Search that returns the average BMI for all patients based on the most recent height and weight measurements
+        /// </summary>
+        /// <param name="lv">
+        /// Needs to be the ListViewItem returned by DiabeticSearch()
+        /// </param>
+        /// <returns>
+        /// Returns a ListViewItem with the thrid slot being BMI, First and Second slot should be set by earlier DiabeticSearch.
+        /// </returns>
         private ListViewItem BMISearch(ListViewItem lv)
         {
             connection.Open();
@@ -332,7 +370,11 @@ namespace Test
             connection.Close();
             return lv;
         }
-
+        /// <summary>
+        /// Logic statements will need to be changed if more filters are added.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SearchButton_Click(object sender, EventArgs e)
         {
             if (checkedListBox1.CheckedItems.Count.Equals(0)) {
