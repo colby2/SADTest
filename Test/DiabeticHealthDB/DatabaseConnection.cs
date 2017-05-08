@@ -27,7 +27,7 @@ namespace DiabeticHealthDB
             string fileName = "C:\\DBBackup\\stored.dat";
             String password = RijndaelSimple.Decrypt(File.ReadAllText(fileName), passPhrase, saltValue, hashAlgorithm, passwordIterations, initVector, keySize);
 
-            connectionString = "SERVER=localhost; DATABASE =dhrp; USERNAME=root; Password="+password;
+            connectionString = "SERVER=localhost; DATABASE =dhrp; USERNAME=nomawkellner; Password="+password;
             MySqlConnection conn = new MySqlConnection(connectionString);
             return conn;
         }
