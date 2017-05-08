@@ -31,7 +31,11 @@ namespace Test
         {
 
         }
-
+        /// <summary>
+        /// Checks if each field is filled, if complete inserts data into database.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void insertButton_Click_1(object sender, EventArgs e)
         {
             if (dvtb.Text == "" || fnTb.Text == "" || lnTB.Text == "" || gtb.Text == "" || ptb.Text == "" || stb.Text == "" || sttb.Text == "" || ctb.Text == "" || ztb.Text == "" || dbtb.Text == "" || pitb.Text == "" || sitb.Text == "")
@@ -57,28 +61,5 @@ namespace Test
         }
     }
 }
-    
-
-        //private void InsertPatient_Load(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private bool areControlsValid(Control.ControlCollection controls)
-        //{
-        //    foreach (Control c in controls)
-        //    {
-        //        if (c is TextBox)
-        //        {
-        //            if (string.IsNullOrEmpty(((TextBox)c).Text))
-        //                return false;
-        //        }
-        //        if (c.HasChildren)
-        //        {
-        //            areControlsValid(c.Controls);
-        //        }
-        //    }
-        //    return true;
-        //}
     
 
