@@ -106,5 +106,11 @@ namespace Test
         {
 
         }
+
+        private void settingsButton_Click(object sender, EventArgs e)
+        {
+            SettingsForm settings = new SettingsForm();
+            settings.ShowDialog();
+        }
     }
 }

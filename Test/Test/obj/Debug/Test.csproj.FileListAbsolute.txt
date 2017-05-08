@@ -1,7 +1,6 @@
 \\cdc-susers\susers\jscoma\visual studio 2015\Projects\Test\Test\bin\Debug\Test.exe.config
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\bin\Debug\Test.exe.config
 C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\bin\Debug\Test.exe.config
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\Test.exe.config
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\bin\Debug\Test.exe
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\bin\Debug\Test.pdb
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
@@ -77,21 +76,10 @@ C:\Users\Owner\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Hub.resources
 C:\Users\Owner\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Patient.resources
 C:\Users\Owner\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Properties.Resources.resources
 C:\Users\Owner\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.exe
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.pdb
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\bin\Debug\MySql.Data.xml
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.LoadScreen.resources
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.Patient.resources
 C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.LoadScreen.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\Test.exe
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\Test.pdb
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.GraphTemplate.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.LoadScreen.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Login.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Hub.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Patient.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Properties.Resources.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.LoadScreen.resources
 C:\Users\default.DESKTOP-U2654PP\Source\Repos\SADTest\Test\Test\bin\Debug\Test.exe.config
 C:\Users\default.DESKTOP-U2654PP\Source\Repos\SADTest\Test\Test\obj\Debug\Test.exe
@@ -158,20 +146,13 @@ C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\bin\Debug\DiabeticHealthDB.dll
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\bin\Debug\DiabeticHealthDB.pdb
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.InsertPatient.resources
 C:\Users\default.DESKTOP-U2654PP\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddAllergyInfo.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\DiabeticHealthDB.dll
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\DiabeticHealthDB.pdb
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddAllergyInfo.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.InsertPatient.resources
 C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddAllergyInfo.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddVitalsInfo.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddAllergyInfo.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddVitalsInfo.resources
 C:\Users\rkesterson1\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddVitalsInfo.resources
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddAllergyInfo.resources
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddVitalsInfo.resources
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.InsertPatient.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddMedicationInfo.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.xml
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddAllergyInfo.resources
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddMedicationInfo.resources
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddVitalsInfo.resources
@@ -203,9 +184,6 @@ C:\Users\jscoma\Source\Repos\SADTest3\Test\Test\obj\Debug\Test.Hub.resources
 C:\Users\jscoma\Source\Repos\SADTest3\Test\Test\obj\Debug\Test.Patient.resources
 C:\Users\jscoma\Source\Repos\SADTest3\Test\Test\obj\Debug\Test.Properties.Resources.resources
 C:\Users\jscoma\Source\Repos\SADTest3\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabetesBackground.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabetesMedicaitonInfo.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddLipidTestInfo.resources
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddDiabetesBackground.resources
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddDiabetesMedicaitonInfo.resources
 C:\Users\jscoma\Source\Repos\SADTest2\Test\Test\obj\Debug\Test.AddLipidTestInfo.resources
@@ -241,16 +219,12 @@ C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabetes
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabeticTestInfo.resources
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddLipidTestInfo.resources
 C:\Users\Prince Vegeta\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddMedicationInfo.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabeticTestInfo.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.xml
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabetesBackground.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabetesMedicaitonInfo.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabeticTestInfo.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddLipidTestInfo.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddMedicationInfo.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\MySqlBackup.dll
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Trends.resources
-C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Backup.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\bin\Debug\MySqlBackup.dll
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Backup.resources
 C:\Users\jscoma\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Trends.resources
@@ -308,5 +282,32 @@ C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.Patient.resources
 C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.Properties.Resources.resources
 C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
 C:\Users\Owner\Source\Repos\SADTest4\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddAllergyInfo.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabetesBackground.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabetesMedicaitonInfo.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddDiabeticTestInfo.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddLipidTestInfo.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddMedicationInfo.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.AddVitalsInfo.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Backup.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.SettingsForm.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Trends.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.GraphTemplate.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.InsertPatient.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.LoadScreen.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Login.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Hub.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Patient.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\Test.exe.config
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\Test.exe
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\Test.pdb
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\DiabeticHealthDB.dll
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.dll
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\MySqlBackup.dll
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\DiabeticHealthDB.pdb
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\bin\Debug\MySql.Data.xml
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.exe
+C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.pdb
 C:\Users\cboren2\Source\Repos\SADTest\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache

@@ -17,12 +17,6 @@ C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\DiabeticHealthDB\bin\
 C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.dll
 C:\Users\default.DESKTOP-U2654PP\Source\Repos\NewRepo\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.pdb
 C:\Users\default.DESKTOP-U2654PP\Source\Repos\SADTest\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.csprojResolveAssemblyReference.cache
-C:\Users\cboren2\Source\Repos\SADTest\Test\DiabeticHealthDB\bin\Debug\DiabeticHealthDB.dll
-C:\Users\cboren2\Source\Repos\SADTest\Test\DiabeticHealthDB\bin\Debug\DiabeticHealthDB.pdb
-C:\Users\cboren2\Source\Repos\SADTest\Test\DiabeticHealthDB\bin\Debug\MySql.Data.dll
-C:\Users\cboren2\Source\Repos\SADTest\Test\DiabeticHealthDB\bin\Debug\MySql.Data.xml
-C:\Users\cboren2\Source\Repos\SADTest\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.dll
-C:\Users\cboren2\Source\Repos\SADTest\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.pdb
 C:\Users\jscoma\Source\Repos\SADTest3\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.csprojResolveAssemblyReference.cache
 C:\Users\jscoma\Source\Repos\SADTest3\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.dll
 C:\Users\jscoma\Source\Repos\SADTest3\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.pdb
@@ -34,3 +28,9 @@ C:\Users\Owner\Source\Repos\SADTest4\Test\DiabeticHealthDB\bin\Debug\DiabeticHea
 C:\Users\Owner\Source\Repos\SADTest4\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.csprojResolveAssemblyReference.cache
 C:\Users\Owner\Source\Repos\SADTest4\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.dll
 C:\Users\Owner\Source\Repos\SADTest4\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.pdb
+C:\Users\cboren2\Source\Repos\SADTest\Test\DiabeticHealthDB\bin\Debug\DiabeticHealthDB.dll
+C:\Users\cboren2\Source\Repos\SADTest\Test\DiabeticHealthDB\bin\Debug\DiabeticHealthDB.pdb
+C:\Users\cboren2\Source\Repos\SADTest\Test\DiabeticHealthDB\bin\Debug\MySql.Data.dll
+C:\Users\cboren2\Source\Repos\SADTest\Test\DiabeticHealthDB\bin\Debug\MySql.Data.xml
+C:\Users\cboren2\Source\Repos\SADTest\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.dll
+C:\Users\cboren2\Source\Repos\SADTest\Test\DiabeticHealthDB\obj\Debug\DiabeticHealthDB.pdb

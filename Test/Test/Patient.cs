@@ -492,16 +492,17 @@ namespace Test
                 string dateOfTest = lvVitalsList.SelectedItems[0].SubItems[0].Text;
                 string formattedDateOfTest = DateTime.ParseExact(dateOfTest, "MMM dd, yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
                 string heartRate = lvVitalsList.SelectedItems[0].SubItems[1].Text;
-                string bloodPressure = lvVitalsList.SelectedItems[0].SubItems[2].Text;
-                string respiratoryRate = lvVitalsList.SelectedItems[0].SubItems[3].Text;
-                string oxygenSaturation = lvVitalsList.SelectedItems[0].SubItems[4].Text;
-                string airType = lvVitalsList.SelectedItems[0].SubItems[5].Text;
-                string height = lvVitalsList.SelectedItems[0].SubItems[6].Text;
-                string weight = lvVitalsList.SelectedItems[0].SubItems[7].Text;
-                string temperature = lvVitalsList.SelectedItems[0].SubItems[9].Text;
+                string systolic = lvVitalsList.SelectedItems[0].SubItems[2].Text;
+                string diastolic = lvVitalsList.SelectedItems[0].SubItems[3].Text;
+                string respiratoryRate = lvVitalsList.SelectedItems[0].SubItems[4].Text;
+                string oxygenSaturation = lvVitalsList.SelectedItems[0].SubItems[5].Text;
+                string airType = lvVitalsList.SelectedItems[0].SubItems[6].Text;
+                string height = lvVitalsList.SelectedItems[0].SubItems[7].Text;
+                string weight = lvVitalsList.SelectedItems[0].SubItems[8].Text;
+                string temperature = lvVitalsList.SelectedItems[0].SubItems[10].Text;
 
                 connection.Open();
-                string deleteRow = "DELETE FROM VitalsInformation WHERE PatientID = " + selectedID + " AND DateOfTest = '" + formattedDateOfTest + "' AND HeartRate = '"+heartRate+"' AND BloodPressure = '"+bloodPressure+"' AND RespiratoryRate = '"+respiratoryRate+"' AND OxygenSaturation = '"+oxygenSaturation+"' AND AirType = '"+airType+"' AND Height = '"+height+"' AND Weight = '"+weight+"' AND Temperature = '"+temperature+"';";
+                string deleteRow = "DELETE FROM VitalsInformation WHERE PatientID = " + selectedID + " AND DateOfTest = '" + formattedDateOfTest + "' AND HeartRate = '"+heartRate+"' AND Systolic = '"+systolic+ "'AND Diastolic= '"+diastolic+"' AND RespiratoryRate = '"+respiratoryRate+"' AND OxygenSaturation = '"+oxygenSaturation+"' AND AirType = '"+airType+"' AND Height = '"+height+"' AND Weight = '"+weight+"' AND Temperature = '"+temperature+"';";
                 MySqlCommand cmd = new MySqlCommand(deleteRow, connection);
                 cmd.ExecuteNonQuery();
                 connection.Close();

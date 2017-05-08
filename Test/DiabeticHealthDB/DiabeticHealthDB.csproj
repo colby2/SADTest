@@ -48,6 +48,7 @@
     <Compile Include="InsertFunctions.cs" />
     <Compile Include="LoginFunction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rijndael.cs" />
     <Compile Include="UpdateFunctions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
